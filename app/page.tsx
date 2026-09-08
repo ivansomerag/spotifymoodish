@@ -241,20 +241,9 @@ export default function WellnessDashboard() {
                     <span style={{fontSize:10,fontWeight:700,textTransform:"uppercase",letterSpacing:"0.06em",padding:"2px 8px",borderRadius:999,background:"rgba(16,185,129,0.15)",color:"#6ee7b7",border:"1px solid rgba(16,185,129,0.3)"}}>MOOD MATCH</span>
                     <span style={{fontSize:10,color:"#475569"}}>15 tracks</span>
                   </div>
-                  <div style={{display:"flex",alignItems:"center",gap:14,marginBottom:14}}>
-                    <div style={{width:72,height:72,borderRadius:14,background:"linear-gradient(135deg,#0c2a3a,#0d3328)",border:"1px solid rgba(20,241,149,0.35)",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,position:"relative"}}>
-                      <svg className="pulse" style={{width:32,height:32,stroke:"rgba(94,234,212,0.8)",fill:"none"}} viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="10" strokeDasharray="4 2" strokeWidth="1.5"/>
-                        <path d="M12 8v8m-4-6v4m8-5v6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"/>
-                      </svg>
-                      <div style={{position:"absolute",bottom:3,right:3,width:20,height:20,background:"#fff",borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center"}}>
-                        <svg style={{width:10,height:10,fill:"#0f172a",marginLeft:2}} viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                      </div>
-                    </div>
-                    <div>
-                      <h3 style={{fontSize:15,fontWeight:700,color:"#fff",lineHeight:1.2}}>Daily Mood Playlist</h3>
-                      <p style={{fontSize:11,color:"#2dd4bf",fontWeight:600,marginTop:2}}>Updated hourly by Hela</p>
-                    </div>
+                  <div style={{marginBottom:10}}>
+                    <h3 style={{fontSize:15,fontWeight:700,color:"#fff",lineHeight:1.2}}>Daily Mood Playlist</h3>
+                    <p style={{fontSize:11,color:"#2dd4bf",fontWeight:500,marginTop:2}}>Updated hourly by Hela</p>
                   </div>
                   <iframe
                     src="https://open.spotify.com/embed/playlist/294GQpveapLix5cOdGWOru?utm_source=generator&theme=0"
@@ -289,10 +278,10 @@ export default function WellnessDashboard() {
                     <div key={t.n} style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"11px 0",borderBottom:i<tracks.length-1?"1px solid rgba(255,255,255,0.04)":"none"}}>
                       <div style={{display:"flex",alignItems:"center",gap:10}}>
                         <span style={{fontSize:11,fontFamily:"monospace",fontWeight:700,width:26,height:26,borderRadius:10,display:"flex",alignItems:"center",justifyContent:"center",border:"1px solid",backgroundColor:t.nBg,borderColor:t.nBd,color:t.nc,flexShrink:0}}>{String(t.n).padStart(2,"0")}</span>
-                        <div>
+                        <a href={`https://open.spotify.com/search/${encodeURIComponent(t.name + " " + t.artist)}`} target="_blank" rel="noopener noreferrer" style={{textDecoration:"none"}}>
                           <p style={{fontSize:12,fontWeight:700,color:"#fff"}}>{t.name}</p>
                           <p style={{fontSize:10,color:"#64748b",marginTop:1}}>{t.artist}</p>
-                        </div>
+                        </a>
                       </div>
                       <span style={{fontSize:9,fontWeight:700,padding:"3px 8px",borderRadius:999,border:"1px solid",backgroundColor:t.vBg,borderColor:t.vBd,color:t.vc,flexShrink:0,marginLeft:8}}>{t.vibe}</span>
                     </div>
