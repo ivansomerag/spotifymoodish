@@ -48,10 +48,15 @@ export default function WellnessDashboard() {
         .ping { animation: ping 1s cubic-bezier(0,0,0.2,1) infinite; }
         .pulse { animation: pulse 2s cubic-bezier(0.4,0,0.6,1) infinite; }
         .spin-slow { animation: spin-slow 8s linear infinite; }
+        @media (min-width: 768px) {
+          .desktop-sidebar-left { display: block !important; }
+        }
       `}</style>
 
-      <div style={{background:"#080C14",color:"#f1f5f9",minHeight:"100vh",display:"flex",justifyContent:"center"}}>
-        <div style={{width:"100%",maxWidth:430,minHeight:"100vh",paddingBottom:112,display:"flex",flexDirection:"column",position:"relative",borderLeft:"1px solid rgba(148,163,184,0.1)",borderRight:"1px solid rgba(148,163,184,0.1)",background:"#0A0E17",overflow:"hidden"}}>
+      <div style={{background:"#080C14",color:"#f1f5f9",minHeight:"100vh",display:"flex",justifyContent:"center",alignItems:"flex-start"}}>
+        {/* Desktop sidebar glow */}
+        <div style={{flex:1,minHeight:"100vh",background:"radial-gradient(ellipse at right, rgba(20,241,149,0.03) 0%, transparent 60%)",display:"none"}} className="desktop-sidebar-left"/>
+        <div style={{width:"100%",maxWidth:430,minHeight:"100vh",paddingBottom:112,display:"flex",flexDirection:"column",position:"relative",borderLeft:"1px solid rgba(148,163,184,0.1)",borderRight:"1px solid rgba(148,163,184,0.1)",background:"#0A0E17",overflow:"hidden",boxShadow:"0 0 80px rgba(0,0,0,0.8)"}}>
 
           <div className="glow-conic" style={{position:"absolute",top:0,left:0,right:0,height:384,pointerEvents:"none",zIndex:0}}/>
 
