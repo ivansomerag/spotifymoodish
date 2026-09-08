@@ -8,12 +8,12 @@ export default function WellnessDashboard() {
   const insight = "Your last 30 tracks lean heavily into emotional depth — Olivia Rodrigo, Lana Del Rey, Agnes Obel, James Blake, and Taylor Swift vault tracks dominate, painting a picture of introspection and quiet longing. But flashes of Latin energy (LATIN MAFIA, RIA, Becky G) and house pulses (AVAION, Carlita x SOFI TUKKER) reveal you're reaching for momentum underneath the melancholy."
 
   const tracks = [
-    { n: 1, name: "deja vu", artist: "Olivia Rodrigo", vibe: "SAD POP", nc: "#fb7185", nBg: "rgba(239,68,68,0.1)",   nBd: "rgba(239,68,68,0.2)",   vc: "#fb7185", vBg: "rgba(239,68,68,0.15)",  vBd: "rgba(239,68,68,0.3)" },
-    { n: 2, name: "Doesn't Just Happen", artist: "James Blake & Dave", vibe: "GRIME", nc: "#818cf8", nBg: "rgba(99,102,241,0.1)",  nBd: "rgba(99,102,241,0.2)",  vc: "#818cf8", vBg: "rgba(99,102,241,0.15)", vBd: "rgba(99,102,241,0.3)" },
-    { n: 3, name: "Familiar", artist: "Agnes Obel", vibe: "DARK FOLK", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.3)", nBd: "rgba(100,116,139,0.3)", vc: "#cbd5e1", vBg: "#1e293b",              vBd: "rgba(100,116,139,0.6)" },
-    { n: 4, name: "Te Estoy Correteando", artist: "LATIN MAFIA & Fred again..", vibe: "LATIN HEAT", nc: "#2dd4bf", nBg: "rgba(20,241,149,0.1)",  nBd: "rgba(20,241,149,0.2)",  vc: "#2dd4bf", vBg: "rgba(20,241,149,0.15)", vBd: "rgba(20,241,149,0.3)" },
-    { n: 5, name: "Manhattan", artist: "Carlita & SOFI TUKKER", vibe: "HOUSE", nc: "#22d3ee", nBg: "rgba(34,211,238,0.1)",  nBd: "rgba(34,211,238,0.2)",  vc: "#22d3ee", vBg: "rgba(34,211,238,0.15)", vBd: "rgba(34,211,238,0.3)" },
-    { n: 6, name: "I Can Do It With a Broken Heart", artist: "Taylor Swift", vibe: "RESILIENT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.1)",  nBd: "rgba(245,158,11,0.2)",  vc: "#fbbf24", vBg: "rgba(245,158,11,0.15)", vBd: "rgba(245,158,11,0.3)" },
+    { n: 1, name: "deja vu", artist: "Olivia Rodrigo", url: "https://open.spotify.com/search/deja%20vu%20Olivia%20Rodrigo", vibe: "SAD POP", nc: "#fb7185", nBg: "rgba(239,68,68,0.1)",   nBd: "rgba(239,68,68,0.2)",   vc: "#fb7185", vBg: "rgba(239,68,68,0.15)",  vBd: "rgba(239,68,68,0.3)" },
+    { n: 2, name: "Doesn't Just Happen", artist: "James Blake & Dave", url: "https://open.spotify.com/search/Doesn't%20Just%20Happen%20James%20Blake", vibe: "GRIME", nc: "#818cf8", nBg: "rgba(99,102,241,0.1)",  nBd: "rgba(99,102,241,0.2)",  vc: "#818cf8", vBg: "rgba(99,102,241,0.15)", vBd: "rgba(99,102,241,0.3)" },
+    { n: 3, name: "Familiar", artist: "Agnes Obel", url: "https://open.spotify.com/search/Familiar%20Agnes%20Obel", vibe: "DARK FOLK", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.3)", nBd: "rgba(100,116,139,0.3)", vc: "#cbd5e1", vBg: "#1e293b",              vBd: "rgba(100,116,139,0.6)" },
+    { n: 4, name: "Te Estoy Correteando", artist: "LATIN MAFIA & Fred again..", url: "https://open.spotify.com/search/Te%20Estoy%20Correteando%20LATIN%20MAFIA", vibe: "LATIN HEAT", nc: "#2dd4bf", nBg: "rgba(20,241,149,0.1)",  nBd: "rgba(20,241,149,0.2)",  vc: "#2dd4bf", vBg: "rgba(20,241,149,0.15)", vBd: "rgba(20,241,149,0.3)" },
+    { n: 5, name: "Manhattan", artist: "Carlita & SOFI TUKKER", url: "https://open.spotify.com/search/Manhattan%20Carlita%20SOFI%20TUKKER", vibe: "HOUSE", nc: "#22d3ee", nBg: "rgba(34,211,238,0.1)",  nBd: "rgba(34,211,238,0.2)",  vc: "#22d3ee", vBg: "rgba(34,211,238,0.15)", vBd: "rgba(34,211,238,0.3)" },
+    { n: 6, name: "I Can Do It With a Broken Heart", artist: "Taylor Swift", url: "https://open.spotify.com/search/I%20Can%20Do%20It%20With%20a%20Broken%20Heart%20Taylor%20Swift", vibe: "RESILIENT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.1)",  nBd: "rgba(245,158,11,0.2)",  vc: "#fbbf24", vBg: "rgba(245,158,11,0.15)", vBd: "rgba(245,158,11,0.3)" },
   ]
 
   const meters = [
@@ -278,8 +278,8 @@ export default function WellnessDashboard() {
                     <div key={t.n} style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"11px 0",borderBottom:i<tracks.length-1?"1px solid rgba(255,255,255,0.04)":"none"}}>
                       <div style={{display:"flex",alignItems:"center",gap:10}}>
                         <span style={{fontSize:11,fontFamily:"monospace",fontWeight:700,width:26,height:26,borderRadius:10,display:"flex",alignItems:"center",justifyContent:"center",border:"1px solid",backgroundColor:t.nBg,borderColor:t.nBd,color:t.nc,flexShrink:0}}>{String(t.n).padStart(2,"0")}</span>
-                        <a href={`https://open.spotify.com/search/${encodeURIComponent(t.name + " " + t.artist)}`} target="_blank" rel="noopener noreferrer" style={{textDecoration:"none"}}>
-                          <p style={{fontSize:12,fontWeight:700,color:"#fff"}}>{t.name}</p>
+                        <a href={t.url} target="_blank" rel="noopener noreferrer" style={{textDecoration:"none"}}>
+                          <p style={{fontSize:12,fontWeight:700,color:"#fff",transition:"color .15s"}} onMouseEnter={e=>(e.currentTarget.style.color="#2dd4bf")} onMouseLeave={e=>(e.currentTarget.style.color="#fff")}>{t.name}</p>
                           <p style={{fontSize:10,color:"#64748b",marginTop:1}}>{t.artist}</p>
                         </a>
                       </div>
