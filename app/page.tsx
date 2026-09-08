@@ -3,34 +3,34 @@ import { useState, useEffect } from "react"
 import { ShaderBackground } from "@/components/ui/shader-background"
 
 export default function WellnessDashboard() {
-  // ── DATA — updated hourly by Hela ─────────────────────────────────────────
+  // ── DATA — updated every 3 hours by Hela ──
   const date = "Tue Sep 08, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Nocturnal drift into dawn" }
-  const insight = "Your night moved from deep introspection — Billie Eilish, Agnes Obel, Lana Del Rey, Daft Punk's Veridis Quo — into a Latin rhythm pulse with ROSALÍA, Trueno, and Nsqk before landing in full EDM energy with John Summit and David Guetta. This arc from stillness to momentum signals your mind was processing quietly before choosing to push forward."
+  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Processed in the dark, moving toward light" }
+  const insight = "Your session moved through three distinct emotional phases: a quiet, introspective depth with Agnes Obel, Billie Eilish, and Lana Del Rey, then a Latin identity-grounded pulse with ROSALÍA, Trueno, Nsqk, and C. Tangana, before breaking into full EDM momentum with John Summit and David Guetta. The arc — from stillness through rhythm into energy — suggests you processed something heavy and actively chose to push forward."
 
   const tracks = [
     { n: 1, name: "LIGHTS GO OUT - Major Lazer Remix", artist: "John Summit", url: "https://open.spotify.com/search/LIGHTS%20GO%20OUT%20Major%20Lazer%20Remix%20John%20Summit", vibe: "PEAK", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
     { n: 2, name: "Sexo, Violencia y Llantas", artist: "ROSALÍA", url: "https://open.spotify.com/search/Sexo%20Violencia%20y%20Llantas%20ROSALIA", vibe: "FIRE", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
-    { n: 3, name: "when the party's over", artist: "Billie Eilish", url: "https://open.spotify.com/search/when%20the%20partys%20over%20Billie%20Eilish", vibe: "STILL", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
-    { n: 4, name: "PUMAS", artist: "Trueno ft. Milo j", url: "https://open.spotify.com/search/PUMAS%20Trueno%20Milo%20j", vibe: "RAW", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 5, name: "Veridis Quo", artist: "Daft Punk", url: "https://open.spotify.com/search/Veridis%20Quo%20Daft%20Punk", vibe: "DEEP", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 3, name: "PUMAS", artist: "Trueno ft. Milo j", url: "https://open.spotify.com/search/PUMAS%20Trueno%20Milo%20j", vibe: "RAW", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 4, name: "when the party's over", artist: "Billie Eilish", url: "https://open.spotify.com/search/when%20the%20partys%20over%20Billie%20Eilish", vibe: "STILL", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 5, name: "Familiar", artist: "Agnes Obel", url: "https://open.spotify.com/search/Familiar%20Agnes%20Obel", vibe: "DEEP", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
     { n: 6, name: "Mariners Apartment Complex", artist: "Lana Del Rey", url: "https://open.spotify.com/search/Mariners%20Apartment%20Complex%20Lana%20Del%20Rey", vibe: "DRIFT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 58, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 42, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 62, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 60, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 44, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 65, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Morning Run", desc: "Channel that John Summit energy — 20 minutes outside before the city fully wakes. Your body is primed after a night of rhythm-building.", time: "20 min" },
-    { icon: "🌬️", title: "Box Breathing", desc: "4 counts in, 4 hold, 4 out, 4 hold. The Daft Punk / Agnes Obel stillness you visited last night is worth keeping for a few minutes more.", time: "5 min" },
-    { icon: "📓", title: "Night-to-Day Journal", desc: "Write one thing you processed quietly last night and one thing you're choosing to push toward today. Two sentences, no more.", time: "10 min" },
+    { icon: "🏃", title: "Morning Run", desc: "You ended on John Summit and David Guetta — your body already wants to move. Take that energy outside for 20 minutes before the city wakes up.", time: "20 min" },
+    { icon: "🌬️", title: "Box Breathing", desc: "Agnes Obel and Billie Eilish tell you something was processed last night. Hold it: 4 counts in, 4 hold, 4 out, 4 hold. Let the stillness settle.", time: "5 min" },
+    { icon: "📓", title: "Arc Journal", desc: "Your playlist moved through three phases last night. Write one word for each: what you felt in the quiet, what anchored you in the Latin pulse, and what you're choosing now.", time: "10 min" },
   ]
 
-  const journalPrompt = "Your playlist moved from Lana Del Rey's patient melancholy all the way to John Summit's peak energy — what were you working through in the quiet, and what finally shifted?"
-  const quote = { text: "In the middle of difficulty lies opportunity.", author: "Albert Einstein" }
+  const journalPrompt = "Agnes Obel to Trueno to John Summit — three very different worlds in one session. What were you moving through, and where did you land?"
+  const quote = { text: "The only way out is through.", author: "Robert Frost" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
