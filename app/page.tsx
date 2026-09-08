@@ -55,7 +55,7 @@ export default function WellnessDashboard() {
     page: { background:"transparent", color:"#f1f5f9", minHeight:"100vh", display:"flex", justifyContent:"center", alignItems:"stretch", position:"relative" as const } as React.CSSProperties,
     shell: { width:"100%", maxWidth:440, height:"100vh", display:"flex", flexDirection:"column" as const, position:"relative" as const, zIndex:10, borderLeft:"1px solid rgba(0,229,255,0.25)", borderRight:"1px solid rgba(250,46,140,0.25)", background:"rgba(6,10,18,0.55)", backdropFilter:"blur(26px)", WebkitBackdropFilter:"blur(26px)", overflowY:"hidden" as const, boxShadow:"0 0 120px rgba(0,0,0,0.85), 0 0 40px rgba(0,229,255,0.12)", flexShrink:0 },
     glow: { position:"absolute" as const, top:0, left:0, right:0, height:360, background:"radial-gradient(circle at 50% 0%, rgba(0,229,255,0.15) 0%, rgba(250,46,140,0.1) 45%, rgba(168,85,247,0.08) 70%, transparent 90%)", pointerEvents:"none" as const, zIndex:0 },
-    card: { padding:16, borderRadius:20, background:"rgba(9,15,26,0.82)", backdropFilter:"blur(24px)", WebkitBackdropFilter:"blur(24px)", border:"1px solid rgba(0,229,255,0.24)", boxShadow:"0 8px 32px rgba(0,0,0,0.4), 0 0 16px rgba(0,229,255,0.08), inset 0 1px 0 rgba(255,255,255,0.12)", marginBottom:14, position:"relative" as const, zIndex:12 } as React.CSSProperties,
+    card: { padding:16, borderRadius:20, background:"rgba(9,15,26,0.92)", border:"1px solid rgba(0,229,255,0.24)", boxShadow:"0 8px 32px rgba(0,0,0,0.4), 0 0 16px rgba(0,229,255,0.08), inset 0 1px 0 rgba(255,255,255,0.12)", marginBottom:14, position:"relative" as const, zIndex:12 } as React.CSSProperties,
   }
 
   return (
@@ -322,9 +322,7 @@ export default function WellnessDashboard() {
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              background: "linear-gradient(90deg, rgba(12,22,38,0.85), rgba(6,32,26,0.85))",
-              backdropFilter: "blur(24px)",
-              WebkitBackdropFilter: "blur(24px)",
+              background: "linear-gradient(90deg, rgba(12,22,38,0.95), rgba(6,32,26,0.95))",
               boxShadow: "0 4px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.15)",
               position: "relative",
               overflow: "hidden",
@@ -434,14 +432,14 @@ export default function WellnessDashboard() {
                     </svg>
 
                     {/* Center Dial Readout */}
-                    <div style={{position:"absolute",display:"flex",flexDirection:"column",alignItems:"center",textAlign:"center",top:"50%",transform:"translateY(-50%)"}}>
-                      <span className="orb neon-text-title" style={{fontSize:36,fontWeight:900,color:"#fff",letterSpacing:"-0.02em"}}>
+                    <div style={{position:"absolute",display:"flex",flexDirection:"column",alignItems:"center",textAlign:"center",top:"50%",transform:"translateY(-50%)",width:90,padding:"0 4px",overflow:"hidden"}}>
+                      <span className="orb neon-text-title" style={{fontSize:28,fontWeight:900,color:"#fff",letterSpacing:"-0.02em",lineHeight:1}}>
                         {meters[0].value + meters[2].value}
                       </span>
-                      <span className="mono" style={{fontSize:9,textTransform:"uppercase",fontWeight:800,letterSpacing:"0.14em",color:"#00E5FF",marginTop:1}}>
+                      <span className="mono" style={{fontSize:8,textTransform:"uppercase",fontWeight:800,letterSpacing:"0.1em",color:"#00E5FF",marginTop:2}}>
                         MOOD SCORE
                       </span>
-                      <span style={{fontSize:10,color:"#94a3b8",marginTop:3}}>{mood.sub}</span>
+                      <span style={{fontSize:9,color:"#94a3b8",marginTop:3,lineHeight:1.3,wordBreak:"break-word" as const}}>{mood.sub}</span>
                     </div>
                   </div>
 
@@ -466,7 +464,7 @@ export default function WellnessDashboard() {
                       {l:"Energía",v:`${meters[0].value}%`,c:"#00E5FF",glow:"rgba(0,229,255,0.3)"},
                       {l:"Dance",v:`${meters[2].value}%`,c:"#FA2E8C",glow:"rgba(250,46,140,0.3)"}
                     ].map((b,i)=>(
-                      <div key={i} style={{padding:"9px 6px",borderRadius:12,background:"rgba(5,11,20,0.7)",backdropFilter:"blur(12px)",border:`1px solid ${b.c}33`,boxShadow:`0 0 12px ${b.glow}`,textAlign:"center"}}>
+                      <div key={i} style={{padding:"9px 6px",borderRadius:12,background:"rgba(5,11,20,0.9)",border:`1px solid ${b.c}33`,boxShadow:`0 0 12px ${b.glow}`,textAlign:"center"}}>
                         <span className="mono" style={{display:"block",fontSize:9,textTransform:"uppercase",color:"#94a3b8",letterSpacing:"0.08em"}}>{b.l}</span>
                         <span className="orb" style={{display:"block",fontSize:16,fontWeight:800,color:b.c,marginTop:2}}>{b.v}</span>
                       </div>
@@ -710,7 +708,7 @@ export default function WellnessDashboard() {
                 </div>
 
                 {/* Quote */}
-                <div style={{padding:"14px 16px",borderRadius:14,borderLeft:"3px solid #00E5FF",background:"rgba(9,15,26,0.82)",backdropFilter:"blur(16px)",border:"1px solid rgba(255,255,255,0.08)",marginTop:12,position:"relative",zIndex:12}}>
+                <div style={{padding:"14px 16px",borderRadius:14,borderLeft:"3px solid #00E5FF",background:"rgba(9,15,26,0.95)",border:"1px solid rgba(255,255,255,0.08)",marginTop:12,position:"relative",zIndex:12}}>
                   <p style={{fontSize:12,color:"#cbd5e1",fontStyle:"italic",lineHeight:1.6}}>"{quote.text}"</p>
                   <span className="mono" style={{display:"block",fontSize:10,color:"#00E5FF",marginTop:4}}>— {quote.author}</span>
                 </div>
@@ -729,7 +727,7 @@ export default function WellnessDashboard() {
 
                   <p className="mono neon-text-cyan" style={{fontSize:10,fontWeight:800,textTransform:"uppercase",letterSpacing:"0.08em",color:"#00E5FF",marginBottom:12}}>CURRENT MOOD SNAPSHOT</p>
                   <div style={{display:"flex",alignItems:"center",gap:14,marginBottom:14}}>
-                    <div style={{width:58,height:58,borderRadius:16,background:"rgba(5,10,20,0.75)",backdropFilter:"blur(12px)",border:"2px solid #00E5FF",boxShadow:"0 0 16px rgba(0,229,255,0.35)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:30}}>{mood.emoji}</div>
+                    <div style={{width:58,height:58,borderRadius:16,background:"rgba(5,10,20,0.95)",border:"2px solid #00E5FF",boxShadow:"0 0 16px rgba(0,229,255,0.35)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:30}}>{mood.emoji}</div>
                     <div>
                       <p className="fd neon-text-green" style={{fontSize:20,fontWeight:900,color:"#14F195",letterSpacing:"-0.01em"}}>{mood.label}</p>
                       <p style={{fontSize:12,color:"#cbd5e1",marginTop:2}}>{mood.sub}</p>
