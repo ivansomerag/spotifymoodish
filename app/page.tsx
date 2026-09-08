@@ -41,8 +41,8 @@ export default function WellnessDashboard() {
   }
 
   const S = {
-    page: { background:"#080C14", color:"#f1f5f9", minHeight:"100vh", display:"flex", justifyContent:"center", alignItems:"flex-start" } as React.CSSProperties,
-    shell: { width:"100%", maxWidth:430, minHeight:"100vh", paddingBottom:96, display:"flex", flexDirection:"column" as const, position:"relative" as const, borderLeft:"1px solid rgba(148,163,184,0.1)", borderRight:"1px solid rgba(148,163,184,0.1)", background:"#0A0E17", overflow:"hidden", boxShadow:"0 0 80px rgba(0,0,0,0.8)" },
+    page: { background:"#080C14", color:"#f1f5f9", minHeight:"100vh", display:"flex", justifyContent:"center", alignItems:"stretch" } as React.CSSProperties,
+    shell: { width:"100%", maxWidth:430, height:"100vh", display:"flex", flexDirection:"column" as const, position:"relative" as const, borderLeft:"1px solid rgba(148,163,184,0.1)", borderRight:"1px solid rgba(148,163,184,0.1)", background:"#0A0E17", overflowY:"hidden" as const, boxShadow:"0 0 80px rgba(0,0,0,0.8)", flexShrink:0 },
     glow: { position:"absolute" as const, top:0, left:0, right:0, height:320, background:"radial-gradient(circle at 50% 0%, rgba(20,241,149,0.1) 0%, transparent 70%)", pointerEvents:"none" as const, zIndex:0 },
     card: { padding:16, borderRadius:20, background:"rgba(16,20,26,0.85)", border:"1px solid rgba(30,41,59,0.9)", marginBottom:12 } as React.CSSProperties,
   }
@@ -65,12 +65,16 @@ export default function WellnessDashboard() {
         .tab-btn:not(.active) { border:1px solid transparent; }
         .done-card { transition: background .25s, border-color .25s; cursor:pointer; }
         .done-card.done { background: rgba(20,241,149,0.08) !important; border-color: rgba(20,241,149,0.4) !important; }
-        @media (min-width:768px) { .sidebar { display:block !important; } }
+        @media (min-width:768px) {
+          .sidebar { display:block !important; }
+          /* On desktop, page fills full viewport height */
+          html, body { height: 100%; overflow: hidden; }
+        }
         ::-webkit-scrollbar { width:0; }
       `}</style>
 
       <div style={S.page}>
-        <div className="sidebar" style={{flex:1,minHeight:"100vh",display:"none",background:"radial-gradient(ellipse at right,rgba(20,241,149,0.03),transparent 60%)"}}/>
+        <div className="sidebar" style={{flex:1,display:"none",background:"radial-gradient(ellipse at left,rgba(20,241,149,0.03),transparent 60%)"}}/>
         <div style={S.shell}>
           <div style={S.glow}/>
 
@@ -121,7 +125,7 @@ export default function WellnessDashboard() {
           </section>
 
           {/* ── SCROLLABLE CONTENT ── */}
-          <div style={{flex:1,overflowY:"auto",padding:"0 20px 8px",position:"relative",zIndex:10}}>
+          <div style={{flex:1,overflowY:"auto",overflowX:"hidden",padding:"0 20px 8px",position:"relative",zIndex:10,WebkitOverflowScrolling:"touch"} as React.CSSProperties}>
 
             {/* TODAY TAB */}
             {tab === "today" && (
@@ -364,7 +368,7 @@ export default function WellnessDashboard() {
           </div>
 
           {/* ── BOTTOM TAB BAR ── */}
-          <nav style={{position:"fixed",bottom:0,left:"50%",transform:"translateX(-50%)",width:"100%",maxWidth:430,zIndex:50,padding:"8px 16px 16px",background:"linear-gradient(to top,#06090F 60%,transparent)"}}>
+          <nav style={{position:"relative",zIndex:50,padding:"8px 16px 16px",background:"linear-gradient(to top,#06090F 80%,transparent)",flexShrink:0}}>
             <div style={{background:"rgba(10,14,23,0.97)",border:"1px solid rgba(71,85,105,0.4)",borderRadius:22,padding:6,display:"flex",alignItems:"center",justifyContent:"space-around",boxShadow:"0 -4px 32px rgba(0,0,0,0.6)"}}>
               {([
                 { id:"today",    label:"Today",    path:"M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" },
@@ -383,6 +387,7 @@ export default function WellnessDashboard() {
           </nav>
 
         </div>
+        <div className="sidebar" style={{flex:1,display:"none",background:"radial-gradient(ellipse at right,rgba(20,241,149,0.03),transparent 60%)"}}/>
       </div>
     </>
   )
