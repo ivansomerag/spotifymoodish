@@ -3,33 +3,33 @@ import { useState, useEffect } from "react"
 
 export default function WellnessDashboard() {
   // ── DATA — updated hourly by Hela ─────────────────────────────────────────
-  const date = "Mon Sep 08, 2026 · Mexico City · 09:02 PM"
-  const mood = { label: "MELANCHOLIC", emoji: "🌊", sub: "Processing & reaching for light" }
-  const insight = "Your last 30 tracks lean heavily into emotional depth — Olivia Rodrigo, Lana Del Rey, Agnes Obel, James Blake, and Taylor Swift vault tracks dominate, painting a picture of introspection and quiet longing. But flashes of Latin energy (LATIN MAFIA, RIA, Becky G) and house pulses (AVAION, Carlita x SOFI TUKKER) reveal you're reaching for momentum underneath the melancholy."
+  const date = "[Mon Sep 08, 2026 · Mexico City · 09:31 PM]"
+  const mood = { label: "MELANCHOLIC", emoji: "🌙", sub: "Processing & reaching inward" }
+  const insight = "Your late-night session wove together slow, aching tracks — Billie Eilish, SYML, Agnes Obel, Olivia Rodrigo — signaling a deeply introspective headspace. The Latin pulses from C. Tangana and LATIN MAFIA act like small anchors of warmth, suggesting you're processing something quietly but haven't fully let go yet."
 
   const tracks = [
-    { n: 1, name: "deja vu", artist: "Olivia Rodrigo", url: "https://open.spotify.com/search/deja%20vu%20Olivia%20Rodrigo", vibe: "SAD POP", nc: "#fb7185", nBg: "rgba(239,68,68,0.1)",   nBd: "rgba(239,68,68,0.2)",   vc: "#fb7185", vBg: "rgba(239,68,68,0.15)",  vBd: "rgba(239,68,68,0.3)" },
-    { n: 2, name: "Doesn't Just Happen", artist: "James Blake & Dave", url: "https://open.spotify.com/search/Doesn't%20Just%20Happen%20James%20Blake", vibe: "GRIME", nc: "#818cf8", nBg: "rgba(99,102,241,0.1)",  nBd: "rgba(99,102,241,0.2)",  vc: "#818cf8", vBg: "rgba(99,102,241,0.15)", vBd: "rgba(99,102,241,0.3)" },
-    { n: 3, name: "Familiar", artist: "Agnes Obel", url: "https://open.spotify.com/search/Familiar%20Agnes%20Obel", vibe: "DARK FOLK", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.3)", nBd: "rgba(100,116,139,0.3)", vc: "#cbd5e1", vBg: "#1e293b",              vBd: "rgba(100,116,139,0.6)" },
+    { n: 1, name: "when the party's over", artist: "Billie Eilish", url: "https://open.spotify.com/search/when%20the%20partys%20over%20Billie%20Eilish", vibe: "MELANCHOLIC", nc: "#fb7185", nBg: "rgba(239,68,68,0.1)",   nBd: "rgba(239,68,68,0.2)",   vc: "#fb7185", vBg: "rgba(239,68,68,0.15)",  vBd: "rgba(239,68,68,0.3)" },
+    { n: 2, name: "Ingobernable", artist: "C. Tangana", url: "https://open.spotify.com/search/Ingobernable%20C%20Tangana", vibe: "FLAMENCO", nc: "#818cf8", nBg: "rgba(99,102,241,0.1)",  nBd: "rgba(99,102,241,0.2)",  vc: "#818cf8", vBg: "rgba(99,102,241,0.15)", vBd: "rgba(99,102,241,0.3)" },
+    { n: 3, name: "Fear of the Water", artist: "SYML", url: "https://open.spotify.com/search/Fear%20of%20the%20Water%20SYML", vibe: "MOODY", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.3)", nBd: "rgba(100,116,139,0.3)", vc: "#cbd5e1", vBg: "#1e293b",              vBd: "rgba(100,116,139,0.6)" },
     { n: 4, name: "Te Estoy Correteando", artist: "LATIN MAFIA & Fred again..", url: "https://open.spotify.com/search/Te%20Estoy%20Correteando%20LATIN%20MAFIA", vibe: "LATIN HEAT", nc: "#2dd4bf", nBg: "rgba(20,241,149,0.1)",  nBd: "rgba(20,241,149,0.2)",  vc: "#2dd4bf", vBg: "rgba(20,241,149,0.15)", vBd: "rgba(20,241,149,0.3)" },
-    { n: 5, name: "Manhattan", artist: "Carlita & SOFI TUKKER", url: "https://open.spotify.com/search/Manhattan%20Carlita%20SOFI%20TUKKER", vibe: "HOUSE", nc: "#22d3ee", nBg: "rgba(34,211,238,0.1)",  nBd: "rgba(34,211,238,0.2)",  vc: "#22d3ee", vBg: "rgba(34,211,238,0.15)", vBd: "rgba(34,211,238,0.3)" },
-    { n: 6, name: "I Can Do It With a Broken Heart", artist: "Taylor Swift", url: "https://open.spotify.com/search/I%20Can%20Do%20It%20With%20a%20Broken%20Heart%20Taylor%20Swift", vibe: "RESILIENT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.1)",  nBd: "rgba(245,158,11,0.2)",  vc: "#fbbf24", vBg: "rgba(245,158,11,0.15)", vBd: "rgba(245,158,11,0.3)" },
+    { n: 5, name: "what's wrong with me", artist: "Olivia Rodrigo & Robert Smith", url: "https://open.spotify.com/search/whats%20wrong%20with%20me%20Olivia%20Rodrigo", vibe: "SAD POP", nc: "#22d3ee", nBg: "rgba(34,211,238,0.1)",  nBd: "rgba(34,211,238,0.2)",  vc: "#22d3ee", vBg: "rgba(34,211,238,0.15)", vBd: "rgba(34,211,238,0.3)" },
+    { n: 6, name: "Familiar", artist: "Agnes Obel", url: "https://open.spotify.com/search/Familiar%20Agnes%20Obel", vibe: "DARK CALM", nc: "#fbbf24", nBg: "rgba(245,158,11,0.1)",  nBd: "rgba(245,158,11,0.2)",  vc: "#fbbf24", vBg: "rgba(245,158,11,0.15)", vBd: "rgba(245,158,11,0.3)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 52, color: "#2dd4bf", glow: "#14F195" },
-    { label: "Valence",      value: 38, color: "#c084fc", glow: "#c084fc" },
-    { label: "Danceability", value: 61, color: "#22d3ee", glow: "#22d3ee" },
+    { label: "Energy",       value: 42, color: "#2dd4bf", glow: "#14F195" },
+    { label: "Valence",      value: 35, color: "#c084fc", glow: "#c084fc" },
+    { label: "Danceability", value: 55, color: "#22d3ee", glow: "#22d3ee" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Slow Walk Without Headphones", desc: "Step outside for 15 minutes, no music. Let the city sounds be your soundtrack and give your mind space to decompress.", time: "15 min" },
-    { icon: "🌬️", title: "Box Breathing Reset", desc: "Inhale 4 counts, hold 4, exhale 4, hold 4. Repeat 6 times. Anchors you when emotions feel bigger than the moment.", time: "5 min" },
-    { icon: "📓", title: "Write It Out", desc: "Open a notes app or a notebook. No filter, no editing. Just write whatever is sitting heavy on your chest right now.", time: "10 min" },
+    { icon: "🚶", title: "Evening Walk", desc: "A slow 20-minute walk outside to let the music processing continue without screens. Let your mind wander.", time: "20 min" },
+    { icon: "🌬️", title: "Box Breathing", desc: "4 counts in, hold 4, out 4, hold 4. Repeat 6 cycles. Calms the nervous system after an emotionally heavy session.", time: "5 min" },
+    { icon: "📓", title: "Stream of Consciousness", desc: "Write without stopping for 10 minutes. No structure, no goals — just what's moving through you tonight.", time: "10 min" },
   ]
 
-  const journalPrompt = "Olivia Rodrigo, Lana Del Rey, Agnes Obel — what feeling keeps showing up in the music you're choosing today? What are you processing that you haven't said out loud yet?"
-  const quote = { text: "The wound is the place where the light enters you.", author: "Rumi" }
+  const journalPrompt = "Billie Eilish and Agnes Obel both played tonight — what feeling were you sitting with that made those songs feel right? What would you want that feeling to hear from you?"
+  const quote = { text: "The cure for the pain is in the pain.", author: "Rumi" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
@@ -74,36 +74,13 @@ export default function WellnessDashboard() {
         .tab-btn:not(.active) { border:1px solid transparent; }
         .done-card { transition: background .25s, border-color .25s; cursor:pointer; }
         .done-card.done { background: rgba(20,241,149,0.08) !important; border-color: rgba(20,241,149,0.4) !important; }
-        @media (min-width:768px) {
-          html, body { height: 100%; overflow: hidden; }
-        }
+        @media (min-width:768px) { html, body { height: 100%; overflow: hidden; } }
         @media (min-width:1024px) {
-          .app-shell {
-            max-width: 1200px !important;
-            width: 100% !important;
-            border-left: none !important;
-            border-right: none !important;
-            border-radius: 24px;
-            box-shadow: 0 0 120px rgba(0,0,0,0.5) !important;
-            margin: 24px 0;
-            height: calc(100vh - 48px) !important;
-          }
-          .app-nav {
-            padding: 8px 28px 20px !important;
-          }
-          .app-nav > div {
-            justify-content: center !important;
-            gap: 10px;
-            max-width: 420px;
-            margin: 0 auto;
-          }
+          .app-shell { max-width: 1200px !important; width: 100% !important; border-left: none !important; border-right: none !important; border-radius: 24px; box-shadow: 0 0 120px rgba(0,0,0,0.5) !important; margin: 24px 0; height: calc(100vh - 48px) !important; }
+          .app-nav { padding: 8px 28px 20px !important; }
+          .app-nav > div { justify-content: center !important; gap: 10px; max-width: 420px; margin: 0 auto; }
           .app-content { padding: 0 28px 28px !important; }
-          .content-grid {
-            display: grid !important;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 18px;
-            align-items: start;
-          }
+          .content-grid { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px; align-items: start; }
           .grid-span-all { grid-column: 1 / -1; }
         }
         ::-webkit-scrollbar { width:0; }
@@ -177,7 +154,7 @@ export default function WellnessDashboard() {
                     <div style={{position:"absolute",display:"flex",flexDirection:"column",alignItems:"center",textAlign:"center",top:"50%",transform:"translateY(-50%)",width:96,padding:"0 4px"}}>
                       <span style={{fontSize:26,fontWeight:800,color:"#fff",lineHeight:1}}>{meters[0].value + meters[2].value}</span>
                       <span style={{fontSize:7,textTransform:"uppercase",fontWeight:700,letterSpacing:"0.06em",color:"#22d3ee",marginTop:2}}>MOOD SCORE</span>
-                      <span style={{fontSize:8,color:"#94a3b8",marginTop:3,lineHeight:1.3,wordBreak:"break-word" as const}}>{mood.sub}</span>
+                      <span style={{fontSize:8,color:"#94a3b8",marginTop:3,lineHeight:1.3,wordBreak:"break-word"}}>{mood.sub}</span>
                     </div>
                   </div>
                   <div style={{marginTop:8,paddingTop:10,borderTop:"1px solid rgba(255,255,255,0.05)"}}>
@@ -235,11 +212,11 @@ export default function WellnessDashboard() {
 
             {tab === "music" && (
               <div className="content-grid">
-                <div style={{...S.card,border:"1px solid rgba(20,241,149,0.25)",background:"linear-gradient(180deg,#141A24,#10141A)",position:"relative",overflow:"hidden",marginBottom:12}}>
+                <div style={{...S.card,border:"1px solid rgba(20,241,149,0.25)",background:"linear-gradient(180deg,#141A24,#10141A)",position:"relative",overflow:"hidden",marginBottom:12,padding:12}}>
                   <div style={{position:"absolute",right:-30,top:-30,width:120,height:120,background:"rgba(20,241,149,0.08)",borderRadius:"50%",filter:"blur(32px)"}}/>
                   <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:10}}>
                     <span style={{fontSize:10,fontWeight:700,textTransform:"uppercase",letterSpacing:"0.06em",padding:"2px 8px",borderRadius:999,background:"rgba(16,185,129,0.15)",color:"#6ee7b7",border:"1px solid rgba(16,185,129,0.3)"}}>MOOD MATCH</span>
-                    <span style={{fontSize:10,color:"#475569"}}>15 tracks</span>
+                    <span style={{fontSize:10,color:"#475569"}}>Updated hourly</span>
                   </div>
                   <div style={{marginBottom:10}}>
                     <h3 style={{fontSize:15,fontWeight:700,color:"#fff",lineHeight:1.2}}>Daily Mood Playlist</h3>
