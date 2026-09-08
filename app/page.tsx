@@ -1,3 +1,5 @@
+"use client"
+
 export default function WellnessDashboard() {
   // ── DATA (updated daily by Hela routine) ──────────────────────────────────
   const date = "Monday, September 8 · Mexico City · 6:00 AM"
@@ -37,94 +39,289 @@ export default function WellnessDashboard() {
   // ─────────────────────────────────────────────────────────────────────────
 
   return (
-    <main style={{ minHeight: "100vh", padding: "28px 20px 48px", maxWidth: 480, margin: "0 auto" }}>
+    <>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-      {/* HEADER */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 24 }}>
-        <div>
-          <h1 style={{ fontSize: 24, fontWeight: 800, letterSpacing: -0.5 }}>
-            Good morning, Ivan <span style={{ color: "#1DB954" }}>·</span>
-          </h1>
-          <p style={{ fontSize: 12, color: "#666", marginTop: 5 }}>{date}</p>
-        </div>
-        <div style={{ background: "#181818", border: "1px solid #2a2a2a", borderRadius: 14, padding: "10px 16px", textAlign: "center", minWidth: 110 }}>
-          <div style={{ fontSize: 24 }}>{mood.emoji}</div>
-          <div style={{ fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.2, color: "#1DB954", marginTop: 6 }}>{mood.label}</div>
-          <div style={{ fontSize: 10, color: "#555", marginTop: 2 }}>{mood.sub}</div>
-        </div>
-      </div>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-      {/* MOOD ANALYSIS */}
-      <div style={{ marginBottom: 20 }}>
-        <div style={{ fontSize: 10, textTransform: "uppercase", letterSpacing: 1.4, color: "#555", marginBottom: 12, fontWeight: 600 }}>Last 24h Listening Analysis</div>
-        <div style={{ background: "#181818", border: "1px solid #222", borderRadius: 14, padding: "16px 18px" }}>
-          <p style={{ fontSize: 13, color: "#bbb", lineHeight: 1.6, marginBottom: 14 }}>{insight}</p>
+        body {
+          font-family: 'Inter', sans-serif;
+          background: #0d0d0d;
+          color: #f0f0f0;
+          min-height: 100vh;
+        }
 
-          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            {tracks.map((t, i) => (
-              <div key={i} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10 }}>
-                <div style={{ overflow: "hidden" }}>
-                  <div style={{ fontSize: 12, color: "#ddd", fontWeight: 500, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{t.name}</div>
-                  <div style={{ fontSize: 11, color: "#555", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{t.artist}</div>
-                </div>
-                <span style={{ fontSize: 10, fontWeight: 600, padding: "3px 10px", borderRadius: 20, whiteSpace: "nowrap", flexShrink: 0, background: t.bg, color: t.color }}>{t.vibe}</span>
-              </div>
-            ))}
-          </div>
+        .page {
+          width: 100%;
+          min-height: 100vh;
+          padding: 24px 16px 48px;
+        }
 
-          {/* METERS */}
-          <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 8 }}>
-            {meters.map((m, i) => (
-              <div key={i} style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                <span style={{ fontSize: 10, color: "#555", width: 80, flexShrink: 0 }}>{m.label}</span>
-                <div style={{ flex: 1, height: 4, background: "#2a2a2a", borderRadius: 4, overflow: "hidden" }}>
-                  <div style={{ width: `${m.value}%`, height: "100%", background: m.color, borderRadius: 4 }} />
-                </div>
-                <span style={{ fontSize: 10, color: m.color, width: 32, textAlign: "right", flexShrink: 0 }}>{m.value}%</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+        .inner {
+          max-width: 1100px;
+          margin: 0 auto;
+        }
 
-      {/* WELLNESS CARDS */}
-      <div style={{ marginBottom: 20 }}>
-        <div style={{ fontSize: 10, textTransform: "uppercase", letterSpacing: 1.4, color: "#555", marginBottom: 12, fontWeight: 600 }}>Today's Wellness Plan</div>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
-          {cards.map((c, i) => (
-            <div key={i} style={{
-              background: c.primary ? "#0f1f14" : "#181818",
-              border: `1px solid ${c.primary ? "#1DB954" : "#222"}`,
-              borderRadius: 14,
-              padding: 16,
-              display: "flex",
-              flexDirection: "column",
-              gap: 6,
-            }}>
-              <div style={{ fontSize: 26 }}>{c.icon}</div>
-              <div style={{ fontSize: 13, fontWeight: 700 }}>{c.title}</div>
-              <div style={{ fontSize: 11, color: "#777", lineHeight: 1.55, flexGrow: 1 }}>{c.desc}</div>
-              <div style={{ fontSize: 10, color: "#1DB954", fontWeight: 700, textTransform: "uppercase", letterSpacing: 0.8, marginTop: 4 }}>→ {c.cta}</div>
+        /* HEADER */
+        .header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: 28px;
+          gap: 12px;
+        }
+
+        .greeting h1 {
+          font-size: 22px;
+          font-weight: 800;
+          letter-spacing: -0.5px;
+          line-height: 1.2;
+        }
+
+        .greeting p {
+          font-size: 11px;
+          color: #555;
+          margin-top: 5px;
+        }
+
+        .mood-badge {
+          background: #181818;
+          border: 1px solid #2a2a2a;
+          border-radius: 14px;
+          padding: 10px 14px;
+          text-align: center;
+          flex-shrink: 0;
+          min-width: 100px;
+        }
+
+        .mood-badge .emoji { font-size: 22px; line-height: 1; }
+        .mood-badge .mood-label {
+          font-size: 9px; font-weight: 700;
+          text-transform: uppercase; letter-spacing: 1.2px;
+          color: #1DB954; margin-top: 5px;
+        }
+        .mood-badge .mood-sub { font-size: 9px; color: #555; margin-top: 2px; }
+
+        /* SECTION LABEL */
+        .section-label {
+          font-size: 9px;
+          text-transform: uppercase;
+          letter-spacing: 1.4px;
+          color: #555;
+          margin-bottom: 10px;
+          font-weight: 700;
+        }
+
+        /* CARDS */
+        .card {
+          background: #181818;
+          border: 1px solid #222;
+          border-radius: 14px;
+          padding: 16px;
+        }
+
+        /* MOOD SECTION */
+        .mood-insight {
+          font-size: 12px;
+          color: #999;
+          line-height: 1.65;
+          margin-bottom: 14px;
+        }
+
+        .track-row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 8px;
+          margin-bottom: 7px;
+        }
+
+        .track-name { font-size: 12px; color: #ddd; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .track-artist { font-size: 10px; color: #555; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        .vibe-tag {
+          font-size: 9px; font-weight: 700;
+          padding: 3px 9px; border-radius: 20px;
+          white-space: nowrap; flex-shrink: 0;
+          letter-spacing: 0.3px;
+        }
+
+        .meter-row {
+          display: flex; align-items: center; gap: 10px; margin-top: 8px;
+        }
+        .meter-label { font-size: 10px; color: #555; width: 80px; flex-shrink: 0; }
+        .meter-bar { flex: 1; height: 4px; background: #2a2a2a; border-radius: 4px; overflow: hidden; }
+        .meter-fill { height: 100%; border-radius: 4px; }
+        .meter-value { font-size: 10px; width: 30px; text-align: right; flex-shrink: 0; }
+
+        /* WELLNESS CARDS GRID */
+        .wellness-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 10px;
+        }
+
+        .wellness-card {
+          background: #181818;
+          border: 1px solid #222;
+          border-radius: 14px;
+          padding: 14px;
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          transition: border-color 0.2s;
+        }
+
+        .wellness-card.primary {
+          background: #0f1f14;
+          border-color: #1DB954;
+        }
+
+        .wellness-card .w-icon { font-size: 24px; margin-bottom: 3px; }
+        .wellness-card .w-title { font-size: 13px; font-weight: 700; }
+        .wellness-card .w-desc { font-size: 11px; color: #777; line-height: 1.5; flex-grow: 1; }
+        .wellness-card .w-cta { font-size: 9px; color: #1DB954; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 6px; }
+
+        /* JOURNAL */
+        .journal-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #1DB954; margin-bottom: 8px; }
+        .journal-prompt { font-size: 13px; color: #ddd; line-height: 1.65; font-style: italic; }
+
+        /* QUOTE */
+        .quote { text-align: center; padding: 20px 10px 0; border-top: 1px solid #1e1e1e; margin-top: 4px; }
+        .quote p { font-size: 11px; color: #555; line-height: 1.7; font-style: italic; }
+        .quote span { font-size: 10px; color: #3a3a3a; display: block; margin-top: 6px; }
+
+        .section { margin-bottom: 18px; }
+        .green { color: #1DB954; }
+
+        /* ── DESKTOP LAYOUT ── */
+        @media (min-width: 768px) {
+          .page { padding: 40px 32px 64px; }
+
+          .greeting h1 { font-size: 30px; }
+          .greeting p { font-size: 13px; }
+          .mood-badge { padding: 12px 20px; min-width: 130px; }
+          .mood-badge .emoji { font-size: 28px; }
+          .mood-badge .mood-label { font-size: 10px; }
+          .mood-badge .mood-sub { font-size: 10px; }
+
+          .desktop-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: start;
+          }
+
+          .desktop-left {}
+          .desktop-right {}
+
+          .wellness-grid {
+            grid-template-columns: 1fr 1fr;
+          }
+
+          .wellness-card .w-title { font-size: 14px; }
+          .wellness-card .w-desc { font-size: 12px; }
+          .wellness-card .w-icon { font-size: 28px; }
+
+          .mood-insight { font-size: 13px; }
+          .track-name { font-size: 13px; }
+          .track-artist { font-size: 11px; }
+          .journal-prompt { font-size: 14px; }
+          .quote p { font-size: 12px; }
+          .section-label { font-size: 10px; }
+        }
+
+        @media (min-width: 1100px) {
+          .greeting h1 { font-size: 34px; }
+        }
+      `}</style>
+
+      <div className="page">
+        <div className="inner">
+
+          {/* HEADER */}
+          <div className="header">
+            <div className="greeting">
+              <h1>Good morning, Ivan <span className="green">·</span></h1>
+              <p>{date}</p>
             </div>
-          ))}
+            <div className="mood-badge">
+              <div className="emoji">{mood.emoji}</div>
+              <div className="mood-label">{mood.label}</div>
+              <div className="mood-sub">{mood.sub}</div>
+            </div>
+          </div>
+
+          {/* DESKTOP: two-column grid / MOBILE: single column */}
+          <div className="desktop-grid">
+
+            {/* LEFT COL — Mood Analysis */}
+            <div className="desktop-left">
+              <div className="section">
+                <div className="section-label">Last 24h Listening Analysis</div>
+                <div className="card">
+                  <p className="mood-insight">{insight}</p>
+
+                  {tracks.map((t, i) => (
+                    <div className="track-row" key={i}>
+                      <div style={{ overflow: "hidden", flex: 1 }}>
+                        <div className="track-name">{t.name}</div>
+                        <div className="track-artist">{t.artist}</div>
+                      </div>
+                      <span className="vibe-tag" style={{ background: t.bg, color: t.color }}>{t.vibe}</span>
+                    </div>
+                  ))}
+
+                  <div style={{ marginTop: 14 }}>
+                    {meters.map((m, i) => (
+                      <div className="meter-row" key={i}>
+                        <span className="meter-label">{m.label}</span>
+                        <div className="meter-bar">
+                          <div className="meter-fill" style={{ width: `${m.value}%`, background: m.color }} />
+                        </div>
+                        <span className="meter-value" style={{ color: m.color }}>{m.value}%</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Journal — shown below analysis on both mobile and desktop left col */}
+              <div className="section">
+                <div className="section-label">Journal Prompt</div>
+                <div className="card">
+                  <div className="journal-label">✏️ Today's Question</div>
+                  <p className="journal-prompt">{journalPrompt}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* RIGHT COL — Wellness Plan + Quote */}
+            <div className="desktop-right">
+              <div className="section">
+                <div className="section-label">Today's Wellness Plan</div>
+                <div className="wellness-grid">
+                  {cards.map((c, i) => (
+                    <div className={`wellness-card${c.primary ? " primary" : ""}`} key={i}>
+                      <div className="w-icon">{c.icon}</div>
+                      <div className="w-title">{c.title}</div>
+                      <div className="w-desc">{c.desc}</div>
+                      <div className="w-cta">→ {c.cta}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="quote">
+                <p>"{quote.text}"</p>
+                <span>— {quote.author}</span>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
-
-      {/* JOURNAL PROMPT */}
-      <div style={{ marginBottom: 20 }}>
-        <div style={{ fontSize: 10, textTransform: "uppercase", letterSpacing: 1.4, color: "#555", marginBottom: 12, fontWeight: 600 }}>Journal Prompt</div>
-        <div style={{ background: "#181818", border: "1px solid #222", borderRadius: 14, padding: 18 }}>
-          <div style={{ fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.2, color: "#1DB954", marginBottom: 10 }}>✏️ Today's Question</div>
-          <p style={{ fontSize: 14, color: "#ddd", lineHeight: 1.65, fontStyle: "italic" }}>{journalPrompt}</p>
-        </div>
-      </div>
-
-      {/* QUOTE */}
-      <div style={{ textAlign: "center", padding: "20px 10px 0", borderTop: "1px solid #1e1e1e" }}>
-        <p style={{ fontSize: 12, color: "#555", lineHeight: 1.7, fontStyle: "italic" }}>"{quote.text}"</p>
-        <span style={{ fontSize: 10, color: "#3a3a3a", display: "block", marginTop: 8 }}>— {quote.author}</span>
-      </div>
-
-    </main>
+    </>
   )
 }
