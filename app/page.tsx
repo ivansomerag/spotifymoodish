@@ -66,16 +66,42 @@ export default function WellnessDashboard() {
         .done-card { transition: background .25s, border-color .25s; cursor:pointer; }
         .done-card.done { background: rgba(20,241,149,0.08) !important; border-color: rgba(20,241,149,0.4) !important; }
         @media (min-width:768px) {
-          .sidebar { display:block !important; }
-          /* On desktop, page fills full viewport height */
           html, body { height: 100%; overflow: hidden; }
+        }
+        @media (min-width:1024px) {
+          .app-shell {
+            max-width: 1200px !important;
+            width: 100% !important;
+            border-left: none !important;
+            border-right: none !important;
+            border-radius: 24px;
+            box-shadow: 0 0 120px rgba(0,0,0,0.5) !important;
+            margin: 24px 0;
+            height: calc(100vh - 48px) !important;
+          }
+          .app-nav {
+            padding: 8px 28px 20px !important;
+          }
+          .app-nav > div {
+            justify-content: center !important;
+            gap: 10px;
+            max-width: 420px;
+            margin: 0 auto;
+          }
+          .app-content { padding: 0 28px 28px !important; }
+          .content-grid {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 18px;
+            align-items: start;
+          }
+          .grid-span-all { grid-column: 1 / -1; }
         }
         ::-webkit-scrollbar { width:0; }
       `}</style>
 
       <div style={S.page}>
-        <div className="sidebar" style={{flex:1,display:"none",background:"radial-gradient(ellipse at left,rgba(20,241,149,0.03),transparent 60%)"}}/>
-        <div style={S.shell}>
+        <div className="app-shell" style={S.shell}>
           <div style={S.glow}/>
 
           {/* ── HEADER ── */}
@@ -125,11 +151,11 @@ export default function WellnessDashboard() {
           </section>
 
           {/* ── SCROLLABLE CONTENT ── */}
-          <div style={{flex:1,overflowY:"auto",overflowX:"hidden",padding:"0 20px 8px",position:"relative",zIndex:10,WebkitOverflowScrolling:"touch"} as React.CSSProperties}>
+          <div className="app-content" style={{flex:1,overflowY:"auto",overflowX:"hidden",padding:"0 20px 8px",position:"relative",zIndex:10,WebkitOverflowScrolling:"touch"} as React.CSSProperties}>
 
             {/* TODAY TAB */}
             {tab === "today" && (
-              <div>
+              <div className="content-grid">
                 {/* Dial */}
                 <div style={{...S.card, marginBottom:12}}>
                   <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:12}}>
@@ -209,7 +235,7 @@ export default function WellnessDashboard() {
 
             {/* MUSIC TAB */}
             {tab === "music" && (
-              <div>
+              <div className="content-grid">
                 {/* Playlist card */}
                 <div style={{...S.card,border:"1px solid rgba(20,241,149,0.25)",background:"linear-gradient(180deg,#141A24,#10141A)",position:"relative",overflow:"hidden",marginBottom:12}}>
                   <div style={{position:"absolute",right:-30,top:-30,width:120,height:120,background:"rgba(20,241,149,0.08)",borderRadius:"50%",filter:"blur(32px)"}}/>
@@ -277,8 +303,8 @@ export default function WellnessDashboard() {
 
             {/* WELLNESS TAB */}
             {tab === "wellness" && (
-              <div>
-                <p style={{fontSize:10,fontWeight:700,textTransform:"uppercase",letterSpacing:"0.06em",color:"#475569",marginBottom:12}}>TAP TO MARK AS DONE</p>
+              <div className="content-grid">
+                <p className="grid-span-all" style={{fontSize:10,fontWeight:700,textTransform:"uppercase",letterSpacing:"0.06em",color:"#475569",marginBottom:12}}>TAP TO MARK AS DONE</p>
                 {wellnessItems.map((c,i)=>(
                   <div key={i} onClick={()=>toggleDone(i)} className={`done-card${done[i]?" done":""}`} style={{...S.card,cursor:"pointer",border:done[i]?"1px solid rgba(20,241,149,0.4)":"1px solid rgba(30,41,59,0.9)",background:done[i]?"rgba(20,241,149,0.07)":"rgba(16,20,26,0.85)",position:"relative",overflow:"hidden"}}>
                     {done[i] && <div style={{position:"absolute",top:0,left:0,right:0,height:2,background:"linear-gradient(90deg,#14F195,#00E5FF)"}}/>}
@@ -321,7 +347,7 @@ export default function WellnessDashboard() {
 
             {/* PROFILE TAB */}
             {tab === "profile" && (
-              <div>
+              <div className="content-grid">
                 {/* Current mood summary */}
                 <div style={{...S.card,border:"1px solid rgba(20,241,149,0.2)",marginBottom:12}}>
                   <p style={{fontSize:10,fontWeight:700,textTransform:"uppercase",letterSpacing:"0.06em",color:"#475569",marginBottom:12}}>CURRENT MOOD SNAPSHOT</p>
@@ -362,13 +388,13 @@ export default function WellnessDashboard() {
                   </div>
                 </div>
 
-                <p style={{textAlign:"center",fontSize:10,color:"#1e293b",marginTop:16}}>Updated hourly by Hela · Spotify Studio · This content was generated using AI.</p>
+                <p className="grid-span-all" style={{textAlign:"center",fontSize:10,color:"#1e293b",marginTop:16}}>Updated hourly by Hela · Spotify Studio · This content was generated using AI.</p>
               </div>
             )}
           </div>
 
-          {/* ── BOTTOM TAB BAR ── */}
-          <nav style={{position:"relative",zIndex:50,padding:"8px 16px 16px",background:"linear-gradient(to top,#06090F 80%,transparent)",flexShrink:0}}>
+          {/* ── BOTTOM TAB BAR (top nav on desktop) ── */}
+          <nav className="app-nav" style={{position:"relative",zIndex:50,padding:"8px 16px 16px",background:"linear-gradient(to top,#06090F 80%,transparent)",flexShrink:0}}>
             <div style={{background:"rgba(10,14,23,0.97)",border:"1px solid rgba(71,85,105,0.4)",borderRadius:22,padding:6,display:"flex",alignItems:"center",justifyContent:"space-around",boxShadow:"0 -4px 32px rgba(0,0,0,0.6)"}}>
               {([
                 { id:"today",    label:"Today",    path:"M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" },
@@ -387,7 +413,6 @@ export default function WellnessDashboard() {
           </nav>
 
         </div>
-        <div className="sidebar" style={{flex:1,display:"none",background:"radial-gradient(ellipse at right,rgba(20,241,149,0.03),transparent 60%)"}}/>
       </div>
     </>
   )
