@@ -3,17 +3,17 @@ import { useState, useEffect } from "react"
 
 export default function WellnessDashboard() {
   // ── DATA — updated hourly by Hela ─────────────────────────────────────────
-  const date = "[Mon Sep 08, 2026 · Mexico City · 09:31 PM]"
-  const mood = { label: "MELANCHOLIC", emoji: "🌙", sub: "Processing & reaching inward" }
-  const insight = "Your late-night session wove together slow, aching tracks — Billie Eilish, SYML, Agnes Obel, Olivia Rodrigo — signaling a deeply introspective headspace. The Latin pulses from C. Tangana and LATIN MAFIA act like small anchors of warmth, suggesting you're processing something quietly but haven't fully let go yet."
+  const date = "Mon Sep 08, 2026"
+  const mood = { label: "MELANCHOLIC", emoji: "🌑", sub: "Deep in the feels" }
+  const insight = "Your last few hours have been a late-night emotional journey — Billie Eilish, Lana Del Rey, Agnes Obel, and SYML signal deep introspection and emotional processing. Occasional EDM bursts from John Summit and David Guetta show you reaching for energy, but the pull toward stillness is strong right now."
 
   const tracks = [
-    { n: 1, name: "when the party's over", artist: "Billie Eilish", url: "https://open.spotify.com/search/when%20the%20partys%20over%20Billie%20Eilish", vibe: "MELANCHOLIC", nc: "#fb7185", nBg: "rgba(239,68,68,0.1)",   nBd: "rgba(239,68,68,0.2)",   vc: "#fb7185", vBg: "rgba(239,68,68,0.15)",  vBd: "rgba(239,68,68,0.3)" },
-    { n: 2, name: "Ingobernable", artist: "C. Tangana", url: "https://open.spotify.com/search/Ingobernable%20C%20Tangana", vibe: "FLAMENCO", nc: "#818cf8", nBg: "rgba(99,102,241,0.1)",  nBd: "rgba(99,102,241,0.2)",  vc: "#818cf8", vBg: "rgba(99,102,241,0.15)", vBd: "rgba(99,102,241,0.3)" },
-    { n: 3, name: "Fear of the Water", artist: "SYML", url: "https://open.spotify.com/search/Fear%20of%20the%20Water%20SYML", vibe: "MOODY", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.3)", nBd: "rgba(100,116,139,0.3)", vc: "#cbd5e1", vBg: "#1e293b",              vBd: "rgba(100,116,139,0.6)" },
-    { n: 4, name: "Te Estoy Correteando", artist: "LATIN MAFIA & Fred again..", url: "https://open.spotify.com/search/Te%20Estoy%20Correteando%20LATIN%20MAFIA", vibe: "LATIN HEAT", nc: "#2dd4bf", nBg: "rgba(20,241,149,0.1)",  nBd: "rgba(20,241,149,0.2)",  vc: "#2dd4bf", vBg: "rgba(20,241,149,0.15)", vBd: "rgba(20,241,149,0.3)" },
-    { n: 5, name: "what's wrong with me", artist: "Olivia Rodrigo & Robert Smith", url: "https://open.spotify.com/search/whats%20wrong%20with%20me%20Olivia%20Rodrigo", vibe: "SAD POP", nc: "#22d3ee", nBg: "rgba(34,211,238,0.1)",  nBd: "rgba(34,211,238,0.2)",  vc: "#22d3ee", vBg: "rgba(34,211,238,0.15)", vBd: "rgba(34,211,238,0.3)" },
-    { n: 6, name: "Familiar", artist: "Agnes Obel", url: "https://open.spotify.com/search/Familiar%20Agnes%20Obel", vibe: "DARK CALM", nc: "#fbbf24", nBg: "rgba(245,158,11,0.1)",  nBd: "rgba(245,158,11,0.2)",  vc: "#fbbf24", vBg: "rgba(245,158,11,0.15)", vBd: "rgba(245,158,11,0.3)" },
+    { n: 1, name: "LIGHTS GO OUT (Major Lazer Remix)", artist: "John Summit", url: "https://open.spotify.com/search/LIGHTS%20GO%20OUT%20John%20Summit", vibe: "PEAK", nc: "#fb7185", nBg: "rgba(239,68,68,0.1)", nBd: "rgba(239,68,68,0.2)", vc: "#fb7185", vBg: "rgba(239,68,68,0.15)", vBd: "rgba(239,68,68,0.3)" },
+    { n: 2, name: "when the party's over", artist: "Billie Eilish", url: "https://open.spotify.com/search/when%20the%20party%27s%20over%20Billie%20Eilish", vibe: "MOODY", nc: "#818cf8", nBg: "rgba(99,102,241,0.1)", nBd: "rgba(99,102,241,0.2)", vc: "#818cf8", vBg: "rgba(99,102,241,0.15)", vBd: "rgba(99,102,241,0.3)" },
+    { n: 3, name: "Mariners Apartment Complex", artist: "Lana Del Rey", url: "https://open.spotify.com/search/Mariners%20Apartment%20Complex%20Lana%20Del%20Rey", vibe: "LONGING", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.3)", nBd: "rgba(100,116,139,0.3)", vc: "#cbd5e1", vBg: "#1e293b", vBd: "rgba(100,116,139,0.6)" },
+    { n: 4, name: "Veridis Quo", artist: "Daft Punk", url: "https://open.spotify.com/search/Veridis%20Quo%20Daft%20Punk", vibe: "DRIFT", nc: "#2dd4bf", nBg: "rgba(20,241,149,0.1)", nBd: "rgba(20,241,149,0.2)", vc: "#2dd4bf", vBg: "rgba(20,241,149,0.15)", vBd: "rgba(20,241,149,0.3)" },
+    { n: 5, name: "Familiar", artist: "Agnes Obel", url: "https://open.spotify.com/search/Familiar%20Agnes%20Obel", vibe: "DARK", nc: "#22d3ee", nBg: "rgba(34,211,238,0.1)", nBd: "rgba(34,211,238,0.2)", vc: "#22d3ee", vBg: "rgba(34,211,238,0.15)", vBd: "rgba(34,211,238,0.3)" },
+    { n: 6, name: "Fear of the Water", artist: "SYML", url: "https://open.spotify.com/search/Fear%20of%20the%20Water%20SYML", vibe: "STILL", nc: "#fbbf24", nBg: "rgba(245,158,11,0.1)", nBd: "rgba(245,158,11,0.2)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.15)", vBd: "rgba(245,158,11,0.3)" },
   ]
 
   const meters = [
@@ -23,13 +23,13 @@ export default function WellnessDashboard() {
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Evening Walk", desc: "A slow 20-minute walk outside to let the music processing continue without screens. Let your mind wander.", time: "20 min" },
-    { icon: "🌬️", title: "Box Breathing", desc: "4 counts in, hold 4, out 4, hold 4. Repeat 6 cycles. Calms the nervous system after an emotionally heavy session.", time: "5 min" },
-    { icon: "📓", title: "Stream of Consciousness", desc: "Write without stopping for 10 minutes. No structure, no goals — just what's moving through you tonight.", time: "10 min" },
+    { icon: "🚶", title: "Slow Walk Outside", desc: "A 20-minute walk in fresh air without headphones. Let the stillness do the work.", time: "20 min" },
+    { icon: "🌬️", title: "4-7-8 Breathing", desc: "Inhale 4 counts, hold 7, exhale 8. Repeat 4 cycles to quiet a restless mind.", time: "5 min" },
+    { icon: "📓", title: "Night Journal", desc: "Write freely before sleep — what's sitting heavy, what you want to let go of tonight.", time: "10 min" },
   ]
 
-  const journalPrompt = "Billie Eilish and Agnes Obel both played tonight — what feeling were you sitting with that made those songs feel right? What would you want that feeling to hear from you?"
-  const quote = { text: "The cure for the pain is in the pain.", author: "Rumi" }
+  const journalPrompt = "Billie Eilish and Lana Del Rey carried you tonight — what feeling are you sitting with, and what would it look like to set it down before you sleep?"
+  const quote = { text: "The wound is the place where the Light enters you.", author: "Rumi" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
