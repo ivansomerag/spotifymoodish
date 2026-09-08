@@ -290,6 +290,7 @@ export default function WellnessDashboard() {
           }
           .app-nav {
             padding: 8px 28px 20px !important;
+            padding-bottom: max(20px, env(safe-area-inset-bottom)) !important;
           }
           .app-nav > div {
             justify-content: center !important;
@@ -327,7 +328,7 @@ export default function WellnessDashboard() {
           <div style={S.glow}/>
 
           {/* ── RETRO TV OSD TOP STATUS BAR ── */}
-          <div style={{position:"relative",zIndex:15,padding:"6px 20px",display:"flex",alignItems:"center",justifyContent:"space-between",background:"rgba(4,8,16,0.6)",borderBottom:"1px solid rgba(0,229,255,0.18)",fontSize:9,letterSpacing:"0.12em"}} className="mono">
+          <div style={{position:"sticky",top:0,zIndex:20,padding:"6px 20px",display:"flex",alignItems:"center",justifyContent:"space-between",background:"rgba(4,8,16,0.95)",borderBottom:"1px solid rgba(0,229,255,0.18)",fontSize:9,letterSpacing:"0.12em",flexShrink:0}} className="mono">
             <div style={{display:"flex",alignItems:"center",gap:8,color:"#14F195"}}>
               <span style={{color:"#FA2E8C",fontWeight:700}}>● REC</span>
               <span style={{color:"#475569"}}>|</span>
@@ -363,7 +364,7 @@ export default function WellnessDashboard() {
           </div>
 
           {/* ── HEADER WITH VINYL LOGO BESIDE MOODISH ── */}
-          <header style={{position:"relative",zIndex:15,padding:"14px 20px 12px",display:"flex",alignItems:"center",justifyContent:"space-between",background:"rgba(5,9,18,0.4)",borderBottom:"1px solid rgba(0,229,255,0.22)",boxShadow:"0 4px 20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.15)"}}>
+          <header style={{position:"sticky",top:0,zIndex:20,padding:"14px 20px 12px",display:"flex",alignItems:"center",justifyContent:"space-between",background:"rgba(5,9,18,0.97)",borderBottom:"1px solid rgba(0,229,255,0.22)",boxShadow:"0 4px 20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.15)",flexShrink:0}}>
             <div style={{display:"flex",alignItems:"center",gap:12}}>
               {/* Halftone Vinyl Record Player Logo with Neon Glow Ring & Turntable Stylus */}
               <div
@@ -994,7 +995,7 @@ export default function WellnessDashboard() {
           </div>
 
           {/* ── BOTTOM TAB BAR (DARK LIQUID GLASS — NO BLUR) ── */}
-          <nav className="app-nav" style={{position:"relative",zIndex:15,padding:"8px 16px 16px",background:"linear-gradient(to top, rgba(3,5,10,0.8) 75%, transparent)",flexShrink:0}}>
+          <nav className="app-nav" style={{position:"sticky",bottom:0,zIndex:20,padding:"8px 16px 16px",background:"linear-gradient(to top, rgba(3,5,10,0.98) 75%, transparent)",flexShrink:0}}>
             <div style={{background:"rgba(6,12,22,0.82)",border:"1px solid rgba(0,229,255,0.3)",borderRadius:24,padding:6,display:"flex",alignItems:"center",justifyContent:"space-around",boxShadow:"0 8px 32px rgba(0,0,0,0.6), 0 0 20px rgba(0,229,255,0.15), inset 0 1px 1px rgba(255,255,255,0.25)"}}>
               {([
                 { id:"today",    label:"Today",    path:"M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" },
