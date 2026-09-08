@@ -40,7 +40,7 @@ export default function WellnessDashboard() {
 
   useEffect(() => {
     const h = new Date().getHours()
-    setGreeting(h < 12 ? "Good morning" : h < 18 ? "Good afternoon" : "Good evening")
+    setGreeting(h < 12 ? "Good morning" : h < 18 ? "Good afternoon" : h < 21 ? "Good evening" : "Good night")
     const now = new Date()
     setUpdatedAt(now.toLocaleTimeString("es-MX", { hour:"2-digit", minute:"2-digit", hour12:true, timeZone:"America/Mexico_City" }))
   }, [])
@@ -96,7 +96,6 @@ export default function WellnessDashboard() {
                 <svg style={{width:14,height:14,stroke:"#2dd4bf",fill:"none"}} viewBox="0 0 24 24"><path d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"/></svg>
               </div>
               <span className="fd" style={{fontWeight:700,fontSize:15,color:"#fff",letterSpacing:"0.03em"}}>Moodish</span>
-              {updatedAt && <span style={{fontSize:9,fontFamily:"monospace",color:"#475569",letterSpacing:"0.04em"}}>Updated {updatedAt}</span>}
             </div>
             <div style={{display:"flex",alignItems:"center",gap:8}}>
               <div style={{display:"flex",alignItems:"center",gap:5,padding:"3px 8px",borderRadius:999,background:"rgba(30,41,59,0.7)",border:"1px solid rgba(71,85,105,0.4)"}}>
@@ -117,6 +116,7 @@ export default function WellnessDashboard() {
               <span style={{width:8,height:8,borderRadius:"50%",background:"#2dd4bf",boxShadow:"0 0 8px #2dd4bf",display:"inline-block"}}/>
             </h1>
             <p style={{fontSize:11,color:"#64748b",marginTop:3}}>{date}</p>
+            {updatedAt && <p style={{fontSize:10,color:"#334155",marginTop:2,fontFamily:"monospace"}}>Updated {updatedAt}</p>}
             <div style={{marginTop:12,padding:"12px 14px",borderRadius:14,border:"1px solid rgba(20,241,149,0.2)",display:"flex",alignItems:"center",justifyContent:"space-between",background:"linear-gradient(90deg,rgba(20,24,36,0.9),rgba(5,30,20,0.2))"}}>
               <div style={{display:"flex",alignItems:"center",gap:10}}>
                 <div style={{width:30,height:30,borderRadius:10,background:"rgba(20,241,149,0.12)",border:"1px solid rgba(45,212,191,0.3)",display:"flex",alignItems:"center",justifyContent:"center"}}>
