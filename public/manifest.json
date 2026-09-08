@@ -1,0 +1,40 @@
+{
+  "name": "Moodish — Emotional OS",
+  "short_name": "Moodish",
+  "description": "Daily mood & wellness dashboard powered by Spotify listening analysis",
+  "start_url": "/",
+  "id": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "window-controls-overlay", "minimal-ui"],
+  "background_color": "#03060C",
+  "theme_color": "#03060C",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/moodish-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["lifestyle", "music", "health"],
+  "shortcuts": [
+    {
+      "name": "Hoy",
+      "url": "/?tab=today",
+      "description": "Ver resumen de hoy"
+    },
+    {
+      "name": "Música",
+      "url": "/?tab=music",
+      "description": "Reproductor y pistas de Spotify"
+    }
+  ]
+}

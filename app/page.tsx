@@ -39,13 +39,58 @@ export default function WellnessDashboard() {
   const [greeting, setGreeting] = useState("Good morning")
   const [updatedAt, setUpdatedAt] = useState("")
   const [isPlayingVinyl, setIsPlayingVinyl] = useState<boolean>(true)
+  const [deferredPrompt, setDeferredPrompt] = useState<any>(null)
+  const [isStandalone, setIsStandalone] = useState(false)
+  const [showInstallModal, setShowInstallModal] = useState(false)
 
   useEffect(() => {
     const h = new Date().getHours()
     setGreeting(h < 12 ? "Good morning" : h < 18 ? "Good afternoon" : h < 21 ? "Good evening" : "Good night")
     const now = new Date()
     setUpdatedAt(now.toLocaleTimeString("es-MX", { hour:"2-digit", minute:"2-digit", hour12:true, timeZone:"America/Mexico_City" }))
+
+    if (typeof window !== "undefined") {
+      if (window.matchMedia('(display-mode: standalone)').matches || (window.navigator as any).standalone) {
+        setIsStandalone(true)
+      }
+
+      const handleBeforeInstall = (e: Event) => {
+        e.preventDefault()
+        setDeferredPrompt(e)
+      }
+      window.addEventListener('beforeinstallprompt', handleBeforeInstall)
+
+      window.addEventListener('appinstalled', () => {
+        setIsStandalone(true)
+        setDeferredPrompt(null)
+      })
+
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(() => {})
+      }
+
+      return () => {
+        window.removeEventListener('beforeinstallprompt', handleBeforeInstall)
+      }
+    }
   }, [])
+
+  const triggerInstall = async () => {
+    if (deferredPrompt) {
+      try {
+        deferredPrompt.prompt()
+        const { outcome } = await deferredPrompt.userChoice
+        if (outcome === 'accepted') {
+          setDeferredPrompt(null)
+          setIsStandalone(true)
+        }
+      } catch {
+        setShowInstallModal(true)
+      }
+    } else {
+      setShowInstallModal(true)
+    }
+  }
 
   const toggleDone = (i: number) => {
     setDone(prev => { const n = [...prev]; n[i] = !n[i]; return n })
@@ -53,9 +98,11 @@ export default function WellnessDashboard() {
 
   const S = {
     page: { background:"transparent", color:"#f1f5f9", minHeight:"100vh", display:"flex", justifyContent:"center", alignItems:"stretch", position:"relative" as const } as React.CSSProperties,
-    shell: { width:"100%", maxWidth:440, height:"100vh", display:"flex", flexDirection:"column" as const, position:"relative" as const, zIndex:10, borderLeft:"1px solid rgba(0,229,255,0.25)", borderRight:"1px solid rgba(250,46,140,0.25)", background:"rgba(6,10,18,0.55)", backdropFilter:"blur(26px)", WebkitBackdropFilter:"blur(26px)", overflowY:"hidden" as const, boxShadow:"0 0 120px rgba(0,0,0,0.85), 0 0 40px rgba(0,229,255,0.12)", flexShrink:0 },
-    glow: { position:"absolute" as const, top:0, left:0, right:0, height:360, background:"radial-gradient(circle at 50% 0%, rgba(0,229,255,0.15) 0%, rgba(250,46,140,0.1) 45%, rgba(168,85,247,0.08) 70%, transparent 90%)", pointerEvents:"none" as const, zIndex:0 },
-    card: { padding:16, borderRadius:20, background:"rgba(9,15,26,0.92)", border:"1px solid rgba(0,229,255,0.24)", boxShadow:"0 8px 32px rgba(0,0,0,0.4), 0 0 16px rgba(0,229,255,0.08), inset 0 1px 0 rgba(255,255,255,0.12)", marginBottom:14, position:"relative" as const, zIndex:12 } as React.CSSProperties,
+    // Translucent liquid shell — darker tone for depth, but moving background still shows through smoothly
+    shell: { width:"100%", maxWidth:440, height:"100vh", display:"flex", flexDirection:"column" as const, position:"relative" as const, zIndex:10, borderLeft:"1px solid rgba(0,229,255,0.22)", borderRight:"1px solid rgba(250,46,140,0.22)", background:"rgba(4,7,14,0.32)", overflowY:"hidden" as const, boxShadow:"0 0 120px rgba(0,0,0,0.85), 0 0 40px rgba(0,229,255,0.12)", flexShrink:0 },
+    glow: { position:"absolute" as const, top:0, left:0, right:0, height:360, background:"radial-gradient(circle at 50% 0%, rgba(0,229,255,0.16) 0%, rgba(250,46,140,0.1) 45%, rgba(168,85,247,0.08) 70%, transparent 90%)", pointerEvents:"none" as const, zIndex:0 },
+    // Dark Liquid Glass cards: darker smoky translucency for high data contrast, specular reflections, NO blur!
+    card: { padding:16, borderRadius:20, background:"linear-gradient(135deg, rgba(16,28,48,0.78) 0%, rgba(8,15,28,0.80) 50%, rgba(3,7,16,0.86) 100%)", border:"1px solid rgba(0,229,255,0.28)", boxShadow:"0 10px 36px rgba(0,0,0,0.55), inset 0 1px 1px rgba(255,255,255,0.2), inset 0 -1px 2px rgba(0,0,0,0.6), 0 0 20px rgba(0,229,255,0.08)", marginBottom:14, position:"relative" as const, zIndex:12 } as React.CSSProperties,
   }
 
   return (
@@ -68,28 +115,81 @@ export default function WellnessDashboard() {
         .mono { font-family: 'Share Tech Mono', monospace; }
         .orb { font-family: 'Orbitron', monospace; }
 
-        /* CRT SCANLINES & TV SCREEN ANIMATIONS — Behind Cards */
+        /* CRT SCANLINES & TV SCREEN ANIMATIONS */
         .crt-scanlines {
           position: fixed;
           inset: 0;
           pointer-events: none;
           z-index: 1;
-          background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.42) 50%),
-                      linear-gradient(90deg, rgba(250, 46, 140, 0.025), rgba(20, 241, 149, 0.02), rgba(0, 229, 255, 0.025));
+          background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.38) 50%),
+                      linear-gradient(90deg, rgba(250, 46, 140, 0.02), rgba(20, 241, 149, 0.02), rgba(0, 229, 255, 0.02));
           background-size: 100% 3px, 4px 100%;
           opacity: 0.9;
         }
+
+        /* WIDE CATHODE RAY WASH BEAM */
         .crt-beam {
           position: fixed;
           top: 0;
           left: 0;
           right: 0;
-          height: 180px;
+          height: 220px;
           pointer-events: none;
           z-index: 2;
-          background: linear-gradient(to bottom, transparent, rgba(20, 241, 149, 0.04) 25%, rgba(0, 229, 255, 0.18) 60%, rgba(250, 46, 140, 0.14) 85%, transparent);
-          animation: crt-roll 6.5s linear infinite;
+          background: linear-gradient(to bottom, transparent, rgba(20, 241, 149, 0.04) 25%, rgba(0, 229, 255, 0.18) 60%, rgba(255, 255, 255, 0.14) 75%, rgba(250, 46, 140, 0.14) 90%, transparent);
+          animation: crt-roll 6s linear infinite;
         }
+
+        /* RETRO STATIC MOVING SCANLINE — Subtle analog CRT tracking line */
+        .retro-static-line {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 2px;
+          pointer-events: none;
+          z-index: 16;
+          background: linear-gradient(90deg, transparent 0%, rgba(0, 229, 255, 0.25) 15%, rgba(255, 255, 255, 0.75) 48%, rgba(20, 241, 149, 0.5) 75%, rgba(0, 229, 255, 0.3) 90%, transparent 100%);
+          box-shadow: 0 0 8px rgba(0, 229, 255, 0.4), 0 0 16px rgba(20, 241, 149, 0.25);
+          opacity: 0.55;
+          animation: crt-roll 7s linear infinite;
+        }
+
+        /* RETRO STATIC TRACKING NOISE BAND — Soft, delicate analog shimmer */
+        .retro-static-band {
+          position: fixed;
+          top: -8px;
+          left: 0;
+          right: 0;
+          height: 18px;
+          pointer-events: none;
+          z-index: 16;
+          background: repeating-linear-gradient(90deg,
+            rgba(255, 255, 255, 0.05) 0px,
+            rgba(0, 229, 255, 0.09) 2px,
+            transparent 4px,
+            rgba(20, 241, 149, 0.07) 6px,
+            transparent 9px
+          );
+          opacity: 0.28;
+          animation: crt-roll 7s linear infinite;
+        }
+
+        /* SECONDARY SUBTLE STATIC GLITCH LINE */
+        .retro-static-line-secondary {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 1.5px;
+          pointer-events: none;
+          z-index: 16;
+          background: linear-gradient(90deg, transparent 0%, rgba(250, 46, 140, 0.25) 20%, rgba(255, 255, 255, 0.55) 50%, rgba(0, 229, 255, 0.35) 80%, transparent 100%);
+          box-shadow: 0 0 6px rgba(250, 46, 140, 0.35);
+          opacity: 0.35;
+          animation: crt-roll-secondary 11s linear infinite;
+        }
+
         .crt-vignette {
           position: fixed;
           inset: 0;
@@ -98,10 +198,17 @@ export default function WellnessDashboard() {
           background: radial-gradient(circle at 50% 50%, transparent 62%, rgba(3, 6, 12, 0.5) 85%, rgba(0, 0, 0, 0.88) 100%);
           box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.8);
         }
+
         @keyframes crt-roll {
-          0% { transform: translateY(-180px); }
+          0% { transform: translateY(-220px); }
           100% { transform: translateY(105vh); }
         }
+
+        @keyframes crt-roll-secondary {
+          0% { transform: translateY(-100px); }
+          100% { transform: translateY(105vh); }
+        }
+
         @keyframes crt-flicker {
           0% { opacity: 0.985; }
           48% { opacity: 1; }
@@ -162,10 +269,10 @@ export default function WellnessDashboard() {
         .spin  { animation: spin  8s linear infinite; }
 
         .tab-btn { background:none; border:none; cursor:pointer; display:flex; flex-direction:column; align-items:center; padding:8px 16px; border-radius:16px; gap:3px; transition:all .2s; }
-        .tab-btn.active { background:rgba(0,229,255,0.16); border:1px solid rgba(0,229,255,0.45); box-shadow:0 0 14px rgba(0,229,255,0.25); }
+        .tab-btn.active { background:rgba(0,229,255,0.18); border:1px solid rgba(0,229,255,0.45); box-shadow:0 0 14px rgba(0,229,255,0.25); }
         .tab-btn:not(.active) { border:1px solid transparent; }
         .done-card { transition: all .25s; cursor:pointer; }
-        .done-card.done { background: rgba(20,241,149,0.18) !important; border-color: rgba(20,241,149,0.6) !important; box-shadow: 0 0 20px rgba(20,241,149,0.25) !important; }
+        .done-card.done { background: rgba(20,241,149,0.22) !important; border-color: rgba(20,241,149,0.6) !important; box-shadow: 0 0 20px rgba(20,241,149,0.25) !important; }
 
         @media (min-width:768px) {
           html, body { height: 100%; overflow: hidden; }
@@ -176,9 +283,7 @@ export default function WellnessDashboard() {
             width: 100% !important;
             border: 1px solid rgba(0,229,255,0.28) !important;
             border-radius: 28px !important;
-            background: rgba(6,10,18,0.5) !important;
-            backdrop-filter: blur(28px) !important;
-            -webkit-backdrop-filter: blur(28px) !important;
+            background: rgba(4,7,14,0.28) !important;
             box-shadow: 0 20px 80px rgba(0,0,0,0.7), 0 0 40px rgba(0,229,255,0.14), inset 0 1px 0 rgba(255,255,255,0.15) !important;
             margin: 20px 0 !important;
             height: calc(100vh - 40px) !important;
@@ -209,16 +314,20 @@ export default function WellnessDashboard() {
         {/* WebGL Plasma Background (Synthwave neon palette) */}
         <ShaderBackground className="shader-bg" />
 
-        {/* CRT Scanlines and Cathode Ray sweep live BEHIND the cards */}
+        {/* CRT Scanlines and Cathode Ray sweep */}
         <div className="crt-scanlines" />
         <div className="crt-beam" />
+        {/* Retro Static Moving Lines */}
+        <div className="retro-static-band" />
+        <div className="retro-static-line" />
+        <div className="retro-static-line-secondary" />
         <div className="crt-vignette" />
 
         <div className="app-shell crt-screen-alive" style={S.shell}>
           <div style={S.glow}/>
 
           {/* ── RETRO TV OSD TOP STATUS BAR ── */}
-          <div style={{position:"relative",zIndex:15,padding:"6px 20px",display:"flex",alignItems:"center",justifyContent:"space-between",background:"rgba(4,8,16,0.8)",borderBottom:"1px solid rgba(0,229,255,0.18)",fontSize:9,letterSpacing:"0.12em"}} className="mono">
+          <div style={{position:"relative",zIndex:15,padding:"6px 20px",display:"flex",alignItems:"center",justifyContent:"space-between",background:"rgba(4,8,16,0.6)",borderBottom:"1px solid rgba(0,229,255,0.18)",fontSize:9,letterSpacing:"0.12em"}} className="mono">
             <div style={{display:"flex",alignItems:"center",gap:8,color:"#14F195"}}>
               <span style={{color:"#FA2E8C",fontWeight:700}}>● REC</span>
               <span style={{color:"#475569"}}>|</span>
@@ -227,13 +336,34 @@ export default function WellnessDashboard() {
               <span style={{color:"#00E5FF"}}>NTSC 60Hz</span>
             </div>
             <div style={{display:"flex",alignItems:"center",gap:8,color:"#94a3b8"}}>
+              <button
+                onClick={triggerInstall}
+                style={{
+                  background: isStandalone ? "rgba(20,241,149,0.15)" : "rgba(0,229,255,0.15)",
+                  border: isStandalone ? "1px solid rgba(20,241,149,0.4)" : "1px solid rgba(0,229,255,0.4)",
+                  borderRadius: 4,
+                  padding: "1px 6px",
+                  color: isStandalone ? "#14F195" : "#00E5FF",
+                  cursor: "pointer",
+                  fontSize: 8.5,
+                  letterSpacing: "0.08em",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 3,
+                  fontFamily: "inherit"
+                }}
+                title={isStandalone ? "Corriendo en ventana Standalone" : "Instalar como App en Chrome (sin barra de navegador)"}
+              >
+                <span>{isStandalone ? "✓" : "⚡"}</span>
+                <span>{isStandalone ? "STANDALONE" : "INSTALAR"}</span>
+              </button>
               <span>STEREO HI-FI</span>
               <span style={{color:"#14F195",fontWeight:700}} className="pulse">PLAY ▶</span>
             </div>
           </div>
 
           {/* ── HEADER WITH VINYL LOGO BESIDE MOODISH ── */}
-          <header style={{position:"relative",zIndex:15,padding:"14px 20px 12px",display:"flex",alignItems:"center",justifyContent:"space-between",background:"rgba(7,13,24,0.75)",backdropFilter:"blur(22px)",WebkitBackdropFilter:"blur(22px)",borderBottom:"1px solid rgba(0,229,255,0.2)"}}>
+          <header style={{position:"relative",zIndex:15,padding:"14px 20px 12px",display:"flex",alignItems:"center",justifyContent:"space-between",background:"rgba(5,9,18,0.4)",borderBottom:"1px solid rgba(0,229,255,0.22)",boxShadow:"0 4px 20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.15)"}}>
             <div style={{display:"flex",alignItems:"center",gap:12}}>
               {/* Halftone Vinyl Record Player Logo with Neon Glow Ring & Turntable Stylus */}
               <div
@@ -313,17 +443,17 @@ export default function WellnessDashboard() {
               </div>
             </div>
 
-            {/* Retro Neon State Card (Clean, no lines over it) */}
+            {/* Liquid Glass State Card (No blur, crystal clear) */}
             <div style={{
               marginTop: 12,
               padding: "12px 16px",
               borderRadius: 16,
-              border: "1px solid rgba(0,229,255,0.3)",
+              border: "1px solid rgba(0,229,255,0.28)",
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              background: "linear-gradient(90deg, rgba(12,22,38,0.95), rgba(6,32,26,0.95))",
-              boxShadow: "0 4px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.15)",
+              background: "linear-gradient(90deg, rgba(14,24,42,0.80), rgba(6,28,24,0.76))",
+              boxShadow: "0 6px 24px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.2)",
               position: "relative",
               overflow: "hidden",
               zIndex: 12
@@ -349,13 +479,13 @@ export default function WellnessDashboard() {
             </div>
           </section>
 
-          {/* ── SCROLLABLE CONTENT (CARDS ARE CRISP AND CLEAN) ── */}
+          {/* ── SCROLLABLE CONTENT (LIQUID GLASS CARDS — NO BLUR) ── */}
           <div className="app-content" style={{flex:1,overflowY:"auto",overflowX:"hidden",padding:"0 20px 10px",position:"relative",zIndex:12,WebkitOverflowScrolling:"touch"} as React.CSSProperties}>
 
             {/* TODAY TAB */}
             {tab === "today" && (
               <div className="content-grid">
-                {/* Dial Emocional - Retro Synth Oscilloscope Gauge */}
+                {/* Dial Emocional - Liquid Glass Synth Gauge */}
                 <div style={{...S.card}}>
                   <div className="hud-corner hud-tl" />
                   <div className="hud-corner hud-tr" />
@@ -431,15 +561,59 @@ export default function WellnessDashboard() {
                       />
                     </svg>
 
-                    {/* Center Dial Readout */}
-                    <div style={{position:"absolute",display:"flex",flexDirection:"column",alignItems:"center",textAlign:"center",top:"50%",transform:"translateY(-50%)",width:90,padding:"0 4px",overflow:"hidden"}}>
-                      <span className="orb neon-text-title" style={{fontSize:28,fontWeight:900,color:"#fff",letterSpacing:"-0.02em",lineHeight:1}}>
+                    {/* Center Dial Readout — strictly enclosed within the inner circle */}
+                    <div style={{
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                      width: 110,
+                      height: 110,
+                      borderRadius: "50%",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      textAlign: "center",
+                      padding: "0 6px",
+                      overflow: "hidden",
+                      pointerEvents: "none",
+                      boxSizing: "border-box"
+                    }}>
+                      <span className="orb neon-text-title" style={{
+                        fontSize: 30,
+                        fontWeight: 900,
+                        color: "#fff",
+                        letterSpacing: "-0.02em",
+                        lineHeight: 1
+                      }}>
                         {meters[0].value + meters[2].value}
                       </span>
-                      <span className="mono" style={{fontSize:8,textTransform:"uppercase",fontWeight:800,letterSpacing:"0.1em",color:"#00E5FF",marginTop:2}}>
+                      <span className="mono" style={{
+                        fontSize: 8.5,
+                        textTransform: "uppercase",
+                        fontWeight: 800,
+                        letterSpacing: "0.12em",
+                        color: "#00E5FF",
+                        marginTop: 3,
+                        lineHeight: 1
+                      }}>
                         MOOD SCORE
                       </span>
-                      <span style={{fontSize:9,color:"#94a3b8",marginTop:3,lineHeight:1.3,wordBreak:"break-word" as const}}>{mood.sub}</span>
+                      <span style={{
+                        fontSize: 9,
+                        color: "#94a3b8",
+                        marginTop: 3,
+                        lineHeight: 1.2,
+                        maxWidth: 90,
+                        display: "-webkit-box",
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                        wordBreak: "break-word"
+                      }}>
+                        {mood.sub}
+                      </span>
                     </div>
                   </div>
 
@@ -457,14 +631,14 @@ export default function WellnessDashboard() {
                     </div>
                   </div>
 
-                  {/* Triple telemetry cells */}
+                  {/* Triple telemetry cells in Dark Liquid Glass */}
                   <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:8,marginTop:14}}>
                     {[
                       {l:"Valence",v:`${meters[1].value}%`,c:"#14F195",glow:"rgba(20,241,149,0.3)"},
                       {l:"Energía",v:`${meters[0].value}%`,c:"#00E5FF",glow:"rgba(0,229,255,0.3)"},
                       {l:"Dance",v:`${meters[2].value}%`,c:"#FA2E8C",glow:"rgba(250,46,140,0.3)"}
                     ].map((b,i)=>(
-                      <div key={i} style={{padding:"9px 6px",borderRadius:12,background:"rgba(5,11,20,0.9)",border:`1px solid ${b.c}33`,boxShadow:`0 0 12px ${b.glow}`,textAlign:"center"}}>
+                      <div key={i} style={{padding:"9px 6px",borderRadius:12,background:"rgba(4,9,18,0.76)",border:`1px solid ${b.c}44`,boxShadow:`0 0 12px ${b.glow}, inset 0 1px 1px rgba(255,255,255,0.2)`,textAlign:"center"}}>
                         <span className="mono" style={{display:"block",fontSize:9,textTransform:"uppercase",color:"#94a3b8",letterSpacing:"0.08em"}}>{b.l}</span>
                         <span className="orb" style={{display:"block",fontSize:16,fontWeight:800,color:b.c,marginTop:2}}>{b.v}</span>
                       </div>
@@ -472,8 +646,8 @@ export default function WellnessDashboard() {
                   </div>
                 </div>
 
-                {/* Emotional Flow */}
-                <div style={{...S.card,border:"1px solid rgba(0,229,255,0.25)"}}>
+                {/* Emotional Flow - Liquid Glass */}
+                <div style={{...S.card,border:"1px solid rgba(0,229,255,0.28)"}}>
                   <div className="hud-corner hud-tl" />
                   <div className="hud-corner hud-tr" />
                   <div className="hud-corner hud-bl" />
@@ -486,8 +660,8 @@ export default function WellnessDashboard() {
                   <p style={{fontSize:13,color:"#e2e8f0",lineHeight:1.7}}>{insight}</p>
                 </div>
 
-                {/* Sonic Signature - Vintage Stereo LED VU Equalizer */}
-                <div style={{...S.card,border:"1px solid rgba(20,241,149,0.25)"}}>
+                {/* Sonic Signature - Liquid Glass VU Equalizer */}
+                <div style={{...S.card,border:"1px solid rgba(20,241,149,0.28)"}}>
                   <div className="hud-corner hud-tl" />
                   <div className="hud-corner hud-tr" />
                   <div className="hud-corner hud-bl" />
@@ -515,7 +689,7 @@ export default function WellnessDashboard() {
                         </div>
 
                         {/* Segmented LED Blocks */}
-                        <div style={{display:"flex",gap:3,alignItems:"center",background:"rgba(4,9,18,0.8)",padding:"4px 6px",borderRadius:8,border:"1px solid rgba(255,255,255,0.06)"}}>
+                        <div style={{display:"flex",gap:3,alignItems:"center",background:"rgba(4,9,18,0.6)",padding:"4px 6px",borderRadius:8,border:"1px solid rgba(255,255,255,0.08)"}}>
                           {Array.from({length:totalSegments}).map((_,segIdx)=>{
                             const isActive = segIdx < activeCount
                             const segColor = segIdx < 9 ? "#14F195" : segIdx < 12 ? "#FBBF24" : "#FA2E8C"
@@ -526,7 +700,7 @@ export default function WellnessDashboard() {
                                   flex: 1,
                                   height: 10,
                                   borderRadius: 2,
-                                  background: isActive ? segColor : "rgba(255,255,255,0.05)",
+                                  background: isActive ? segColor : "rgba(255,255,255,0.06)",
                                   boxShadow: isActive ? `0 0 6px ${segColor}` : "none",
                                   transition: "all 0.2s"
                                 }}
@@ -545,7 +719,7 @@ export default function WellnessDashboard() {
             {tab === "music" && (
               <div className="content-grid">
                 {/* Vinyl Player Card featuring the uploaded logo graphic */}
-                <div style={{...S.card,border:"1px solid rgba(0,229,255,0.35)",background:"linear-gradient(180deg,rgba(10,22,38,0.85),rgba(6,14,24,0.85))",position:"relative",overflow:"hidden",marginBottom:14}}>
+                <div style={{...S.card,border:"1px solid rgba(0,229,255,0.35)",background:"linear-gradient(180deg,rgba(10,22,38,0.80),rgba(4,10,20,0.86))",position:"relative",overflow:"hidden",marginBottom:14}}>
                   <div className="hud-corner hud-tl" />
                   <div className="hud-corner hud-tr" />
                   <div className="hud-corner hud-bl" />
@@ -657,7 +831,7 @@ export default function WellnessDashboard() {
               </div>
             )}
 
-            {/* WELLNESS TAB */}
+            {/* WELLNESS TAB (LIQUID GLASS) */}
             {tab === "wellness" && (
               <div className="content-grid">
                 <p className="grid-span-all mono neon-text-green" style={{fontSize:11,fontWeight:800,textTransform:"uppercase",letterSpacing:"0.08em",color:"#14F195",marginBottom:12}}>
@@ -665,7 +839,7 @@ export default function WellnessDashboard() {
                 </p>
 
                 {wellnessItems.map((c,i)=>(
-                  <div key={i} onClick={()=>toggleDone(i)} className={`done-card${done[i]?" done":""}`} style={{...S.card,cursor:"pointer",border:done[i]?"1px solid rgba(20,241,149,0.6)":"1px solid rgba(0,229,255,0.25)",background:done[i]?"rgba(20,241,149,0.2)":"rgba(9,15,26,0.82)",position:"relative",overflow:"hidden"}}>
+                  <div key={i} onClick={()=>toggleDone(i)} className={`done-card${done[i]?" done":""}`} style={{...S.card,cursor:"pointer",border:done[i]?"1px solid rgba(20,241,149,0.6)":"1px solid rgba(0,229,255,0.25)",background:done[i]?"rgba(20,241,149,0.24)":"linear-gradient(135deg, rgba(16,28,48,0.78) 0%, rgba(8,15,28,0.80) 50%, rgba(3,7,16,0.86) 100%)",position:"relative",overflow:"hidden"}}>
                     <div className="hud-corner hud-tl" />
                     <div className="hud-corner hud-tr" />
                     <div className="hud-corner hud-bl" />
@@ -693,7 +867,7 @@ export default function WellnessDashboard() {
                   </div>
                 ))}
 
-                {/* Journal prompt */}
+                {/* Journal prompt in Dark Liquid Glass */}
                 <div style={{...S.card,border:"1px solid rgba(250,46,140,0.25)",marginTop:4}}>
                   <div className="hud-corner hud-tl" />
                   <div className="hud-corner hud-tr" />
@@ -707,15 +881,15 @@ export default function WellnessDashboard() {
                   <p style={{fontSize:13,color:"#e2e8f0",lineHeight:1.7,fontStyle:"italic"}}>"{journalPrompt}"</p>
                 </div>
 
-                {/* Quote */}
-                <div style={{padding:"14px 16px",borderRadius:14,borderLeft:"3px solid #00E5FF",background:"rgba(9,15,26,0.95)",border:"1px solid rgba(255,255,255,0.08)",marginTop:12,position:"relative",zIndex:12}}>
+                {/* Quote in Dark Liquid Glass */}
+                <div style={{padding:"14px 16px",borderRadius:14,borderLeft:"3px solid #00E5FF",background:"linear-gradient(135deg, rgba(14,24,42,0.82) 0%, rgba(6,12,24,0.86) 100%)",border:"1px solid rgba(255,255,255,0.08)",boxShadow:"0 6px 24px rgba(0,0,0,0.45), inset 0 1px 1px rgba(255,255,255,0.2)",marginTop:12,position:"relative",zIndex:12}}>
                   <p style={{fontSize:12,color:"#cbd5e1",fontStyle:"italic",lineHeight:1.6}}>"{quote.text}"</p>
                   <span className="mono" style={{display:"block",fontSize:10,color:"#00E5FF",marginTop:4}}>— {quote.author}</span>
                 </div>
               </div>
             )}
 
-            {/* PROFILE TAB */}
+            {/* PROFILE TAB (DARK LIQUID GLASS) */}
             {tab === "profile" && (
               <div className="content-grid">
                 {/* Current mood snapshot */}
@@ -727,7 +901,7 @@ export default function WellnessDashboard() {
 
                   <p className="mono neon-text-cyan" style={{fontSize:10,fontWeight:800,textTransform:"uppercase",letterSpacing:"0.08em",color:"#00E5FF",marginBottom:12}}>CURRENT MOOD SNAPSHOT</p>
                   <div style={{display:"flex",alignItems:"center",gap:14,marginBottom:14}}>
-                    <div style={{width:58,height:58,borderRadius:16,background:"rgba(5,10,20,0.95)",border:"2px solid #00E5FF",boxShadow:"0 0 16px rgba(0,229,255,0.35)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:30}}>{mood.emoji}</div>
+                    <div style={{width:58,height:58,borderRadius:16,background:"rgba(5,10,20,0.78)",border:"2px solid #00E5FF",boxShadow:"0 0 16px rgba(0,229,255,0.35), inset 0 1px 1px rgba(255,255,255,0.25)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:30}}>{mood.emoji}</div>
                     <div>
                       <p className="fd neon-text-green" style={{fontSize:20,fontWeight:900,color:"#14F195",letterSpacing:"-0.01em"}}>{mood.label}</p>
                       <p style={{fontSize:12,color:"#cbd5e1",marginTop:2}}>{mood.sub}</p>
@@ -745,7 +919,7 @@ export default function WellnessDashboard() {
                     {label:"Danceability", value:`${meters[2].value}%`, color:"#00E5FF", icon:"🎧", glow:"rgba(0,229,255,0.35)"},
                     {label:"Mood Score",value:`${meters[0].value+meters[2].value}`, color:"#FA2E8C", icon:"🌊", glow:"rgba(250,46,140,0.35)"},
                   ].map((s,i)=>(
-                    <div key={i} style={{...S.card,marginBottom:0,textAlign:"center",padding:14,border:`1px solid ${s.color}44`,boxShadow:`0 0 16px ${s.glow}`}}>
+                    <div key={i} style={{...S.card,marginBottom:0,textAlign:"center",padding:14,border:`1px solid ${s.color}44`,boxShadow:`0 0 16px ${s.glow}, inset 0 1px 1px rgba(255,255,255,0.2)`}}>
                       <span style={{fontSize:22}}>{s.icon}</span>
                       <p className="orb" style={{fontSize:24,fontWeight:900,color:s.color,marginTop:6,textShadow:`0 0 10px ${s.color}`}}>{s.value}</p>
                       <p className="mono" style={{fontSize:10,color:"#94a3b8",textTransform:"uppercase",letterSpacing:"0.08em",marginTop:2}}>{s.label}</p>
@@ -768,14 +942,60 @@ export default function WellnessDashboard() {
                   </div>
                 </div>
 
+                {/* Standalone PWA / Chrome Shortcut card */}
+                <div style={{...S.card,marginTop:12,border:"1px solid rgba(0,229,255,0.35)",background:"linear-gradient(135deg, rgba(14,24,42,0.84) 0%, rgba(6,12,24,0.88) 100%)"}}>
+                  <div className="hud-corner hud-tl" />
+                  <div className="hud-corner hud-tr" />
+                  <div className="hud-corner hud-bl" />
+                  <div className="hud-corner hud-br" />
+
+                  <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:10}}>
+                    <div style={{display:"flex",alignItems:"center",gap:6}}>
+                      <span style={{fontSize:14}}>⚡</span>
+                      <span className="mono neon-text-cyan" style={{fontSize:10,fontWeight:800,textTransform:"uppercase",letterSpacing:"0.08em",color:"#00E5FF"}}>MODO APP STANDALONE</span>
+                    </div>
+                    <span className="mono" style={{fontSize:9,padding:"2px 6px",borderRadius:4,background:isStandalone?"rgba(20,241,149,0.15)":"rgba(0,229,255,0.15)",color:isStandalone?"#14F195":"#00E5FF",border:isStandalone?"1px solid rgba(20,241,149,0.3)":"1px solid rgba(0,229,255,0.3)"}}>
+                      {isStandalone ? "INSTALADA" : "CHROME / PWA"}
+                    </span>
+                  </div>
+
+                  <p style={{fontSize:12,color:"#cbd5e1",lineHeight:1.6}}>
+                    Instala Moodish en Chrome para abrirla como una aplicación independiente en pantalla completa sin barra de direcciones ni pestañas.
+                  </p>
+
+                  <button
+                    onClick={triggerInstall}
+                    style={{
+                      width:"100%",
+                      marginTop:12,
+                      padding:"10px 14px",
+                      borderRadius:12,
+                      background:"linear-gradient(90deg, rgba(0,229,255,0.22), rgba(20,241,149,0.22))",
+                      border:"1px solid rgba(0,229,255,0.45)",
+                      color:"#fff",
+                      cursor:"pointer",
+                      display:"flex",
+                      alignItems:"center",
+                      justifyContent:"center",
+                      gap:8,
+                      fontSize:12,
+                      fontWeight:700,
+                      boxShadow:"0 0 16px rgba(0,229,255,0.2)"
+                    }}
+                  >
+                    <span style={{color:"#14F195"}}>⚡</span>
+                    <span className="mono">{isStandalone ? "ABRIR COMO APP INDEPENDIENTE" : "INSTALAR EN CHROME / CREAR ACCESO"}</span>
+                  </button>
+                </div>
+
                 <p className="grid-span-all mono" style={{textAlign:"center",fontSize:10,color:"#475569",marginTop:16}}>Updated hourly by Hela · Spotify Studio · Neuro-OS 1989</p>
               </div>
             )}
           </div>
 
-          {/* ── BOTTOM TAB BAR ── */}
-          <nav className="app-nav" style={{position:"relative",zIndex:15,padding:"8px 16px 16px",background:"linear-gradient(to top, rgba(4,8,16,0.92) 75%, transparent)",flexShrink:0}}>
-            <div style={{background:"rgba(7,14,24,0.85)",backdropFilter:"blur(26px)",WebkitBackdropFilter:"blur(26px)",border:"1px solid rgba(0,229,255,0.3)",borderRadius:24,padding:6,display:"flex",alignItems:"center",justifyContent:"space-around",boxShadow:"0 8px 32px rgba(0,0,0,0.6), 0 0 20px rgba(0,229,255,0.12), inset 0 1px 0 rgba(255,255,255,0.15)"}}>
+          {/* ── BOTTOM TAB BAR (DARK LIQUID GLASS — NO BLUR) ── */}
+          <nav className="app-nav" style={{position:"relative",zIndex:15,padding:"8px 16px 16px",background:"linear-gradient(to top, rgba(3,5,10,0.8) 75%, transparent)",flexShrink:0}}>
+            <div style={{background:"rgba(6,12,22,0.82)",border:"1px solid rgba(0,229,255,0.3)",borderRadius:24,padding:6,display:"flex",alignItems:"center",justifyContent:"space-around",boxShadow:"0 8px 32px rgba(0,0,0,0.6), 0 0 20px rgba(0,229,255,0.15), inset 0 1px 1px rgba(255,255,255,0.25)"}}>
               {([
                 { id:"today",    label:"Today",    path:"M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" },
                 { id:"music",   label:"Music",    path:"M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" },
@@ -791,6 +1011,78 @@ export default function WellnessDashboard() {
               ))}
             </div>
           </nav>
+
+          {/* INSTALL HELP MODAL */}
+          {showInstallModal && (
+            <div
+              onClick={()=>setShowInstallModal(false)}
+              style={{
+                position:"fixed",
+                inset:0,
+                zIndex:100,
+                background:"rgba(2,4,8,0.85)",
+                display:"flex",
+                alignItems:"center",
+                justifyContent:"center",
+                padding:20
+              }}
+            >
+              <div
+                onClick={e=>e.stopPropagation()}
+                style={{
+                  maxWidth:380,
+                  width:"100%",
+                  background:"linear-gradient(135deg, rgba(14,24,42,0.96), rgba(6,12,24,0.98))",
+                  border:"1px solid rgba(0,229,255,0.45)",
+                  borderRadius:20,
+                  padding:22,
+                  boxShadow:"0 0 40px rgba(0,229,255,0.25)",
+                  position:"relative"
+                }}
+              >
+                <div className="hud-corner hud-tl" />
+                <div className="hud-corner hud-tr" />
+                <div className="hud-corner hud-bl" />
+                <div className="hud-corner hud-br" />
+
+                <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:14}}>
+                  <span className="mono neon-text-cyan" style={{fontSize:11,fontWeight:800,color:"#00E5FF",letterSpacing:"0.08em"}}>CÓMO INSTALAR EN CHROME</span>
+                  <button onClick={()=>setShowInstallModal(false)} style={{background:"none",border:"none",color:"#94a3b8",fontSize:18,cursor:"pointer"}}>✕</button>
+                </div>
+
+                <div style={{fontSize:12,color:"#cbd5e1",lineHeight:1.7}}>
+                  <p style={{marginBottom:10}}>Para disfrutar Moodish a pantalla completa sin barra de navegación:</p>
+                  <div style={{background:"rgba(0,0,0,0.4)",padding:12,borderRadius:10,border:"1px solid rgba(255,255,255,0.08)",marginBottom:12}}>
+                    <p className="mono" style={{color:"#14F195",fontSize:11,fontWeight:700,marginBottom:4}}>OPCIÓN 1 (Barra de direcciones):</p>
+                    <p>Haz clic en el ícono de <strong>Instalar</strong> <span style={{color:"#00E5FF"}}>(computadora con flecha 📥)</span> a la derecha en la barra de URL de Chrome.</p>
+                  </div>
+                  <div style={{background:"rgba(0,0,0,0.4)",padding:12,borderRadius:10,border:"1px solid rgba(255,255,255,0.08)"}}>
+                    <p className="mono" style={{color:"#FA2E8C",fontSize:11,fontWeight:700,marginBottom:4}}>OPCIÓN 2 (Menú ⋮ de Chrome):</p>
+                    <p>1. Clic en los <strong>3 puntos (⋮)</strong> arriba a la derecha de Chrome.</p>
+                    <p>2. Ve a <strong>"Guardar y compartir"</strong> → <strong>"Instalar Moodish"</strong> (o "Crear acceso directo" marcando <em>"Abrir como ventana"</em>).</p>
+                  </div>
+                </div>
+
+                <button
+                  onClick={()=>setShowInstallModal(false)}
+                  style={{
+                    width:"100%",
+                    marginTop:16,
+                    padding:10,
+                    borderRadius:10,
+                    background:"rgba(0,229,255,0.18)",
+                    border:"1px solid rgba(0,229,255,0.45)",
+                    color:"#00E5FF",
+                    fontWeight:700,
+                    cursor:"pointer"
+                  }}
+                  className="mono"
+                >
+                  ENTENDIDO
+                </button>
+              </div>
+            </div>
+          )}
 
         </div>
       </div>
