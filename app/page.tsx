@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export default function WellnessDashboard() {
   // ── DATA — updated hourly by Hela ─────────────────────────────────────────
@@ -35,6 +35,15 @@ export default function WellnessDashboard() {
 
   const [tab, setTab] = useState<"today"|"music"|"wellness"|"profile">("today")
   const [done, setDone] = useState<boolean[]>([false, false, false])
+  const [greeting, setGreeting] = useState("Good morning")
+  const [updatedAt, setUpdatedAt] = useState("")
+
+  useEffect(() => {
+    const h = new Date().getHours()
+    setGreeting(h < 12 ? "Good morning" : h < 18 ? "Good afternoon" : "Good evening")
+    const now = new Date()
+    setUpdatedAt(now.toLocaleTimeString("es-MX", { hour:"2-digit", minute:"2-digit", hour12:true, timeZone:"America/Mexico_City" }))
+  }, [])
 
   const toggleDone = (i: number) => {
     setDone(prev => { const n = [...prev]; n[i] = !n[i]; return n })
@@ -110,7 +119,7 @@ export default function WellnessDashboard() {
                 <svg style={{width:14,height:14,stroke:"#2dd4bf",fill:"none"}} viewBox="0 0 24 24"><path d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"/></svg>
               </div>
               <span className="fd" style={{fontWeight:700,fontSize:15,color:"#fff",letterSpacing:"0.03em"}}>Moodish</span>
-              <span style={{fontSize:9,fontFamily:"monospace",padding:"2px 5px",borderRadius:4,background:"rgba(20,241,149,0.1)",color:"#2dd4bf",border:"1px solid rgba(20,241,149,0.2)",letterSpacing:"0.08em"}}>NEURO·OS</span>
+              {updatedAt && <span style={{fontSize:9,fontFamily:"monospace",color:"#475569",letterSpacing:"0.04em"}}>Updated {updatedAt}</span>}
             </div>
             <div style={{display:"flex",alignItems:"center",gap:8}}>
               <div style={{display:"flex",alignItems:"center",gap:5,padding:"3px 8px",borderRadius:999,background:"rgba(30,41,59,0.7)",border:"1px solid rgba(71,85,105,0.4)"}}>
@@ -127,7 +136,7 @@ export default function WellnessDashboard() {
 
           <section style={{position:"relative",zIndex:10,padding:"20px 20px 12px"}}>
             <h1 style={{fontSize:22,fontWeight:800,color:"#fff",display:"flex",alignItems:"center",gap:8,letterSpacing:"-0.02em"}}>
-              Good morning, Ivan
+              {greeting}, Ivan
               <span style={{width:8,height:8,borderRadius:"50%",background:"#2dd4bf",boxShadow:"0 0 8px #2dd4bf",display:"inline-block"}}/>
             </h1>
             <p style={{fontSize:11,color:"#64748b",marginTop:3}}>{date}</p>
@@ -165,10 +174,10 @@ export default function WellnessDashboard() {
                       <circle cx="80" cy="80" fill="transparent" r="70" strokeWidth="10" stroke="rgba(255,255,255,0.07)"/>
                       <circle cx="80" cy="80" fill="transparent" r="70" strokeWidth="10" stroke="#00E5FF" strokeLinecap="round" strokeDasharray="440" strokeDashoffset="120" style={{transform:"rotate(-90deg)",transformOrigin:"50% 50%"}}/>
                     </svg>
-                    <div style={{position:"absolute",display:"flex",flexDirection:"column",alignItems:"center",textAlign:"center",top:"50%",transform:"translateY(-50%)"}}>
-                      <span style={{fontSize:32,fontWeight:800,color:"#fff"}}>{meters[0].value + meters[2].value}</span>
-                      <span style={{fontSize:9,textTransform:"uppercase",fontWeight:700,letterSpacing:"0.1em",color:"#22d3ee",marginTop:1}}>MOOD SCORE</span>
-                      <span style={{fontSize:10,color:"#94a3b8",marginTop:3}}>{mood.sub}</span>
+                    <div style={{position:"absolute",display:"flex",flexDirection:"column",alignItems:"center",textAlign:"center",top:"50%",transform:"translateY(-50%)",width:96,padding:"0 4px"}}>
+                      <span style={{fontSize:26,fontWeight:800,color:"#fff",lineHeight:1}}>{meters[0].value + meters[2].value}</span>
+                      <span style={{fontSize:7,textTransform:"uppercase",fontWeight:700,letterSpacing:"0.06em",color:"#22d3ee",marginTop:2}}>MOOD SCORE</span>
+                      <span style={{fontSize:8,color:"#94a3b8",marginTop:3,lineHeight:1.3,wordBreak:"break-word" as const}}>{mood.sub}</span>
                     </div>
                   </div>
                   <div style={{marginTop:8,paddingTop:10,borderTop:"1px solid rgba(255,255,255,0.05)"}}>
@@ -245,11 +254,17 @@ export default function WellnessDashboard() {
                     <div>
                       <h3 style={{fontSize:15,fontWeight:700,color:"#fff",lineHeight:1.2}}>Daily Mood Playlist</h3>
                       <p style={{fontSize:11,color:"#2dd4bf",fontWeight:600,marginTop:2}}>Updated hourly by Hela</p>
-                      <p style={{fontSize:11,color:"#64748b",marginTop:3,lineHeight:1.4}}>Flows from introspective into momentum-building.</p>
                     </div>
                   </div>
-                  <a href={playlistUrl} target="_blank" rel="noopener noreferrer" style={{display:"flex",alignItems:"center",justifyContent:"center",gap:8,width:"100%",padding:"12px",borderRadius:14,background:"#1DB954",color:"#000",fontWeight:700,fontSize:12,textTransform:"uppercase",letterSpacing:"0.06em",textDecoration:"none",boxShadow:"0 4px 16px rgba(29,185,84,0.3)"}}>
-                    <svg style={{width:14,height:14,fill:"currentColor"}} viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.494 17.308c-.216.354-.678.468-1.032.253-2.827-1.728-6.386-2.119-10.579-1.162-.404.093-.807-.156-.899-.56-.093-.404.156-.807.56-.899 4.595-1.049 8.528-.611 11.697 1.336.354.215.468.678.253 1.032zm1.464-3.261c-.272.443-.853.585-1.296.313-3.235-1.988-8.169-2.564-11.996-1.401-.497.151-1.026-.134-1.177-.63-.151-.497.134-1.026.63-1.177 4.375-1.328 9.805-.688 13.526 1.601.443.272.585.853.313 1.294zm.126-3.414c-3.879-2.303-10.283-2.516-13.993-1.389-.594.181-1.229-.158-1.41-.752-.181-.594.158-1.229.752-1.41 4.267-1.296 11.329-1.044 15.795 1.608.535.318.708 1.011.39 1.546-.318.535-1.011.708-1.546.39z"/></svg>
+                  <iframe
+                    src="https://open.spotify.com/embed/playlist/294GQpveapLix5cOdGWOru?utm_source=generator&theme=0"
+                    width="100%" height="152"
+                    style={{borderRadius:12,border:"none",display:"block",marginBottom:10}}
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
+                  />
+                  <a href={playlistUrl} target="_blank" rel="noopener noreferrer" style={{display:"flex",alignItems:"center",justifyContent:"center",gap:8,width:"100%",padding:"11px",borderRadius:12,background:"#1DB954",color:"#000",fontWeight:700,fontSize:11,textTransform:"uppercase",letterSpacing:"0.06em",textDecoration:"none",boxShadow:"0 4px 16px rgba(29,185,84,0.3)"}}>
+                    <svg style={{width:13,height:13,fill:"currentColor"}} viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.494 17.308c-.216.354-.678.468-1.032.253-2.827-1.728-6.386-2.119-10.579-1.162-.404.093-.807-.156-.899-.56-.093-.404.156-.807.56-.899 4.595-1.049 8.528-.611 11.697 1.336.354.215.468.678.253 1.032zm1.464-3.261c-.272.443-.853.585-1.296.313-3.235-1.988-8.169-2.564-11.996-1.401-.497.151-1.026-.134-1.177-.63-.151-.497.134-1.026.63-1.177 4.375-1.328 9.805-.688 13.526 1.601.443.272.585.853.313 1.294zm.126-3.414c-3.879-2.303-10.283-2.516-13.993-1.389-.594.181-1.229-.158-1.41-.752-.181-.594.158-1.229.752-1.41 4.267-1.296 11.329-1.044 15.795 1.608.535.318.708 1.011.39 1.546-.318.535-1.011.708-1.546.39z"/></svg>
                     Open in Spotify
                   </a>
                 </div>
