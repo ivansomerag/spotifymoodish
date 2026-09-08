@@ -5,32 +5,32 @@ import { ShaderBackground } from "@/components/ui/shader-background"
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Tue Sep 08, 2026"
-  const mood = { label: "EUPHORIC", emoji: "💥", sub: "K-pop voltage, electric all the way through" }
-  const insight = "BLACKPINK and LISA took over your morning — Kill This Love, BOOMBAYAH, GO, Rockstar back to back. That's not casual listening, that's intentional energy. The EDM layer underneath (French 79, Gryffin, BUNT.) keeps the voltage high. You're running at full charge today."
+  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Latin soul pulls inward, EDM pulls outward" }
+  const insight = "Your last 30 tracks are split between introspective Latin indie — RØZ, Nsqk, Diana Meril, C. Tangana — and high-energy EDM — San Holo, ILLENIUM, John Summit. ABBA and Taylor Swift vault cuts add a nostalgic undercurrent. You are processing something and simultaneously reaching for momentum."
 
   const tracks = [
-    { n: 1, name: "Kill This Love - Live", artist: "BLACKPINK", url: "https://open.spotify.com/track/1GrGs8HBvOHHdeho4w1ZkH", vibe: "IGNITE", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 2, name: "GO", artist: "BLACKPINK", url: "https://open.spotify.com/track/3FZPp9lBUvhsxFxKJi3VkB", vibe: "FIRE", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
-    { n: 3, name: "Rockstar", artist: "LISA", url: "https://open.spotify.com/track/65ZihkVQO3KqPj7ZKxmcev", vibe: "PEAK", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 4, name: "Colors Collide", artist: "French 79", url: "https://open.spotify.com/track/5pj1lxRJRonuzTu8DfsbUz", vibe: "WAVE", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 5, name: "World Away - GorillaT Remix", artist: "Gryffin", url: "https://open.spotify.com/track/4goygFQQW67Jfg83OhGsol", vibe: "LIFT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 6, name: "BRISA.", artist: "Lucas Gael & Bratty", url: "https://open.spotify.com/track/08BOIM9Wxae7opSnJPL7fP", vibe: "FLOW", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 1, name: "No veo bien", artist: "RØZ & Nsqk", url: "https://open.spotify.com/track/0KZjUlL4n5kJVhpFllMc1J", vibe: "DRIFT", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 2, name: "RAWFEAR", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/43ee3gqWBlPKe2MeGJ2S6I", vibe: "PUSH", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
+    { n: 3, name: "PULL ME CLOSER", artist: "San Holo & LSDREAM", url: "https://open.spotify.com/track/4TL9YbU53eOeTTvv2ZWDTf", vibe: "LIFT", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 4, name: "Life Boat.", artist: "RAYE", url: "https://open.spotify.com/track/7BguGjelfXyHttxhfQVxzr", vibe: "ACHE", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 5, name: "Ingobernable", artist: "C. Tangana & Gipsy Kings", url: "https://open.spotify.com/track/3SK45LddxlEkzI8OWO9Eyo", vibe: "FIRE", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 6, name: "Knowing Me, Knowing You", artist: "ABBA", url: "https://open.spotify.com/track/798cuJeotvXP8UVa8GJPnD", vibe: "ECHO", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 82, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 70, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 78, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 65, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 48, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 62, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Run or HIIT", desc: "BLACKPINK at 82 energy is a workout playlist by itself. Use it — 20 minutes of movement while the voltage is already in your system.", time: "20 min" },
-    { icon: "💃", title: "Dance Break", desc: "BOOMBAYAH and Rockstar back to back — literally put them on and move. No gym required. Five minutes of full release.", time: "5 min" },
-    { icon: "📓", title: "Momentum Journal", desc: "Write one thing you want to attack today and why you are ready to do it. Match the energy you are already carrying.", time: "5 min" },
+    { icon: "🚶", title: "Walk Without Headphones", desc: "Your playlist is already doing heavy processing work. Give your mind 15 minutes of quiet movement to let it integrate — no input, just steps.", time: "15 min" },
+    { icon: "🌬️", title: "Box Breathing Reset", desc: "4 counts in, 4 hold, 4 out, 4 hold. Repeat 5 cycles. The push-pull in your tracks mirrors something internal — breathwork helps settle it.", time: "5 min" },
+    { icon: "📓", title: "Two Columns Journal", desc: "Draw a line down the page. Left: what is pulling you inward right now. Right: what you are reaching for. No resolution needed — just name both sides.", time: "10 min" },
   ]
 
-  const journalPrompt = "BLACKPINK and LISA hit back to back this morning. What are you charging up for right now — what would feel like a win today?"
-  const quote = { text: "Energy is contagious, positive and negative alike. I will forever be mindful of what and who I am allowing into my space.", author: "Alex Elle" }
+  const journalPrompt = "RAWFEAR and No veo bien played back to back — one rock, one Latin indie, both about something unresolved. What is the thing you have not said out loud yet today?"
+  const quote = { text: "Between stimulus and response there is a space. In that space is our power to choose our response.", author: "Viktor Frankl" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
