@@ -3,33 +3,33 @@ import { useState, useEffect } from "react"
 
 export default function WellnessDashboard() {
   // ── DATA — updated hourly by Hela ─────────────────────────────────────────
-  const date = "Mon Sep 08, 2026"
-  const mood = { label: "MELANCHOLIC", emoji: "🌑", sub: "Deep in the feels" }
-  const insight = "Your last few hours have been a late-night emotional journey — Billie Eilish, Lana Del Rey, Agnes Obel, and SYML signal deep introspection and emotional processing. Occasional EDM bursts from John Summit and David Guetta show you reaching for energy, but the pull toward stillness is strong right now."
+  const date = "Tue Sep 08, 2026"
+  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Nocturnal drift into dawn" }
+  const insight = "Your night moved from deep introspection — Billie Eilish, Agnes Obel, Lana Del Rey, Daft Punk's Veridis Quo — into a Latin rhythm pulse with ROSALÍA, Trueno, and Nsqk before landing in full EDM energy with John Summit and David Guetta. This arc from stillness to momentum signals your mind was processing quietly before choosing to push forward."
 
   const tracks = [
-    { n: 1, name: "LIGHTS GO OUT (Major Lazer Remix)", artist: "John Summit", url: "https://open.spotify.com/search/LIGHTS%20GO%20OUT%20John%20Summit", vibe: "PEAK", nc: "#fb7185", nBg: "rgba(239,68,68,0.1)", nBd: "rgba(239,68,68,0.2)", vc: "#fb7185", vBg: "rgba(239,68,68,0.15)", vBd: "rgba(239,68,68,0.3)" },
-    { n: 2, name: "when the party's over", artist: "Billie Eilish", url: "https://open.spotify.com/search/when%20the%20party%27s%20over%20Billie%20Eilish", vibe: "MOODY", nc: "#818cf8", nBg: "rgba(99,102,241,0.1)", nBd: "rgba(99,102,241,0.2)", vc: "#818cf8", vBg: "rgba(99,102,241,0.15)", vBd: "rgba(99,102,241,0.3)" },
-    { n: 3, name: "Mariners Apartment Complex", artist: "Lana Del Rey", url: "https://open.spotify.com/search/Mariners%20Apartment%20Complex%20Lana%20Del%20Rey", vibe: "LONGING", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.3)", nBd: "rgba(100,116,139,0.3)", vc: "#cbd5e1", vBg: "#1e293b", vBd: "rgba(100,116,139,0.6)" },
-    { n: 4, name: "Veridis Quo", artist: "Daft Punk", url: "https://open.spotify.com/search/Veridis%20Quo%20Daft%20Punk", vibe: "DRIFT", nc: "#2dd4bf", nBg: "rgba(20,241,149,0.1)", nBd: "rgba(20,241,149,0.2)", vc: "#2dd4bf", vBg: "rgba(20,241,149,0.15)", vBd: "rgba(20,241,149,0.3)" },
-    { n: 5, name: "Familiar", artist: "Agnes Obel", url: "https://open.spotify.com/search/Familiar%20Agnes%20Obel", vibe: "DARK", nc: "#22d3ee", nBg: "rgba(34,211,238,0.1)", nBd: "rgba(34,211,238,0.2)", vc: "#22d3ee", vBg: "rgba(34,211,238,0.15)", vBd: "rgba(34,211,238,0.3)" },
-    { n: 6, name: "Fear of the Water", artist: "SYML", url: "https://open.spotify.com/search/Fear%20of%20the%20Water%20SYML", vibe: "STILL", nc: "#fbbf24", nBg: "rgba(245,158,11,0.1)", nBd: "rgba(245,158,11,0.2)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.15)", vBd: "rgba(245,158,11,0.3)" },
+    { n: 1, name: "LIGHTS GO OUT - Major Lazer Remix", artist: "John Summit", url: "https://open.spotify.com/search/LIGHTS%20GO%20OUT%20Major%20Lazer%20Remix%20John%20Summit", vibe: "PEAK", nc: "#fb7185", nBg: "rgba(239,68,68,0.1)",   nBd: "rgba(239,68,68,0.2)",   vc: "#fb7185", vBg: "rgba(239,68,68,0.15)",  vBd: "rgba(239,68,68,0.3)" },
+    { n: 2, name: "Sexo, Violencia y Llantas", artist: "ROSALÍA", url: "https://open.spotify.com/search/Sexo%20Violencia%20y%20Llantas%20ROSALIA", vibe: "FIRE", nc: "#818cf8", nBg: "rgba(99,102,241,0.1)",  nBd: "rgba(99,102,241,0.2)",  vc: "#818cf8", vBg: "rgba(99,102,241,0.15)", vBd: "rgba(99,102,241,0.3)" },
+    { n: 3, name: "when the party's over", artist: "Billie Eilish", url: "https://open.spotify.com/search/when%20the%20partys%20over%20Billie%20Eilish", vibe: "STILL", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.3)", nBd: "rgba(100,116,139,0.3)", vc: "#cbd5e1", vBg: "#1e293b",              vBd: "rgba(100,116,139,0.6)" },
+    { n: 4, name: "PUMAS", artist: "Trueno ft. Milo j", url: "https://open.spotify.com/search/PUMAS%20Trueno%20Milo%20j", vibe: "RAW", nc: "#2dd4bf", nBg: "rgba(20,241,149,0.1)",  nBd: "rgba(20,241,149,0.2)",  vc: "#2dd4bf", vBg: "rgba(20,241,149,0.15)", vBd: "rgba(20,241,149,0.3)" },
+    { n: 5, name: "Veridis Quo", artist: "Daft Punk", url: "https://open.spotify.com/search/Veridis%20Quo%20Daft%20Punk", vibe: "DEEP", nc: "#22d3ee", nBg: "rgba(34,211,238,0.1)",  nBd: "rgba(34,211,238,0.2)",  vc: "#22d3ee", vBg: "rgba(34,211,238,0.15)", vBd: "rgba(34,211,238,0.3)" },
+    { n: 6, name: "Mariners Apartment Complex", artist: "Lana Del Rey", url: "https://open.spotify.com/search/Mariners%20Apartment%20Complex%20Lana%20Del%20Rey", vibe: "DRIFT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.1)",  nBd: "rgba(245,158,11,0.2)",  vc: "#fbbf24", vBg: "rgba(245,158,11,0.15)", vBd: "rgba(245,158,11,0.3)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 42, color: "#2dd4bf", glow: "#14F195" },
-    { label: "Valence",      value: 35, color: "#c084fc", glow: "#c084fc" },
-    { label: "Danceability", value: 55, color: "#22d3ee", glow: "#22d3ee" },
+    { label: "Energy",       value: 58, color: "#2dd4bf", glow: "#14F195" },
+    { label: "Valence",      value: 42, color: "#c084fc", glow: "#c084fc" },
+    { label: "Danceability", value: 62, color: "#22d3ee", glow: "#22d3ee" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Slow Walk Outside", desc: "A 20-minute walk in fresh air without headphones. Let the stillness do the work.", time: "20 min" },
-    { icon: "🌬️", title: "4-7-8 Breathing", desc: "Inhale 4 counts, hold 7, exhale 8. Repeat 4 cycles to quiet a restless mind.", time: "5 min" },
-    { icon: "📓", title: "Night Journal", desc: "Write freely before sleep — what's sitting heavy, what you want to let go of tonight.", time: "10 min" },
+    { icon: "🏃", title: "Morning Run", desc: "Channel that John Summit energy — 20 minutes outside before the city fully wakes. Your body is primed after a night of rhythm-building.", time: "20 min" },
+    { icon: "🌬️", title: "Box Breathing", desc: "4 counts in, 4 hold, 4 out, 4 hold. The Daft Punk / Agnes Obel stillness you visited last night is worth keeping for a few minutes more.", time: "5 min" },
+    { icon: "📓", title: "Night-to-Day Journal", desc: "Write one thing you processed quietly last night and one thing you're choosing to push toward today. Two sentences, no more.", time: "10 min" },
   ]
 
-  const journalPrompt = "Billie Eilish and Lana Del Rey carried you tonight — what feeling are you sitting with, and what would it look like to set it down before you sleep?"
-  const quote = { text: "The wound is the place where the Light enters you.", author: "Rumi" }
+  const journalPrompt = "Your playlist moved from Lana Del Rey's patient melancholy all the way to John Summit's peak energy — what were you working through in the quiet, and what finally shifted?"
+  const quote = { text: "In the middle of difficulty lies opportunity.", author: "Albert Einstein" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
