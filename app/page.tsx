@@ -22,11 +22,13 @@ export default function WellnessDashboard() {
     { label: "Danceability", value: 67, color: "#fbbf24" },
   ]
 
+  const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
+
   const cards = [
-    { icon: "🏃", title: "20-Min Run", desc: "Your danceability is high — that restless energy wants out. Put on something fast and move.", cta: "Start now", primary: true },
-    { icon: "🫁", title: "4-7-8 Breathing", desc: "Inhale 4s · hold 7s · exhale 8s. Repeat 4 times. Lowers the emotional static before work.", cta: "5 min", primary: false },
-    { icon: "🎵", title: "Daily Mood Playlist", desc: "Updated this morning — starts introspective, lifts toward energy by the end.", cta: "Open on Spotify", primary: false },
-    { icon: "☀️", title: "3 Wins from Yesterday", desc: "Write 3 things you did right yesterday. Small counts. Shifts the narrative before it sets.", cta: "5 min", primary: false },
+    { icon: "🏃", title: "20-Min Run", desc: "Your danceability is high — that restless energy wants out. Put on something fast and move.", cta: "Start now", primary: true, link: null },
+    { icon: "🫁", title: "4-7-8 Breathing", desc: "Inhale 4s · hold 7s · exhale 8s. Repeat 4 times. Lowers the emotional static before work.", cta: "5 min", primary: false, link: null },
+    { icon: "🎵", title: "Daily Mood Playlist", desc: "Updated this morning — starts introspective, lifts toward energy by the end.", cta: "Open on Spotify", primary: false, link: playlistUrl },
+    { icon: "☀️", title: "3 Wins from Yesterday", desc: "Write 3 things you did right yesterday. Small counts. Shifts the narrative before it sets.", cta: "5 min", primary: false, link: null },
   ]
 
   const journalPrompt =
@@ -307,7 +309,10 @@ export default function WellnessDashboard() {
                       <div className="w-icon">{c.icon}</div>
                       <div className="w-title">{c.title}</div>
                       <div className="w-desc">{c.desc}</div>
-                      <div className="w-cta">→ {c.cta}</div>
+                      {c.link
+                        ? <a href={c.link} target="_blank" rel="noopener noreferrer" className="w-cta" style={{ textDecoration: "none" }}>→ {c.cta}</a>
+                        : <div className="w-cta">→ {c.cta}</div>
+                      }
                     </div>
                   ))}
                 </div>
