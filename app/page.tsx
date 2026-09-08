@@ -3,33 +3,33 @@ import { useState } from "react"
 
 export default function WellnessDashboard() {
   // ── DATA — updated hourly by Hela ─────────────────────────────────────────
-  const date = "Sep 8, 2026 · Mexico City · 8:00 PM"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Processing & reaching" }
-  const insight = "Your last few hours moved between Agnes Obel's dark introspection and Olivia Rodrigo's melancholy, then pivoted hard into EDM and Latin dance — a classic emotional push-pull. You're processing something, but also actively reaching for energy to move through it."
+  const date = "Mon Sep 08, 2026 · Mexico City · 09:02 PM"
+  const mood = { label: "MELANCHOLIC", emoji: "🌊", sub: "Processing & reaching for light" }
+  const insight = "Your last 30 tracks lean heavily into emotional depth — Olivia Rodrigo, Lana Del Rey, Agnes Obel, James Blake, and Taylor Swift vault tracks dominate, painting a picture of introspection and quiet longing. But flashes of Latin energy (LATIN MAFIA, RIA, Becky G) and house pulses (AVAION, Carlita x SOFI TUKKER) reveal you're reaching for momentum underneath the melancholy."
 
   const tracks = [
-    { n: 1, name: "what's wrong with me",  artist: "Olivia Rodrigo & Robert Smith", vibe: "Sad",   nc: "#fb7185", nBg: "rgba(239,68,68,0.1)",    nBd: "rgba(239,68,68,0.2)",    vc: "#fb7185", vBg: "rgba(239,68,68,0.15)",   vBd: "rgba(239,68,68,0.3)" },
-    { n: 2, name: "Familiar",              artist: "Agnes Obel",                    vibe: "Dark",  nc: "#818cf8", nBg: "rgba(99,102,241,0.1)",   nBd: "rgba(99,102,241,0.2)",   vc: "#818cf8", vBg: "rgba(99,102,241,0.15)",  vBd: "rgba(99,102,241,0.3)" },
-    { n: 3, name: "Doesn't Just Happen",   artist: "James Blake & Dave",            vibe: "Grime", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.3)",  nBd: "rgba(100,116,139,0.3)",  vc: "#cbd5e1", vBg: "#1e293b",               vBd: "rgba(100,116,139,0.6)" },
-    { n: 4, name: "Manhattan",             artist: "Carlita & SOFI TUKKER",         vibe: "House", nc: "#2dd4bf", nBg: "rgba(20,241,149,0.1)",   nBd: "rgba(20,241,149,0.2)",   vc: "#2dd4bf", vBg: "rgba(20,241,149,0.15)",  vBd: "rgba(20,241,149,0.3)" },
-    { n: 5, name: "FADE AWAY",             artist: "San Holo & Tisoki",             vibe: "EDM",   nc: "#22d3ee", nBg: "rgba(34,211,238,0.1)",   nBd: "rgba(34,211,238,0.2)",   vc: "#22d3ee", vBg: "rgba(34,211,238,0.15)",  vBd: "rgba(34,211,238,0.3)" },
-    { n: 6, name: "Te Estoy Correteando",  artist: "LATIN MAFIA & Fred again..",    vibe: "Latin", nc: "#fbbf24", nBg: "rgba(245,158,11,0.1)",   nBd: "rgba(245,158,11,0.2)",   vc: "#fbbf24", vBg: "rgba(245,158,11,0.15)",  vBd: "rgba(245,158,11,0.3)" },
+    { n: 1, name: "deja vu", artist: "Olivia Rodrigo", vibe: "SAD POP", nc: "#fb7185", nBg: "rgba(239,68,68,0.1)",   nBd: "rgba(239,68,68,0.2)",   vc: "#fb7185", vBg: "rgba(239,68,68,0.15)",  vBd: "rgba(239,68,68,0.3)" },
+    { n: 2, name: "Doesn't Just Happen", artist: "James Blake & Dave", vibe: "GRIME", nc: "#818cf8", nBg: "rgba(99,102,241,0.1)",  nBd: "rgba(99,102,241,0.2)",  vc: "#818cf8", vBg: "rgba(99,102,241,0.15)", vBd: "rgba(99,102,241,0.3)" },
+    { n: 3, name: "Familiar", artist: "Agnes Obel", vibe: "DARK FOLK", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.3)", nBd: "rgba(100,116,139,0.3)", vc: "#cbd5e1", vBg: "#1e293b",              vBd: "rgba(100,116,139,0.6)" },
+    { n: 4, name: "Te Estoy Correteando", artist: "LATIN MAFIA & Fred again..", vibe: "LATIN HEAT", nc: "#2dd4bf", nBg: "rgba(20,241,149,0.1)",  nBd: "rgba(20,241,149,0.2)",  vc: "#2dd4bf", vBg: "rgba(20,241,149,0.15)", vBd: "rgba(20,241,149,0.3)" },
+    { n: 5, name: "Manhattan", artist: "Carlita & SOFI TUKKER", vibe: "HOUSE", nc: "#22d3ee", nBg: "rgba(34,211,238,0.1)",  nBd: "rgba(34,211,238,0.2)",  vc: "#22d3ee", vBg: "rgba(34,211,238,0.15)", vBd: "rgba(34,211,238,0.3)" },
+    { n: 6, name: "I Can Do It With a Broken Heart", artist: "Taylor Swift", vibe: "RESILIENT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.1)",  nBd: "rgba(245,158,11,0.2)",  vc: "#fbbf24", vBg: "rgba(245,158,11,0.15)", vBd: "rgba(245,158,11,0.3)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 58, color: "#2dd4bf", glow: "#14F195" },
-    { label: "Valence",      value: 42, color: "#c084fc", glow: "#c084fc" },
-    { label: "Danceability", value: 68, color: "#22d3ee", glow: "#22d3ee" },
+    { label: "Energy",       value: 52, color: "#2dd4bf", glow: "#14F195" },
+    { label: "Valence",      value: 38, color: "#c084fc", glow: "#c084fc" },
+    { label: "Danceability", value: 61, color: "#22d3ee", glow: "#22d3ee" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃‍♂️", title: "Zone 2 Run",      desc: "20–30 min easy pace. Let the body settle while the mind untangles.", time: "20–30 min" },
-    { icon: "🍃",   title: "Box Breathing",   desc: "4 sec inhale · 4 hold · 4 exhale · 4 hold. Repeat 6 times.", time: "4 min" },
-    { icon: "📝",   title: "Journal 10 min",  desc: "Open stream of thought. What are you carrying that you haven't said out loud?", time: "10 min" },
+    { icon: "🚶", title: "Slow Walk Without Headphones", desc: "Step outside for 15 minutes, no music. Let the city sounds be your soundtrack and give your mind space to decompress.", time: "15 min" },
+    { icon: "🌬️", title: "Box Breathing Reset", desc: "Inhale 4 counts, hold 4, exhale 4, hold 4. Repeat 6 times. Anchors you when emotions feel bigger than the moment.", time: "5 min" },
+    { icon: "📓", title: "Write It Out", desc: "Open a notes app or a notebook. No filter, no editing. Just write whatever is sitting heavy on your chest right now.", time: "10 min" },
   ]
 
-  const journalPrompt = "What feeling kept coming back today that you kept trying to outrun with a faster song? What is it actually about?"
-  const quote = { text: "The wound is the place where the Light enters you.", author: "Rumi" }
+  const journalPrompt = "Olivia Rodrigo, Lana Del Rey, Agnes Obel — what feeling keeps showing up in the music you're choosing today? What are you processing that you haven't said out loud yet?"
+  const quote = { text: "The wound is the place where the light enters you.", author: "Rumi" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
@@ -104,7 +104,6 @@ export default function WellnessDashboard() {
         <div className="app-shell" style={S.shell}>
           <div style={S.glow}/>
 
-          {/* ── HEADER ── */}
           <header style={{position:"relative",zIndex:10,padding:"14px 20px 12px",display:"flex",alignItems:"center",justifyContent:"space-between",borderBottom:"1px solid rgba(255,255,255,0.04)"}}>
             <div style={{display:"flex",alignItems:"center",gap:8}}>
               <div style={{width:30,height:30,borderRadius:10,background:"rgba(20,241,149,0.1)",border:"1px solid rgba(20,241,149,0.3)",display:"flex",alignItems:"center",justifyContent:"center"}}>
@@ -126,7 +125,6 @@ export default function WellnessDashboard() {
             </div>
           </header>
 
-          {/* ── GREETING ── */}
           <section style={{position:"relative",zIndex:10,padding:"20px 20px 12px"}}>
             <h1 style={{fontSize:22,fontWeight:800,color:"#fff",display:"flex",alignItems:"center",gap:8,letterSpacing:"-0.02em"}}>
               Good morning, Ivan
@@ -150,13 +148,10 @@ export default function WellnessDashboard() {
             </div>
           </section>
 
-          {/* ── SCROLLABLE CONTENT ── */}
           <div className="app-content" style={{flex:1,overflowY:"auto",overflowX:"hidden",padding:"0 20px 8px",position:"relative",zIndex:10,WebkitOverflowScrolling:"touch"} as React.CSSProperties}>
 
-            {/* TODAY TAB */}
             {tab === "today" && (
               <div className="content-grid">
-                {/* Dial */}
                 <div style={{...S.card, marginBottom:12}}>
                   <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:12}}>
                     <div style={{display:"flex",alignItems:"center",gap:6}}>
@@ -197,8 +192,6 @@ export default function WellnessDashboard() {
                     ))}
                   </div>
                 </div>
-
-                {/* Emotional Flow */}
                 <div style={{...S.card,border:"1px solid rgba(20,241,149,0.2)"}}>
                   <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:10}}>
                     <span style={{fontSize:10,fontWeight:700,textTransform:"uppercase",letterSpacing:"0.06em",padding:"3px 8px",borderRadius:999,background:"rgba(20,241,149,0.1)",color:"#5eead4",border:"1px solid rgba(20,241,149,0.25)"}}>EMOTIONAL FLOW</span>
@@ -206,8 +199,6 @@ export default function WellnessDashboard() {
                   </div>
                   <p style={{fontSize:13,color:"#e2e8f0",lineHeight:1.65}}>{insight}</p>
                 </div>
-
-                {/* Sonic Bars */}
                 <div style={S.card}>
                   <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:12}}>
                     <div style={{display:"flex",alignItems:"center",gap:6}}>
@@ -233,10 +224,8 @@ export default function WellnessDashboard() {
               </div>
             )}
 
-            {/* MUSIC TAB */}
             {tab === "music" && (
               <div className="content-grid">
-                {/* Playlist card */}
                 <div style={{...S.card,border:"1px solid rgba(20,241,149,0.25)",background:"linear-gradient(180deg,#141A24,#10141A)",position:"relative",overflow:"hidden",marginBottom:12}}>
                   <div style={{position:"absolute",right:-30,top:-30,width:120,height:120,background:"rgba(20,241,149,0.08)",borderRadius:"50%",filter:"blur(32px)"}}/>
                   <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:10}}>
@@ -264,8 +253,6 @@ export default function WellnessDashboard() {
                     Open in Spotify
                   </a>
                 </div>
-
-                {/* Mood summary */}
                 <div style={{...S.card,border:"1px solid rgba(20,241,149,0.15)",marginBottom:12}}>
                   <p style={{fontSize:10,fontWeight:700,textTransform:"uppercase",letterSpacing:"0.06em",color:"#475569",marginBottom:10}}>MOOD ANALYSIS</p>
                   <p style={{fontSize:13,color:"#e2e8f0",lineHeight:1.65,marginBottom:14}}>{insight}</p>
@@ -281,8 +268,6 @@ export default function WellnessDashboard() {
                     </div>
                   ))}
                 </div>
-
-                {/* Key tracks */}
                 <div style={{...S.card,padding:"8px 16px"}}>
                   <p style={{fontSize:10,fontWeight:700,textTransform:"uppercase",letterSpacing:"0.06em",color:"#475569",margin:"8px 0 4px"}}>LAST 24H · KEY TRACKS</p>
                   {tracks.map((t,i)=>(
@@ -301,7 +286,6 @@ export default function WellnessDashboard() {
               </div>
             )}
 
-            {/* WELLNESS TAB */}
             {tab === "wellness" && (
               <div className="content-grid">
                 <p className="grid-span-all" style={{fontSize:10,fontWeight:700,textTransform:"uppercase",letterSpacing:"0.06em",color:"#475569",marginBottom:12}}>TAP TO MARK AS DONE</p>
@@ -327,8 +311,6 @@ export default function WellnessDashboard() {
                     </div>
                   </div>
                 ))}
-
-                {/* Journal prompt */}
                 <div style={{...S.card,border:"1px solid rgba(20,241,149,0.2)",marginTop:4}}>
                   <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:8}}>
                     <span style={{fontSize:10,fontWeight:700,textTransform:"uppercase",letterSpacing:"0.06em",color:"#5eead4"}}>📓 JOURNAL PROMPT</span>
@@ -336,8 +318,6 @@ export default function WellnessDashboard() {
                   </div>
                   <p style={{fontSize:13,color:"#e2e8f0",lineHeight:1.7,fontStyle:"italic"}}>"{journalPrompt}"</p>
                 </div>
-
-                {/* Quote */}
                 <div style={{padding:"14px 16px",borderRadius:14,borderLeft:"2px solid #22d3ee",background:"rgba(16,20,26,0.4)",marginTop:12}}>
                   <p style={{fontSize:12,color:"#64748b",fontStyle:"italic",lineHeight:1.6}}>"{quote.text}"</p>
                   <span style={{display:"block",fontSize:10,color:"#334155",marginTop:4,fontFamily:"monospace"}}>— {quote.author}</span>
@@ -345,10 +325,8 @@ export default function WellnessDashboard() {
               </div>
             )}
 
-            {/* PROFILE TAB */}
             {tab === "profile" && (
               <div className="content-grid">
-                {/* Current mood summary */}
                 <div style={{...S.card,border:"1px solid rgba(20,241,149,0.2)",marginBottom:12}}>
                   <p style={{fontSize:10,fontWeight:700,textTransform:"uppercase",letterSpacing:"0.06em",color:"#475569",marginBottom:12}}>CURRENT MOOD SNAPSHOT</p>
                   <div style={{display:"flex",alignItems:"center",gap:14,marginBottom:14}}>
@@ -361,14 +339,12 @@ export default function WellnessDashboard() {
                   </div>
                   <p style={{fontSize:13,color:"#cbd5e1",lineHeight:1.65}}>{insight}</p>
                 </div>
-
-                {/* Stats grid */}
                 <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:10,marginBottom:12}}>
                   {[
-                    {label:"Energy",    value:`${meters[0].value}%`, color:"#2dd4bf", icon:"⚡"},
-                    {label:"Valence",   value:`${meters[1].value}%`, color:"#c084fc", icon:"💜"},
+                    {label:"Energy",       value:`${meters[0].value}%`, color:"#2dd4bf", icon:"⚡"},
+                    {label:"Valence",      value:`${meters[1].value}%`, color:"#c084fc", icon:"💜"},
                     {label:"Danceability", value:`${meters[2].value}%`, color:"#22d3ee", icon:"🎧"},
-                    {label:"Mood Score",value:`${meters[0].value+meters[2].value}`, color:"#fbbf24", icon:"🌊"},
+                    {label:"Mood Score",   value:`${meters[0].value+meters[2].value}`, color:"#fbbf24", icon:"🌊"},
                   ].map((s,i)=>(
                     <div key={i} style={{...S.card,marginBottom:0,textAlign:"center",padding:14}}>
                       <span style={{fontSize:20}}>{s.icon}</span>
@@ -377,8 +353,6 @@ export default function WellnessDashboard() {
                     </div>
                   ))}
                 </div>
-
-                {/* Top vibe tags */}
                 <div style={S.card}>
                   <p style={{fontSize:10,fontWeight:700,textTransform:"uppercase",letterSpacing:"0.06em",color:"#475569",marginBottom:10}}>TODAY'S VIBE MIX</p>
                   <div style={{display:"flex",flexWrap:"wrap",gap:6}}>
@@ -387,13 +361,11 @@ export default function WellnessDashboard() {
                     ))}
                   </div>
                 </div>
-
                 <p className="grid-span-all" style={{textAlign:"center",fontSize:10,color:"#1e293b",marginTop:16}}>Updated hourly by Hela · Spotify Studio · This content was generated using AI.</p>
               </div>
             )}
           </div>
 
-          {/* ── BOTTOM TAB BAR (top nav on desktop) ── */}
           <nav className="app-nav" style={{position:"relative",zIndex:50,padding:"8px 16px 16px",background:"linear-gradient(to top,#06090F 80%,transparent)",flexShrink:0}}>
             <div style={{background:"rgba(10,14,23,0.97)",border:"1px solid rgba(71,85,105,0.4)",borderRadius:22,padding:6,display:"flex",alignItems:"center",justifyContent:"space-around",boxShadow:"0 -4px 32px rgba(0,0,0,0.6)"}}>
               {([
