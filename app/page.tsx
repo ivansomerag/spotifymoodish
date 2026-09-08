@@ -5,32 +5,32 @@ import { ShaderBackground } from "@/components/ui/shader-background"
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Tue Sep 08, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Processed in the dark, moving toward light" }
-  const insight = "Your session moved through three distinct emotional phases: a quiet, introspective depth with Agnes Obel, Billie Eilish, and Lana Del Rey, then a Latin identity-grounded pulse with ROSALÍA, Trueno, Nsqk, and C. Tangana, before breaking into full EDM momentum with John Summit and David Guetta. The arc — from stillness through rhythm into energy — suggests you processed something heavy and actively chose to push forward."
+  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Latin roots deep, edges still tender" }
+  const insight = "ROSALÍA anchored your night — Focu 'Ranni and Sexo, Violencia y Llantas played the longest, holding you in that sharp Latin pop tension. But you also sat with Agnes Obel, Billie Eilish, and SYML in the quiet hours, which tells a different story underneath the rhythm. You're somewhere between processing and pushing forward."
 
   const tracks = [
-    { n: 1, name: "LIGHTS GO OUT - Major Lazer Remix", artist: "John Summit", url: "https://open.spotify.com/track/7MbJthHlLAxVt8fbI28ZGC", vibe: "PEAK", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 1, name: "Focu 'Ranni", artist: "ROSALÍA", url: "https://open.spotify.com/track/3aIGNjFJPjrGpe24OFMSUH", vibe: "ANCHOR", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
     { n: 2, name: "Sexo, Violencia y Llantas", artist: "ROSALÍA", url: "https://open.spotify.com/track/1dp0MRcrgCxEESP1LrF2yA", vibe: "FIRE", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
     { n: 3, name: "PUMAS", artist: "Trueno ft. Milo j", url: "https://open.spotify.com/track/5Iu46UfunYa0I5CFGAW59y", vibe: "RAW", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
     { n: 4, name: "when the party's over", artist: "Billie Eilish", url: "https://open.spotify.com/track/43zdsphuZLzwA9k4DJhU0I", vibe: "STILL", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
     { n: 5, name: "Familiar", artist: "Agnes Obel", url: "https://open.spotify.com/track/2EWnKuspetOzgfBtmaNZvJ", vibe: "DEEP", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "Mariners Apartment Complex", artist: "Lana Del Rey", url: "https://open.spotify.com/track/6OG05bPAwUuV3OMvy2Vy1P", vibe: "DRIFT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 6, name: "LIGHTS GO OUT - Major Lazer Remix", artist: "John Summit", url: "https://open.spotify.com/track/7MbJthHlLAxVt8fbI28ZGC", vibe: "PEAK", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 60, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 44, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 65, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 58, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 48, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 68, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Morning Run", desc: "You ended on John Summit and David Guetta — your body already wants to move. Take that energy outside for 20 minutes before the city wakes up.", time: "20 min" },
-    { icon: "🌬️", title: "Box Breathing", desc: "Agnes Obel and Billie Eilish tell you something was processed last night. Hold it: 4 counts in, 4 hold, 4 out, 4 hold. Let the stillness settle.", time: "5 min" },
-    { icon: "📓", title: "Arc Journal", desc: "Your playlist moved through three phases last night. Write one word for each: what you felt in the quiet, what anchored you in the Latin pulse, and what you're choosing now.", time: "10 min" },
+    { icon: "🚶", title: "Morning Walk", desc: "ROSALÍA dominated your night — a walk with headphones and her on repeat is the right way to ease into today. 20 minutes, no destination.", time: "20 min" },
+    { icon: "🌬️", title: "4-7-8 Breathing", desc: "Agnes Obel and Billie Eilish sat heavy in the background. Inhale 4 counts, hold 7, exhale 8. Three rounds to clear what the quiet hours held.", time: "5 min" },
+    { icon: "📓", title: "Two-line Journal", desc: "One sentence for what the dark, slow tracks were about. One sentence for what you want today to be. That's it — no more needed.", time: "5 min" },
   ]
 
-  const journalPrompt = "Agnes Obel to Trueno to John Summit — three very different worlds in one session. What were you moving through, and where did you land?"
-  const quote = { text: "The only way out is through.", author: "Robert Frost" }
+  const journalPrompt = "ROSALÍA stayed with you the longest last night. What is it about her sound that holds you right now — the tension, the control, the edge?"
+  const quote = { text: "Music gives a soul to the universe, wings to the mind, flight to the imagination, and life to everything.", author: "Plato" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
