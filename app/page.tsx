@@ -4,33 +4,33 @@ import { ShaderBackground } from "@/components/ui/shader-background"
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Tue Sep 08, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Reggaeton heat, sad pop undertow, EDM surge" }
-  const insight = "Your last 30 tracks swing between Latin heat — Bad Bunny, Rauw Alejandro, Nsqk, RØZ — and emotional cool-downs — Olivia Rodrigo, RAYE, Labrinth. Bruno Mars and On My Soul nudge the valence up, but the sad pop keeps pulling back. You are riding a wave: high energy on the surface, something quieter underneath."
+  const date = "Wed Sep 09, 2026"
+  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Latin urgency, rock edge, alt-pop depth" }
+  const insight = "Your session moves from reggaeton fire — RØZ, Nsqk, Rauw Alejandro — into indie rock tension with Twenty One Pilots and Starcrusher, then collapses inward with Olivia Rodrigo and Labrinth. The EDM cuts (David Guetta, San Holo, JADOM) keep injecting energy between the emotional dips. You are cycling fast between output and withdrawal."
 
   const tracks = [
     { n: 1, name: "pongo remix", artist: "RØZ, Rvssian & Rauw Alejandro", url: "https://open.spotify.com/track/1Z02pAigkKXgTfy3GMiQ6x", vibe: "HEAT", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 2, name: "PIToRRO DE COCO", artist: "Bad Bunny", url: "https://open.spotify.com/track/14QaXYIK3K3QPtezqxRRPN", vibe: "BOUNCE", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
-    { n: 3, name: "PULL ME CLOSER", artist: "San Holo & LSDREAM", url: "https://open.spotify.com/track/4TL9YbU53eOeTTvv2ZWDTf", vibe: "LIFT", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "NADIE MÁS!", artist: "Nsqk", url: "https://open.spotify.com/track/0HWyOfh3Q08UreN155KmRZ", vibe: "PULSE", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
+    { n: 3, name: "Center Mass", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/2BHSRlGgJwzTPfYvAax28m", vibe: "SURGE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
     { n: 4, name: "the cure", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/55pBIZO1cqoldeqpp5WR7H", vibe: "ACHE", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 5, name: "On My Soul", artist: "Bruno Mars", url: "https://open.spotify.com/track/4i4BVY2JiH4mDSLIBdNGKD", vibe: "GLOW", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 6, name: "No veo bien", artist: "RØZ & Nsqk", url: "https://open.spotify.com/track/0KZjUlL4n5kJVhpFllMc1J", vibe: "DRIFT", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 5, name: "IMPLOSION", artist: "Labrinth", url: "https://open.spotify.com/track/5v69y5vJhDy8YJ2blZoO1Y", vibe: "DEPTH", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 6, name: "I Run", artist: "HAVEN. & David Guetta", url: "https://open.spotify.com/track/43psRuTeLgq7wHLXahgkO5", vibe: "LIFT", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 68, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 55, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 72, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 72, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 52, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 70, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "20-Min Rhythm Run", desc: "Your danceability is peaking — channel that reggaeton and EDM energy into a run. Let pongo remix or PIToRRO DE COCO set the pace. Move before the sad pop pulls you back down.", time: "20 min" },
-    { icon: "🌬️", title: "4-7-8 Breathing", desc: "Inhale 4 counts, hold 7, exhale 8. Do 4 rounds. The emotional swing in your tracks — Olivia's ache against Bruno's warmth — signals your nervous system needs a reset between the highs.", time: "6 min" },
-    { icon: "📓", title: "High vs. Low Journal", desc: "Write the one thing giving you energy today and the one thing quietly draining it. Your music is doing both simultaneously — name them so they stop running in the background unnoticed.", time: "10 min" },
+    { icon: "🏋️", title: "Interval Burst Set", desc: "Your energy is high but cycling fast. Match it with 4 rounds of 40-sec all-out effort followed by 20-sec rest. Put Center Mass or I Run on. Let the rhythm do the pacing.", time: "15 min" },
+    { icon: "🌬️", title: "Box Breathing Reset", desc: "Inhale 4 counts, hold 4, exhale 4, hold 4. Repeat 6 cycles. You are moving between output and withdrawal fast — this slows the oscillation before it drains you.", time: "5 min" },
+    { icon: "📓", title: "Output vs. Withdrawal", desc: "Name one thing you pushed hard on today and one thing you retreated from. Your playlist is doing both in the same session — the journal is where you decide which one to lean into tomorrow.", time: "10 min" },
   ]
 
-  const journalPrompt = "You played On My Soul right after the cure — Bruno Mars warmth following Olivia Rodrigo ache. What are you trying to feel your way toward today, and what keeps pulling you back?"
-  const quote = { text: "You don't have to be positive all the time. It's perfectly okay to feel sad, angry, annoyed, frustrated, scared, or anxious. Having feelings doesn't make you a negative person.", author: "Lori Deschene" }
+  const journalPrompt = "You went from NADIE MÁS! urgency straight into IMPLOSION — Nsqk's longing into Labrinth's collapse. What are you holding onto that still has weight, and what are you letting implode on purpose?"
+  const quote = { text: "Between stimulus and response there is a space. In that space is our power to choose our response.", author: "Viktor E. Frankl" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
