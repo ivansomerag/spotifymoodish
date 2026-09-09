@@ -5,32 +5,32 @@ import { ShaderBackground } from "@/components/ui/shader-background"
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Wed Sep 09, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Trap heat, alt-rock tension, alt-pop ache" }
-  const insight = "Your 30 tracks swing hard between reggaeton urgency (Bad Bunny, RØZ, Rauw), raw alt-rock (Muse, Twenty One Pilots, Starcrusher), and emotional alt-pop (Olivia Rodrigo, Labrinth, RAYE) — with Alvaro Diaz and C. Tangana latin soul threading through the gaps. Three distinct emotional lanes running in parallel, none fully resolved."
+  const mood = { label: "TRANSITIONAL", emoji: "⚡", sub: "EDM surge, rock grit, Latin warmth, indie drift" }
+  const insight = "Your morning session pulled in four distinct forces at once: Skrillex and SOFI TUKKER pushing hard electronic energy, Twenty One Pilots and Muse anchoring the rock core, ROSALÍA and RØZ bringing Latin heat, and Gorillaz plus James Blake adding an indie-introspective undercurrent. The session is wide awake and deliberately unfocused — exploring rather than settling."
 
   const tracks = [
-    { n: 1, name: "PIToRRO DE COCO", artist: "Bad Bunny", url: "https://open.spotify.com/track/14QaXYIK3K3QPtezqxRRPN", vibe: "HEAT", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 2, name: "MALASNOTICIAS.", artist: "Alvaro Diaz", url: "https://open.spotify.com/track/7giI2ndmt3L5QiMB8v3McO", vibe: "PULSE", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
-    { n: 3, name: "Center Mass", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/2BHSRlGgJwzTPfYvAax28m", vibe: "SURGE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 4, name: "the cure", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/55pBIZO1cqoldeqpp5WR7H", vibe: "ACHE", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 5, name: "NADIE MÁS!", artist: "Nsqk", url: "https://open.spotify.com/track/0HWyOfh3Q08UreN155KmRZ", vibe: "DRIFT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 6, name: "messy", artist: "Łaszewo", url: "https://open.spotify.com/track/3CPhCNH8rV1czzGSmXm9TH", vibe: "LIFT", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 1, name: "Center Mass", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/2BHSRlGgJwzTPfYvAax28m", vibe: "SURGE", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 2, name: "COOK", artist: "SOFI TUKKER & J Balvin", url: "https://open.spotify.com/track/4H2rI43vuXJuUrRIMxknzA", vibe: "HEAT", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
+    { n: 3, name: "Duro", artist: "Skrillex & Young Miko", url: "https://open.spotify.com/track/4ysLanNeZHdMkUvBB8g9bE", vibe: "BASS", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 4, name: "Focu 'Ranni", artist: "ROSALÍA", url: "https://open.spotify.com/track/3aIGNjFJPjrGpe24OFMSUH", vibe: "GLOW", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 5, name: "Orange County", artist: "Gorillaz & Bizarrap", url: "https://open.spotify.com/track/4HnBNOfnPYCgRzB1dcAi3x", vibe: "DRIFT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 6, name: "Hush", artist: "Muse & Ellie Goulding", url: "https://open.spotify.com/track/0OcCTvv3tpZBSZxP889Ijs", vibe: "PULSE", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 72, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 56, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 70, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 70, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 60, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 68, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Interval Walk — Rock Tempo", desc: "Twenty One Pilots and Muse want movement with intention. Alternate 2 min brisk walk, 1 min easy — 5 rounds. Let the alt-rock tension drive the pace changes naturally.", time: "20 min" },
-    { icon: "🌬️", title: "Box Breath Reset", desc: "Inhale 4 counts, hold 4, exhale 4, hold 4. Four rounds. Three emotional lanes running at once is a lot — this square breath anchors the nervous system without shutting down the energy.", time: "5 min" },
-    { icon: "📓", title: "Name the Three Lanes", desc: "Your session ran on reggaeton urgency, alt-rock drive, and alt-pop ache simultaneously. Write one sentence naming what each lane is pointing to right now — then pick one to follow into the rest of the day.", time: "7 min" },
+    { icon: "🏃", title: "Power Walk — EDM Pace", desc: "Skrillex, SOFI TUKKER, and ILLENIUM are pushing the BPM high. Lock in a fast 20-minute walk at that tempo — let the electronic surge carry the momentum without forcing it.", time: "20 min" },
+    { icon: "🌬️", title: "4-7-8 Release Breath", desc: "Four lanes running at once takes nervous system bandwidth. Inhale 4 counts, hold 7, exhale 8. Three full rounds. This pattern specifically offloads the mental juggle of a wide-ranging session.", time: "5 min" },
+    { icon: "📓", title: "Map the Mood Spread", desc: "You moved through EDM surge, Latin warmth, rock grit, and indie drift in a single session. Write one word for each lane and one sentence about which one is closest to where you actually are right now.", time: "8 min" },
   ]
 
-  const journalPrompt = "Bad Bunny urgency, Twenty One Pilots tension, Olivia Rodrigo ache — your session covered a lot of ground without landing anywhere. What are you actually moving toward today, and which of those three sounds gets closest to naming it?"
-  const quote = { text: "In the middle of difficulty lies opportunity.", author: "Albert Einstein" }
+  const journalPrompt = "Skrillex energy, ROSALÍA warmth, Twenty One Pilots tension, and Gorillaz detachment — four very different postures in one morning. Which one of those is the real Ivan today, and what would it look like to fully commit to that lane for the rest of the day?"
+  const quote = { text: "The measure of intelligence is the ability to change.", author: "Albert Einstein" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
