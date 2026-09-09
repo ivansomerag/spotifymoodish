@@ -4,33 +4,33 @@ import { ShaderBackground } from "@/components/ui/shader-background"
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Wed Sep 09, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Latin urgency, rock edge, alt-pop depth" }
-  const insight = "Your session moves from reggaeton fire — RØZ, Nsqk, Rauw Alejandro — into indie rock tension with Twenty One Pilots and Starcrusher, then collapses inward with Olivia Rodrigo and Labrinth. The EDM cuts (David Guetta, San Holo, JADOM) keep injecting energy between the emotional dips. You are cycling fast between output and withdrawal."
+  const date = "Tue Sep 09, 2026"
+  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Reggaeton surge, EDM pulse, alt-pop undertow" }
+  const insight = "Your last 30 tracks arc from Bad Bunny and RØZ heat into San Holo and JADOM electronic tension, then pull sideways into Olivia Rodrigo and Labrinth emotional weight — with C. Tangana flamenco and RAYE soul stitching the gaps. You are running on three different fuel sources at once, none of them settled."
 
   const tracks = [
-    { n: 1, name: "pongo remix", artist: "RØZ, Rvssian & Rauw Alejandro", url: "https://open.spotify.com/track/1Z02pAigkKXgTfy3GMiQ6x", vibe: "HEAT", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 1, name: "PIToRRO DE COCO", artist: "Bad Bunny", url: "https://open.spotify.com/track/14QaXYIK3K3QPtezqxRRPN", vibe: "HEAT", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
     { n: 2, name: "NADIE MÁS!", artist: "Nsqk", url: "https://open.spotify.com/track/0HWyOfh3Q08UreN155KmRZ", vibe: "PULSE", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
-    { n: 3, name: "Center Mass", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/2BHSRlGgJwzTPfYvAax28m", vibe: "SURGE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 3, name: "PULL ME CLOSER", artist: "San Holo & LSDREAM", url: "https://open.spotify.com/track/4TL9YbU53eOeTTvv2ZWDTf", vibe: "SURGE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
     { n: 4, name: "the cure", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/55pBIZO1cqoldeqpp5WR7H", vibe: "ACHE", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 5, name: "IMPLOSION", artist: "Labrinth", url: "https://open.spotify.com/track/5v69y5vJhDy8YJ2blZoO1Y", vibe: "DEPTH", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 6, name: "I Run", artist: "HAVEN. & David Guetta", url: "https://open.spotify.com/track/43psRuTeLgq7wHLXahgkO5", vibe: "LIFT", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 5, name: "Ricota", artist: "ZULAN & Debians", url: "https://open.spotify.com/track/4uZh7m5a3DFqI1WCUniio6", vibe: "DRIFT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 6, name: "messy", artist: "Łaszewo", url: "https://open.spotify.com/track/3CPhCNH8rV1czzGSmXm9TH", vibe: "LIFT", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 72, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 52, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 70, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 74, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 55, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 73, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏋️", title: "Interval Burst Set", desc: "Your energy is high but cycling fast. Match it with 4 rounds of 40-sec all-out effort followed by 20-sec rest. Put Center Mass or I Run on. Let the rhythm do the pacing.", time: "15 min" },
-    { icon: "🌬️", title: "Box Breathing Reset", desc: "Inhale 4 counts, hold 4, exhale 4, hold 4. Repeat 6 cycles. You are moving between output and withdrawal fast — this slows the oscillation before it drains you.", time: "5 min" },
-    { icon: "📓", title: "Output vs. Withdrawal", desc: "Name one thing you pushed hard on today and one thing you retreated from. Your playlist is doing both in the same session — the journal is where you decide which one to lean into tomorrow.", time: "10 min" },
+    { icon: "🏃", title: "Zone 2 Run or Walk", desc: "Bad Bunny and San Holo at this BPM range want a sustained low-intensity output — not sprints. 25 minutes at a pace where you can still talk. Let the reggaeton carry the tempo.", time: "25 min" },
+    { icon: "🌬️", title: "4-7-8 Breath Cycle", desc: "Inhale 4 counts, hold 7, exhale 8. Three rounds. Your session is pulling in too many directions — this one slows the nervous system without stopping momentum.", time: "4 min" },
+    { icon: "📓", title: "Three Fuel Sources", desc: "You are running on reggaeton urgency, EDM lift, and alt-pop weight simultaneously. Write one sentence for each: what each one is feeding in you right now and which one you actually want to lean into tonight.", time: "8 min" },
   ]
 
-  const journalPrompt = "You went from NADIE MÁS! urgency straight into IMPLOSION — Nsqk's longing into Labrinth's collapse. What are you holding onto that still has weight, and what are you letting implode on purpose?"
-  const quote = { text: "Between stimulus and response there is a space. In that space is our power to choose our response.", author: "Viktor E. Frankl" }
+  const journalPrompt = "Bad Bunny heat, San Holo euphoria, Olivia Rodrigo ache — your session did not pick a lane. What is the version of tonight that actually needs all three of those at once, and what are you trying to hold together?"
+  const quote = { text: "You can't calm the storm, so stop trying. What you can do is calm yourself. The storm will pass.", author: "Timber Hawkeye" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
