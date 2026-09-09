@@ -5,32 +5,32 @@ import { ShaderBackground } from "@/components/ui/shader-background"
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Wed Sep 09, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "⚡", sub: "EDM surge, rock grit, Latin warmth, indie drift" }
-  const insight = "Your morning session pulled in four distinct forces at once: Skrillex and SOFI TUKKER pushing hard electronic energy, Twenty One Pilots and Muse anchoring the rock core, ROSALÍA and RØZ bringing Latin heat, and Gorillaz plus James Blake adding an indie-introspective undercurrent. The session is wide awake and deliberately unfocused — exploring rather than settling."
+  const mood = { label: "MELANCHOLIC", emoji: "🌙", sub: "Deep JMSN dive — dark R&B, slow burn, introspective drift" }
+  const insight = "Your afternoon was a long, deliberate descent into JMSN — ten consecutive tracks of dark, sensual R&B anchored by Drama, Mind Playin' Tricks, and Real Thing. The earlier window brought James Blake, Olivia Rodrigo, and Mumford & Sons into the mix, all pointing the same emotional direction: inward, searching, quietly heavy."
 
   const tracks = [
-    { n: 1, name: "Center Mass", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/2BHSRlGgJwzTPfYvAax28m", vibe: "SURGE", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 2, name: "COOK", artist: "SOFI TUKKER & J Balvin", url: "https://open.spotify.com/track/4H2rI43vuXJuUrRIMxknzA", vibe: "HEAT", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
-    { n: 3, name: "Duro", artist: "Skrillex & Young Miko", url: "https://open.spotify.com/track/4ysLanNeZHdMkUvBB8g9bE", vibe: "BASS", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 4, name: "Focu 'Ranni", artist: "ROSALÍA", url: "https://open.spotify.com/track/3aIGNjFJPjrGpe24OFMSUH", vibe: "GLOW", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 5, name: "Orange County", artist: "Gorillaz & Bizarrap", url: "https://open.spotify.com/track/4HnBNOfnPYCgRzB1dcAi3x", vibe: "DRIFT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 6, name: "Hush", artist: "Muse & Ellie Goulding", url: "https://open.spotify.com/track/0OcCTvv3tpZBSZxP889Ijs", vibe: "PULSE", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 1, name: "Drama Pt. II", artist: "JMSN", url: "https://open.spotify.com/track/6xAj8EKP426dlsD5uhlXKN", vibe: "DARK", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 2, name: "Mind Playin' Tricks", artist: "JMSN", url: "https://open.spotify.com/track/4hEr9lOhF67HEBAhWNegl0", vibe: "HAUNT", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
+    { n: 3, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/49j6SvuvWfbEKZKzsHCdLJ", vibe: "ACHE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 4, name: "Death of Love", artist: "James Blake", url: "https://open.spotify.com/track/0eXLacgidV4BAUBWYpRsdV", vibe: "VOID", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 5, name: "ÁNGEL CAÍDO", artist: "RØZ & Natt Calma", url: "https://open.spotify.com/track/2wUXndDjnKHph7BowMMf1k", vibe: "FALL", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 6, name: "Badlands", artist: "Mumford & Sons & Gracie Abrams", url: "https://open.spotify.com/track/47Z5J8r3LrI0gSuqxijzSg", vibe: "RIFT", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 70, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 60, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 68, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 38, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 28, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 42, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Power Walk — EDM Pace", desc: "Skrillex, SOFI TUKKER, and ILLENIUM are pushing the BPM high. Lock in a fast 20-minute walk at that tempo — let the electronic surge carry the momentum without forcing it.", time: "20 min" },
-    { icon: "🌬️", title: "4-7-8 Release Breath", desc: "Four lanes running at once takes nervous system bandwidth. Inhale 4 counts, hold 7, exhale 8. Three full rounds. This pattern specifically offloads the mental juggle of a wide-ranging session.", time: "5 min" },
-    { icon: "📓", title: "Map the Mood Spread", desc: "You moved through EDM surge, Latin warmth, rock grit, and indie drift in a single session. Write one word for each lane and one sentence about which one is closest to where you actually are right now.", time: "8 min" },
+    { icon: "🚶", title: "Slow Walk — No Destination", desc: "JMSN's tempo is unhurried on purpose. Match it — a slow 15-minute walk outside, no podcast, no target. Let the body process what the music already started.", time: "15 min" },
+    { icon: "🌬️", title: "Box Breathing — Ground Out", desc: "Low valence sessions can pool in the chest. Inhale 4, hold 4, exhale 4, hold 4. Four complete rounds. This brings the nervous system back to neutral without forcing a mood shift.", time: "6 min" },
+    { icon: "📓", title: "Name What's Heavy", desc: "Ten JMSN tracks in a row is a choice, not a shuffle. Write one paragraph about what you were moving toward or away from in that hour. No need to resolve it — just name it.", time: "10 min" },
   ]
 
-  const journalPrompt = "Skrillex energy, ROSALÍA warmth, Twenty One Pilots tension, and Gorillaz detachment — four very different postures in one morning. Which one of those is the real Ivan today, and what would it look like to fully commit to that lane for the rest of the day?"
-  const quote = { text: "The measure of intelligence is the ability to change.", author: "Albert Einstein" }
+  const journalPrompt = "JMSN for a full hour, then James Blake, then Olivia Rodrigo — the afternoon had a clear emotional through-line. What were you actually sitting with? And is there something underneath these tracks that hasn't been said out loud yet?"
+  const quote = { text: "The soul that sees beauty may sometimes walk alone.", author: "Johann Wolfgang von Goethe" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
