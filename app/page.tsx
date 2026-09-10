@@ -5,32 +5,32 @@ import { ShaderBackground } from "@/components/ui/shader-background"
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Thu Sep 10, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🪨🌊", sub: "Rock tension anchors the session, dancefloor keeps pulling back" }
-  const insight = "Muse's Unravelling closed the morning — angular, coiled, unresolved — bookending a session that ran from Paloma Morphy's ache through Twenty One Pilots' RAWFEAR and Center Mass, then briefly into SOFI TUKKER and Kaskade before snapping back to rock. The throughline isn't energy or melancholy on their own: it's the refusal to settle into either. You're keeping both doors open."
+  const mood = { label: "TRANSITIONAL", emoji: "⚡", sub: "Rock edge meets dance floor, heart caught between" }
+  const insight = "Twenty One Pilots doubled down this afternoon — RAWFEAR and Center Mass again, plus Feel Alive with ILLENIUM and Bastille punching through the EDM-rock boundary. Olivia Rodrigo's stupid song and Nsqk's live set pulled the current back toward something more fragile. You're not resolving the tension — you're feeding both sides of it at once."
 
   const tracks = [
-    { n: 1, name: "Unravelling", artist: "Muse", url: "https://open.spotify.com/track/5OLvTcn4P3pZQ4erbwg6ro", vibe: "TENSION", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 2, name: "Center Mass", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/2BHSRlGgJwzTPfYvAax28m", vibe: "ANCHOR", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
-    { n: 3, name: "COOK", artist: "SOFI TUKKER & J Balvin", url: "https://open.spotify.com/track/4H2rI43vuXJuUrRIMxknzA", vibe: "SURGE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 4, name: "lo que un día fue", artist: "Paloma Morphy", url: "https://open.spotify.com/track/3b9BBjthb7r9Jn5yyWMlrm", vibe: "ACHE", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 5, name: "CÓMO QUIERES", artist: "RØZ", url: "https://open.spotify.com/track/3e9cKUnFgJIVleVRZ19atR", vibe: "PULSE", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
-    { n: 6, name: "Got Away", artist: "Subtronics & ILLENIUM", url: "https://open.spotify.com/track/0ezzY28pW6MYCb5RLkWQg8", vibe: "LIFT", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 1, name: "RAWFEAR", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/43ee3gqWBlPKe2MeGJ2S6I", vibe: "ANCHOR", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 2, name: "Center Mass", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/2BHSRlGgJwzTPfYvAax28m", vibe: "CORE", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
+    { n: 3, name: "Feel Alive", artist: "ILLENIUM, Bastille, Dabin", url: "https://open.spotify.com/track/1xkkHeokEkhrUmqjh2dkv5", vibe: "RISE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 4, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/49j6SvuvWfbEKZKzsHCdLJ", vibe: "ACHE", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 5, name: "NUNCA ESTOY - EN VIVO", artist: "Nsqk", url: "https://open.spotify.com/track/4D2bhzH9qxjZLzeKAR69TY", vibe: "STILL", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 6, name: "LIGHTS GO OUT - Major Lazer Remix", artist: "John Summit", url: "https://open.spotify.com/track/7MbJthHlLAxVt8fbI28ZGC", vibe: "PEAK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 60, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 34, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 57, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 65, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 50, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 70, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🧗", title: "High-Knees or Stair Sprints", desc: "Muse and Twenty One Pilots have been running at high intensity for two hours — match that physically. Three rounds of 30-second high-knees with 30-second rest. Let the rock tension burn out through the body instead of the head.", time: "10 min" },
-    { icon: "🌬️", title: "Extended Exhale Breath", desc: "The session is sitting in unresolved tension — Unravelling isn't a resolution, it's a coil. Inhale for 4 counts, exhale for 8. Repeat 6 rounds. The longer exhale activates the parasympathetic brake and loosens the grip.", time: "6 min" },
-    { icon: "📓", title: "What Are You Not Settling Into?", desc: "You've been toggling between rock weight and dancefloor escape all morning. Write for 5 minutes: what would it feel like to stop toggling and just land somewhere — even somewhere uncomfortable?", time: "5 min" },
+    { icon: "🏃", title: "Sprint Intervals", desc: "RAWFEAR and Feel Alive have your adrenaline system primed. Four rounds of 30-second sprints with 90-second walking rest. Burn through the rock tension physically before the afternoon sits in.", time: "15 min" },
+    { icon: "🌬️", title: "Box Breathing Reset", desc: "You're running high on both rock weight and emotional EDM. 4 counts in, 4 hold, 4 out, 4 hold — four rounds. You'll feel the nervous system shift by round three.", time: "5 min" },
+    { icon: "📓", title: "Two-Door Journal", desc: "Your afternoon split between Twenty One Pilots' weight and the danceable Latin session. Write: one door you're pushing through right now, and one door you're circling but not walking into yet.", time: "5 min" },
   ]
 
-  const journalPrompt = "Muse ended the session with Unravelling — not a release, a buildup. What is still unravelling for you right now, and are you trying to resolve it or just live in the tension?"
-  const quote = { text: "It's only after we've lost everything that we're free to do anything.", author: "Chuck Palahniuk" }
+  const journalPrompt = "RAWFEAR came back a second time today. What does Twenty One Pilots name for you that keeps pulling you back — and is the fear in that song yours right now, or someone else's?"
+  const quote = { text: "The emotion in a song comes from the tension between what you expect and what you get.", author: "Daniel J. Levitin" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
