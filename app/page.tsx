@@ -4,33 +4,33 @@ import { ShaderBackground } from "@/components/ui/shader-background"
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Wed Sep 10, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "⚡🎸", sub: "EDM ignition into rock catharsis — velocity traded for weight" }
-  const insight = "The session opened at full tilt with a Ninajirachi EDM cluster — WannaCry with Porter Robinson, girl EDM, Heaven, WannaCry — pure dancefloor propulsion. Then the gear shifted: James Blake's Death of Love brought everything down into deep melancholy, and from there the arc went full rock catharsis: Given Up, My Chemical Romance, Knights of Cydonia, Paint It Black. It closed on John Williams' orchestral grandeur. That's not just TRANSITIONAL — it's a full emotional journey, from velocity to weight to something cinematic."
+  const date = "Thu Sep 10, 2026"
+  const mood = { label: "TRANSITIONAL", emoji: "🌊⚡", sub: "Rock anchor meets dance current — weight and velocity in constant tension" }
+  const insight = "This session is a tug of war between gravity and lift. Twenty One Pilots dominated the early hours — Center Mass, Fake You Out, RAWFEAR, The Hype — modern rock with real emotional heft. Then bursts of pure dancefloor: SOFI TUKKER and J Balvin's COOK, Kaskade's Comes Back Around, ILLENIUM's Got Away. Threading through it all: Paloma Morphy's melancholic Latin indie (lo que un día fue, Au, interesante) and Nsqk's understated darkness. John Williams at midnight sealed the arc with cinematic finality. This isn't chaos — it's a mind processing something through sound."
 
   const tracks = [
-    { n: 1, name: "WannaCry", artist: "Ninajirachi & Porter Robinson", url: "https://open.spotify.com/track/7JW8FRWVCOQDs40IjEXdPi", vibe: "SURGE", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 2, name: "Death of Love", artist: "James Blake", url: "https://open.spotify.com/track/0eXLacgidV4BAUBWYpRsdV", vibe: "ACHE", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
-    { n: 3, name: "Knights of Cydonia", artist: "Muse", url: "https://open.spotify.com/track/7ouMYWpwJ422jRcDASZB7P", vibe: "RAGE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 4, name: "I'm Not Okay (I Promise)", artist: "My Chemical Romance", url: "https://open.spotify.com/track/7lRlq939cDG4SzWOF4VAnd", vibe: "EDGE", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 5, name: "LOKENECESITAS", artist: "SAIKO & Omar Courtz", url: "https://open.spotify.com/track/1cQx85WypWumn7ZQjUxWQi", vibe: "HEAT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 1, name: "Center Mass", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/2BHSRlGgJwzTPfYvAax28m", vibe: "ANCHOR", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 2, name: "COOK", artist: "SOFI TUKKER & J Balvin", url: "https://open.spotify.com/track/4H2rI43vuXJuUrRIMxknzA", vibe: "SURGE", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
+    { n: 3, name: "lo que un día fue", artist: "Paloma Morphy", url: "https://open.spotify.com/track/3b9BBjthb7r9Jn5yyWMlrm", vibe: "ACHE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 4, name: "Got Away", artist: "Subtronics & ILLENIUM", url: "https://open.spotify.com/track/0ezzY28pW6MYCb5RLkWQg8", vibe: "LIFT", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 5, name: "Pensándote", artist: "Diana Meril", url: "https://open.spotify.com/track/5vdtdW6gXrJKzHQZp5CICO", vibe: "DRIFT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
     { n: 6, name: "The Throne Room and End Title", artist: "John Williams", url: "https://open.spotify.com/track/3HjDvnmiTLKaDalq4u2Hem", vibe: "EPIC", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 68, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 38, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 65, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 65, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 40, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 62, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🥊", title: "Rock Catharsis — Heavy Bag or Wall Push", desc: "Given Up and Knights of Cydonia are fight songs. Channel that aggressive energy into 3 sets of 20 explosive push-ups or shadow boxing. Let the tension out physically before it settles as static.", time: "10 min" },
-    { icon: "🌬️", title: "Box Breath — Reset the Arc", desc: "A full emotional journey in one session — EDM to rock angst to orchestral — is a lot of nervous system travel. Inhale 4, hold 4, exhale 4, hold 4. Four rounds. Bring yourself back to baseline.", time: "5 min" },
-    { icon: "📓", title: "The Shift Point", desc: "Your session broke cleanly: first half was pure velocity, second was weight and catharsis. Identify the exact song where the mood turned and write one sentence about what that shift was tracking in you.", time: "8 min" },
+    { icon: "🏃", title: "Interval Run — Twenty One Pilots Pace", desc: "Center Mass and The Hype set a driving, mid-tempo pulse. Run 3 minutes at comfortable pace, 1 minute hard, repeat 4 times. Let the rock anchor your rhythm and the EDM bursts push your sprint.", time: "16 min" },
+    { icon: "🌬️", title: "4-7-8 Breath — Settle the Push-Pull", desc: "Alternating between rock weight and dancefloor energy is a lot for the nervous system to hold. Inhale 4 counts, hold 7, exhale slowly for 8. Three rounds. Let the body decide where it actually wants to land.", time: "5 min" },
+    { icon: "📓", title: "Two Tracks, Two Truths", desc: "You played both Center Mass and COOK this morning — one inward, one outward. Write one sentence about what each song gave you that the other couldn't. That gap is worth knowing.", time: "7 min" },
   ]
 
-  const journalPrompt = "You went from WannaCry at full dancefloor intensity to James Blake's Death of Love, then all the way through Muse and My Chemical Romance to John Williams' triumphant finale. That's not random shuffling — that's a story. What were you working through?"
-  const quote = { text: "The most beautiful thing we can experience is the mysterious. It is the source of all true art and science.", author: "Albert Einstein" }
+  const journalPrompt = "Twenty One Pilots held you for a long stretch, then SOFI TUKKER pulled you onto the dancefloor, then Paloma Morphy brought you back down. You kept returning to rock and leaving for dance. What were you looking for each time you made that switch?"
+  const quote = { text: "Music is the shorthand of emotion.", author: "Leo Tolstoy" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
