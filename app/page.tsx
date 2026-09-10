@@ -5,32 +5,32 @@ import { ShaderBackground } from "@/components/ui/shader-background"
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Thu Sep 10, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊🔥", sub: "Latin melancholy and rock gravity pull against EDM lift" }
-  const insight = "The morning opened deep — Paloma Morphy's lo que un día fue and Au, Nsqk's Blamegame, Olivia Rodrigo's stranger — all quiet weight and unresolved feeling. Then Twenty One Pilots took over with Center Mass, RAWFEAR, The Hype, Fake You Out, driving harder into rock territory. Then the session broke wide open: SOFI TUKKER's COOK, Kaskade's Comes Back Around, Subtronics and ILLENIUM's Got Away. The pattern is consistent — you reach for darkness, then force yourself toward energy. Something is being processed."
+  const mood = { label: "TRANSITIONAL", emoji: "🪨🌊", sub: "Rock tension anchors the session, dancefloor keeps pulling back" }
+  const insight = "Muse's Unravelling closed the morning — angular, coiled, unresolved — bookending a session that ran from Paloma Morphy's ache through Twenty One Pilots' RAWFEAR and Center Mass, then briefly into SOFI TUKKER and Kaskade before snapping back to rock. The throughline isn't energy or melancholy on their own: it's the refusal to settle into either. You're keeping both doors open."
 
   const tracks = [
-    { n: 1, name: "lo que un día fue", artist: "Paloma Morphy", url: "https://open.spotify.com/track/3b9BBjthb7r9Jn5yyWMlrm", vibe: "ACHE", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 1, name: "Unravelling", artist: "Muse", url: "https://open.spotify.com/track/5OLvTcn4P3pZQ4erbwg6ro", vibe: "TENSION", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
     { n: 2, name: "Center Mass", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/2BHSRlGgJwzTPfYvAax28m", vibe: "ANCHOR", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
     { n: 3, name: "COOK", artist: "SOFI TUKKER & J Balvin", url: "https://open.spotify.com/track/4H2rI43vuXJuUrRIMxknzA", vibe: "SURGE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 4, name: "Got Away", artist: "Subtronics & ILLENIUM", url: "https://open.spotify.com/track/0ezzY28pW6MYCb5RLkWQg8", vibe: "LIFT", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 5, name: "Unravelling", artist: "Muse", url: "https://open.spotify.com/track/5OLvTcn4P3pZQ4erbwg6ro", vibe: "TENSION", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 6, name: "CÓMO QUIERES", artist: "RØZ", url: "https://open.spotify.com/track/3e9cKUnFgJIVleVRZ19atR", vibe: "PULSE", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 4, name: "lo que un día fue", artist: "Paloma Morphy", url: "https://open.spotify.com/track/3b9BBjthb7r9Jn5yyWMlrm", vibe: "ACHE", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 5, name: "CÓMO QUIERES", artist: "RØZ", url: "https://open.spotify.com/track/3e9cKUnFgJIVleVRZ19atR", vibe: "PULSE", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 6, name: "Got Away", artist: "Subtronics & ILLENIUM", url: "https://open.spotify.com/track/0ezzY28pW6MYCb5RLkWQg8", vibe: "LIFT", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 63, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 38, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 60, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 60, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 34, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 57, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Walk Without Destination", desc: "Paloma Morphy's lo que un día fue demands slow movement, not sprint. Walk for 15 minutes with no route — let the Latin indie carry the pace. No phone screen. You're not going anywhere, just moving through what the morning already said.", time: "15 min" },
-    { icon: "🌬️", title: "Box Breath — Four Counts Square", desc: "You swung between heavy indie and hard EDM this session — the nervous system needs a reset, not another jolt. Inhale 4 counts, hold 4, exhale 4, hold 4. Repeat 5 rounds. No music. Find the floor.", time: "5 min" },
-    { icon: "📓", title: "Name What You Were Avoiding", desc: "You opened with Paloma Morphy's melancholy, then pushed hard into Twenty One Pilots, then broke for the dancefloor. That arc is a pattern — reaching for sound to avoid sitting still. Write one sentence about what you were not thinking about this morning.", time: "6 min" },
+    { icon: "🧗", title: "High-Knees or Stair Sprints", desc: "Muse and Twenty One Pilots have been running at high intensity for two hours — match that physically. Three rounds of 30-second high-knees with 30-second rest. Let the rock tension burn out through the body instead of the head.", time: "10 min" },
+    { icon: "🌬️", title: "Extended Exhale Breath", desc: "The session is sitting in unresolved tension — Unravelling isn't a resolution, it's a coil. Inhale for 4 counts, exhale for 8. Repeat 6 rounds. The longer exhale activates the parasympathetic brake and loosens the grip.", time: "6 min" },
+    { icon: "📓", title: "What Are You Not Settling Into?", desc: "You've been toggling between rock weight and dancefloor escape all morning. Write for 5 minutes: what would it feel like to stop toggling and just land somewhere — even somewhere uncomfortable?", time: "5 min" },
   ]
 
-  const journalPrompt = "Paloma Morphy showed up three times in the last few hours — lo que un día fue, Au, yo creo que todxs estamos mal. That's not a coincidence. What does that album hold right now that you keep returning to it?"
-  const quote = { text: "The music is not in the notes, but in the silence between.", author: "Wolfgang Amadeus Mozart" }
+  const journalPrompt = "Muse ended the session with Unravelling — not a release, a buildup. What is still unravelling for you right now, and are you trying to resolve it or just live in the tension?"
+  const quote = { text: "It's only after we've lost everything that we're free to do anything.", author: "Chuck Palahniuk" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
