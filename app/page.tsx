@@ -4,33 +4,33 @@ import { ShaderBackground } from "@/components/ui/shader-background"
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Wed Sep 09, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "⚡🌑", sub: "Dance floor to heartbreak — EDM highs bleeding into Latin melancholy" }
-  const insight = "The evening opened with a Ninajirachi deep-dive — WannaCry with Porter Robinson, the Madeon remix of iPod Touch, girl EDM — all high-energy electropop pushing danceability into the red. Then the tide turned hard: ROSALÍA, C. Tangana, Hush, Ya no te quiero ver, and Happier Than Ever pulled everything back into longing and emotional weight. That's a classic TRANSITIONAL arc — body wants to move, mind has other plans."
+  const date = "Wed Sep 10, 2026"
+  const mood = { label: "TRANSITIONAL", emoji: "⚡🎸", sub: "EDM ignition into rock catharsis — velocity traded for weight" }
+  const insight = "The session opened at full tilt with a Ninajirachi EDM cluster — WannaCry with Porter Robinson, girl EDM, Heaven, WannaCry — pure dancefloor propulsion. Then the gear shifted: James Blake's Death of Love brought everything down into deep melancholy, and from there the arc went full rock catharsis: Given Up, My Chemical Romance, Knights of Cydonia, Paint It Black. It closed on John Williams' orchestral grandeur. That's not just TRANSITIONAL — it's a full emotional journey, from velocity to weight to something cinematic."
 
   const tracks = [
     { n: 1, name: "WannaCry", artist: "Ninajirachi & Porter Robinson", url: "https://open.spotify.com/track/7JW8FRWVCOQDs40IjEXdPi", vibe: "SURGE", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 2, name: "Sexo, Violencia y Llantas", artist: "ROSALÍA", url: "https://open.spotify.com/track/1dp0MRcrgCxEESP1LrF2yA", vibe: "EDGE", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
-    { n: 3, name: "girl EDM", artist: "Ninajirachi", url: "https://open.spotify.com/track/1oNYiuCvyixmwcyNZyq3Dd", vibe: "LIFT", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 4, name: "Tú Me Dejaste De Querer", artist: "C. Tangana", url: "https://open.spotify.com/track/5ddFjrPG8NgQQ6xlOQIVd2", vibe: "ACHE", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 5, name: "Happier Than Ever", artist: "Billie Eilish", url: "https://open.spotify.com/track/4RVwu0g32PAqgUiJoXsdF8", vibe: "TURN", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 6, name: "iPod Touch (Madeon Remix)", artist: "Ninajirachi & Madeon", url: "https://open.spotify.com/track/2gRrj7LQZMTtUQv0gvhHpQ", vibe: "DRIFT", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 2, name: "Death of Love", artist: "James Blake", url: "https://open.spotify.com/track/0eXLacgidV4BAUBWYpRsdV", vibe: "ACHE", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
+    { n: 3, name: "Knights of Cydonia", artist: "Muse", url: "https://open.spotify.com/track/7ouMYWpwJ422jRcDASZB7P", vibe: "RAGE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 4, name: "I'm Not Okay (I Promise)", artist: "My Chemical Romance", url: "https://open.spotify.com/track/7lRlq939cDG4SzWOF4VAnd", vibe: "EDGE", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 5, name: "LOKENECESITAS", artist: "SAIKO & Omar Courtz", url: "https://open.spotify.com/track/1cQx85WypWumn7ZQjUxWQi", vibe: "HEAT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 6, name: "The Throne Room and End Title", artist: "John Williams", url: "https://open.spotify.com/track/3HjDvnmiTLKaDalq4u2Hem", vibe: "EPIC", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 62, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 44, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 71, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 68, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 38, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 65, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Channel the EDM — Short Sprint", desc: "You had real dance energy in the first half of the session. Burn it off with 3 rounds of 30-second sprints or jump rope. Let Ninajirachi's tempo do the pacing.", time: "10 min" },
-    { icon: "🌬️", title: "4-7-8 Breath — Transition Down", desc: "The shift from EDM to C. Tangana and Billie Eilish signals your nervous system is mid-transition. Inhale 4, hold 7, exhale 8. Three rounds — it bridges the two states without forcing either.", time: "5 min" },
-    { icon: "📓", title: "Two Halves of the Night", desc: "Your session had a clear break point — high-energy electropop, then longing and regret. Write one sentence about what you were chasing in the first half and one sentence about what arrived in the second.", time: "8 min" },
+    { icon: "🥊", title: "Rock Catharsis — Heavy Bag or Wall Push", desc: "Given Up and Knights of Cydonia are fight songs. Channel that aggressive energy into 3 sets of 20 explosive push-ups or shadow boxing. Let the tension out physically before it settles as static.", time: "10 min" },
+    { icon: "🌬️", title: "Box Breath — Reset the Arc", desc: "A full emotional journey in one session — EDM to rock angst to orchestral — is a lot of nervous system travel. Inhale 4, hold 4, exhale 4, hold 4. Four rounds. Bring yourself back to baseline.", time: "5 min" },
+    { icon: "📓", title: "The Shift Point", desc: "Your session broke cleanly: first half was pure velocity, second was weight and catharsis. Identify the exact song where the mood turned and write one sentence about what that shift was tracking in you.", time: "8 min" },
   ]
 
-  const journalPrompt = "Ninajirachi and Porter Robinson at the start, then ROSALÍA, C. Tangana, and Billie Eilish at the end — two very different emotional destinations in the same session. What shifted? Was the turn in the music leading something, or following it?"
-  const quote = { text: "Between stimulus and response there is a space. In that space is our power to choose our response.", author: "Viktor Frankl" }
+  const journalPrompt = "You went from WannaCry at full dancefloor intensity to James Blake's Death of Love, then all the way through Muse and My Chemical Romance to John Williams' triumphant finale. That's not random shuffling — that's a story. What were you working through?"
+  const quote = { text: "The most beautiful thing we can experience is the mysterious. It is the source of all true art and science.", author: "Albert Einstein" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
