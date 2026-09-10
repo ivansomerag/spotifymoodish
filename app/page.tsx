@@ -5,32 +5,32 @@ import { ShaderBackground } from "@/components/ui/shader-background"
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Thu Sep 10, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊⚡", sub: "Rock anchor meets dance current — weight and velocity in constant tension" }
-  const insight = "This session is a tug of war between gravity and lift. Twenty One Pilots dominated the early hours — Center Mass, Fake You Out, RAWFEAR, The Hype — modern rock with real emotional heft. Then bursts of pure dancefloor: SOFI TUKKER and J Balvin's COOK, Kaskade's Comes Back Around, ILLENIUM's Got Away. Threading through it all: Paloma Morphy's melancholic Latin indie (lo que un día fue, Au, interesante) and Nsqk's understated darkness. John Williams at midnight sealed the arc with cinematic finality. This isn't chaos — it's a mind processing something through sound."
+  const mood = { label: "TRANSITIONAL", emoji: "🌊🔥", sub: "Latin melancholy and rock gravity pull against EDM lift" }
+  const insight = "The morning opened deep — Paloma Morphy's lo que un día fue and Au, Nsqk's Blamegame, Olivia Rodrigo's stranger — all quiet weight and unresolved feeling. Then Twenty One Pilots took over with Center Mass, RAWFEAR, The Hype, Fake You Out, driving harder into rock territory. Then the session broke wide open: SOFI TUKKER's COOK, Kaskade's Comes Back Around, Subtronics and ILLENIUM's Got Away. The pattern is consistent — you reach for darkness, then force yourself toward energy. Something is being processed."
 
   const tracks = [
-    { n: 1, name: "Center Mass", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/2BHSRlGgJwzTPfYvAax28m", vibe: "ANCHOR", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 2, name: "COOK", artist: "SOFI TUKKER & J Balvin", url: "https://open.spotify.com/track/4H2rI43vuXJuUrRIMxknzA", vibe: "SURGE", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
-    { n: 3, name: "lo que un día fue", artist: "Paloma Morphy", url: "https://open.spotify.com/track/3b9BBjthb7r9Jn5yyWMlrm", vibe: "ACHE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 1, name: "lo que un día fue", artist: "Paloma Morphy", url: "https://open.spotify.com/track/3b9BBjthb7r9Jn5yyWMlrm", vibe: "ACHE", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 2, name: "Center Mass", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/2BHSRlGgJwzTPfYvAax28m", vibe: "ANCHOR", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
+    { n: 3, name: "COOK", artist: "SOFI TUKKER & J Balvin", url: "https://open.spotify.com/track/4H2rI43vuXJuUrRIMxknzA", vibe: "SURGE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
     { n: 4, name: "Got Away", artist: "Subtronics & ILLENIUM", url: "https://open.spotify.com/track/0ezzY28pW6MYCb5RLkWQg8", vibe: "LIFT", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 5, name: "Pensándote", artist: "Diana Meril", url: "https://open.spotify.com/track/5vdtdW6gXrJKzHQZp5CICO", vibe: "DRIFT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 6, name: "The Throne Room and End Title", artist: "John Williams", url: "https://open.spotify.com/track/3HjDvnmiTLKaDalq4u2Hem", vibe: "EPIC", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 5, name: "Unravelling", artist: "Muse", url: "https://open.spotify.com/track/5OLvTcn4P3pZQ4erbwg6ro", vibe: "TENSION", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 6, name: "CÓMO QUIERES", artist: "RØZ", url: "https://open.spotify.com/track/3e9cKUnFgJIVleVRZ19atR", vibe: "PULSE", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 65, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 40, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 62, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 63, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 38, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 60, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Interval Run — Twenty One Pilots Pace", desc: "Center Mass and The Hype set a driving, mid-tempo pulse. Run 3 minutes at comfortable pace, 1 minute hard, repeat 4 times. Let the rock anchor your rhythm and the EDM bursts push your sprint.", time: "16 min" },
-    { icon: "🌬️", title: "4-7-8 Breath — Settle the Push-Pull", desc: "Alternating between rock weight and dancefloor energy is a lot for the nervous system to hold. Inhale 4 counts, hold 7, exhale slowly for 8. Three rounds. Let the body decide where it actually wants to land.", time: "5 min" },
-    { icon: "📓", title: "Two Tracks, Two Truths", desc: "You played both Center Mass and COOK this morning — one inward, one outward. Write one sentence about what each song gave you that the other couldn't. That gap is worth knowing.", time: "7 min" },
+    { icon: "🚶", title: "Walk Without Destination", desc: "Paloma Morphy's lo que un día fue demands slow movement, not sprint. Walk for 15 minutes with no route — let the Latin indie carry the pace. No phone screen. You're not going anywhere, just moving through what the morning already said.", time: "15 min" },
+    { icon: "🌬️", title: "Box Breath — Four Counts Square", desc: "You swung between heavy indie and hard EDM this session — the nervous system needs a reset, not another jolt. Inhale 4 counts, hold 4, exhale 4, hold 4. Repeat 5 rounds. No music. Find the floor.", time: "5 min" },
+    { icon: "📓", title: "Name What You Were Avoiding", desc: "You opened with Paloma Morphy's melancholy, then pushed hard into Twenty One Pilots, then broke for the dancefloor. That arc is a pattern — reaching for sound to avoid sitting still. Write one sentence about what you were not thinking about this morning.", time: "6 min" },
   ]
 
-  const journalPrompt = "Twenty One Pilots held you for a long stretch, then SOFI TUKKER pulled you onto the dancefloor, then Paloma Morphy brought you back down. You kept returning to rock and leaving for dance. What were you looking for each time you made that switch?"
-  const quote = { text: "Music is the shorthand of emotion.", author: "Leo Tolstoy" }
+  const journalPrompt = "Paloma Morphy showed up three times in the last few hours — lo que un día fue, Au, yo creo que todxs estamos mal. That's not a coincidence. What does that album hold right now that you keep returning to it?"
+  const quote = { text: "The music is not in the notes, but in the silence between.", author: "Wolfgang Amadeus Mozart" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
