@@ -2,6 +2,8 @@
 import { useState, useEffect } from "react"
 import { ShaderBackground } from "@/components/ui/shader-background"
 
+const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
+
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Fri Sep 11, 2026"
@@ -987,6 +989,52 @@ export default function WellnessDashboard() {
                     <span style={{color:"#14F195"}}>⚡</span>
                     <span className="mono">{isStandalone ? "ABRIR COMO APP INDEPENDIENTE" : "INSTALAR EN CHROME / CREAR ACCESO"}</span>
                   </button>
+                </div>
+
+                {/* HELA AI Assistant launcher — external tool, opens in a new tab.
+                    Not the "Hela" mood-data bot referenced in the footer below. */}
+                <div style={{...S.card,marginTop:12,border:"1px solid rgba(192,132,252,0.35)",background:"linear-gradient(135deg, rgba(28,14,42,0.84) 0%, rgba(12,6,24,0.88) 100%)"}}>
+                  <div className="hud-corner hud-tl" />
+                  <div className="hud-corner hud-tr" />
+                  <div className="hud-corner hud-bl" />
+                  <div className="hud-corner hud-br" />
+
+                  <div style={{display:"flex",alignItems:"center",gap:6,marginBottom:10}}>
+                    <span style={{fontSize:14}}>🧠</span>
+                    <span className="mono" style={{fontSize:10,fontWeight:800,textTransform:"uppercase",letterSpacing:"0.08em",color:"#c084fc"}}>HELA AI ASSISTANT</span>
+                  </div>
+
+                  <p style={{fontSize:12,color:"#cbd5e1",lineHeight:1.6}}>
+                    Chatea con tu asistente de IA personal — se abre en una pestaña nueva.
+                  </p>
+
+                  <button
+                    onClick={() => { if (HELA_URL) window.open(HELA_URL, "_blank", "noopener,noreferrer") }}
+                    disabled={!HELA_URL}
+                    style={{
+                      width:"100%",
+                      marginTop:12,
+                      padding:"10px 14px",
+                      borderRadius:12,
+                      background:"linear-gradient(90deg, rgba(192,132,252,0.22), rgba(129,140,248,0.22))",
+                      border:"1px solid rgba(192,132,252,0.45)",
+                      color:"#fff",
+                      cursor: HELA_URL ? "pointer" : "not-allowed",
+                      opacity: HELA_URL ? 1 : 0.45,
+                      display:"flex",
+                      alignItems:"center",
+                      justifyContent:"center",
+                      gap:8,
+                      fontSize:12,
+                      fontWeight:700,
+                      boxShadow:"0 0 16px rgba(192,132,252,0.2)"
+                    }}
+                  >
+                    <span style={{color:"#c084fc"}}>🧠</span>
+                    <span className="mono">LAUNCH HELA AI →</span>
+                  </button>
+
+                  <p className="mono" style={{fontSize:9,color:"#64748b",marginTop:8,textAlign:"center"}}>External tool · not the mood-data bot below</p>
                 </div>
 
                 <p className="grid-span-all mono" style={{textAlign:"center",fontSize:10,color:"#475569",marginTop:16}}>Updated hourly by Hela · Spotify Studio · Neuro-OS 1989</p>
