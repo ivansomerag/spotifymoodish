@@ -5,32 +5,32 @@ import { ShaderBackground } from "@/components/ui/shader-background"
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Fri Sep 11, 2026"
-  const mood = { label: "HYPE", emoji: "🔥", sub: "Muse riffs, Kendrick bars, Linkin Park rage — full send" }
-  const insight = "The last session hit hard and fast: Hysteria into Knights of Cydonia, then a pivot to Kendrick's tv off and Macklemore's Can't Hold Us, landing on Linkin Park nu-metal. This is a focused high-output state — the kind of listening that happens when you're moving fast or need to push through something."
+  const mood = { label: "TRANSITIONAL", emoji: "🌓", sub: "James Blake oscuridad, ABBA disco, SOFI TUKKER fuego — buscando el centro" }
+  const insight = "La sesión de hoy mezcla géneros opuestos con una honestidad brutal: James Blake en modo melancólico, ABBA y Paloma Morphy en loop, SOFI TUKKER y Small Town Kid house empujando hacia arriba. Hay algo que estás procesando y al mismo tiempo tratando de sacudir — el playlist no miente."
 
   const tracks = [
-    { n: 1, name: "Hysteria", artist: "Muse", url: "https://open.spotify.com/track/0knbMPVHpFbsx38pLoYSRs", vibe: "IGNITE", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 2, name: "Knights of Cydonia", artist: "Muse", url: "https://open.spotify.com/track/7ouMYWpwJ422jRcDASZB7P", vibe: "SURGE", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
-    { n: 3, name: "tv off (feat. lefty gunplay)", artist: "Kendrick Lamar", url: "https://open.spotify.com/track/0aB0v4027ukVziUGwVGYpG", vibe: "BARS", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 4, name: "Can't Hold Us", artist: "Macklemore & Ryan Lewis", url: "https://open.spotify.com/track/22skzmqfdWrjJylampe0kt", vibe: "PEAK", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 5, name: "Guilty All the Same", artist: "Linkin Park feat. Rakim", url: "https://open.spotify.com/track/6L5QMBrydoaapTDMQ0Anui", vibe: "RAGE", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
-    { n: 6, name: "Paint It, Black", artist: "The Rolling Stones", url: "https://open.spotify.com/track/63T7DJ1AFDD6Bn8VzG6JE8", vibe: "EDGE", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 1, name: "IMPLOSION", artist: "Labrinth", url: "https://open.spotify.com/track/5v69y5vJhDy8YJ2blZoO1Y", vibe: "DEPTH", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 2, name: "We Run", artist: "Small Town Kid", url: "https://open.spotify.com/track/2ZGSXWF4H5HogHxtKbyckj", vibe: "LIFT", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
+    { n: 3, name: "COOK", artist: "SOFI TUKKER & J Balvin", url: "https://open.spotify.com/track/4H2rI43vuXJuUrRIMxknzA", vibe: "HEAT", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 4, name: "Death of Love", artist: "James Blake", url: "https://open.spotify.com/track/0eXLacgidV4BAUBWYpRsdV", vibe: "ACHE", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 5, name: "lo que un día fue", artist: "Paloma Morphy", url: "https://open.spotify.com/track/3b9BBjthb7r9Jn5yyWMlrm", vibe: "DRIFT", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 6, name: "Knowing Me, Knowing You", artist: "ABBA", url: "https://open.spotify.com/track/798cuJeotvXP8UVa8GJPnD", vibe: "ECHO", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 86, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 52, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 71, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 63, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 44, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 68, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Libera con movimiento", desc: "Con Hysteria o Knights of Cydonia de fondo, haz 10 minutos de movimiento intenso — burpees, saltos, lo que sea. El cuerpo está en modo descarga; dale un canal físico antes de que esa energía se quede atorada.", time: "10 min" },
-    { icon: "🌬️", title: "Reset con box breathing", desc: "Inhala 4, sostén 4, exhala 4, sostén 4. Cuatro rondas. Después de una sesión HYPE, este patrón cuadrado devuelve el sistema nervioso al centro sin apagarte.", time: "4 min" },
-    { icon: "📓", title: "Descarga de adrenalina", desc: "¿Qué estás empujando hoy? Muse + Kendrick + Linkin Park juntos son señal de que algo necesita salir. Escribe sin filtro qué es lo que quieres atravesar — sin editar.", time: "5 min" },
+    { icon: "🚶", title: "Caminata sin destino", desc: "Pon Paloma Morphy o James Blake y camina 15 minutos sin teléfono en mano. Cuando el mood es TRANSITIONAL, el movimiento lento ayuda más que el intenso — el cuerpo necesita espacio para procesar, no más estímulo.", time: "15 min" },
+    { icon: "🌬️", title: "Respiración 4-7-8", desc: "Inhala 4 segundos, sostén 7, exhala lento en 8. Tres rondas. Este patrón activa el nervio vago y baja la tensión del estado entre-mundos que tienes hoy — ni arriba ni abajo, sino moviéndote.", time: "3 min" },
+    { icon: "📓", title: "Escribe los dos lados", desc: "Tus últimas horas pusieron ABBA disco y James Blake melancólico en el mismo loop. Escribe una frase que describa qué parte de ti quiere bailar — y otra que diga qué parte todavía está procesando algo.", time: "5 min" },
   ]
 
-  const journalPrompt = "Pusiste Hysteria, Knights of Cydonia y Guilty All the Same seguidos. ¿Contra qué estás peleando hoy — o contra quién?"
-  const quote = { text: "The most powerful weapon on earth is the human soul on fire.", author: "Ferdinand Foch" }
+  const journalPrompt = "SOFI TUKKER te jaló hacia arriba, James Blake te jaló hacia adentro. ¿Qué estás tratando de resolver — y qué pasaría si simplemente lo dejaras estar?"
+  const quote = { text: "Between stimulus and response there is a space. In that space is our power to choose our response.", author: "Viktor Frankl" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
