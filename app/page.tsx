@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react"
 import { ShaderBackground } from "@/components/ui/shader-background"
 
-const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
+const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL || "https://cross-logged-effort-keith.trycloudflare.com"
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
@@ -359,6 +359,28 @@ export default function WellnessDashboard() {
               >
                 <span>{isStandalone ? "✓" : "⚡"}</span>
                 <span>{isStandalone ? "STANDALONE" : "INSTALAR"}</span>
+              </button>
+              <button
+                onClick={() => { if (HELA_URL) window.open(HELA_URL, "_blank", "noopener,noreferrer") }}
+                style={{
+                  background: "rgba(192,132,252,0.16)",
+                  border: "1px solid rgba(192,132,252,0.45)",
+                  borderRadius: 4,
+                  padding: "1px 7px",
+                  color: "#c084fc",
+                  cursor: "pointer",
+                  fontSize: 8.5,
+                  letterSpacing: "0.08em",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 3.5,
+                  fontFamily: "inherit",
+                  boxShadow: "0 0 10px rgba(192,132,252,0.25)"
+                }}
+                title="Abrir HELA AI Assistant en pestaña nueva"
+              >
+                <span style={{fontSize:9}}>🧠</span>
+                <span style={{fontWeight:800}}>HELA AI</span>
               </button>
               <span>STEREO HI-FI</span>
               <span style={{color:"#14F195",fontWeight:700}} className="pulse">PLAY ▶</span>

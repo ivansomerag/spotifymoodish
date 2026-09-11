@@ -129,15 +129,15 @@ spotifymoodish/
 
 ## 📌 Estado Actual
 
-- **Último Commit local**: `15762a8` (*Add HELA AI assistant launcher to Profile tab*) — **committeado pero NO pusheado todavía**, a propósito (repo con deploy automático a Vercel; se retiene el push hasta tener la URL final de HELA).
+- **Integración HELA AI**: Conectado a Cloudflare Tunnel (`https://cross-logged-effort-keith.trycloudflare.com`). Acceso disponible en la barra OSD superior (`🧠 HELA AI`) y en la tarjeta dedicada en la pestaña **Profile**.
 - **Compilación**: 100% limpia (`npm run build` con 0 errores de TypeScript y linting).
-- **Repositorio**: `origin/main` tiene el commit `d6a007b` como último; hay 1 commit local sin pushear (ver Próximos Pasos).
+- **Repositorio**: Rebase limpio con `origin/main`, manteniendo los commits de actualización de Hela.
 
 ## 🧠 Próximos pasos
 
 > Actualizar esta sección cada vez que se complete una tarea relacionada.
 
-- [ ] **Pendiente (tú)**: correr HELA + Cloudflare Tunnel localmente (ver `projects/hela/DEPLOY.md`) y pasarle a Claude la URL `*.trycloudflare.com`.
-- [ ] Con la URL: Claude setea `NEXT_PUBLIC_HELA_URL` en Vercel (Settings → Environment Variables).
-- [ ] Claude hace `git push` del commit `15762a8` (botón HELA AI) — retenido hasta este punto.
-- [ ] Verificar en producción: sitio deployado en Vercel, tab Profile, botón abre la URL del tunnel, login gate de HELA aparece.
+- [x] Correr HELA + Cloudflare Tunnel localmente y obtener la URL `*.trycloudflare.com`.
+- [x] Conectar `NEXT_PUBLIC_HELA_URL` en spotifymoodish con fallback activo a Cloudflare.
+- [ ] Hacer `git push` a `origin/main` para desplegar automáticamente en Vercel.
+- [ ] Verificar en producción Vercel que el botón abre HELA correctamente.
