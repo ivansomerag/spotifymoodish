@@ -4,33 +4,33 @@ import { ShaderBackground } from "@/components/ui/shader-background"
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Thu Sep 11, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Latin warmth, disco flickers, EDM pull — caught mid-current" }
-  const insight = "Paloma Morphy anchored the session twice — introspective alternative pop bleeding into ABBA's disco lift, then back down through Nsqk's live Latin set and Harry Styles. The EDM thread (ILLENIUM, JADOM dubstep, John Summit) kept surfacing but never took over. You're drifting between softness and momentum, not choosing either."
+  const date = "Fri Sep 11, 2026"
+  const mood = { label: "HYPE", emoji: "🔥", sub: "Muse riffs, Kendrick bars, Linkin Park rage — full send" }
+  const insight = "The last session hit hard and fast: Hysteria into Knights of Cydonia, then a pivot to Kendrick's tv off and Macklemore's Can't Hold Us, landing on Linkin Park nu-metal. This is a focused high-output state — the kind of listening that happens when you're moving fast or need to push through something."
 
   const tracks = [
-    { n: 1, name: "lo que un día fue", artist: "Paloma Morphy", url: "https://open.spotify.com/track/3b9BBjthb7r9Jn5yyWMlrm", vibe: "ANCHOR", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 2, name: "Gimme! Gimme! Gimme!", artist: "ABBA", url: "https://open.spotify.com/track/3vkQ5DAB1qQMYO4Mr9zJN6", vibe: "LIFT", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
-    { n: 3, name: "The Waiting Game", artist: "Harry Styles", url: "https://open.spotify.com/track/0tV6LXuVzJR4yifqwQuNwN", vibe: "DRIFT", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 4, name: "NUNCA ESTOY - EN VIVO", artist: "Nsqk", url: "https://open.spotify.com/track/4D2bhzH9qxjZLzeKAR69TY", vibe: "STILL", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 5, name: "Feel Alive", artist: "ILLENIUM, Bastille, Dabin", url: "https://open.spotify.com/track/1xkkHeokEkhrUmqjh2dkv5", vibe: "RISE", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
-    { n: 6, name: "BOBOMENSOTONTO", artist: "Nsqk & Easykid", url: "https://open.spotify.com/track/1OSzB7QkZHJZnmQnu61vE8", vibe: "PULSE", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 1, name: "Hysteria", artist: "Muse", url: "https://open.spotify.com/track/0knbMPVHpFbsx38pLoYSRs", vibe: "IGNITE", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 2, name: "Knights of Cydonia", artist: "Muse", url: "https://open.spotify.com/track/7ouMYWpwJ422jRcDASZB7P", vibe: "SURGE", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
+    { n: 3, name: "tv off (feat. lefty gunplay)", artist: "Kendrick Lamar", url: "https://open.spotify.com/track/0aB0v4027ukVziUGwVGYpG", vibe: "BARS", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 4, name: "Can't Hold Us", artist: "Macklemore & Ryan Lewis", url: "https://open.spotify.com/track/22skzmqfdWrjJylampe0kt", vibe: "PEAK", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 5, name: "Guilty All the Same", artist: "Linkin Park feat. Rakim", url: "https://open.spotify.com/track/6L5QMBrydoaapTDMQ0Anui", vibe: "RAGE", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 6, name: "Paint It, Black", artist: "The Rolling Stones", url: "https://open.spotify.com/track/63T7DJ1AFDD6Bn8VzG6JE8", vibe: "EDGE", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 62, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 55, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 68, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 86, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 52, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 71, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Camina sin destino", desc: "Con Paloma Morphy en los oídos, sal 15 minutos sin ruta fija. El movimiento lento acompaña el mood transitional mejor que el ejercicio intenso — deja que el cuerpo procese lo que la música está nombrando.", time: "15 min" },
-    { icon: "🌬️", title: "Exhale largo", desc: "Inhala 4 tiempos, exhala 8. El doble de tiempo al exhalar activa el sistema parasimpático. Cuatro rondas bastan para bajar del mid-tension que traes desde el ABBA-to-Nsqk flip.", time: "5 min" },
-    { icon: "📓", title: "Diario de corriente", desc: "Paloma Morphy y Nsqk nombraron algo hoy. Escribe: ¿qué estás esperando que pase para que algo cambie? No lo analices — escríbelo rápido, sin releer.", time: "5 min" },
+    { icon: "🏃", title: "Libera con movimiento", desc: "Con Hysteria o Knights of Cydonia de fondo, haz 10 minutos de movimiento intenso — burpees, saltos, lo que sea. El cuerpo está en modo descarga; dale un canal físico antes de que esa energía se quede atorada.", time: "10 min" },
+    { icon: "🌬️", title: "Reset con box breathing", desc: "Inhala 4, sostén 4, exhala 4, sostén 4. Cuatro rondas. Después de una sesión HYPE, este patrón cuadrado devuelve el sistema nervioso al centro sin apagarte.", time: "4 min" },
+    { icon: "📓", title: "Descarga de adrenalina", desc: "¿Qué estás empujando hoy? Muse + Kendrick + Linkin Park juntos son señal de que algo necesita salir. Escribe sin filtro qué es lo que quieres atravesar — sin editar.", time: "5 min" },
   ]
 
-  const journalPrompt = "Escuchaste 'lo que un día fue' dos veces hoy. ¿Qué fue exactamente — y todavía lo extrañas, o ya solo es una forma de medir desde dónde estás ahora?"
-  const quote = { text: "Music gives a soul to the universe, wings to the mind, flight to the imagination, and life to everything.", author: "Plato" }
+  const journalPrompt = "Pusiste Hysteria, Knights of Cydonia y Guilty All the Same seguidos. ¿Contra qué estás peleando hoy — o contra quién?"
+  const quote = { text: "The most powerful weapon on earth is the human soul on fire.", author: "Ferdinand Foch" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
