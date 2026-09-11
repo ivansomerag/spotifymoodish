@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react"
 import { ShaderBackground } from "@/components/ui/shader-background"
 
-const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL || "https://cross-logged-effort-keith.trycloudflare.com"
+const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
