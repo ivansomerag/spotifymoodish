@@ -4,33 +4,33 @@ import { ShaderBackground } from "@/components/ui/shader-background"
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Thu Sep 10, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "⚡", sub: "Rock edge meets dance floor, heart caught between" }
-  const insight = "Twenty One Pilots doubled down this afternoon — RAWFEAR and Center Mass again, plus Feel Alive with ILLENIUM and Bastille punching through the EDM-rock boundary. Olivia Rodrigo's stupid song and Nsqk's live set pulled the current back toward something more fragile. You're not resolving the tension — you're feeding both sides of it at once."
+  const date = "Thu Sep 11, 2026"
+  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Latin warmth, disco flickers, EDM pull — caught mid-current" }
+  const insight = "Paloma Morphy anchored the session twice — introspective alternative pop bleeding into ABBA's disco lift, then back down through Nsqk's live Latin set and Harry Styles. The EDM thread (ILLENIUM, JADOM dubstep, John Summit) kept surfacing but never took over. You're drifting between softness and momentum, not choosing either."
 
   const tracks = [
-    { n: 1, name: "RAWFEAR", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/43ee3gqWBlPKe2MeGJ2S6I", vibe: "ANCHOR", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 2, name: "Center Mass", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/2BHSRlGgJwzTPfYvAax28m", vibe: "CORE", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
-    { n: 3, name: "Feel Alive", artist: "ILLENIUM, Bastille, Dabin", url: "https://open.spotify.com/track/1xkkHeokEkhrUmqjh2dkv5", vibe: "RISE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 4, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/49j6SvuvWfbEKZKzsHCdLJ", vibe: "ACHE", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 5, name: "NUNCA ESTOY - EN VIVO", artist: "Nsqk", url: "https://open.spotify.com/track/4D2bhzH9qxjZLzeKAR69TY", vibe: "STILL", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
-    { n: 6, name: "LIGHTS GO OUT - Major Lazer Remix", artist: "John Summit", url: "https://open.spotify.com/track/7MbJthHlLAxVt8fbI28ZGC", vibe: "PEAK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 1, name: "lo que un día fue", artist: "Paloma Morphy", url: "https://open.spotify.com/track/3b9BBjthb7r9Jn5yyWMlrm", vibe: "ANCHOR", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 2, name: "Gimme! Gimme! Gimme!", artist: "ABBA", url: "https://open.spotify.com/track/3vkQ5DAB1qQMYO4Mr9zJN6", vibe: "LIFT", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
+    { n: 3, name: "The Waiting Game", artist: "Harry Styles", url: "https://open.spotify.com/track/0tV6LXuVzJR4yifqwQuNwN", vibe: "DRIFT", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 4, name: "NUNCA ESTOY - EN VIVO", artist: "Nsqk", url: "https://open.spotify.com/track/4D2bhzH9qxjZLzeKAR69TY", vibe: "STILL", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 5, name: "Feel Alive", artist: "ILLENIUM, Bastille, Dabin", url: "https://open.spotify.com/track/1xkkHeokEkhrUmqjh2dkv5", vibe: "RISE", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 6, name: "BOBOMENSOTONTO", artist: "Nsqk & Easykid", url: "https://open.spotify.com/track/1OSzB7QkZHJZnmQnu61vE8", vibe: "PULSE", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 65, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 50, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 70, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 62, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 55, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 68, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Sprint Intervals", desc: "RAWFEAR and Feel Alive have your adrenaline system primed. Four rounds of 30-second sprints with 90-second walking rest. Burn through the rock tension physically before the afternoon sits in.", time: "15 min" },
-    { icon: "🌬️", title: "Box Breathing Reset", desc: "You're running high on both rock weight and emotional EDM. 4 counts in, 4 hold, 4 out, 4 hold — four rounds. You'll feel the nervous system shift by round three.", time: "5 min" },
-    { icon: "📓", title: "Two-Door Journal", desc: "Your afternoon split between Twenty One Pilots' weight and the danceable Latin session. Write: one door you're pushing through right now, and one door you're circling but not walking into yet.", time: "5 min" },
+    { icon: "🚶", title: "Camina sin destino", desc: "Con Paloma Morphy en los oídos, sal 15 minutos sin ruta fija. El movimiento lento acompaña el mood transitional mejor que el ejercicio intenso — deja que el cuerpo procese lo que la música está nombrando.", time: "15 min" },
+    { icon: "🌬️", title: "Exhale largo", desc: "Inhala 4 tiempos, exhala 8. El doble de tiempo al exhalar activa el sistema parasimpático. Cuatro rondas bastan para bajar del mid-tension que traes desde el ABBA-to-Nsqk flip.", time: "5 min" },
+    { icon: "📓", title: "Diario de corriente", desc: "Paloma Morphy y Nsqk nombraron algo hoy. Escribe: ¿qué estás esperando que pase para que algo cambie? No lo analices — escríbelo rápido, sin releer.", time: "5 min" },
   ]
 
-  const journalPrompt = "RAWFEAR came back a second time today. What does Twenty One Pilots name for you that keeps pulling you back — and is the fear in that song yours right now, or someone else's?"
-  const quote = { text: "The emotion in a song comes from the tension between what you expect and what you get.", author: "Daniel J. Levitin" }
+  const journalPrompt = "Escuchaste 'lo que un día fue' dos veces hoy. ¿Qué fue exactamente — y todavía lo extrañas, o ya solo es una forma de medir desde dónde estás ahora?"
+  const quote = { text: "Music gives a soul to the universe, wings to the mind, flight to the imagination, and life to everything.", author: "Plato" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
