@@ -6,33 +6,33 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Fri Sep 11, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌓", sub: "James Blake oscuridad, ABBA disco, SOFI TUKKER fuego — buscando el centro" }
-  const insight = "La sesión de hoy mezcla géneros opuestos con una honestidad brutal: James Blake en modo melancólico, ABBA y Paloma Morphy en loop, SOFI TUKKER y Small Town Kid house empujando hacia arriba. Hay algo que estás procesando y al mismo tiempo tratando de sacudir — el playlist no miente."
+  const date = "Tue Sep 22, 2026"
+  const mood = { label: "MELANCHOLIC", emoji: "🌧️", sub: "Olivia en loop, Taylor en modo introspectivo — procesando en voz alta" }
+  const insight = "La sesión de hoy está dominada por Olivia Rodrigo en modo raw — 'drop dead', 'maggots for brains', 'stupid song' en loop pesado — con Taylor Swift acústica y reflexiva de fondo. Hay una sola salida de energía con Muse y un poco de latin, pero el hilo conductor es claro: estás procesando algo y la música lo dice sin filtro."
 
   const tracks = [
-    { n: 1, name: "IMPLOSION", artist: "Labrinth", url: "https://open.spotify.com/track/5v69y5vJhDy8YJ2blZoO1Y", vibe: "DEPTH", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 2, name: "We Run", artist: "Small Town Kid", url: "https://open.spotify.com/track/2ZGSXWF4H5HogHxtKbyckj", vibe: "LIFT", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
-    { n: 3, name: "COOK", artist: "SOFI TUKKER & J Balvin", url: "https://open.spotify.com/track/4H2rI43vuXJuUrRIMxknzA", vibe: "HEAT", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 4, name: "Death of Love", artist: "James Blake", url: "https://open.spotify.com/track/0eXLacgidV4BAUBWYpRsdV", vibe: "ACHE", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 5, name: "lo que un día fue", artist: "Paloma Morphy", url: "https://open.spotify.com/track/3b9BBjthb7r9Jn5yyWMlrm", vibe: "DRIFT", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
-    { n: 6, name: "Knowing Me, Knowing You", artist: "ABBA", url: "https://open.spotify.com/track/798cuJeotvXP8UVa8GJPnD", vibe: "ECHO", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 1, name: "drop dead", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/3fRCAPMMZ8l8P9YKI6OCzD", vibe: "ACHE", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 2, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/49j6SvuvWfbEKZKzsHCdLJ", vibe: "RAW", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
+    { n: 3, name: "You're On Your Own, Kid", artist: "Taylor Swift", url: "https://open.spotify.com/track/4D7BCuvgdJlYvlX5WlN54t", vibe: "DRIFT", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 4, name: "Snow On The Beach", artist: "Taylor Swift ft. Lana Del Rey", url: "https://open.spotify.com/track/4zmKGsrXjLmljb5fTaBTot", vibe: "ECHO", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 5, name: "New Born", artist: "Muse", url: "https://open.spotify.com/track/2VrJMuLt2m9HbifGrKWHqk", vibe: "SURGE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 6, name: "maggots for brains", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/6jfiwkcwt8iYCdkbLukxeI", vibe: "DEPTH", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 63, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 44, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 68, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 42, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 32, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 46, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Caminata sin destino", desc: "Pon Paloma Morphy o James Blake y camina 15 minutos sin teléfono en mano. Cuando el mood es TRANSITIONAL, el movimiento lento ayuda más que el intenso — el cuerpo necesita espacio para procesar, no más estímulo.", time: "15 min" },
-    { icon: "🌬️", title: "Respiración 4-7-8", desc: "Inhala 4 segundos, sostén 7, exhala lento en 8. Tres rondas. Este patrón activa el nervio vago y baja la tensión del estado entre-mundos que tienes hoy — ni arriba ni abajo, sino moviéndote.", time: "3 min" },
-    { icon: "📓", title: "Escribe los dos lados", desc: "Tus últimas horas pusieron ABBA disco y James Blake melancólico en el mismo loop. Escribe una frase que describa qué parte de ti quiere bailar — y otra que diga qué parte todavía está procesando algo.", time: "5 min" },
+    { icon: "🏃", title: "Corre con Muse o Olivia", desc: "Un solo track de alta energía — 'New Born' o 'drop dead' — y sal a correr o hacer 10 minutos de movimiento fuerte. El cuerpo necesita liberar lo que la música está guardando; el movimiento físico convierte emoción en energía usable.", time: "10 min" },
+    { icon: "🌬️", title: "Respiración box (4-4-4-4)", desc: "Inhala 4 segundos, sostén 4, exhala 4, sostén 4. Repite 4 veces. Cuando el valence está bajo, este patrón equilibra el sistema nervioso sin pedirte que 'te sientas mejor' — solo te regula.", time: "4 min" },
+    { icon: "📓", title: "Escribe sin editar", desc: "Olivia Rodrigo en heavy loop es una señal de que hay algo sin decir. Pon un timer de 5 minutos y escribe lo que sea — sin releer, sin tachar. Deja que la pluma diga lo que la música ya sabe.", time: "5 min" },
   ]
 
-  const journalPrompt = "SOFI TUKKER te jaló hacia arriba, James Blake te jaló hacia adentro. ¿Qué estás tratando de resolver — y qué pasaría si simplemente lo dejaras estar?"
-  const quote = { text: "Between stimulus and response there is a space. In that space is our power to choose our response.", author: "Viktor Frankl" }
+  const journalPrompt = "Olivia Rodrigo estuvo en loop todo el día. ¿Qué parte de esa letra te habla directo — y por qué ahora?"
+  const quote = { text: "The wound is the place where the Light enters you.", author: "Rumi" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
