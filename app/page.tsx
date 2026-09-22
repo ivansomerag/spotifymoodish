@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Tue Sep 22, 2026"
-  const mood = { label: "MELANCHOLIC", emoji: "🌧️", sub: "Olivia en loop, Taylor en modo introspectivo — procesando en voz alta" }
-  const insight = "La sesión de hoy está dominada por Olivia Rodrigo en modo raw — 'drop dead', 'maggots for brains', 'stupid song' en loop pesado — con Taylor Swift acústica y reflexiva de fondo. Hay una sola salida de energía con Muse y un poco de latin, pero el hilo conductor es claro: estás procesando algo y la música lo dice sin filtro."
+  const mood = { label: "TRANSITIONAL", emoji: "⚡", sub: "De Taylor nostálgica a Kendrick y Eminem — el estado de ánimo cambió de carril a mitad del día" }
+  const insight = "La sesión arrancó suave: Taylor Swift en modo introspectivo, The Beatles acústico, Delilah shoegaze. Luego el switch fue brusco — Eminem, Kendrick Lamar, Offset+JID, Lil Wayne entraron con todo. Esa transición de pop reflexivo a rap agresivo es el patrón TRANSITIONAL clásico: algo cambió en el día y la música lo siguió."
 
   const tracks = [
-    { n: 1, name: "drop dead", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/3fRCAPMMZ8l8P9YKI6OCzD", vibe: "ACHE", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 2, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/49j6SvuvWfbEKZKzsHCdLJ", vibe: "RAW", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
+    { n: 1, name: "Tobey (feat. Big Sean and BabyTron)", artist: "Eminem", url: "https://open.spotify.com/track/1ymWIr4E5x6xORlDO0bXlP", vibe: "FIRE", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 2, name: "euphoria", artist: "Kendrick Lamar", url: "https://open.spotify.com/track/77DRzu7ERs0TX3roZcre7Q", vibe: "HEAT", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
     { n: 3, name: "You're On Your Own, Kid", artist: "Taylor Swift", url: "https://open.spotify.com/track/4D7BCuvgdJlYvlX5WlN54t", vibe: "DRIFT", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
-    { n: 4, name: "Snow On The Beach", artist: "Taylor Swift ft. Lana Del Rey", url: "https://open.spotify.com/track/4zmKGsrXjLmljb5fTaBTot", vibe: "ECHO", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 5, name: "New Born", artist: "Muse", url: "https://open.spotify.com/track/2VrJMuLt2m9HbifGrKWHqk", vibe: "SURGE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 6, name: "maggots for brains", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/6jfiwkcwt8iYCdkbLukxeI", vibe: "DEPTH", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 4, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/49j6SvuvWfbEKZKzsHCdLJ", vibe: "RAW", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 5, name: "Bodies (feat. JID)", artist: "Offset", url: "https://open.spotify.com/track/7jXHMDFD5IP6pOUtC1p3iz", vibe: "SURGE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 6, name: "Snow On The Beach (feat. More Lana Del Rey)", artist: "Taylor Swift", url: "https://open.spotify.com/track/4zmKGsrXjLmljb5fTaBTot", vibe: "ECHO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 42, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 32, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 46, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 68, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 44, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 61, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Corre con Muse o Olivia", desc: "Un solo track de alta energía — 'New Born' o 'drop dead' — y sal a correr o hacer 10 minutos de movimiento fuerte. El cuerpo necesita liberar lo que la música está guardando; el movimiento físico convierte emoción en energía usable.", time: "10 min" },
-    { icon: "🌬️", title: "Respiración box (4-4-4-4)", desc: "Inhala 4 segundos, sostén 4, exhala 4, sostén 4. Repite 4 veces. Cuando el valence está bajo, este patrón equilibra el sistema nervioso sin pedirte que 'te sientas mejor' — solo te regula.", time: "4 min" },
-    { icon: "📓", title: "Escribe sin editar", desc: "Olivia Rodrigo en heavy loop es una señal de que hay algo sin decir. Pon un timer de 5 minutos y escribe lo que sea — sin releer, sin tachar. Deja que la pluma diga lo que la música ya sabe.", time: "5 min" },
+    { icon: "🥊", title: "Canaliza la energía del rap", desc: "Eminem y Kendrick tienen BPM alto y agresividad controlada — ponlos y haz 15 minutos de sombra, burpees o saltar cuerda. La energía transitional necesita salida física o se queda atrapada en el cuerpo.", time: "15 min" },
+    { icon: "🌬️", title: "Respira entre el ruido", desc: "Después del bloque de rap, haz 4-7-8: inhala 4 seg, sostén 7, exhala 8. El sistema nervioso necesita ese reset cuando pasó de Taylor introspectiva a Kendrick en menos de una hora.", time: "5 min" },
+    { icon: "📓", title: "¿Qué cambió hoy a las 6pm?", desc: "Tu música giró de suave a intensa en un punto específico del día. Escribe qué pasó alrededor de esa hora — el playlist es un mapa emocional más honesto que cualquier diario.", time: "5 min" },
   ]
 
-  const journalPrompt = "Olivia Rodrigo estuvo en loop todo el día. ¿Qué parte de esa letra te habla directo — y por qué ahora?"
-  const quote = { text: "The wound is the place where the Light enters you.", author: "Rumi" }
+  const journalPrompt = "Tu música pasó de Taylor Swift introspectiva a Eminem y Kendrick en menos de dos horas. ¿Qué fue lo que cambió — y qué necesitaba esa energía decir?"
+  const quote = { text: "Between stimulus and response there is a space. In that space is our power to choose our response.", author: "Viktor Frankl" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
