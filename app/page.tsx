@@ -6,33 +6,33 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Tue Sep 23, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "De Taylor a la batalla con Kendrick — y de vuelta al corazón en español" }
-  const insight = "La noche arrancó con un bloque intenso de rap: Eminem, Kendrick Lamar, Lil Wayne, Offset. Luego todo cambió — Residente cerebral, Olivia Rodrigo melancólica, Twenty One Pilots angustiado, reggaeton de RØZ y latin electro. El patrón es claro: buscaste fuerza en el rap y aterrizaste en lo emocional. Eso es TRANSITIONAL en su forma más honesta."
+  const date = "Wed Sep 23, 2026"
+  const mood = { label: "HYPE", emoji: "🔥", sub: "Rap pesado de madrugada — Kendrick, Eminem y trap latino al mando" }
+  const insight = "La madrugada fue dominada por rap de alto octanaje: Kendrick Lamar, Eminem (múltiples tracks), Logic, Offset, Token — seguido de trap latino con Trueno y RØZ. TØP y Gorillaz aparecieron como respiro alternativo, pero el tono general es agresivo, cerebral y de alta energía. Esto es HYPE en modo nocturno: buscaste intensidad y la encontraste."
 
   const tracks = [
-    { n: 1, name: "Cerebro", artist: "Residente & Busta Rhymes", url: "https://open.spotify.com/track/1c2aazzNHc0UPwNPd3kSe0", vibe: "MENTE", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 2, name: "deja vu", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/6HU7h9RYOaPRFeh0R3UeAr", vibe: "DRIFT", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
-    { n: 3, name: "Drag Path", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/0TlcczkVTGpinpkGJpT81L", vibe: "ANGST", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 1, name: "Ya no te quiero ver", artist: "RØZ & Joalin", url: "https://open.spotify.com/track/4kddD5phh3YQIX8L7UKltl", vibe: "CORAZÓN", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "Drag Path", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/0TlcczkVTGpinpkGJpT81L", vibe: "ANGST", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 3, name: "ZOMBI", artist: "Trueno", url: "https://open.spotify.com/track/2JxNMSXbMvzjOXyzleH5UZ", vibe: "TRAP", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
     { n: 4, name: "euphoria", artist: "Kendrick Lamar", url: "https://open.spotify.com/track/77DRzu7ERs0TX3roZcre7Q", vibe: "HEAT", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 5, name: "Ya no te quiero ver", artist: "RØZ & Joalin", url: "https://open.spotify.com/track/4kddD5phh3YQIX8L7UKltl", vibe: "CORAZÓN", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 6, name: "Tobey", artist: "Eminem, Big Sean & BabyTron", url: "https://open.spotify.com/track/1ymWIr4E5x6xORlDO0bXlP", vibe: "FUEGO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 5, name: "Estás DISTANTE", artist: "Diana Meril", url: "https://open.spotify.com/track/6tYwbdJWWrHo1l7OrymbUS", vibe: "DRIFT", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
+    { n: 6, name: "Bodies (feat. JID)", artist: "Offset & JID", url: "https://open.spotify.com/track/7jXHMDFD5IP6pOUtC1p3iz", vibe: "FUEGO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 68, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 42, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 58, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 82, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 48, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 71, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🥊", title: "Saca lo que quedó adentro", desc: "Escuchaste rap intenso (Kendrick, Eminem, Lil Wayne) — esa energía necesita salida física. 15 minutos de shadowboxing o saltar la cuerda con ese mismo bloque de fondo. No lo analices, solo muévete.", time: "15 min" },
-    { icon: "🌬️", title: "Aterriza con respiración 4-7-8", desc: "La noche terminó en lo emocional (Olivia, RØZ, TØP). Antes de dormir: inhala 4 seg, sostén 7, exhala 8. Tres rondas. Baja del loop mental al cuerpo.", time: "5 min" },
-    { icon: "📓", title: "La búsqueda de fuerza", desc: "Fuiste del rap más agresivo a las canciones más vulnerables en una misma noche. Escribe: ¿qué estabas buscando cuando pusiste a Eminem? ¿Lo encontraste en RØZ?", time: "5 min" },
+    { icon: "🏃", title: "Canaliza el HYPE", desc: "Llevas horas escuchando Kendrick, Eminem y trap — esa energía acumulada necesita salida. Sal a correr 20 minutos con ese mismo bloque de rap de fondo. Tu cuerpo ya sabe el ritmo.", time: "20 min" },
+    { icon: "🌬️", title: "Box breathing para aterrizar", desc: "Tanta intensidad nocturna puede disparar el sistema nervioso. Antes de dormir haz box breathing: inhala 4, sostén 4, exhala 4, sostén 4. Cuatro rondas. Baja el motor.", time: "5 min" },
+    { icon: "📓", title: "¿Qué buscabas a las 3am?", desc: "Pusiste rap agresivo de madrugada, luego RØZ y TØP. Escribe: ¿qué necesitabas a esa hora — energía, distracción, o algo más difícil de nombrar?", time: "5 min" },
   ]
 
-  const journalPrompt = "Buscaste fuerza en Kendrick y Eminem, y terminaste la noche con RØZ en español. ¿Qué cambió entre esos dos momentos — o qué no cambió?"
-  const quote = { text: "Music gives a soul to the universe, wings to the mind, flight to the imagination, and life to everything.", author: "Plato" }
+  const journalPrompt = "Kendrick, Eminem, trap latino a las 3am — y después RØZ en español. ¿Qué estabas procesando mientras escuchabas eso?"
+  const quote = { text: "Without music, life would be a mistake.", author: "Friedrich Nietzsche" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
