@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Wed Sep 23, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "De Chopin al dance pop — un viaje emocional completo en una tarde" }
-  const insight = "Tu sesión contó una historia: arrancaste con Carly Rae Jepsen en modo maratón (dance pop electrizante), luego viraste hacia Taylor Swift en clave introspectiva — Back to December, Daylight, You're Losing Me — y cerraste con clásicos: Bach, Chopin, Beethoven. Energía descendente, búsqueda de calma. El mood es de procesamiento activo."
+  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "De Taylor Swift introspectiva a Chopin a indie rock — procesando algo grande" }
+  const insight = "Tu tarde contó una historia en tres actos: abriste con Taylor Swift en modo vault (Back to December, Daylight, invisible string — pura introspección), te sumergiste en clásicos densos (Chopin, Beethoven, Bach, Vivaldi), y cerraste subiendo con indie rock y latin trap. La energía descendió a fondo y luego rebotó. Mood de alguien procesando algo con calma antes de volver a moverse."
 
   const tracks = [
-    { n: 1, name: "After All", artist: "Carly Rae Jepsen", url: "https://open.spotify.com/track/26UOQcB5QI7hzmSIz4ewol", vibe: "DANCE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "You're Losing Me (From The Vault)", artist: "Taylor Swift", url: "https://open.spotify.com/track/3CWq0pAKKTWb0K4yiglDc4", vibe: "FEELS", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
-    { n: 3, name: "Back To December (Taylor's Version)", artist: "Taylor Swift", url: "https://open.spotify.com/track/79uDOz0zuuWS7HWxzMmTa2", vibe: "NOSTALGIC", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 4, name: "Nocturne No. 20 in C-Sharp Minor", artist: "Chopin / Pletnev", url: "https://open.spotify.com/track/2MSgFefjK0T7Iwjvr3OKqV", vibe: "CALM", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 5, name: "Hits Different", artist: "Taylor Swift", url: "https://open.spotify.com/track/3xYJScVfxByb61dYHTwiby", vibe: "EDGE", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
-    { n: 6, name: "Reminiscence", artist: "Ólafur Arnalds & Alice Sara Ott", url: "https://open.spotify.com/track/7tJi6GDPUK9PgIA44dLWtn", vibe: "FLOAT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 1, name: "Back To December (Taylor's Version)", artist: "Taylor Swift", url: "https://open.spotify.com/track/79uDOz0zuuWS7HWxzMmTa2", vibe: "NOSTALGIC", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 2, name: "Nocturne No. 20 in C-Sharp Minor", artist: "Chopin / Pletnev", url: "https://open.spotify.com/track/2MSgFefjK0T7Iwjvr3OKqV", vibe: "CALM", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 3, name: "Reminiscence", artist: "Ólafur Arnalds & Alice Sara Ott", url: "https://open.spotify.com/track/7tJi6GDPUK9PgIA44dLWtn", vibe: "FLOAT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 4, name: "Intentions", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3FbMtvXMcjmuAzlAhgwK0I", vibe: "FEELS", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 5, name: "We Run", artist: "Small Town Kid", url: "https://open.spotify.com/track/2ZGSXWF4H5HogHxtKbyckj", vibe: "PULSE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 6, name: "Fear Won't Make It Better", artist: "Starcrusher", url: "https://open.spotify.com/track/1w5fKD8aPGqbM7jm8d73PU", vibe: "INDIE", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 62, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 55, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 68, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 52, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 48, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 44, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Camina sin destino", desc: "Tu sesión fue un viaje: de dance pop a clásicos en una tarde. Sal 15 minutos, sin ruta fija. Deja que el movimiento integre lo que escuchaste.", time: "15 min" },
-    { icon: "🌬️", title: "Respiración 4-7-8", desc: "Inhala 4 segundos, retén 7, exhala lento en 8. El clásico de cierre de día que tu sesión de Chopin ya empezó a preparar. Tres rondas.", time: "5 min" },
-    { icon: "📓", title: "¿Qué estabas procesando?", desc: "Fuiste de CRJ a Taylor Swift introspectiva a Bach. Escribe: ¿qué emoción te llevó de una a otra? ¿Qué estabas buscando al final?", time: "5 min" },
+    { icon: "🚶", title: "Caminata consciente", desc: "Tres actos musicales en una tarde — Taylor, Chopin, indie rock. Sal 15 min sin teléfono. Deja que el cuerpo integre lo que la mente estuvo procesando.", time: "15 min" },
+    { icon: "🌬️", title: "Box breathing 4-4-4-4", desc: "Inhala 4, retén 4, exhala 4, pausa 4. Cuatro rondas. Ideal para pasar del estado contemplativo de los clásicos a un cierre activo del día.", time: "5 min" },
+    { icon: "📓", title: "El arco emocional de hoy", desc: "De Taylor Swift a Beethoven a indie rock — escribe: ¿qué emoción estabas procesando al inicio? ¿Qué encontraste al final?", time: "5 min" },
   ]
 
-  const journalPrompt = "Tu sesión de hoy fue un arco emocional — dance pop, melancolía de Taylor Swift, paz de Chopin. ¿Qué estabas procesando? ¿Llegaste a donde necesitabas llegar?"
-  const quote = { text: "Music is the shorthand of emotion.", author: "Leo Tolstoy" }
+  const journalPrompt = "Tu tarde tuvo tres capas: nostalgia con Taylor Swift, quietud con Chopin, impulso hacia adelante con indie rock. ¿Qué dejaste ir? ¿Qué encontraste al otro lado?"
+  const quote = { text: "Music gives a soul to the universe, wings to the mind, flight to the imagination, and life to everything.", author: "Plato" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
