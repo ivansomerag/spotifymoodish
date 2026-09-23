@@ -6,33 +6,33 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Tue Sep 22, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "⚡", sub: "De Taylor nostálgica a Kendrick y Eminem — el estado de ánimo cambió de carril a mitad del día" }
-  const insight = "La sesión arrancó suave: Taylor Swift en modo introspectivo, The Beatles acústico, Delilah shoegaze. Luego el switch fue brusco — Eminem, Kendrick Lamar, Offset+JID, Lil Wayne entraron con todo. Esa transición de pop reflexivo a rap agresivo es el patrón TRANSITIONAL clásico: algo cambió en el día y la música lo siguió."
+  const date = "Tue Sep 23, 2026"
+  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "De Midnights a Kendrick a Jain — tres carriles en un solo día" }
+  const insight = "La tarde arrancó con un bloque puro de Taylor Swift (Midnights + vault tracks), introspectivo y melancólico. Luego llegó el corte brusco: Eminem, Kendrick Lamar, Lil Wayne. Para el cierre de noche la música viró otra vez — Jain eléctrica, Balu Brigada indie, Gorillaz, KAROL G reggaeton. Tres estados de ánimo distintos en una sola sesión: eso es TRANSITIONAL clásico."
 
   const tracks = [
-    { n: 1, name: "Tobey (feat. Big Sean and BabyTron)", artist: "Eminem", url: "https://open.spotify.com/track/1ymWIr4E5x6xORlDO0bXlP", vibe: "FIRE", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 2, name: "euphoria", artist: "Kendrick Lamar", url: "https://open.spotify.com/track/77DRzu7ERs0TX3roZcre7Q", vibe: "HEAT", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
+    { n: 1, name: "Única", artist: "Tainy & KAROL G", url: "https://open.spotify.com/track/0xHAfrziD261HeNYVmYqNF", vibe: "FLOW", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 2, name: "Ride", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/2Z8WuEywRWYTKe1NybPQEW", vibe: "PULSE", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
     { n: 3, name: "You're On Your Own, Kid", artist: "Taylor Swift", url: "https://open.spotify.com/track/4D7BCuvgdJlYvlX5WlN54t", vibe: "DRIFT", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
-    { n: 4, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/49j6SvuvWfbEKZKzsHCdLJ", vibe: "RAW", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 5, name: "Bodies (feat. JID)", artist: "Offset", url: "https://open.spotify.com/track/7jXHMDFD5IP6pOUtC1p3iz", vibe: "SURGE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 6, name: "Snow On The Beach (feat. More Lana Del Rey)", artist: "Taylor Swift", url: "https://open.spotify.com/track/4zmKGsrXjLmljb5fTaBTot", vibe: "ECHO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 4, name: "euphoria", artist: "Kendrick Lamar", url: "https://open.spotify.com/track/77DRzu7ERs0TX3roZcre7Q", vibe: "HEAT", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 5, name: "Kill It With The Beat", artist: "Jain", url: "https://open.spotify.com/track/2oN4lORHOZdxyPeTLEvn9S", vibe: "SURGE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 6, name: "BedHead", artist: "Balu Brigada", url: "https://open.spotify.com/track/5d3QY0Kq63rwQqPDe5usTs", vibe: "ECHO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 68, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 44, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 61, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 72, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 48, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 66, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🥊", title: "Canaliza la energía del rap", desc: "Eminem y Kendrick tienen BPM alto y agresividad controlada — ponlos y haz 15 minutos de sombra, burpees o saltar cuerda. La energía transitional necesita salida física o se queda atrapada en el cuerpo.", time: "15 min" },
-    { icon: "🌬️", title: "Respira entre el ruido", desc: "Después del bloque de rap, haz 4-7-8: inhala 4 seg, sostén 7, exhala 8. El sistema nervioso necesita ese reset cuando pasó de Taylor introspectiva a Kendrick en menos de una hora.", time: "5 min" },
-    { icon: "📓", title: "¿Qué cambió hoy a las 6pm?", desc: "Tu música giró de suave a intensa en un punto específico del día. Escribe qué pasó alrededor de esa hora — el playlist es un mapa emocional más honesto que cualquier diario.", time: "5 min" },
+    { icon: "🏃", title: "Corre con el switch", desc: "La sesión tuvo un giro brusco de suave a intenso. Aprovecha esa energía acumulada: 20 minutos de cardio con el bloque de Kendrick y Eminem de fondo — libera lo que quedó atrapado en la transición.", time: "20 min" },
+    { icon: "🌬️", title: "Reset con box breathing", desc: "Tres carriles emocionales en un día desgastan. Haz box breathing: inhala 4 seg, sostén 4, exhala 4, sostén 4. Cuatro ciclos completos para recentrarte antes de dormir.", time: "5 min" },
+    { icon: "📓", title: "¿Cuál fue el momento del giro?", desc: "Tu música cambia de carril dos veces hoy. Escribe qué estabas haciendo cuando pasaste de Taylor a Kendrick — el playlist es más honesto que cualquier diario.", time: "5 min" },
   ]
 
-  const journalPrompt = "Tu música pasó de Taylor Swift introspectiva a Eminem y Kendrick en menos de dos horas. ¿Qué fue lo que cambió — y qué necesitaba esa energía decir?"
-  const quote = { text: "Between stimulus and response there is a space. In that space is our power to choose our response.", author: "Viktor Frankl" }
+  const journalPrompt = "Tres géneros, tres estados de ánimo en una tarde: Swift introspectiva, rap agresivo, indie electrónico. ¿Cuál de los tres sentías más tuyo — y cuál fue una fuga?"
+  const quote = { text: "The music is not in the notes, but in the silence between.", author: "Wolfgang Amadeus Mozart" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
