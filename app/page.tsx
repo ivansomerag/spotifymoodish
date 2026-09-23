@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Wed Sep 23, 2026"
-  const mood = { label: "HYPE", emoji: "🔥", sub: "Rap pesado de madrugada — Kendrick, Eminem y trap latino al mando" }
-  const insight = "La madrugada fue dominada por rap de alto octanaje: Kendrick Lamar, Eminem (múltiples tracks), Logic, Offset, Token — seguido de trap latino con Trueno y RØZ. TØP y Gorillaz aparecieron como respiro alternativo, pero el tono general es agresivo, cerebral y de alta energía. Esto es HYPE en modo nocturno: buscaste intensidad y la encontraste."
+  const mood = { label: "EUPHORIC", emoji: "✨", sub: "Tarde de Carly Rae Jepsen — dance pop eléctrico, imparable" }
+  const insight = "Más de dos horas seguidas de Carly Rae Jepsen en modo maratón — dance pop electrizante, melodías que no sueltan, danceability en el techo. Antes: Taylor Swift pop cinemático y Olivia Rodrigo alt-pop. El mood de la tarde es claro: buscaste algo que te levantara y lo encontraste con todo."
 
   const tracks = [
-    { n: 1, name: "Ya no te quiero ver", artist: "RØZ & Joalin", url: "https://open.spotify.com/track/4kddD5phh3YQIX8L7UKltl", vibe: "CORAZÓN", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "Drag Path", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/0TlcczkVTGpinpkGJpT81L", vibe: "ANGST", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
-    { n: 3, name: "ZOMBI", artist: "Trueno", url: "https://open.spotify.com/track/2JxNMSXbMvzjOXyzleH5UZ", vibe: "TRAP", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 4, name: "euphoria", artist: "Kendrick Lamar", url: "https://open.spotify.com/track/77DRzu7ERs0TX3roZcre7Q", vibe: "HEAT", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 5, name: "Estás DISTANTE", artist: "Diana Meril", url: "https://open.spotify.com/track/6tYwbdJWWrHo1l7OrymbUS", vibe: "DRIFT", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
-    { n: 6, name: "Bodies (feat. JID)", artist: "Offset & JID", url: "https://open.spotify.com/track/7jXHMDFD5IP6pOUtC1p3iz", vibe: "FUEGO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 1, name: "Don't Leave Me on the Dance Floor", artist: "Carly Rae Jepsen", url: "https://open.spotify.com/track/34XRbhIQAaZnZWKjEaFtBd", vibe: "DANCE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "Never Let a Good Thing Die", artist: "Carly Rae Jepsen", url: "https://open.spotify.com/track/1TDp2LpjVxMZuZcZIorpFT", vibe: "GLOW", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 3, name: "Blank Space (Taylor's Version)", artist: "Taylor Swift", url: "https://open.spotify.com/track/45wMBGri1PORPjM9PwFfrS", vibe: "ICONIC", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 4, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/49j6SvuvWfbEKZKzsHCdLJ", vibe: "EDGE", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 5, name: "ÁNGEL CAÍDO", artist: "RØZ & Natt Calma", url: "https://open.spotify.com/track/2wUXndDjnKHph7BowMMf1k", vibe: "LATIN", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
+    { n: 6, name: "After All", artist: "Carly Rae Jepsen", url: "https://open.spotify.com/track/26UOQcB5QI7hzmSIz4ewol", vibe: "FLOAT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 82, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 48, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 71, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 78, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 74, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 85, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Canaliza el HYPE", desc: "Llevas horas escuchando Kendrick, Eminem y trap — esa energía acumulada necesita salida. Sal a correr 20 minutos con ese mismo bloque de rap de fondo. Tu cuerpo ya sabe el ritmo.", time: "20 min" },
-    { icon: "🌬️", title: "Box breathing para aterrizar", desc: "Tanta intensidad nocturna puede disparar el sistema nervioso. Antes de dormir haz box breathing: inhala 4, sostén 4, exhala 4, sostén 4. Cuatro rondas. Baja el motor.", time: "5 min" },
-    { icon: "📓", title: "¿Qué buscabas a las 3am?", desc: "Pusiste rap agresivo de madrugada, luego RØZ y TØP. Escribe: ¿qué necesitabas a esa hora — energía, distracción, o algo más difícil de nombrar?", time: "5 min" },
+    { icon: "💃", title: "Muévete con CRJ", desc: "Dos horas de dance pop puro — tu cuerpo ya sabe los pasos. Pon On Wires o Amalfi Coast y baila 10 minutos sin objetivo. No es ejercicio, es descarga.", time: "10 min" },
+    { icon: "🌬️", title: "Respiración energizante", desc: "El dance pop de hoy tiene energía ascendente. Refuérzala: 10 respiraciones profundas por la nariz, exhala fuerte por la boca. Siente el lift.", time: "3 min" },
+    { icon: "📓", title: "¿Qué CRJ despertó en ti?", desc: "Escuchaste más de 15 tracks seguidos de Carly Rae Jepsen. Escribe: ¿qué sentías que necesitabas hoy que esas canciones te dieron?", time: "5 min" },
   ]
 
-  const journalPrompt = "Kendrick, Eminem, trap latino a las 3am — y después RØZ en español. ¿Qué estabas procesando mientras escuchabas eso?"
-  const quote = { text: "Without music, life would be a mistake.", author: "Friedrich Nietzsche" }
+  const journalPrompt = "Pusiste Carly Rae Jepsen en modo maratón esta tarde. ¿Qué parte de ese dance pop necesitabas exactamente — la energía, la melancolía disfrazada de pop, o algo más?"
+  const quote = { text: "Music gives color to the air of the moment.", author: "Karl Lagerfeld" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
