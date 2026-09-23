@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Tue Sep 23, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "De Midnights a Kendrick a Jain — tres carriles en un solo día" }
-  const insight = "La tarde arrancó con un bloque puro de Taylor Swift (Midnights + vault tracks), introspectivo y melancólico. Luego llegó el corte brusco: Eminem, Kendrick Lamar, Lil Wayne. Para el cierre de noche la música viró otra vez — Jain eléctrica, Balu Brigada indie, Gorillaz, KAROL G reggaeton. Tres estados de ánimo distintos en una sola sesión: eso es TRANSITIONAL clásico."
+  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "De Taylor a la batalla con Kendrick — y de vuelta al corazón en español" }
+  const insight = "La noche arrancó con un bloque intenso de rap: Eminem, Kendrick Lamar, Lil Wayne, Offset. Luego todo cambió — Residente cerebral, Olivia Rodrigo melancólica, Twenty One Pilots angustiado, reggaeton de RØZ y latin electro. El patrón es claro: buscaste fuerza en el rap y aterrizaste en lo emocional. Eso es TRANSITIONAL en su forma más honesta."
 
   const tracks = [
-    { n: 1, name: "Única", artist: "Tainy & KAROL G", url: "https://open.spotify.com/track/0xHAfrziD261HeNYVmYqNF", vibe: "FLOW", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 2, name: "Ride", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/2Z8WuEywRWYTKe1NybPQEW", vibe: "PULSE", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
-    { n: 3, name: "You're On Your Own, Kid", artist: "Taylor Swift", url: "https://open.spotify.com/track/4D7BCuvgdJlYvlX5WlN54t", vibe: "DRIFT", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 1, name: "Cerebro", artist: "Residente & Busta Rhymes", url: "https://open.spotify.com/track/1c2aazzNHc0UPwNPd3kSe0", vibe: "MENTE", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 2, name: "deja vu", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/6HU7h9RYOaPRFeh0R3UeAr", vibe: "DRIFT", nc: "#818cf8", nBg: "rgba(129,140,248,0.15)", nBd: "rgba(129,140,248,0.35)", vc: "#818cf8", vBg: "rgba(129,140,248,0.18)", vBd: "rgba(129,140,248,0.4)" },
+    { n: 3, name: "Drag Path", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/0TlcczkVTGpinpkGJpT81L", vibe: "ANGST", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
     { n: 4, name: "euphoria", artist: "Kendrick Lamar", url: "https://open.spotify.com/track/77DRzu7ERs0TX3roZcre7Q", vibe: "HEAT", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 5, name: "Kill It With The Beat", artist: "Jain", url: "https://open.spotify.com/track/2oN4lORHOZdxyPeTLEvn9S", vibe: "SURGE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 6, name: "BedHead", artist: "Balu Brigada", url: "https://open.spotify.com/track/5d3QY0Kq63rwQqPDe5usTs", vibe: "ECHO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 5, name: "Ya no te quiero ver", artist: "RØZ & Joalin", url: "https://open.spotify.com/track/4kddD5phh3YQIX8L7UKltl", vibe: "CORAZÓN", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 6, name: "Tobey", artist: "Eminem, Big Sean & BabyTron", url: "https://open.spotify.com/track/1ymWIr4E5x6xORlDO0bXlP", vibe: "FUEGO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 72, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 48, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 66, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 68, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 42, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 58, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Corre con el switch", desc: "La sesión tuvo un giro brusco de suave a intenso. Aprovecha esa energía acumulada: 20 minutos de cardio con el bloque de Kendrick y Eminem de fondo — libera lo que quedó atrapado en la transición.", time: "20 min" },
-    { icon: "🌬️", title: "Reset con box breathing", desc: "Tres carriles emocionales en un día desgastan. Haz box breathing: inhala 4 seg, sostén 4, exhala 4, sostén 4. Cuatro ciclos completos para recentrarte antes de dormir.", time: "5 min" },
-    { icon: "📓", title: "¿Cuál fue el momento del giro?", desc: "Tu música cambia de carril dos veces hoy. Escribe qué estabas haciendo cuando pasaste de Taylor a Kendrick — el playlist es más honesto que cualquier diario.", time: "5 min" },
+    { icon: "🥊", title: "Saca lo que quedó adentro", desc: "Escuchaste rap intenso (Kendrick, Eminem, Lil Wayne) — esa energía necesita salida física. 15 minutos de shadowboxing o saltar la cuerda con ese mismo bloque de fondo. No lo analices, solo muévete.", time: "15 min" },
+    { icon: "🌬️", title: "Aterriza con respiración 4-7-8", desc: "La noche terminó en lo emocional (Olivia, RØZ, TØP). Antes de dormir: inhala 4 seg, sostén 7, exhala 8. Tres rondas. Baja del loop mental al cuerpo.", time: "5 min" },
+    { icon: "📓", title: "La búsqueda de fuerza", desc: "Fuiste del rap más agresivo a las canciones más vulnerables en una misma noche. Escribe: ¿qué estabas buscando cuando pusiste a Eminem? ¿Lo encontraste en RØZ?", time: "5 min" },
   ]
 
-  const journalPrompt = "Tres géneros, tres estados de ánimo en una tarde: Swift introspectiva, rap agresivo, indie electrónico. ¿Cuál de los tres sentías más tuyo — y cuál fue una fuga?"
-  const quote = { text: "The music is not in the notes, but in the silence between.", author: "Wolfgang Amadeus Mozart" }
+  const journalPrompt = "Buscaste fuerza en Kendrick y Eminem, y terminaste la noche con RØZ en español. ¿Qué cambió entre esos dos momentos — o qué no cambió?"
+  const quote = { text: "Music gives a soul to the universe, wings to the mind, flight to the imagination, and life to everything.", author: "Plato" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
