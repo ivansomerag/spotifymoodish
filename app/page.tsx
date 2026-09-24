@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Wed Sep 24, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "De Chopin y clásicos a Linkin Park y latin trap — el arco completo en una tarde" }
-  const insight = "Empezaste tu tarde sumergido en Chopin, Beethoven, Vivaldi y Howard Shore — pura quietud introspectiva. Luego escalaste con Ólafur Arnalds, ABBA, Twenty One Pilots, y terminaste con Linkin Park, Trueno, Bad Bunny y Olivia Rodrigo. Es el patrón clásico: bajas el ruido interno primero, luego el cuerpo pide energía. Mood de alguien que procesó algo y emergió listo para moverse."
+  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "De Woodkid y James Blake a ROSALÍA, Bad Bunny y David Guetta — introspección que explota en energía" }
+  const insight = "Tu sesión trazó un arco emocional amplio: arrancaste con Woodkid y James Blake en modo introspectivo-cinematográfico, pasaste por indie rock (Balu Brigada, Starcrusher) y pop emocional (Twenty One Pilots, Olivia Rodrigo), y detonaste en energía latina y electrónica con ROSALÍA, SAIKO, Trueno, Bad Bunny y David Guetta. ABBA como bisagra nostálgica. Es el patrón de alguien que procesó algo y después necesitó moverse."
 
   const tracks = [
-    { n: 1, name: "Guilty All the Same (feat. Rakim)", artist: "Linkin Park", url: "https://open.spotify.com/track/6L5QMBrydoaapTDMQ0Anui", vibe: "HYPE", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 2, name: "LOVELANGUAGE", artist: "Nsqk", url: "https://open.spotify.com/track/5GzLhigmoOXYjX9uEWNZIn", vibe: "LATIN", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 3, name: "maggots for brains", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/6jfiwkcwt8iYCdkbLukxeI", vibe: "DARK POP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 4, name: "Intentions", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3FbMtvXMcjmuAzlAhgwK0I", vibe: "FEELS", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
-    { n: 5, name: "Reminiscence", artist: "Ólafur Arnalds & Alice Sara Ott", url: "https://open.spotify.com/track/7tJi6GDPUK9PgIA44dLWtn", vibe: "FLOAT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 6, name: "ZOMBI", artist: "Trueno", url: "https://open.spotify.com/track/2JxNMSXbMvzjOXyzleH5UZ", vibe: "TRAP", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 1, name: "interesante", artist: "Paloma Morphy", url: "https://open.spotify.com/track/5dL5VeYWna6JiqTzqdbk9b", vibe: "ALT-POP", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 2, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/49j6SvuvWfbEKZKzsHCdLJ", vibe: "DARK POP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 3, name: "Physical", artist: "Dua Lipa", url: "https://open.spotify.com/track/3AzjcOeAmA57TIOr9zF1ZW", vibe: "ENERGIZED", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 4, name: "Run Boy Run", artist: "Woodkid", url: "https://open.spotify.com/track/0boS4e6uXwp3zAvz1mLxZS", vibe: "CINEMATIC", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 5, name: "LOVELANGUAGE", artist: "Nsqk", url: "https://open.spotify.com/track/5GzLhigmoOXYjX9uEWNZIn", vibe: "LATIN", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 6, name: "Focu 'Ranni", artist: "ROSALÍA", url: "https://open.spotify.com/track/3aIGNjFJPjrGpe24OFMSUH", vibe: "LATIN POP", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 58, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 52, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 55, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 62, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 58, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 65, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Carrera de descarga", desc: "De Chopin a Linkin Park en una tarde — tu sistema nervioso hizo el trabajo emocional. Sálelo: 20 min de carrera o HIIT, pon el setlist completo del arco.", time: "20 min" },
-    { icon: "🌬️", title: "Respiración 4-7-8", desc: "Inhala 4 seg, retén 7, exhala 8. Tres rondas antes de dormir. Ideal para bajar el cortisol después de nu metal y trap latino.", time: "5 min" },
-    { icon: "📓", title: "El arco de hoy", desc: "Chopin → ABBA → Linkin Park → Bad Bunny. Escribe: ¿qué emoción iniciaste procesando en silencio y cuál afloró al final? ¿Hay algo que hayas evitado nombrar?", time: "5 min" },
+    { icon: "🏃", title: "Carrera de transición", desc: "Tu sesión fue un arco completo — de Woodkid a David Guetta. Canalízalo: 25 min de carrera progresiva, empieza lento y sube el ritmo al final.", time: "25 min" },
+    { icon: "🌊", title: "Respiración cíclica", desc: "Inhala 5 seg, retén 2, exhala 5. Cuatro rondas. Ideal para resetear el sistema nervioso después de tanto rango emocional en una sola sesión.", time: "8 min" },
+    { icon: "📓", title: "El puente emocional", desc: "Fuiste de James Blake a Bad Bunny en pocas horas. Escribe: ¿qué estabas procesando en el modo quieto y qué necesitabas liberar cuando subió la energía?", time: "5 min" },
   ]
 
-  const journalPrompt = "Tu tarde fue de quietud orquestal a nu metal y trap. ¿Qué necesitabas procesar en silencio primero? ¿Qué encontraste del otro lado cuando subió el volumen?"
-  const quote = { text: "The most beautiful thing we can experience is the mysterious. It is the source of all true art and science.", author: "Albert Einstein" }
+  const journalPrompt = "Tu sesión fue un viaje de introspección a euforia. ¿Qué cargabas cuando pusiste a Woodkid y qué soltaste cuando llegaste a ROSALÍA y Bad Bunny?"
+  const quote = { text: "Energy is contagious, positive and negative alike. I will forever be mindful of what and who I am allowing into my space.", author: "Alex Elle" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
