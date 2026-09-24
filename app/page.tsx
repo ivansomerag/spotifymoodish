@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Thu Sep 24, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Entre Paloma Morphy, Twenty One Pilots y Trueno — procesando en voz alta" }
-  const insight = "Tu sesión de la madrugada mezcla introspección profunda (Paloma Morphy, James Blake, Twenty One Pilots, Woodkid) con explosiones de energía latin urbana (Trueno, SAIKO, KAROL G) y una escala de nostalgia vía ABBA. El patrón es tuyo: vulnerabilidad contenida que se transforma en movimiento. No estás apagado ni encendido — estás en proceso."
+  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "De Nsqk y HBU a Taylor Swift y Olivia — movimiento emocional en tiempo real" }
+  const insight = "Tu tarde de hoy arrancó con el COLORS show de Nsqk (alt-pop introspectivo) y escaló rápido a HBU de RØZ x Artemas (electronic/dance), You Need To Calm Down de Taylor Swift y LOKENECESITAS de SAIKO. El rango emocional es amplio: vulnerabilidad indie mezclada con energía dance y reggaeton. Estás en tránsito — procesando y moviéndote al mismo tiempo."
 
   const tracks = [
-    { n: 1, name: "interesante", artist: "Paloma Morphy", url: "https://open.spotify.com/track/5dL5VeYWna6JiqTzqdbk9b", vibe: "ALT-POP", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 2, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/49j6SvuvWfbEKZKzsHCdLJ", vibe: "DARK POP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 3, name: "Intentions", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3FbMtvXMcjmuAzlAhgwK0I", vibe: "EMO ROCK", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 4, name: "Dancing Queen", artist: "ABBA", url: "https://open.spotify.com/track/0GjEhVFGZW8afUYGChu3Rr", vibe: "NOSTALGIC", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 5, name: "ZOMBI", artist: "Trueno", url: "https://open.spotify.com/track/2JxNMSXbMvzjOXyzleH5UZ", vibe: "TRAP LATINO", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 1, name: "tuffluv - A COLORS SHOW", artist: "Nsqk", url: "https://open.spotify.com/track/5dB7dt2zQ2dkmaMu4KB3Cb", vibe: "ALT-POP", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 2, name: "HBU", artist: "RØZ & Artemas", url: "https://open.spotify.com/track/5aYbkPvZhnu4wMmn0AOrE8", vibe: "ELECTRONIC", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 3, name: "You Need To Calm Down", artist: "Taylor Swift", url: "https://open.spotify.com/track/6RRNNciQGZEXnqk8SQ9yv5", vibe: "DANCE POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 4, name: "LOKENECESITAS", artist: "SAIKO & Omar Courtz", url: "https://open.spotify.com/track/1cQx85WypWumn7ZQjUxWQi", vibe: "REGGAETON", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 5, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/49j6SvuvWfbEKZKzsHCdLJ", vibe: "DARK POP", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
     { n: 6, name: "Physical", artist: "Dua Lipa", url: "https://open.spotify.com/track/3AzjcOeAmA57TIOr9zF1ZW", vibe: "ENERGIZED", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 72, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 62, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 74, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 76, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 65, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 78, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Carrera en dos tiempos", desc: "10 min suave al ritmo de Paloma Morphy y Twenty One Pilots, luego 15 min a fondo con Trueno y Dua Lipa. Deja que el cuerpo complete el arco emocional que empezó en tus oídos.", time: "25 min" },
-    { icon: "💨", title: "Respiración 4-7-8", desc: "Inhala 4 seg, retén 7, exhala 8. Tres ciclos. Para el sistema nervioso después de una madrugada de rango emocional amplio — ancla antes de empezar el día.", time: "5 min" },
-    { icon: "📓", title: "El proceso en voz alta", desc: "¿Qué estabas procesando a las 6am que te llevó de James Blake a KAROL G? Escríbelo sin estructura ni puntuación — solo lo que salga.", time: "5 min" },
+    { icon: "🏃", title: "Run to the rhythm", desc: "Pon HBU o Physical y sal 20 min. La energía dance de tu tarde pide descarga física — deja que el BPM guíe el ritmo de tus pasos, no al revés.", time: "20 min" },
+    { icon: "💨", title: "Box breathing 4-4-4-4", desc: "Inhala 4 seg, retén 4, exhala 4, retén 4. Cuatro ciclos. Tu rango emocional de hoy fue amplio — ancla el sistema nervioso antes de la noche.", time: "5 min" },
+    { icon: "📓", title: "El tránsito en papel", desc: "¿De dónde a dónde fuiste emocionalmente hoy? Escribe una línea por cada track clave — sin editar, solo lo que te trajo cada uno.", time: "7 min" },
   ]
 
-  const journalPrompt = "Fuiste de 'interesante' de Paloma Morphy a ZOMBI de Trueno en una sola sesión. ¿Qué parte de ti escuchó cada canción? ¿Cuál de las dos eres tú hoy?"
-  const quote = { text: "The emotion that can break your heart is sometimes the very one that heals it.", author: "Nicholas Sparks" }
+  const journalPrompt = "Pasaste de la intimidad de Nsqk en COLORS a la energía de SAIKO en reggaeton en una tarde. ¿Qué estabas buscando en cada uno? ¿Llegaste a encontrarlo?"
+  const quote = { text: "Music gives a soul to the universe, wings to the mind, flight to the imagination, and life to everything.", author: "Plato" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
