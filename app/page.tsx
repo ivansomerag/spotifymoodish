@@ -6,33 +6,33 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Thu Sep 24, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "De Nsqk y HBU a Taylor Swift y Olivia — movimiento emocional en tiempo real" }
-  const insight = "Tu tarde de hoy arrancó con el COLORS show de Nsqk (alt-pop introspectivo) y escaló rápido a HBU de RØZ x Artemas (electronic/dance), You Need To Calm Down de Taylor Swift y LOKENECESITAS de SAIKO. El rango emocional es amplio: vulnerabilidad indie mezclada con energía dance y reggaeton. Estás en tránsito — procesando y moviéndote al mismo tiempo."
+  const date = "Thu Sep 25, 2026"
+  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "James Blake + Twenty One Pilots + Dua Lipa — procesando y buscando energía al mismo tiempo" }
+  const insight = "Tu sesión reciente oscila entre lo introspectivo y lo cinético: James Blake 'Through The High Wire', Twenty One Pilots 'Intentions' y Olivia Rodrigo anclan el peso emocional, mientras Dua Lipa 'Physical', David Guetta 'I Run' y SAIKO 'LOKENECESITAS' empujan hacia arriba. Estás procesando algo, pero el cuerpo pide movimiento."
 
   const tracks = [
     { n: 1, name: "tuffluv - A COLORS SHOW", artist: "Nsqk", url: "https://open.spotify.com/track/5dB7dt2zQ2dkmaMu4KB3Cb", vibe: "ALT-POP", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 2, name: "HBU", artist: "RØZ & Artemas", url: "https://open.spotify.com/track/5aYbkPvZhnu4wMmn0AOrE8", vibe: "ELECTRONIC", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 3, name: "You Need To Calm Down", artist: "Taylor Swift", url: "https://open.spotify.com/track/6RRNNciQGZEXnqk8SQ9yv5", vibe: "DANCE POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 4, name: "LOKENECESITAS", artist: "SAIKO & Omar Courtz", url: "https://open.spotify.com/track/1cQx85WypWumn7ZQjUxWQi", vibe: "REGGAETON", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 5, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/49j6SvuvWfbEKZKzsHCdLJ", vibe: "DARK POP", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
-    { n: 6, name: "Physical", artist: "Dua Lipa", url: "https://open.spotify.com/track/3AzjcOeAmA57TIOr9zF1ZW", vibe: "ENERGIZED", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 2, name: "Intentions", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3FbMtvXMcjmuAzlAhgwK0I", vibe: "EMOTIONAL", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 3, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/49j6SvuvWfbEKZKzsHCdLJ", vibe: "DARK POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 4, name: "Physical", artist: "Dua Lipa", url: "https://open.spotify.com/track/3AzjcOeAmA57TIOr9zF1ZW", vibe: "ENERGIZED", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 5, name: "Through The High Wire", artist: "James Blake", url: "https://open.spotify.com/track/0pkmCdVL9F63BEpfM3RBrL", vibe: "MELANCHOLIC", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 6, name: "LOKENECESITAS", artist: "SAIKO & Omar Courtz", url: "https://open.spotify.com/track/1cQx85WypWumn7ZQjUxWQi", vibe: "REGGAETON", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 76, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 65, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 78, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 72, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 60, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 74, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Run to the rhythm", desc: "Pon HBU o Physical y sal 20 min. La energía dance de tu tarde pide descarga física — deja que el BPM guíe el ritmo de tus pasos, no al revés.", time: "20 min" },
-    { icon: "💨", title: "Box breathing 4-4-4-4", desc: "Inhala 4 seg, retén 4, exhala 4, retén 4. Cuatro ciclos. Tu rango emocional de hoy fue amplio — ancla el sistema nervioso antes de la noche.", time: "5 min" },
-    { icon: "📓", title: "El tránsito en papel", desc: "¿De dónde a dónde fuiste emocionalmente hoy? Escribe una línea por cada track clave — sin editar, solo lo que te trajo cada uno.", time: "7 min" },
+    { icon: "🏃", title: "Corre con lo que pesa", desc: "Pon 'Run Boy Run' de Woodkid o 'Physical' de Dua Lipa y sal 20 min. Cuando la música oscila entre peso y energía, el cuerpo necesita resolver esa tensión en movimiento.", time: "20 min" },
+    { icon: "💨", title: "Exhala lo que James Blake trajo", desc: "4 segundos inhala, 7 retén, 8 exhala. Tres ciclos. Tu sesión tuvo mucho peso emocional — este patrón activa el nervio vago y baja el cortisol.", time: "5 min" },
+    { icon: "📓", title: "El push y el pull en papel", desc: "¿Qué te llevó a poner 'Through The High Wire' y luego saltar a SAIKO? Escribe el contraste sin editarlo. Ahí está lo que está pasando.", time: "7 min" },
   ]
 
-  const journalPrompt = "Pasaste de la intimidad de Nsqk en COLORS a la energía de SAIKO en reggaeton en una tarde. ¿Qué estabas buscando en cada uno? ¿Llegaste a encontrarlo?"
-  const quote = { text: "Music gives a soul to the universe, wings to the mind, flight to the imagination, and life to everything.", author: "Plato" }
+  const journalPrompt = "Hoy alternaste entre James Blake y David Guetta, entre Twenty One Pilots y reggaeton. ¿Qué estabas buscando en esa oscilación? ¿Lo encontraste en alguno, o sigues buscando?"
+  const quote = { text: "The whole problem with the world is that fools and fanatics are always so certain of themselves, and wiser people so full of doubts.", author: "Bertrand Russell" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
