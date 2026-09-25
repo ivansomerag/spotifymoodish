@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Fri Sep 25, 2026"
-  const mood = { label: "EUPHORIC", emoji: "🎉", sub: "Taylor Swift new album + Muse + Avicii — todo al máximo, todo a la vez" }
-  const insight = "Tu sesión es un estallido: arrancaste con el nuevo álbum de Taylor Swift (Patient Zero, Pink Clouding, Babylon) y lo mezclaste con Knights of Cydonia de Muse, Iron de Woodkid y Hey Brother de Avicii. Es una energía de celebración y épica — algo grande está pasando o simplemente el día amaneció con todo."
+  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Épica, nostalgia y hype colisionando — tu mente procesa algo grande" }
+  const insight = "Tu sesión de hoy es un arco emocional completo: arrancaste con Taylor Swift nuevo álbum (dreamy, introspective), luego saltaste a Linkin Park y PUNK TACTICS (rabia canalizada), después ABBA y Rascal Flatts (nostalgia pura), y cerraste con RØZ y Paloma Morphy (indie latin suave). Es una sesión de procesamiento — tu cerebro está resolviendo algo mientras la música cambia de registro."
 
   const tracks = [
-    { n: 1, name: "Patient Zero", artist: "Taylor Swift", url: "https://open.spotify.com/track/11hcBLPtbMp4aQI6zGQLub", vibe: "NEW POP", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 1, name: "PUNK TACTICS", artist: "Joey Valence & Brae", url: "https://open.spotify.com/track/2jQ1P0aGT4WkNyJCeoQnb9", vibe: "HYPE HH", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
     { n: 2, name: "Knights of Cydonia", artist: "Muse", url: "https://open.spotify.com/track/7ouMYWpwJ422jRcDASZB7P", vibe: "EPIC ROCK", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 3, name: "Hey Brother", artist: "Avicii", url: "https://open.spotify.com/track/3XOMgW4jVBP3c4LFqe7pH3", vibe: "EDM EMOCIONAL", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 4, name: "Iron", artist: "Woodkid", url: "https://open.spotify.com/track/0j1VVFif10Ib9s3U59adli", vibe: "CINEMATIC", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 3, name: "Given Up", artist: "Linkin Park", url: "https://open.spotify.com/track/2Sru5y6R0mYhV9nEHMDWJ7", vibe: "NU METAL", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 4, name: "Chiquitita", artist: "ABBA", url: "https://open.spotify.com/track/762B4bOcXF7I2Y8UlKTyTy", vibe: "NOSTALGIC", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
     { n: 5, name: "Pink Clouding", artist: "Taylor Swift", url: "https://open.spotify.com/track/3gyJbNBTRVRdZDA1yO3clm", vibe: "DREAM POP", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
-    { n: 6, name: "PUNK TACTICS", artist: "Joey Valence & Brae", url: "https://open.spotify.com/track/2jQ1P0aGT4WkNyJCeoQnb9", vibe: "HYPE HH", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "HBU", artist: "RØZ & Artemas", url: "https://open.spotify.com/track/5aYbkPvZhnu4wMmn0AOrE8", vibe: "LATIN EDM", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 88, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 81, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 76, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 74, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 58, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 63, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏋️", title: "Canaliza la energía", desc: "Con este nivel de energía tu cuerpo pide movimiento físico. 20 minutos de ejercicio intenso con PUNK TACTICS o Knights of Cydonia de fondo — convierte la euforia en potencia.", time: "20 min" },
-    { icon: "🌬️", title: "Baja el pico con intención", desc: "La euforia sostenida agota. Después de tu actividad física, 5 respiraciones caja (4 inhala, 4 retén, 4 exhala, 4 pausa) para aterrizar sin perder el momentum.", time: "5 min" },
-    { icon: "📓", title: "Captura el momento", desc: "¿Qué disparó este mood? Escribe 3 cosas que hoy se sienten posibles. Con una sesión como esta, tu cerebro está en modo expansivo — úsalo.", time: "5 min" },
+    { icon: "🏃", title: "Corre con la tensión", desc: "PUNK TACTICS + Knights of Cydonia tienen suficiente energía para 20 minutos de cardio explosivo. Usa la intensidad que ya traes — no la desperdicies.", time: "20 min" },
+    { icon: "🌬️", title: "Respira entre registros", desc: "Cuando la música salta de ABBA a Linkin Park, tu sistema nervioso también lo siente. 4 respiraciones lentas (inhala 4s, exhala 6s) entre actividades para nivelar el cortisol.", time: "5 min" },
+    { icon: "📓", title: "Escribe la contradicción", desc: "¿Qué parte de ti escucha nostalgia ABBA y cuál escucha Linkin Park al mismo tiempo? Escribe 3 líneas desde cada uno — los dos tienen razón.", time: "8 min" },
   ]
 
-  const journalPrompt = "Pusiste el nuevo álbum de Taylor Swift, luego Muse, luego Avicii, luego Woodkid. Eso no es aleatorio — algo en ti quiere épica hoy. ¿Qué estás a punto de hacer o qué quieres que pase?"
-  const quote = { text: "You have to be burning with an idea, or a problem, or a wrong that you want to right. If you're not passionate enough from the start, you'll never stick it out.", author: "Steve Jobs" }
+  const journalPrompt = "Tu playlist de hoy es una conversación entre la persona que fuiste (ABBA, Rascal Flatts, The Rolling Stones) y la que eres ahora (Taylor Swift nuevo álbum, RØZ, Paloma Morphy). ¿Qué le diría una a la otra?"
+  const quote = { text: "The most common form of despair is not being who you are.", author: "Søren Kierkegaard" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
