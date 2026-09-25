@@ -6,33 +6,33 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Thu Sep 25, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "James Blake + Twenty One Pilots + Dua Lipa — procesando y buscando energía al mismo tiempo" }
-  const insight = "Tu sesión reciente oscila entre lo introspectivo y lo cinético: James Blake 'Through The High Wire', Twenty One Pilots 'Intentions' y Olivia Rodrigo anclan el peso emocional, mientras Dua Lipa 'Physical', David Guetta 'I Run' y SAIKO 'LOKENECESITAS' empujan hacia arriba. Estás procesando algo, pero el cuerpo pide movimiento."
+  const date = "Fri Sep 25, 2026"
+  const mood = { label: "EUPHORIC", emoji: "🎉", sub: "Taylor Swift new album + Muse + Avicii — todo al máximo, todo a la vez" }
+  const insight = "Tu sesión es un estallido: arrancaste con el nuevo álbum de Taylor Swift (Patient Zero, Pink Clouding, Babylon) y lo mezclaste con Knights of Cydonia de Muse, Iron de Woodkid y Hey Brother de Avicii. Es una energía de celebración y épica — algo grande está pasando o simplemente el día amaneció con todo."
 
   const tracks = [
-    { n: 1, name: "tuffluv - A COLORS SHOW", artist: "Nsqk", url: "https://open.spotify.com/track/5dB7dt2zQ2dkmaMu4KB3Cb", vibe: "ALT-POP", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 2, name: "Intentions", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3FbMtvXMcjmuAzlAhgwK0I", vibe: "EMOTIONAL", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 3, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/49j6SvuvWfbEKZKzsHCdLJ", vibe: "DARK POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 4, name: "Physical", artist: "Dua Lipa", url: "https://open.spotify.com/track/3AzjcOeAmA57TIOr9zF1ZW", vibe: "ENERGIZED", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 5, name: "Through The High Wire", artist: "James Blake", url: "https://open.spotify.com/track/0pkmCdVL9F63BEpfM3RBrL", vibe: "MELANCHOLIC", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
-    { n: 6, name: "LOKENECESITAS", artist: "SAIKO & Omar Courtz", url: "https://open.spotify.com/track/1cQx85WypWumn7ZQjUxWQi", vibe: "REGGAETON", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 1, name: "Patient Zero", artist: "Taylor Swift", url: "https://open.spotify.com/track/11hcBLPtbMp4aQI6zGQLub", vibe: "NEW POP", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 2, name: "Knights of Cydonia", artist: "Muse", url: "https://open.spotify.com/track/7ouMYWpwJ422jRcDASZB7P", vibe: "EPIC ROCK", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 3, name: "Hey Brother", artist: "Avicii", url: "https://open.spotify.com/track/3XOMgW4jVBP3c4LFqe7pH3", vibe: "EDM EMOCIONAL", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 4, name: "Iron", artist: "Woodkid", url: "https://open.spotify.com/track/0j1VVFif10Ib9s3U59adli", vibe: "CINEMATIC", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 5, name: "Pink Clouding", artist: "Taylor Swift", url: "https://open.spotify.com/track/3gyJbNBTRVRdZDA1yO3clm", vibe: "DREAM POP", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 6, name: "PUNK TACTICS", artist: "Joey Valence & Brae", url: "https://open.spotify.com/track/2jQ1P0aGT4WkNyJCeoQnb9", vibe: "HYPE HH", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 72, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 60, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 74, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 88, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 81, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 76, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Corre con lo que pesa", desc: "Pon 'Run Boy Run' de Woodkid o 'Physical' de Dua Lipa y sal 20 min. Cuando la música oscila entre peso y energía, el cuerpo necesita resolver esa tensión en movimiento.", time: "20 min" },
-    { icon: "💨", title: "Exhala lo que James Blake trajo", desc: "4 segundos inhala, 7 retén, 8 exhala. Tres ciclos. Tu sesión tuvo mucho peso emocional — este patrón activa el nervio vago y baja el cortisol.", time: "5 min" },
-    { icon: "📓", title: "El push y el pull en papel", desc: "¿Qué te llevó a poner 'Through The High Wire' y luego saltar a SAIKO? Escribe el contraste sin editarlo. Ahí está lo que está pasando.", time: "7 min" },
+    { icon: "🏋️", title: "Canaliza la energía", desc: "Con este nivel de energía tu cuerpo pide movimiento físico. 20 minutos de ejercicio intenso con PUNK TACTICS o Knights of Cydonia de fondo — convierte la euforia en potencia.", time: "20 min" },
+    { icon: "🌬️", title: "Baja el pico con intención", desc: "La euforia sostenida agota. Después de tu actividad física, 5 respiraciones caja (4 inhala, 4 retén, 4 exhala, 4 pausa) para aterrizar sin perder el momentum.", time: "5 min" },
+    { icon: "📓", title: "Captura el momento", desc: "¿Qué disparó este mood? Escribe 3 cosas que hoy se sienten posibles. Con una sesión como esta, tu cerebro está en modo expansivo — úsalo.", time: "5 min" },
   ]
 
-  const journalPrompt = "Hoy alternaste entre James Blake y David Guetta, entre Twenty One Pilots y reggaeton. ¿Qué estabas buscando en esa oscilación? ¿Lo encontraste en alguno, o sigues buscando?"
-  const quote = { text: "The whole problem with the world is that fools and fanatics are always so certain of themselves, and wiser people so full of doubts.", author: "Bertrand Russell" }
+  const journalPrompt = "Pusiste el nuevo álbum de Taylor Swift, luego Muse, luego Avicii, luego Woodkid. Eso no es aleatorio — algo en ti quiere épica hoy. ¿Qué estás a punto de hacer o qué quieres que pase?"
+  const quote = { text: "You have to be burning with an idea, or a problem, or a wrong that you want to right. If you're not passionate enough from the start, you'll never stick it out.", author: "Steve Jobs" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
