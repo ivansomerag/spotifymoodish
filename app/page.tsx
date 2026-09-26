@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Fri Sep 26, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Rock épico, EDM, reggaeton y indie — energía que busca dirección" }
-  const insight = "Tu sesión nocturna mezcla fuerzas opuestas: RAWFEAR de Twenty One Pilots y Knights of Cydonia de Muse anclan todo en rock épico e introspectivo; PUNK TACTICS y Bad Bunny inyectan golpes de hip-hop y reggaeton; RAYE y Paloma Morphy aportan un indie pop más vulnerable. Estás en modo push-pull clásico — buscas energía pero tu escucha siempre regresa a lo emocional."
+  const mood = { label: "MELANCHOLIC", emoji: "🌙", sub: "Twenty One Pilots, Nsqk y Taylor Swift — introspección en modo nocturno" }
+  const insight = "Tu sesión está dominada por una corriente emocional profunda: Drag Path y Nico and the Niners de Twenty One Pilots anclan el tono en angst y reflexión; Nsqk y Paloma Morphy aportan indie-latin introspectivo; 'You're On Your Own, Kid' de Taylor Swift cierra el loop melancólico. Hay destellos de energía con The Chainsmokers y PUNK TACTICS, pero tu escucha siempre regresa al centro emocional."
 
   const tracks = [
-    { n: 1, name: "RAWFEAR", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/43ee3gqWBlPKe2MeGJ2S6I", vibe: "EMO ROCK", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 2, name: "PUNK TACTICS", artist: "Joey Valence & Brae", url: "https://open.spotify.com/track/2jQ1P0aGT4WkNyJCeoQnb9", vibe: "HYPE HH", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 1, name: "Drag Path", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/0TlcczkVTGpinpkGJpT81L", vibe: "EMO ROCK", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 2, name: "You're On Your Own, Kid", artist: "Taylor Swift", url: "https://open.spotify.com/track/4D7BCuvgdJlYvlX5WlN54t", vibe: "SAD POP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
     { n: 3, name: "Au", artist: "Paloma Morphy", url: "https://open.spotify.com/track/1kEufzqJ2fCC9X7K2upW9D", vibe: "ALT POP", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
-    { n: 4, name: "PIToRRO DE COCO", artist: "Bad Bunny", url: "https://open.spotify.com/track/14QaXYIK3K3QPtezqxRRPN", vibe: "TRAP LAT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 5, name: "LIGHTS GO OUT (Major Lazer)", artist: "John Summit", url: "https://open.spotify.com/track/7MbJthHlLAxVt8fbI28ZGC", vibe: "EDM HYPE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 6, name: "Knights of Cydonia", artist: "Muse", url: "https://open.spotify.com/track/7ouMYWpwJ422jRcDASZB7P", vibe: "EPIC ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 4, name: "Nico and the Niners", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/5SehvGGC53A7SZKCLXQcyt", vibe: "EMO ALT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 5, name: "Tarde o temprano", artist: "Nsqk", url: "https://open.spotify.com/track/3AkrjXOl3d8LycQHLHBm94", vibe: "LATIN IND", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 6, name: "Perfectly Alone", artist: "K.Flay", url: "https://open.spotify.com/track/6yjppaAD7BNYNWEEaaqHjt", vibe: "DARK IND", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 72, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 58, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 70, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 55, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 38, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 52, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Cardio de transición", desc: "RAWFEAR y PUNK TACTICS tienen el BPM perfecto para 20 minutos de carrera o caminata rápida. Deja que el rock épico empuje el ritmo — tu cuerpo ya sabe cómo.", time: "20 min" },
-    { icon: "🌬️", title: "Cuadrado de respiración", desc: "Cuando saltas de Muse a Bad Bunny tu sistema nervioso cambia de canal. Inhala 4s, sostén 4s, exhala 4s, sostén 4s — cuatro ciclos para anclar la energía.", time: "5 min" },
-    { icon: "📓", title: "Escribe la transición", desc: "RAWFEAR y Au hablan de estar entre dos estados. ¿Qué estás dejando atrás esta semana? ¿Hacia qué te diriges? Tres oraciones, sin filtro, sin borrar.", time: "8 min" },
+    { icon: "🚶", title: "Caminata consciente", desc: "Con un valence tan bajo, salir 15 minutos sin auriculares permite que el cuerpo procese lo que la música está expresando. Camina lento, respira profundo, regresa más ligero.", time: "15 min" },
+    { icon: "🌬️", title: "Respiración 4-7-8", desc: "Cuando el estado emocional es introspectivo, este patrón calma el sistema nervioso: inhala 4s, sostén 7s, exhala 8s. Tres ciclos antes de dormir o al inicio del día.", time: "5 min" },
+    { icon: "📓", title: "Carta a tu yo de hace un año", desc: "Drag Path y 'You're On Your Own, Kid' hablan de procesar el pasado. Escríbele tres líneas a quien eras hace 12 meses — ¿qué querrías que supiera?", time: "10 min" },
   ]
 
-  const journalPrompt = "Escuchaste rock épico, trap, EDM y indie alternativo en la misma noche. ¿Qué parte de ti estaba buscando energía y qué parte se resistía? Escribe qué emoción ganó al final y por qué."
-  const quote = { text: "Between stimulus and response there is a space. In that space is our power to choose our growth.", author: "Viktor Frankl" }
+  const journalPrompt = "Escuchaste a Twenty One Pilots, Nsqk y Taylor Swift en modo introspectivo esta noche. ¿Qué emoción estás procesando sin nombrarla todavía? Escríbela con tres palabras y luego una oración completa."
+  const quote = { text: "The wound is the place where the Light enters you.", author: "Rumi" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
