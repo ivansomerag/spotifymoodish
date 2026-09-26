@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Sat Sep 26, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Maratón Nsqk + Twenty One Pilots — entre lo íntimo y lo que quiere despertar" }
-  const insight = "Llevas horas en modo Nsqk profundo — LOVELANGUAGE, Tarde o temprano, piel, Cienciaficción — un latin-indie que mezcla vulnerabilidad y calma. Twenty One Pilots ancla el peso emocional con RAWFEAR y Nico and the Niners, pero The Chainsmokers, SOFI TUKKER y PUNK TACTICS irrumpen con energía, como si algo en ti ya quisiera moverse hacia el sábado."
+  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Nsqk en maratón nocturno — latin-indie íntimo que lucha contra el EDM que quiere despertar" }
+  const insight = "Desde medianoche has vivido casi exclusivamente en el universo de Nsqk — BAD INTENCIONES, Blamegame, LOVELANGUAGE, NADIE MÁS!, Hombre De Bien — un latin-indie que procesa en voz baja. Twenty One Pilots (Drag Path, Nico and the Niners, RAWFEAR) añade el peso emocional emo, mientras SOFI TUKKER, The Chainsmokers y Paloma Morphy asoman como señales de que el sábado ya quiere otra energía."
 
   const tracks = [
-    { n: 1, name: "LOVELANGUAGE", artist: "Nsqk", url: "https://open.spotify.com/track/5GzLhigmoOXYjX9uEWNZIn", vibe: "LATIN IND", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 1, name: "BAD INTENCIONES", artist: "Nsqk", url: "https://open.spotify.com/track/0Sge4cEIyNeTehIWk1rlos", vibe: "LATIN IND", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
     { n: 2, name: "Tarde o temprano", artist: "Nsqk", url: "https://open.spotify.com/track/3AkrjXOl3d8LycQHLHBm94", vibe: "LATIN IND", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 3, name: "Nico and the Niners", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/5SehvGGC53A7SZKCLXQcyt", vibe: "EMO ALT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 4, name: "Patient Zero", artist: "Taylor Swift", url: "https://open.spotify.com/track/11hcBLPtbMp4aQI6zGQLub", vibe: "POP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 5, name: "RAWFEAR", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/04aQ0a2yjHueu7djMLoHBG", vibe: "MODERN ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "Au", artist: "Paloma Morphy", url: "https://open.spotify.com/track/1kEufzqJ2fCC9X7K2upW9D", vibe: "ALT POP", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 3, name: "Drag Path", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/0TlcczkVTGpinpkGJpT81L", vibe: "EMO ALT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 4, name: "COOK", artist: "SOFI TUKKER & J Balvin", url: "https://open.spotify.com/track/4H2rI43vuXJuUrRIMxknzA", vibe: "EDM", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "Au", artist: "Paloma Morphy", url: "https://open.spotify.com/track/1kEufzqJ2fCC9X7K2upW9D", vibe: "ALT POP", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "LAS PRIMERAS FLORES", artist: "legallyrxx & Nsqk", url: "https://open.spotify.com/track/5uqczHBwq5jCxlhfOmzMPm", vibe: "LATIN IND", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 62, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 45, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 60, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 58, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 42, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 63, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Salida de 20 minutos", desc: "Tu escucha tiene energía acumulada sin salida física — The Chainsmokers y PUNK TACTICS lo dicen. Un trote corto al amanecer del sábado convierte esa tensión en momentum real.", time: "20 min" },
-    { icon: "🌬️", title: "Respiración alternada", desc: "Para un estado transitional, la respiración nasal alterna (nadi shodhana) equilibra los dos hemisferios. 5 ciclos: tapa fosa derecha, inhala izquierda, alterna, exhala. Ancla el día.", time: "5 min" },
-    { icon: "📓", title: "¿Qué estás dejando atrás esta semana?", desc: "Nsqk en bucle y Twenty One Pilots hablan de transición. Escribe una cosa concreta que quieres que quede en la semana pasada — y una intención para el sábado.", time: "10 min" },
+    { icon: "☀️", title: "Ritual de mañana lenta", desc: "Llevas la noche entera procesando con Nsqk — el sábado pide lo contrario. Sal 10 minutos al exterior sin teléfono, deja que la luz del día resetee el ritmo circadiano y marque el inicio de algo nuevo.", time: "10 min" },
+    { icon: "🌬️", title: "Respiración 4-7-8 para cerrar la noche", desc: "Drag Path y Blamegame indican tensión emocional no resuelta. Inhala 4 segundos, retén 7, exhala lentamente 8. Tres ciclos completos. Cierra lo que quedó abierto anoche.", time: "5 min" },
+    { icon: "📓", title: "¿Qué quieres que sea diferente hoy?", desc: "Tu maratón Nsqk nocturno habla de algo que estás procesando. Escribe solo una frase: qué quieres dejar en la noche pasada y cómo quieres que sea este sábado.", time: "8 min" },
   ]
 
-  const journalPrompt = "Llevas horas con Nsqk y Twenty One Pilots. Algo estás procesando en silencio. ¿Qué es lo que todavía no le has dicho a nadie esta semana? Empieza con 'Hoy me doy cuenta de que…'"
-  const quote = { text: "Every new beginning comes from some other beginning's end.", author: "Seneca" }
+  const journalPrompt = "Llevas horas con Nsqk en silencio — BAD INTENCIONES, Blamegame, Tarde o temprano. ¿Qué conversación interna estuviste teniendo? Empieza con 'Anoche me di cuenta de que…' y escribe sin filtro."
+  const quote = { text: "The first hour of the morning is the rudder of the day.", author: "Henry Ward Beecher" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
