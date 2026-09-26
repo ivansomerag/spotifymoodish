@@ -6,33 +6,33 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Fri Sep 26, 2026"
-  const mood = { label: "MELANCHOLIC", emoji: "🌙", sub: "Twenty One Pilots, Nsqk y Taylor Swift — introspección en modo nocturno" }
-  const insight = "Tu sesión está dominada por una corriente emocional profunda: Drag Path y Nico and the Niners de Twenty One Pilots anclan el tono en angst y reflexión; Nsqk y Paloma Morphy aportan indie-latin introspectivo; 'You're On Your Own, Kid' de Taylor Swift cierra el loop melancólico. Hay destellos de energía con The Chainsmokers y PUNK TACTICS, pero tu escucha siempre regresa al centro emocional."
+  const date = "Sat Sep 26, 2026"
+  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Maratón Nsqk + Twenty One Pilots — entre lo íntimo y lo que quiere despertar" }
+  const insight = "Llevas horas en modo Nsqk profundo — LOVELANGUAGE, Tarde o temprano, piel, Cienciaficción — un latin-indie que mezcla vulnerabilidad y calma. Twenty One Pilots ancla el peso emocional con RAWFEAR y Nico and the Niners, pero The Chainsmokers, SOFI TUKKER y PUNK TACTICS irrumpen con energía, como si algo en ti ya quisiera moverse hacia el sábado."
 
   const tracks = [
-    { n: 1, name: "Drag Path", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/0TlcczkVTGpinpkGJpT81L", vibe: "EMO ROCK", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 2, name: "You're On Your Own, Kid", artist: "Taylor Swift", url: "https://open.spotify.com/track/4D7BCuvgdJlYvlX5WlN54t", vibe: "SAD POP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 3, name: "Au", artist: "Paloma Morphy", url: "https://open.spotify.com/track/1kEufzqJ2fCC9X7K2upW9D", vibe: "ALT POP", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
-    { n: 4, name: "Nico and the Niners", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/5SehvGGC53A7SZKCLXQcyt", vibe: "EMO ALT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 5, name: "Tarde o temprano", artist: "Nsqk", url: "https://open.spotify.com/track/3AkrjXOl3d8LycQHLHBm94", vibe: "LATIN IND", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 6, name: "Perfectly Alone", artist: "K.Flay", url: "https://open.spotify.com/track/6yjppaAD7BNYNWEEaaqHjt", vibe: "DARK IND", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 1, name: "LOVELANGUAGE", artist: "Nsqk", url: "https://open.spotify.com/track/5GzLhigmoOXYjX9uEWNZIn", vibe: "LATIN IND", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "Tarde o temprano", artist: "Nsqk", url: "https://open.spotify.com/track/3AkrjXOl3d8LycQHLHBm94", vibe: "LATIN IND", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 3, name: "Nico and the Niners", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/5SehvGGC53A7SZKCLXQcyt", vibe: "EMO ALT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 4, name: "Patient Zero", artist: "Taylor Swift", url: "https://open.spotify.com/track/11hcBLPtbMp4aQI6zGQLub", vibe: "POP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "RAWFEAR", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/04aQ0a2yjHueu7djMLoHBG", vibe: "MODERN ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "Au", artist: "Paloma Morphy", url: "https://open.spotify.com/track/1kEufzqJ2fCC9X7K2upW9D", vibe: "ALT POP", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 55, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 38, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 52, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 62, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 45, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 60, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Caminata consciente", desc: "Con un valence tan bajo, salir 15 minutos sin auriculares permite que el cuerpo procese lo que la música está expresando. Camina lento, respira profundo, regresa más ligero.", time: "15 min" },
-    { icon: "🌬️", title: "Respiración 4-7-8", desc: "Cuando el estado emocional es introspectivo, este patrón calma el sistema nervioso: inhala 4s, sostén 7s, exhala 8s. Tres ciclos antes de dormir o al inicio del día.", time: "5 min" },
-    { icon: "📓", title: "Carta a tu yo de hace un año", desc: "Drag Path y 'You're On Your Own, Kid' hablan de procesar el pasado. Escríbele tres líneas a quien eras hace 12 meses — ¿qué querrías que supiera?", time: "10 min" },
+    { icon: "🏃", title: "Salida de 20 minutos", desc: "Tu escucha tiene energía acumulada sin salida física — The Chainsmokers y PUNK TACTICS lo dicen. Un trote corto al amanecer del sábado convierte esa tensión en momentum real.", time: "20 min" },
+    { icon: "🌬️", title: "Respiración alternada", desc: "Para un estado transitional, la respiración nasal alterna (nadi shodhana) equilibra los dos hemisferios. 5 ciclos: tapa fosa derecha, inhala izquierda, alterna, exhala. Ancla el día.", time: "5 min" },
+    { icon: "📓", title: "¿Qué estás dejando atrás esta semana?", desc: "Nsqk en bucle y Twenty One Pilots hablan de transición. Escribe una cosa concreta que quieres que quede en la semana pasada — y una intención para el sábado.", time: "10 min" },
   ]
 
-  const journalPrompt = "Escuchaste a Twenty One Pilots, Nsqk y Taylor Swift en modo introspectivo esta noche. ¿Qué emoción estás procesando sin nombrarla todavía? Escríbela con tres palabras y luego una oración completa."
-  const quote = { text: "The wound is the place where the Light enters you.", author: "Rumi" }
+  const journalPrompt = "Llevas horas con Nsqk y Twenty One Pilots. Algo estás procesando en silencio. ¿Qué es lo que todavía no le has dicho a nadie esta semana? Empieza con 'Hoy me doy cuenta de que…'"
+  const quote = { text: "Every new beginning comes from some other beginning's end.", author: "Seneca" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
