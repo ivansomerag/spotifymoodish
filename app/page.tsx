@@ -7,8 +7,8 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Sat Sep 26, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Nsqk en maratón nocturno — latin-indie íntimo que lucha contra el EDM que quiere despertar" }
-  const insight = "Desde medianoche has vivido casi exclusivamente en el universo de Nsqk — BAD INTENCIONES, Blamegame, LOVELANGUAGE, NADIE MÁS!, Hombre De Bien — un latin-indie que procesa en voz baja. Twenty One Pilots (Drag Path, Nico and the Niners, RAWFEAR) añade el peso emocional emo, mientras SOFI TUKKER, The Chainsmokers y Paloma Morphy asoman como señales de que el sábado ya quiere otra energía."
+  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Nsqk sigue dominando la madrugada — latin-indie íntimo sostenido por emo rock y destellos de house que buscan arrancar el sábado" }
+  const insight = "La madrugada fue casi enteramente Nsqk — LOVELANGUAGE en loop, BAD INTENCIONES, Tarde o temprano, NADIE MÁS! — un universo latin-indie que procesa en voz baja sin prisa. Twenty One Pilots (Nico and the Niners, RAWFEAR, Fake You Out) suma el peso emo-rock, mientras Paloma Morphy, The Chainsmokers y SOFI TUKKER empujan sutilmente hacia la energía que el sábado de mañana va a pedir."
 
   const tracks = [
     { n: 1, name: "BAD INTENCIONES", artist: "Nsqk", url: "https://open.spotify.com/track/0Sge4cEIyNeTehIWk1rlos", vibe: "LATIN IND", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
@@ -20,19 +20,19 @@ export default function WellnessDashboard() {
   ]
 
   const meters = [
-    { label: "Energy",       value: 58, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 42, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 63, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 55, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 44, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 62, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "☀️", title: "Ritual de mañana lenta", desc: "Llevas la noche entera procesando con Nsqk — el sábado pide lo contrario. Sal 10 minutos al exterior sin teléfono, deja que la luz del día resetee el ritmo circadiano y marque el inicio de algo nuevo.", time: "10 min" },
-    { icon: "🌬️", title: "Respiración 4-7-8 para cerrar la noche", desc: "Drag Path y Blamegame indican tensión emocional no resuelta. Inhala 4 segundos, retén 7, exhala lentamente 8. Tres ciclos completos. Cierra lo que quedó abierto anoche.", time: "5 min" },
-    { icon: "📓", title: "¿Qué quieres que sea diferente hoy?", desc: "Tu maratón Nsqk nocturno habla de algo que estás procesando. Escribe solo una frase: qué quieres dejar en la noche pasada y cómo quieres que sea este sábado.", time: "8 min" },
+    { icon: "🌅", title: "Sal a la luz del sábado", desc: "Llevas la madrugada en el universo íntimo de Nsqk y Twenty One Pilots. El cuerpo necesita reinicio sensorial: sal 10 minutos al exterior sin teléfono, deja que la luz natural reajuste el cortisol y señale que el día ya empezó.", time: "10 min" },
+    { icon: "🌬️", title: "Exhala lo que procesaste anoche", desc: "LOVELANGUAGE en loop y Drag Path indican carga emocional sostenida. Inhala por 4 segundos, retén 7, exhala lentamente en 8. Repite 3 ciclos. Es la transición que tu sistema nervioso necesita.", time: "5 min" },
+    { icon: "📓", title: "¿Qué llevas cargando que hoy puedes soltar?", desc: "Una madrugada entera con Nsqk habla de algo que no terminaste de procesar. Escribe una sola frase: qué quedó sin cerrar anoche y qué quieres que sea diferente en este sábado.", time: "8 min" },
   ]
 
-  const journalPrompt = "Llevas horas con Nsqk en silencio — BAD INTENCIONES, Blamegame, Tarde o temprano. ¿Qué conversación interna estuviste teniendo? Empieza con 'Anoche me di cuenta de que…' y escribe sin filtro."
-  const quote = { text: "The first hour of the morning is the rudder of the day.", author: "Henry Ward Beecher" }
+  const journalPrompt = "Nsqk en loop toda la madrugada — LOVELANGUAGE, Tarde o temprano, piel. ¿Qué estabas pensando mientras sonaban? Empieza con 'La noche de ayer me dejó pensando en…' y escribe sin censura."
+  const quote = { text: "Even the darkest night will end and the sun will rise.", author: "Victor Hugo" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
