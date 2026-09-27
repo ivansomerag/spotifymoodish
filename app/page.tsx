@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Sat Sep 26, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Nsqk sigue dominando la madrugada — latin-indie íntimo sostenido por emo rock y destellos de house que buscan arrancar el sábado" }
-  const insight = "La madrugada fue casi enteramente Nsqk — LOVELANGUAGE en loop, BAD INTENCIONES, Tarde o temprano, NADIE MÁS! — un universo latin-indie que procesa en voz baja sin prisa. Twenty One Pilots (Nico and the Niners, RAWFEAR, Fake You Out) suma el peso emo-rock, mientras Paloma Morphy, The Chainsmokers y SOFI TUKKER empujan sutilmente hacia la energía que el sábado de mañana va a pedir."
+  const mood = { label: "MELANCHOLIC", emoji: "🌧️", sub: "Trilogía Coldplay al atardecer, James Blake de fondo — la tarde cayó suave y oscura" }
+  const insight = "La tarde fue un viaje hacia adentro: Zoé con Karmadame y Arrullo De Estrellas, Little Jesus con TQM, y después la trilogía Coldplay — Sparks, Yellow, Princess of China — rematada con el cover de 'when the party's over' de James Blake. Hay algo bello y deliberado en esta secuencia: no es tristeza accidental, es introspección elegida mientras el sábado se apagaba despacio."
 
   const tracks = [
-    { n: 1, name: "BAD INTENCIONES", artist: "Nsqk", url: "https://open.spotify.com/track/0Sge4cEIyNeTehIWk1rlos", vibe: "LATIN IND", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "Tarde o temprano", artist: "Nsqk", url: "https://open.spotify.com/track/3AkrjXOl3d8LycQHLHBm94", vibe: "LATIN IND", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 3, name: "Drag Path", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/0TlcczkVTGpinpkGJpT81L", vibe: "EMO ALT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 4, name: "COOK", artist: "SOFI TUKKER & J Balvin", url: "https://open.spotify.com/track/4H2rI43vuXJuUrRIMxknzA", vibe: "EDM", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 5, name: "Au", artist: "Paloma Morphy", url: "https://open.spotify.com/track/1kEufzqJ2fCC9X7K2upW9D", vibe: "ALT POP", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "LAS PRIMERAS FLORES", artist: "legallyrxx & Nsqk", url: "https://open.spotify.com/track/5uqczHBwq5jCxlhfOmzMPm", vibe: "LATIN IND", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 1, name: "Karmadame", artist: "Zoé", url: "https://open.spotify.com/track/1xO5aVaGg8ksIuH1TL9Ba3", vibe: "ROCK ES", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "Yellow", artist: "Coldplay", url: "https://open.spotify.com/track/3AJwUDP919kvQ9QcozQPxg", vibe: "BRIT POP", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 3, name: "Sparks", artist: "Coldplay", url: "https://open.spotify.com/track/7D0RhFcb3CrfPuTJ0obrod", vibe: "MELANCOL", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 4, name: "when the party's over", artist: "James Blake", url: "https://open.spotify.com/track/0U9oiRl4hYwORmWwkYihZN", vibe: "SAD SOUL", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "TQM", artist: "Little Jesus & Ximena Sariñana", url: "https://open.spotify.com/track/3ugSNE8PdPr2sfRWSNfCtX", vibe: "MEX IND", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "Arrullo De Estrellas", artist: "Zoé", url: "https://open.spotify.com/track/1p4rYrxjVkj6v2eMzRhLfA", vibe: "ROCK ES", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 55, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 44, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 62, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 42, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 35, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 48, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🌅", title: "Sal a la luz del sábado", desc: "Llevas la madrugada en el universo íntimo de Nsqk y Twenty One Pilots. El cuerpo necesita reinicio sensorial: sal 10 minutos al exterior sin teléfono, deja que la luz natural reajuste el cortisol y señale que el día ya empezó.", time: "10 min" },
-    { icon: "🌬️", title: "Exhala lo que procesaste anoche", desc: "LOVELANGUAGE en loop y Drag Path indican carga emocional sostenida. Inhala por 4 segundos, retén 7, exhala lentamente en 8. Repite 3 ciclos. Es la transición que tu sistema nervioso necesita.", time: "5 min" },
-    { icon: "📓", title: "¿Qué llevas cargando que hoy puedes soltar?", desc: "Una madrugada entera con Nsqk habla de algo que no terminaste de procesar. Escribe una sola frase: qué quedó sin cerrar anoche y qué quieres que sea diferente en este sábado.", time: "8 min" },
+    { icon: "🚶", title: "Camina sin destino, 15 minutos", desc: "Coldplay + Zoé al atardecer piden movimiento lento, no ejercicio. Sal a caminar sin ruta fija, sin auriculares — deja que el cuerpo procese lo que la música empezó a remover.", time: "15 min" },
+    { icon: "🕯️", title: "Respiración 4-7-8 para soltar tensión", desc: "'when the party's over' en la lista indica que algo terminó o está terminando emocionalmente. Inhala 4s, retén 7s, exhala 8s — tres ciclos completos. Activa el nervio vago y cierra el loop.", time: "5 min" },
+    { icon: "✍️", title: "¿Qué estás dejando ir esta tarde?", desc: "Una secuencia Sparks → Yellow → James Blake no es casualidad. Escribe una frase sin censura: qué persona, situación o versión de ti mismo estás despidiendo con esta playlist.", time: "10 min" },
   ]
 
-  const journalPrompt = "Nsqk en loop toda la madrugada — LOVELANGUAGE, Tarde o temprano, piel. ¿Qué estabas pensando mientras sonaban? Empieza con 'La noche de ayer me dejó pensando en…' y escribe sin censura."
-  const quote = { text: "Even the darkest night will end and the sun will rise.", author: "Victor Hugo" }
+  const journalPrompt = "Pusiste Sparks, Yellow, Princess of China — y después James Blake. ¿Qué estabas sintiendo mientras los escuchabas? Empieza con: 'Esta tarde me di cuenta de que…' y escribe lo que sea verdad."
+  const quote = { text: "The wound is the place where the Light enters you.", author: "Rumi" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
