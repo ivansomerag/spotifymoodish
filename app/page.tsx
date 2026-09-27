@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Sun Sep 27, 2026"
-  const mood = { label: "ENERGIZED", emoji: "⚡", sub: "Woodkid, Muse y Avicii encendieron el domingo — épico, cinético, con nostalgia de Macklemore y One Direction de fondo" }
-  const insight = "La mañana arrancó con house electrónico (Tight Dress, Killen) y escaló rápido: Woodkid puso la escena épica, Muse con Knights of Cydonia elevó la intensidad, Linkin Park y DragonForce al rojo vivo. Avicii y Subtronics/ILLENIUM como puente hacia el drop. Debajo corre una vena nostálgica fuerte — Macklemore 2012, One Direction, Mac Miller, Paint It Black — la energía de hoy está blindada con throwbacks. Es un domingo de acción con corazón retro."
+  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Domingo que navega entre lo épico y lo íntimo — Woodkid a Iron, Natalia Lafourcade, Nsqk y Kendrick en un mismo flujo" }
+  const insight = "La tarde del domingo muestra un Ivan en modo explorador: empezó con Woodkid (Iron, Run Boy Run) — cinematográfico y urgente — luego escaló a Muse, Linkin Park, DragonForce y Subtronics/ILLENIUM para el pico de intensidad. Después bajó suave con Nsqk, La Llorona de Natalia Lafourcade y Aleks Syntek — regresando a raíces latinas e íntimas. Un swing amplio entre lo épico y lo nostálgico-sentimental que define claramente un estado TRANSITIONAL: procesando algo mientras la tarde avanza."
 
   const tracks = [
-    { n: 1, name: "Run Boy Run", artist: "Woodkid", url: "https://open.spotify.com/track/0boS4e6uXwp3zAvz1mLxZS", vibe: "EPIC", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 1, name: "Iron", artist: "Woodkid", url: "https://open.spotify.com/track/0j1VVFif10Ib9s3U59adli", vibe: "CINEMATIC", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
     { n: 2, name: "Knights of Cydonia", artist: "Muse", url: "https://open.spotify.com/track/7ouMYWpwJ422jRcDASZB7P", vibe: "ALT ROCK", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 3, name: "Hey Brother", artist: "Avicii", url: "https://open.spotify.com/track/3XOMgW4jVBP3c4LFqe7pH3", vibe: "EDM", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 4, name: "Can't Hold Us", artist: "Macklemore & Ryan Lewis", url: "https://open.spotify.com/track/22skzmqfdWrjJylampe0kt", vibe: "NOSTALGIA", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 5, name: "Physical", artist: "Dua Lipa", url: "https://open.spotify.com/track/3AzjcOeAmA57TIOr9zF1ZW", vibe: "DANCE POP", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "Given Up", artist: "Linkin Park", url: "https://open.spotify.com/track/2Sru5y6R0mYhV9nEHMDWJ7", vibe: "NU METAL", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 3, name: "Got Away", artist: "Subtronics & ILLENIUM", url: "https://open.spotify.com/track/0ezzY28pW6MYCb5RLkWQg8", vibe: "DUBSTEP", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 4, name: "Hey Brother", artist: "Avicii", url: "https://open.spotify.com/track/3XOMgW4jVBP3c4LFqe7pH3", vibe: "EDM", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "Hombre De Bien", artist: "Nsqk", url: "https://open.spotify.com/track/2FkhJgD9FUnaoAxbWv6cyy", vibe: "LATIN INDIE", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "La Llorona", artist: "Natalia Lafourcade", url: "https://open.spotify.com/track/1WcVu6GCEcThyJBBZovFNv", vibe: "NOSTÁLGICO", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 78, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 65, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 68, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 72, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 54, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 58, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Corre o entrena con esta energía", desc: "Tu playlist de hoy es literalmente un soundtrack de película de acción. Woodkid, Muse y Linkin Park están hechos para el movimiento físico intenso. Úsalos — sal a correr, haz un circuito, lo que sea que te haga sentir el cuerpo.", time: "20 min" },
-    { icon: "🎯", title: "Define tu objetivo del día", desc: "La energía de Macklemore y Avicii en modo 'Can't Hold Us' es señal de que hoy tienes impulso real. Escribe una sola meta concreta que quieras completar antes de que caiga el sol. Una, específica, alcanzable hoy.", time: "5 min" },
-    { icon: "✍️", title: "¿Qué estás corriendo o hacia qué?", desc: "Run Boy Run de Woodkid no es solo energía — es urgencia. Pregúntate: ¿estás corriendo hacia algo o alejándote de algo? Escribe tres oraciones sin pensar demasiado. La respuesta está en la canción que elegiste.", time: "7 min" },
+    { icon: "🚶", title: "Camina sin destino fijo", desc: "El swing entre Woodkid y Natalia Lafourcade dice que hoy tu cuerpo necesita movimiento tranquilo, no explosivo. Una caminata de 20 minutos sin teléfono ni destino — deja que la mente procese lo que la música ya está procesando.", time: "20 min" },
+    { icon: "🌬️", title: "Respiración 4-7-8 para aterrizar", desc: "Cuando saltas de DragonForce a La Llorona en una tarde, tu sistema nervioso está navegando mucho terreno emocional. Tres rondas de 4-7-8 (inhala 4s, sostén 7s, exhala 8s) te devuelven al centro antes de que caiga el sol.", time: "5 min" },
+    { icon: "✍️", title: "¿Qué está en tránsito hoy?", desc: "TRANSITIONAL no es un mood al azar — aparece cuando algo está cambiando. Iron de Woodkid habla de urgencia; La Llorona habla de pérdida y memoria. Escribe: ¿qué está terminando o empezando en tu vida esta semana?", time: "8 min" },
   ]
 
-  const journalPrompt = "Tu domingo arrancó con épica cinematográfica, metal, EDM y nostalgia de 2012. ¿Qué estás preparando o celebrando hoy? Empieza con: 'Esta energía es para…'"
-  const quote = { text: "The energy you bring, positive or negative, dictates your perceptions.", author: "Joe Rogan" }
+  const journalPrompt = "Hoy fuiste de lo épico-cinematográfico (Woodkid, Muse) a lo íntimo-nostálgico (Natalia Lafourcade, Nsqk) en pocas horas. ¿Qué parte de ti estaba buscando cada una de esas canciones? Empieza con: 'Esta tarde necesitaba escuchar…'"
+  const quote = { text: "Music gives a soul to the universe, wings to the mind, flight to the imagination, and life to everything.", author: "Plato" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
