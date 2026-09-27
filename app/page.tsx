@@ -6,33 +6,33 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Sat Sep 26, 2026"
-  const mood = { label: "MELANCHOLIC", emoji: "🌧️", sub: "Trilogía Coldplay al atardecer, James Blake de fondo — la tarde cayó suave y oscura" }
-  const insight = "La tarde fue un viaje hacia adentro: Zoé con Karmadame y Arrullo De Estrellas, Little Jesus con TQM, y después la trilogía Coldplay — Sparks, Yellow, Princess of China — rematada con el cover de 'when the party's over' de James Blake. Hay algo bello y deliberado en esta secuencia: no es tristeza accidental, es introspección elegida mientras el sábado se apagaba despacio."
+  const date = "Sun Sep 27, 2026"
+  const mood = { label: "TRANSITIONAL", emoji: "🌀", sub: "Trueno y Muse abren la noche, ODESZA la lleva al cosmos — el sábado cerró con un viaje de géneros" }
+  const insight = "La noche arrancó con PUMAS de Trueno y Milo j (latin trap con alma de barrio), giró hacia Muse y rock alternativo, luego se disolvió en el house cinematográfico de ODESZA y Fred again.. Ahí dentro: Taylor Swift y Polo & Pan moviendo el centro emocional, Stromae y CHVRCHES añadiendo melancolía electrónica. No hay un mood claro porque no hace falta — es una mente procesando el fin de semana con toda su complejidad simultánea."
 
   const tracks = [
-    { n: 1, name: "Karmadame", artist: "Zoé", url: "https://open.spotify.com/track/1xO5aVaGg8ksIuH1TL9Ba3", vibe: "ROCK ES", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "Yellow", artist: "Coldplay", url: "https://open.spotify.com/track/3AJwUDP919kvQ9QcozQPxg", vibe: "BRIT POP", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 3, name: "Sparks", artist: "Coldplay", url: "https://open.spotify.com/track/7D0RhFcb3CrfPuTJ0obrod", vibe: "MELANCOL", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 4, name: "when the party's over", artist: "James Blake", url: "https://open.spotify.com/track/0U9oiRl4hYwORmWwkYihZN", vibe: "SAD SOUL", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 5, name: "TQM", artist: "Little Jesus & Ximena Sariñana", url: "https://open.spotify.com/track/3ugSNE8PdPr2sfRWSNfCtX", vibe: "MEX IND", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "Arrullo De Estrellas", artist: "Zoé", url: "https://open.spotify.com/track/1p4rYrxjVkj6v2eMzRhLfA", vibe: "ROCK ES", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 1, name: "PUMAS", artist: "Trueno & Milo j", url: "https://open.spotify.com/track/5Iu46UfunYa0I5CFGAW59y", vibe: "LAT TRAP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "The Last Goodbye", artist: "ODESZA & Bettye LaVette", url: "https://open.spotify.com/track/2gQK13gXYZRq2MgvPJyHx8", vibe: "CINE EDM", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 3, name: "Plug in Baby", artist: "Muse", url: "https://open.spotify.com/track/2UKARCqDrhkYDoVR4FN5Wi", vibe: "ALT ROCK", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 4, name: "Holding on to You", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3C3cr2JQwXIhqAHqOardVO", vibe: "EMO POP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "Canopée", artist: "Polo & Pan", url: "https://open.spotify.com/track/260V7huyJrXnyYe0dFv2Fa", vibe: "FRENCH EL", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "just stand there", artist: "Fred again.. & SOAK", url: "https://open.spotify.com/track/2D9a9CXeo3HFtVeaNlzp4a", vibe: "UK HOUSE", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 42, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 35, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 48, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 65, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 52, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 61, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Camina sin destino, 15 minutos", desc: "Coldplay + Zoé al atardecer piden movimiento lento, no ejercicio. Sal a caminar sin ruta fija, sin auriculares — deja que el cuerpo procese lo que la música empezó a remover.", time: "15 min" },
-    { icon: "🕯️", title: "Respiración 4-7-8 para soltar tensión", desc: "'when the party's over' en la lista indica que algo terminó o está terminando emocionalmente. Inhala 4s, retén 7s, exhala 8s — tres ciclos completos. Activa el nervio vago y cierra el loop.", time: "5 min" },
-    { icon: "✍️", title: "¿Qué estás dejando ir esta tarde?", desc: "Una secuencia Sparks → Yellow → James Blake no es casualidad. Escribe una frase sin censura: qué persona, situación o versión de ti mismo estás despidiendo con esta playlist.", time: "10 min" },
+    { icon: "🏃", title: "10 minutos de movimiento libre", desc: "Trueno + Muse en la misma sesión piden liberación física. Pon PUMAS al tope y mueve el cuerpo sin estructura — saltar, estirarte, lo que salga. Energía acumulada que necesita salida.", time: "10 min" },
+    { icon: "🌬️", title: "Box breathing para integrar el viaje", desc: "Después de un recorrido tan ecléctico — trap, rock, house, pop — el sistema nervioso necesita anclar. Inhala 4s, retén 4s, exhala 4s, retén 4s. Cuatro rondas completas antes de dormir.", time: "5 min" },
+    { icon: "✍️", title: "¿Qué versión de ti escuchó todo eso?", desc: "De Trueno a ODESZA a Fred again.. en una misma noche: escribe qué estado de ánimo guió cada cambio. No hay respuesta correcta — el objetivo es nombrar el viaje antes de que se olvide.", time: "8 min" },
   ]
 
-  const journalPrompt = "Pusiste Sparks, Yellow, Princess of China — y después James Blake. ¿Qué estabas sintiendo mientras los escuchabas? Empieza con: 'Esta tarde me di cuenta de que…' y escribe lo que sea verdad."
-  const quote = { text: "The wound is the place where the Light enters you.", author: "Rumi" }
+  const journalPrompt = "Tu lista de esta noche pasó por trap callejero, rock de estadio, y house cinematográfico. ¿Cuál fue el track que más te movió por dentro y por qué? Empieza con: 'Lo que más sentí fue…'"
+  const quote = { text: "Not all those who wander are lost.", author: "J.R.R. Tolkien" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
