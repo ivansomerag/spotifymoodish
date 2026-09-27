@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Sun Sep 27, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌀", sub: "Trueno y Muse abren la noche, ODESZA la lleva al cosmos — el sábado cerró con un viaje de géneros" }
-  const insight = "La noche arrancó con PUMAS de Trueno y Milo j (latin trap con alma de barrio), giró hacia Muse y rock alternativo, luego se disolvió en el house cinematográfico de ODESZA y Fred again.. Ahí dentro: Taylor Swift y Polo & Pan moviendo el centro emocional, Stromae y CHVRCHES añadiendo melancolía electrónica. No hay un mood claro porque no hace falta — es una mente procesando el fin de semana con toda su complejidad simultánea."
+  const mood = { label: "TRANSITIONAL", emoji: "🌀", sub: "La Llorona al amanecer, Twenty One Pilots al anochecer — la madrugada viaja del folk profundo al emo y al reggaeton" }
+  const insight = "La madrugada abrió con La Llorona de Natalia Lafourcade (folk emotivo, raíces profundas) y cerró con Annihilate del Spider-Verse y Latin pop de Danny Ocean. En el medio: Twenty One Pilots en modo introspectivo, Taylor Swift en modo cálido, Polo & Pan flotando, Stromae con su melancolía elegante. Es una mente que procesa el fin de semana — pasando por capas de nostalgia, energía contenida y conexión emocional sin resolverse en un solo género."
 
   const tracks = [
-    { n: 1, name: "PUMAS", artist: "Trueno & Milo j", url: "https://open.spotify.com/track/5Iu46UfunYa0I5CFGAW59y", vibe: "LAT TRAP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "The Last Goodbye", artist: "ODESZA & Bettye LaVette", url: "https://open.spotify.com/track/2gQK13gXYZRq2MgvPJyHx8", vibe: "CINE EDM", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 3, name: "Plug in Baby", artist: "Muse", url: "https://open.spotify.com/track/2UKARCqDrhkYDoVR4FN5Wi", vibe: "ALT ROCK", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 4, name: "Holding on to You", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3C3cr2JQwXIhqAHqOardVO", vibe: "EMO POP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 1, name: "La Llorona", artist: "Natalia Lafourcade", url: "https://open.spotify.com/track/1WcVu6GCEcThyJBBZovFNv", vibe: "LAT FOLK", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "Holding on to You", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3C3cr2JQwXIhqAHqOardVO", vibe: "EMO POP", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 3, name: "Story of My Life", artist: "One Direction", url: "https://open.spotify.com/track/4nVBt6MZDDP6tRVdQTgxJg", vibe: "NOSTALGIA", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 4, name: "Call It What You Want", artist: "Taylor Swift", url: "https://open.spotify.com/track/1GwMQaZz6Au3QLDbjbMdme", vibe: "SOFT POP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
     { n: 5, name: "Canopée", artist: "Polo & Pan", url: "https://open.spotify.com/track/260V7huyJrXnyYe0dFv2Fa", vibe: "FRENCH EL", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "just stand there", artist: "Fred again.. & SOAK", url: "https://open.spotify.com/track/2D9a9CXeo3HFtVeaNlzp4a", vibe: "UK HOUSE", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 6, name: "Annihilate", artist: "Metro Boomin & Lil Wayne", url: "https://open.spotify.com/track/39MK3d3fonIP8Mz9oHCTBB", vibe: "TRAP OST", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 65, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 52, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 61, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 58, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 55, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 60, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "10 minutos de movimiento libre", desc: "Trueno + Muse en la misma sesión piden liberación física. Pon PUMAS al tope y mueve el cuerpo sin estructura — saltar, estirarte, lo que salga. Energía acumulada que necesita salida.", time: "10 min" },
-    { icon: "🌬️", title: "Box breathing para integrar el viaje", desc: "Después de un recorrido tan ecléctico — trap, rock, house, pop — el sistema nervioso necesita anclar. Inhala 4s, retén 4s, exhala 4s, retén 4s. Cuatro rondas completas antes de dormir.", time: "5 min" },
-    { icon: "✍️", title: "¿Qué versión de ti escuchó todo eso?", desc: "De Trueno a ODESZA a Fred again.. en una misma noche: escribe qué estado de ánimo guió cada cambio. No hay respuesta correcta — el objetivo es nombrar el viaje antes de que se olvide.", time: "8 min" },
+    { icon: "🌅", title: "Camina 15 min al aire libre", desc: "La madrugada de folk y nostalgia pide movimiento suave y presencia. Sal, respira, deja que La Llorona o Canopée te acompañen. No hay objetivo — solo el cuerpo en el mundo.", time: "15 min" },
+    { icon: "🌬️", title: "Respiración 4-7-8 para aterrizar", desc: "Pasar de Natalia Lafourcade a trap del Spider-Verse en pocas horas activa el sistema nervioso. Inhala 4s, retén 7s, exhala 8s. Tres ciclos completos para centrar el ritmo interno.", time: "5 min" },
+    { icon: "✍️", title: "¿Qué estabas procesando a las 3am?", desc: "La Llorona y Story of My Life en la misma madrugada no es casualidad. Escribe una oración sobre lo que tu playlist de esta noche intentó decirte. Sin filtro, sin editar.", time: "8 min" },
   ]
 
-  const journalPrompt = "Tu lista de esta noche pasó por trap callejero, rock de estadio, y house cinematográfico. ¿Cuál fue el track que más te movió por dentro y por qué? Empieza con: 'Lo que más sentí fue…'"
-  const quote = { text: "Not all those who wander are lost.", author: "J.R.R. Tolkien" }
+  const journalPrompt = "Esta noche pasaste de folk tradicional mexicano a emo, nostalgia pop, chanson francesa y trap cinematográfico. ¿Qué estado emocional guiaba cada cambio? Empieza con: 'A las 3am yo estaba…'"
+  const quote = { text: "Music gives color to the air of the moment.", author: "Karl Lagerfeld" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
