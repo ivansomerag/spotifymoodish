@@ -6,33 +6,33 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Sun Sep 28, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "De Woodkid y Muse al reggaeton de SAIKO — un domingo que cruzó todos los géneros sin pedir permiso" }
-  const insight = "La sesión de hoy es un mapa emocional amplio: abrió con Woodkid (Run Boy Run, Iron) y Muse en modo cinematográfico-épico, escaló a metal con DragonForce y Linkin Park, pegó el giro hacia dubstep con Subtronics/ILLENIUM, luego aterrizó en reggaeton con SAIKO y Latin indie con Nsqk. El cierre fue íntimo: James Blake, Natalia Lafourcade, Aleks Syntek. TRANSITIONAL puro — un Ivan que procesó mucho en pocas horas y usó la música como territorio de tránsito."
+  const date = "Tue Sep 29, 2026"
+  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "De Lexi Jayde y Billie Eilish al reggaeton de Bad Bunny — una tarde que procesó sentimientos a través de todos los géneros" }
+  const insight = "La sesión de hoy abrió con una maratón de Lexi Jayde (indie pop melancólico, folk pop íntimo) seguida de Billie Eilish 'No Time To Die', Molchat Doma (post-punk oscuro) y Taylor Swift 'happiness' — un bloque muy introspectivo y de baja valence. Pero debajo corría una corriente de energía: Eminem & JID 'Fuel', Bad Bunny 'BAILE INoLVIDABLE', BUNT. y Gryffin con dubstep/house. Kate Bush cierra como punto de quiebre nostálgico. TRANSITIONAL clásico — Ivan procesando algo con la música como territorio de tránsito entre tristeza y movimiento."
 
   const tracks = [
-    { n: 1, name: "Run Boy Run", artist: "Woodkid", url: "https://open.spotify.com/track/0boS4e6uXwp3zAvz1mLxZS", vibe: "CINEMATIC", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "Got Away", artist: "Subtronics & ILLENIUM", url: "https://open.spotify.com/track/0ezzY28pW6MYCb5RLkWQg8", vibe: "DUBSTEP", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 3, name: "LOKENECESITAS", artist: "SAIKO & Omar Courtz", url: "https://open.spotify.com/track/1cQx85WypWumn7ZQjUxWQi", vibe: "REGGAETON", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 4, name: "Hombre De Bien", artist: "Nsqk", url: "https://open.spotify.com/track/2FkhJgD9FUnaoAxbWv6cyy", vibe: "LATIN INDIE", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 5, name: "Tight Dress", artist: "Kaila", url: "https://open.spotify.com/track/0VSnVU4YP5YJ6zZXuMoOBs", vibe: "HOUSE", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 6, name: "La Llorona", artist: "Natalia Lafourcade", url: "https://open.spotify.com/track/1WcVu6GCEcThyJBBZovFNv", vibe: "NOSTÁLGICO", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 1, name: "No Time To Die", artist: "Billie Eilish", url: "https://open.spotify.com/track/73SpzrcaHk0RQPFP73vqVR", vibe: "MELANCHOLIC", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "Fuel", artist: "Eminem & JID", url: "https://open.spotify.com/track/5In8B6Om5OKrhwBMB4tXSi", vibe: "HYPE", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 3, name: "BAILE INoLVIDABLE", artist: "Bad Bunny", url: "https://open.spotify.com/track/2lTm559tuIvatlT1u0JYG2", vibe: "REGGAETON", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 4, name: "drunk text me", artist: "Lexi Jayde", url: "https://open.spotify.com/track/3n4n7ADY2YskJVxYv9fh4C", vibe: "SAD INDIE", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 5, name: "Running Up That Hill", artist: "Kate Bush", url: "https://open.spotify.com/track/1PtQJZVZIdWIYdARpZRDFO", vibe: "NOSTALGIC", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 6, name: "Судно (Борис Рыжий)", artist: "Molchat Doma", url: "https://open.spotify.com/track/1SHB1hp6267UK9bJQUxYvO", vibe: "DARK", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 68, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 52, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 61, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 62, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 44, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 58, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Trota al ritmo de Woodkid", desc: "Run Boy Run no es una sugerencia — es una instrucción. 15-20 minutos de trote ligero al aire libre mientras escuchas los tracks épicos de hoy. Deja que la energía cinematográfica te mueva en lugar de quedarse atrapada en el cuerpo.", time: "20 min" },
-    { icon: "🌬️", title: "Regula con respiración box", desc: "Un arco tan amplio — de DragonForce a Natalia Lafourcade — activa y luego calma el sistema nervioso en ciclos rápidos. Cuatro rondas de box breathing (4s inhala, 4s sostén, 4s exhala, 4s sostén) al final del día lo estabilizan.", time: "6 min" },
-    { icon: "✍️", title: "El cruce de géneros como diario", desc: "Hoy cruzaste metal, dubstep, reggaeton y folk en pocas horas. Escribe: ¿qué estado emocional acompañaba cada cambio de género? ¿Estabas buscando energía, evasión o consuelo? Empieza con el track que más te movió.", time: "10 min" },
+    { icon: "🚶", title: "Caminata sin destino", desc: "Con valence baja y un mood tan introspectivo, no fuerces el ejercicio intenso — sal a caminar 20 minutos sin auriculares. Deja que el cuerpo se mueva y la mente descanse. Lexi Jayde en loop puede esperar.", time: "20 min" },
+    { icon: "🌬️", title: "Respiración 4-7-8 para soltar", desc: "Cuando escuchas a Billie Eilish y Molchat Doma seguidos, el sistema nervioso absorbe tensión sin que te des cuenta. Tres rondas de 4-7-8 (inhala 4s, sostén 7s, exhala 8s) activan el nervio vago y bajan el ruido interno.", time: "5 min" },
+    { icon: "✍️", title: "Carta a la canción que más dolió", desc: "Escoge el track de hoy que más te pegó — puede ser 'drunk text me', 'No Time To Die' o 'happiness'. Escríbele directamente: ¿qué te estaba diciendo que no te dijiste a ti mismo? Sin censura, sin borrar.", time: "10 min" },
   ]
 
-  const journalPrompt = "Fuiste de Run Boy Run a La Llorona en una sola tarde. ¿Qué te estaba diciendo cada canción sobre en qué momento del día estabas? Escribe: 'Cuando puse [canción], lo que realmente necesitaba era…'"
-  const quote = { text: "One good thing about music, when it hits you, you feel no pain.", author: "Bob Marley" }
+  const journalPrompt = "Pusiste 'drunk text me' y 'Running Up That Hill' en la misma tarde. ¿A quién o qué estabas pensando mientras escuchabas? Completa: 'La canción que más me movió hoy fue ___ porque en el fondo me recordó que…'"
+  const quote = { text: "Music gives color to the air of the moment.", author: "Karl Lagerfeld" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
