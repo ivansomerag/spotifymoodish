@@ -276,6 +276,14 @@ export default function WellnessDashboard() {
         .done-card { transition: all .25s; cursor:pointer; }
         .done-card.done { background: rgba(20,241,149,0.22) !important; border-color: rgba(20,241,149,0.6) !important; box-shadow: 0 0 20px rgba(20,241,149,0.25) !important; }
 
+        /* viewport-fit=cover: keep content clear of status bar, notch and gesture bar */
+        .app-shell {
+          padding-top: env(safe-area-inset-top);
+          padding-left: env(safe-area-inset-left);
+          padding-right: env(safe-area-inset-right);
+        }
+        .app-nav { padding-bottom: max(16px, env(safe-area-inset-bottom)) !important; }
+
         @media (min-width:768px) {
           html, body { height: 100%; overflow: hidden; }
         }
