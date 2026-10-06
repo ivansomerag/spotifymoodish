@@ -6,33 +6,33 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Tue Sep 29, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "De Billie Eilish y Mac Miller a BUNT. y Bad Bunny — una noche que oscila entre la melancolía y el movimiento" }
-  const insight = "La sesión nocturna arrancó con un bloque introspectivo denso: Lexi Jayde (folk pop íntimo), Billie Eilish 'No Time To Die', K.Flay 'Perfectly Alone', Molchat Doma (post-punk oscuro) y Taylor Swift 'happiness'. Pero el flujo no se quedó ahí — BUNT. y Gryffin con dubstep/house, Eminem & JID 'Fuel', Bad Bunny 'BAILE INoLVIDABLE', Mac Miller 'The Spins' y Kate Bush como cierre nostálgico. TRANSITIONAL puro: Ivan procesando emociones mientras la música actúa de puente entre la introspección y el movimiento."
+  const date = "Mon Oct 06, 2026"
+  const mood = { label: "TRANSITIONAL", emoji: "⚡", sub: "De Miley Cyrus y Labrinth a trap latino y EDM — tu tarde fue un viaje emocional en dos actos" }
+  const insight = "La tarde arrancó con un bloque introspectivo: un album run de Miley Cyrus (pop alternativo, valence media-baja) seguido de Labrinth en modo cinematic oscuro. Luego el flujo pivotó drásticamente: Nsqk, SAIKO, legallyrxx y RØZ trajeron el urbano latino con calor y ritmo, San Holo y Kaskade inyectaron EDM de alta energía, y Offset con JID cerraron con trap agresivo. TRANSITIONAL clásico — Ivan procesando algo en silencio al inicio y buscando momentum para terminar el día."
 
   const tracks = [
-    { n: 1, name: "Nothing Lasts Forever", artist: "BUNT.", url: "https://open.spotify.com/track/4RDJePvro9z2X1r8FFgSxt", vibe: "DANCE POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "Fuel", artist: "Eminem & JID", url: "https://open.spotify.com/track/5In8B6Om5OKrhwBMB4tXSi", vibe: "HYPE", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 3, name: "BAILE INoLVIDABLE", artist: "Bad Bunny", url: "https://open.spotify.com/track/2lTm559tuIvatlT1u0JYG2", vibe: "REGGAETON", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 4, name: "No Time To Die", artist: "Billie Eilish", url: "https://open.spotify.com/track/73SpzrcaHk0RQPFP73vqVR", vibe: "MELANCHOLIC", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 5, name: "Running Up That Hill", artist: "Kate Bush", url: "https://open.spotify.com/track/1PtQJZVZIdWIYdARpZRDFO", vibe: "NOSTALGIC", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 6, name: "The Spins", artist: "Mac Miller", url: "https://open.spotify.com/track/3iEUDvanZwQhLCIqUmCR7N", vibe: "CHILL", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 1, name: "NADIE MÁS!", artist: "Nsqk", url: "https://open.spotify.com/track/0HWyOfh3Q08UreN155KmRZ", vibe: "LATIN", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "LOKENECESITAS", artist: "SAIKO & Omar Courtz", url: "https://open.spotify.com/track/1cQx85WypWumn7ZQjUxWQi", vibe: "REGGAETON", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 3, name: "PULL ME CLOSER", artist: "San Holo & LSDREAM", url: "https://open.spotify.com/track/4TL9YbU53eOeTTvv2ZWDTf", vibe: "EDM", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 4, name: "Fake You Out", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3MLtopC0uho28PxZN7Zecy", vibe: "EMO ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 5, name: "Bodies (feat. JID)", artist: "Offset & JID", url: "https://open.spotify.com/track/7jXHMDFD5IP6pOUtC1p3iz", vibe: "TRAP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 6, name: "Comes Back Around", artist: "Kaskade & BUNT.", url: "https://open.spotify.com/track/7vDG2z8tUsW7Rtoz9OyjOE", vibe: "DANCE", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 55, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 40, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 62, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 68, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 45, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 72, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🌙", title: "Cierre nocturno sin pantallas", desc: "Con una valence baja y tantos tracks melancólicos en el flujo de hoy, el mejor regalo para tu sistema nervioso es apagar pantallas 30 minutos antes de dormir. Pon 'The Spins' de Mac Miller de fondo y deja que la mente aterrice.", time: "30 min" },
-    { icon: "🌬️", title: "Respiración Box para resetear", desc: "La mezcla de Bad Bunny y Billie Eilish activa registros emocionales opuestos. Cuatro rondas de respiración Box (inhala 4s, sostén 4s, exhala 4s, sostén 4s) centra el sistema nervioso antes de dormir o de la próxima hora.", time: "5 min" },
-    { icon: "✍️", title: "Una línea antes de cerrar el día", desc: "Solo una línea en papel: ¿qué emoción dominó tu tarde? No la analices, solo nómbrala. 'Running Up That Hill' y 'No Time To Die' en el mismo flujo dicen bastante — deja que la pluma lo diga también.", time: "5 min" },
+    { icon: "🏃", title: "Canaliza el momentum con movimiento", desc: "La dosis de San Holo y Kaskade de tu tarde dice que tu cuerpo quiere moverse. 15 minutos de cardio o una caminata rápida con el playlist de EDM activa las endorfinas y convierte esa energía acumulada en algo físico.", time: "15 min" },
+    { icon: "🌬️", title: "Respiración 4-7-8 para el puente emocional", desc: "Pasaste de Miley Cyrus introspectivo a trap agresivo — tu sistema nervioso hizo un viaje. Tres rondas de respiración 4-7-8 (inhala 4s, sostén 7s, exhala 8s) integran ese contraste antes de la noche.", time: "5 min" },
+    { icon: "✍️", title: "El journal del contraste", desc: "Escuchar a Labrinth y luego a Offset en el mismo flujo no es accidental. Apunta: ¿qué buscabas en cada bloque? El contraste entre ambos mundos suele revelar lo que el día te dejó pendiente.", time: "10 min" },
   ]
 
-  const journalPrompt = "Escuchaste 'No Time To Die', 'The Spins' y 'Running Up That Hill' en la misma noche. Completa: 'Lo que realmente estaba buscando en esa música hoy era ___ porque…'"
-  const quote = { text: "One good thing about music, when it hits you, you feel no pain.", author: "Bob Marley" }
+  const journalPrompt = "Arrancaste la tarde con Miley Cyrus y Labrinth, y la terminaste con trap latino y EDM. Completa: 'Lo que estaba procesando en silencio al inicio era ___ y lo que buscaba al final era ___'"
+  const quote = { text: "Music gives a soul to the universe, wings to the mind, flight to the imagination, and life to everything.", author: "Plato" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
