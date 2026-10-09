@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Fri Oct 09, 2026"
-  const mood = { label: "MELANCHOLIC", emoji: "🌑", sub: "Amanecer con TØP — emo profundo y deep cuts del catálogo completo, de Vessel a Mexico City Live" }
-  const insight = "La madrugada arrancó con más de 20 tracks de Twenty One Pilots: deep cuts del catálogo completo (Fake You Out, Message Man, The Pantaloon, Air Catcher), el live de Mexico City y Stressed Out con mucho replay. El arco es emo puro de valence baja, sostenido y coherente. Malabares de Sabino, James Blake y We Run de Small Town Kid aparecieron el día anterior como contrapunto electrónico — pero la energía dominante es TØP en modo introspectivo. Un buen viernes para ir hacia adentro antes de abrirse al fin de semana."
+  const mood = { label: "MELANCHOLIC", emoji: "🌑", sub: "Tarde de viernes con TØP — made for me, Ingobernable y el live de México City cerrando el día" }
+  const insight = "La tarde arrancó con Columbia de Quevedo, 'made for me' de JVKE (romántico y suave) e Ingobernable de C. Tangana con Gipsy Kings — flamenco y latin como puente antes de volver al universo TØP. El live de Mexico City dominó: Ride, Next Semester, Heathens, Shy Away, Stressed Out, Jumpsuit, Fake You Out. Valence baja sostenida, emo moderno con picos de nostalgia. Es viernes de cierre introspectivo antes de que arranque el fin de semana."
 
   const tracks = [
-    { n: 1, name: "Message Man", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/4Oyl6oYSNeeZZP0OAxPVaU", vibe: "EMO ROCK", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "Fake You Out", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3MLtopC0uho28PxZN7Zecy", vibe: "EMO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 3, name: "Stressed Out", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3CRDbSIZ4r5MsZ0YwxuEkn", vibe: "NOSTALGIA", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 4, name: "Malabares", artist: "Sabino", url: "https://open.spotify.com/track/468MBAKrrK72FDQKpSR4hZ", vibe: "LATIN ALT", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 5, name: "We Run", artist: "Small Town Kid", url: "https://open.spotify.com/track/2ZGSXWF4H5HogHxtKbyckj", vibe: "DEEP HOUSE", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 1, name: "Fake You Out", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3MLtopC0uho28PxZN7Zecy", vibe: "EMO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "Stressed Out", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3CRDbSIZ4r5MsZ0YwxuEkn", vibe: "NOSTALGIA", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 3, name: "made for me", artist: "JVKE & ZVC", url: "https://open.spotify.com/track/6FOcAUTjpxsMN5X9cUvK1B", vibe: "ROMANTIC", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 4, name: "Ingobernable", artist: "C. Tangana", url: "https://open.spotify.com/track/3SK45LddxlEkzI8OWO9Eyo", vibe: "FLAMENCO", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 5, name: "Jumpsuit", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/1E1uGhNdBe6Dddbgs2KqtZ", vibe: "MOD ROCK", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
     { n: 6, name: "Columbia", artist: "Quevedo", url: "https://open.spotify.com/track/6XbtvPmIpyCbjuT0e8cQtp", vibe: "REGGAETON", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 52, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 28, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 41, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 48, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 30, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 38, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🌅", title: "Salida al sol matutino — 10 minutos", desc: "Después de un maratón nocturno de TØP de valence baja, la luz solar matutina es el reset más poderoso. Sal antes de las 10am, sin lentes de sol los primeros 2 minutos: activa serotonina y ancla tu ritmo circadiano para el día.", time: "10 min" },
-    { icon: "🌬️", title: "Box breathing para elevar el estado", desc: "El peso emocional de TØP en loop puede dejar el sistema nervioso activado incluso al amanecer. Cuatro rondas de box breathing (4s inhala, 4s sostén, 4s exhala, 4s sostén) suben la valence de forma natural antes de arrancar el viernes.", time: "8 min" },
-    { icon: "✍️", title: "Escribe tu intención para el fin de semana", desc: "Es viernes. Llevas una noche con Tyler Joseph procesando algo — anota en una sola línea qué quieres soltar esta semana y qué quieres llevar contigo al fin de semana. Brevedad es poder.", time: "5 min" },
+    { icon: "🚶", title: "Caminata de cierre — 15 minutos afuera", desc: "Llevas horas en modo introspectivo con TØP. Una caminata corta al atardecer (sin audífonos los primeros 5 minutos) resetea el sistema nervioso y prepara la transición al fin de semana. La luz de tarde es el ritual de cierre perfecto.", time: "15 min" },
+    { icon: "🌬️", title: "Respiración 4-7-8 para bajar del ride emocional", desc: "El loop de emo rock sostenido activa el sistema nervioso simpático. Tres rondas de 4-7-8 (inhala 4s, sostén 7s, exhala 8s) bajan el cortisol y te anclan antes de la noche del viernes.", time: "6 min" },
+    { icon: "✍️", title: "Carta rápida de cierre de semana", desc: "Es viernes por la tarde. Escribe tres cosas: lo que soltás esta semana, lo que te llevás al fin de semana, y una cosa que quieras sentir mañana. Tyler Joseph lleva una noche procesándolo contigo — ahora es tu turno.", time: "8 min" },
   ]
 
-  const journalPrompt = "Pasaste la madrugada con Twenty One Pilots. Es viernes. ¿Qué es lo que realmente estás procesando — y qué necesitas para entrar al fin de semana con la cabeza despejada?"
-  const quote = { text: "We stay afloat. We stay alive.", author: "Tyler Joseph" }
+  const journalPrompt = "Llevas el viernes entero con Twenty One Pilots. ¿Qué estás cerrando esta semana — y cómo quieres que se sienta este fin de semana?"
+  const quote = { text: "Stay alive. Nico and the Niners.", author: "Tyler Joseph" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
