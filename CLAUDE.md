@@ -129,15 +129,25 @@ spotifymoodish/
 
 ## 📌 Estado Actual
 
-- **Integración HELA AI**: Conectado a Cloudflare Tunnel (`https://cross-logged-effort-keith.trycloudflare.com`). Acceso disponible en la barra OSD superior (`🧠 HELA AI`) y en la tarjeta dedicada en la pestaña **Profile**.
-- **Compilación**: 100% limpia (`npm run build` con 0 errores de TypeScript y linting).
-- **Repositorio**: Rebase limpio con `origin/main`, manteniendo los commits de actualización de Hela.
+_(Última verificación: 2026-10-08)_
+
+- **Hosting local, ya no Vercel**: corre en el Mac como `com.ivan.moodish` (`next start` en `127.0.0.1:3000`), publicado con `tailscale serve --https=8443` → **https://macbook-pro-de-ivan.tail8e6d0f.ts.net:8443** (solo tailnet). `com.ivan.moodish-sync` hace `git pull` + rebuild cada 10 min cuando el bot Hela commitea. Vercel ya no se usa.
+- **App Android (APK)**: `projects/hela-mobile/` abre este sitio directo en un WebView (edge-to-edge, safe-areas con `env(safe-area-inset-*)` y `100dvh`). El botón "HELA AI" navega a HELA dentro de la app; los links de Spotify abren la app de Spotify.
+- **Integración HELA AI**: ✅ funcionando por Tailscale (`NEXT_PUBLIC_HELA_URL` apunta al `*.ts.net` de HELA, ya sin Cloudflare Tunnel).
+- **Compilación**: `npm run build` limpio.
+- **Regla de oro**: no pisar los datos dinámicos que actualiza Hela.
 
 ## 🧠 Próximos pasos
 
 > Actualizar esta sección cada vez que se complete una tarea relacionada.
 
-- [x] Correr HELA + Cloudflare Tunnel localmente y obtener la URL `*.trycloudflare.com`.
-- [x] Conectar `NEXT_PUBLIC_HELA_URL` en spotifymoodish con fallback activo a Cloudflare.
-- [ ] Hacer `git push` a `origin/main` para desplegar automáticamente en Vercel.
-- [ ] Verificar en producción Vercel que el botón abre HELA correctamente.
+- [x] Migrar de Vercel a hosting local por Tailscale.
+- [x] Arreglar el botón HELA AI (URL estable `*.ts.net`).
+- [x] Safe-area insets / edge-to-edge en el móvil.
+- [ ] Pausar o borrar el proyecto de Vercel desde la cuenta (ya no se usa).
+- [ ] Probar la APK con datos móviles (Wi-Fi apagado, Tailscale activo).
+
+### ✨ Ideas (backlog)
+- [ ] **Historial de moods**: mini-timeline de ~7 días (datos ya en los commits `Mood update`).
+- [ ] **Compartir mood del día** como imagen vía Web Share API.
+- [ ] **Racha de wellness**: persistir los 3 checkboxes en `localStorage` + contador de días.

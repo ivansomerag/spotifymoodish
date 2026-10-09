@@ -101,7 +101,7 @@ export default function WellnessDashboard() {
   const S = {
     page: { background:"transparent", color:"#f1f5f9", minHeight:"100vh", display:"flex", justifyContent:"center", alignItems:"stretch", position:"relative" as const } as React.CSSProperties,
     // Translucent liquid shell — darker tone for depth, but moving background still shows through smoothly
-    shell: { width:"100%", maxWidth:440, height:"100vh", display:"flex", flexDirection:"column" as const, position:"relative" as const, zIndex:10, borderLeft:"1px solid rgba(0,229,255,0.22)", borderRight:"1px solid rgba(250,46,140,0.22)", background:"rgba(4,7,14,0.32)", overflowY:"hidden" as const, boxShadow:"0 0 120px rgba(0,0,0,0.85), 0 0 40px rgba(0,229,255,0.12)", flexShrink:0 },
+    shell: { width:"100%", maxWidth:440, height:"100dvh", display:"flex", flexDirection:"column" as const, position:"relative" as const, zIndex:10, borderLeft:"1px solid rgba(0,229,255,0.22)", borderRight:"1px solid rgba(250,46,140,0.22)", background:"rgba(4,7,14,0.32)", overflowY:"hidden" as const, boxShadow:"0 0 120px rgba(0,0,0,0.85), 0 0 40px rgba(0,229,255,0.12)", flexShrink:0 },
     glow: { position:"absolute" as const, top:0, left:0, right:0, height:360, background:"radial-gradient(circle at 50% 0%, rgba(0,229,255,0.16) 0%, rgba(250,46,140,0.1) 45%, rgba(168,85,247,0.08) 70%, transparent 90%)", pointerEvents:"none" as const, zIndex:0 },
     // Dark Liquid Glass cards: darker smoky translucency for high data contrast, specular reflections, NO blur!
     card: { padding:16, borderRadius:20, background:"linear-gradient(135deg, rgba(16,28,48,0.78) 0%, rgba(8,15,28,0.80) 50%, rgba(3,7,16,0.86) 100%)", border:"1px solid rgba(0,229,255,0.28)", boxShadow:"0 10px 36px rgba(0,0,0,0.55), inset 0 1px 1px rgba(255,255,255,0.2), inset 0 -1px 2px rgba(0,0,0,0.6), 0 0 20px rgba(0,229,255,0.08)", marginBottom:14, position:"relative" as const, zIndex:12 } as React.CSSProperties,
@@ -278,11 +278,11 @@ export default function WellnessDashboard() {
 
         /* viewport-fit=cover: keep content clear of status bar, notch and gesture bar */
         .app-shell {
-          padding-top: env(safe-area-inset-top);
-          padding-left: env(safe-area-inset-left);
-          padding-right: env(safe-area-inset-right);
+          padding-top: env(safe-area-inset-top, 0px);
+          padding-left: env(safe-area-inset-left, 0px);
+          padding-right: env(safe-area-inset-right, 0px);
         }
-        .app-nav { padding-bottom: max(16px, env(safe-area-inset-bottom)) !important; }
+        .app-nav { padding-bottom: max(16px, env(safe-area-inset-bottom, 0px)) !important; }
 
         @media (min-width:768px) {
           html, body { height: 100%; overflow: hidden; }
