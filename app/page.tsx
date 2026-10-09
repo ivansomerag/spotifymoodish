@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Fri Oct 09, 2026"
-  const mood = { label: "MELANCHOLIC", emoji: "🌑", sub: "Una maratón de Twenty One Pilots en vivo — emo rock en estado puro con un cierre latino suave" }
-  const insight = "La noche fue casi monográfica: más de 20 tracks de Twenty One Pilots, incluyendo su live en Mexico City y deep cuts del catálogo completo — desde Vessel hasta Scaled and Icy. El arco emocional va de emo crudo (Fake You Out, Message Man) a introspectivo moderno (The Line, Smithereens), con un suave aterrizaje en reggaeton (Columbia de Quevedo) y el romántico 'made for me' de JVKE. Valence baja, mucho peso emocional pero sostenido con identidad — Ivan en modo introspectivo nocturno."
+  const mood = { label: "MELANCHOLIC", emoji: "🌑", sub: "Amanecer con TØP — emo profundo y deep cuts del catálogo completo, de Vessel a Mexico City Live" }
+  const insight = "La madrugada arrancó con más de 20 tracks de Twenty One Pilots: deep cuts del catálogo completo (Fake You Out, Message Man, The Pantaloon, Air Catcher), el live de Mexico City y Stressed Out con mucho replay. El arco es emo puro de valence baja, sostenido y coherente. Malabares de Sabino, James Blake y We Run de Small Town Kid aparecieron el día anterior como contrapunto electrónico — pero la energía dominante es TØP en modo introspectivo. Un buen viernes para ir hacia adentro antes de abrirse al fin de semana."
 
   const tracks = [
-    { n: 1, name: "Fake You Out", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3MLtopC0uho28PxZN7Zecy", vibe: "EMO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "Message Man", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/4Oyl6oYSNeeZZP0OAxPVaU", vibe: "EMO ROCK", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 3, name: "Jumpsuit", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/1E1uGhNdBe6Dddbgs2KqtZ", vibe: "ROCK", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 4, name: "Stressed Out", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3CRDbSIZ4r5MsZ0YwxuEkn", vibe: "NOSTALGIA", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 5, name: "Columbia", artist: "Quevedo", url: "https://open.spotify.com/track/6XbtvPmIpyCbjuT0e8cQtp", vibe: "REGGAETON", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 6, name: "made for me", artist: "JVKE & ZVC", url: "https://open.spotify.com/track/6FOcAUTjpxsMN5X9cUvK1B", vibe: "ROMANTIC", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 1, name: "Message Man", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/4Oyl6oYSNeeZZP0OAxPVaU", vibe: "EMO ROCK", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "Fake You Out", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3MLtopC0uho28PxZN7Zecy", vibe: "EMO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 3, name: "Stressed Out", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3CRDbSIZ4r5MsZ0YwxuEkn", vibe: "NOSTALGIA", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 4, name: "Malabares", artist: "Sabino", url: "https://open.spotify.com/track/468MBAKrrK72FDQKpSR4hZ", vibe: "LATIN ALT", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 5, name: "We Run", artist: "Small Town Kid", url: "https://open.spotify.com/track/2ZGSXWF4H5HogHxtKbyckj", vibe: "DEEP HOUSE", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 6, name: "Columbia", artist: "Quevedo", url: "https://open.spotify.com/track/6XbtvPmIpyCbjuT0e8cQtp", vibe: "REGGAETON", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 55, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 32, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 44, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 52, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 28, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 41, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Caminata nocturna sin destino", desc: "Después de más de 3 horas con Twenty One Pilots, tu mente necesita aire. Una caminata de 15 minutos en silencio — sin música, sin teléfono — permite que las emociones del listening se asienten antes de dormir.", time: "15 min" },
-    { icon: "🌬️", title: "Respiración box para anclar el presente", desc: "El peso emocional de un maratón de TØP puede dejar el sistema nervioso activado. Cuatro rondas de box breathing (4s inhala, 4s sostén, 4s exhala, 4s sostén) te devuelven al momento presente.", time: "8 min" },
-    { icon: "✍️", title: "Escribe lo que Tyler Joseph te hizo pensar", desc: "Cuando escuchas tanto de un artista de un jalón, algo resuena. Anota una letra o idea de esta noche que se quedó dando vueltas — y qué dice de lo que estás viviendo ahora mismo.", time: "10 min" },
+    { icon: "🌅", title: "Salida al sol matutino — 10 minutos", desc: "Después de un maratón nocturno de TØP de valence baja, la luz solar matutina es el reset más poderoso. Sal antes de las 10am, sin lentes de sol los primeros 2 minutos: activa serotonina y ancla tu ritmo circadiano para el día.", time: "10 min" },
+    { icon: "🌬️", title: "Box breathing para elevar el estado", desc: "El peso emocional de TØP en loop puede dejar el sistema nervioso activado incluso al amanecer. Cuatro rondas de box breathing (4s inhala, 4s sostén, 4s exhala, 4s sostén) suben la valence de forma natural antes de arrancar el viernes.", time: "8 min" },
+    { icon: "✍️", title: "Escribe tu intención para el fin de semana", desc: "Es viernes. Llevas una noche con Tyler Joseph procesando algo — anota en una sola línea qué quieres soltar esta semana y qué quieres llevar contigo al fin de semana. Brevedad es poder.", time: "5 min" },
   ]
 
-  const journalPrompt = "Pasaste la noche con Twenty One Pilots — desde sus primeros demos hasta su live en Mexico City. ¿Qué línea de Tyler Joseph describe mejor cómo te sientes ahorita, y por qué esa en particular?"
-  const quote = { text: "I know what I want, and I want everything.", author: "Tyler Joseph" }
+  const journalPrompt = "Pasaste la madrugada con Twenty One Pilots. Es viernes. ¿Qué es lo que realmente estás procesando — y qué necesitas para entrar al fin de semana con la cabeza despejada?"
+  const quote = { text: "We stay afloat. We stay alive.", author: "Tyler Joseph" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
