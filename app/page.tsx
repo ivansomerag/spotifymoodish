@@ -6,33 +6,33 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Mon Oct 06, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "⚡", sub: "De Miley Cyrus y Labrinth a trap latino y EDM — tu tarde fue un viaje emocional en dos actos" }
-  const insight = "La tarde arrancó con un bloque introspectivo: un album run de Miley Cyrus (pop alternativo, valence media-baja) seguido de Labrinth en modo cinematic oscuro. Luego el flujo pivotó drásticamente: Nsqk, SAIKO, legallyrxx y RØZ trajeron el urbano latino con calor y ritmo, San Holo y Kaskade inyectaron EDM de alta energía, y Offset con JID cerraron con trap agresivo. TRANSITIONAL clásico — Ivan procesando algo en silencio al inicio y buscando momentum para terminar el día."
+  const date = "Fri Oct 09, 2026"
+  const mood = { label: "MELANCHOLIC", emoji: "🌑", sub: "Una maratón de Twenty One Pilots en vivo — emo rock en estado puro con un cierre latino suave" }
+  const insight = "La noche fue casi monográfica: más de 20 tracks de Twenty One Pilots, incluyendo su live en Mexico City y deep cuts del catálogo completo — desde Vessel hasta Scaled and Icy. El arco emocional va de emo crudo (Fake You Out, Message Man) a introspectivo moderno (The Line, Smithereens), con un suave aterrizaje en reggaeton (Columbia de Quevedo) y el romántico 'made for me' de JVKE. Valence baja, mucho peso emocional pero sostenido con identidad — Ivan en modo introspectivo nocturno."
 
   const tracks = [
-    { n: 1, name: "NADIE MÁS!", artist: "Nsqk", url: "https://open.spotify.com/track/0HWyOfh3Q08UreN155KmRZ", vibe: "LATIN", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "LOKENECESITAS", artist: "SAIKO & Omar Courtz", url: "https://open.spotify.com/track/1cQx85WypWumn7ZQjUxWQi", vibe: "REGGAETON", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 3, name: "PULL ME CLOSER", artist: "San Holo & LSDREAM", url: "https://open.spotify.com/track/4TL9YbU53eOeTTvv2ZWDTf", vibe: "EDM", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 4, name: "Fake You Out", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3MLtopC0uho28PxZN7Zecy", vibe: "EMO ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 5, name: "Bodies (feat. JID)", artist: "Offset & JID", url: "https://open.spotify.com/track/7jXHMDFD5IP6pOUtC1p3iz", vibe: "TRAP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 6, name: "Comes Back Around", artist: "Kaskade & BUNT.", url: "https://open.spotify.com/track/7vDG2z8tUsW7Rtoz9OyjOE", vibe: "DANCE", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 1, name: "Fake You Out", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3MLtopC0uho28PxZN7Zecy", vibe: "EMO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "Message Man", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/4Oyl6oYSNeeZZP0OAxPVaU", vibe: "EMO ROCK", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 3, name: "Jumpsuit", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/1E1uGhNdBe6Dddbgs2KqtZ", vibe: "ROCK", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 4, name: "Stressed Out", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3CRDbSIZ4r5MsZ0YwxuEkn", vibe: "NOSTALGIA", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 5, name: "Columbia", artist: "Quevedo", url: "https://open.spotify.com/track/6XbtvPmIpyCbjuT0e8cQtp", vibe: "REGGAETON", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 6, name: "made for me", artist: "JVKE & ZVC", url: "https://open.spotify.com/track/6FOcAUTjpxsMN5X9cUvK1B", vibe: "ROMANTIC", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 68, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 45, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 72, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 55, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 32, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 44, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Canaliza el momentum con movimiento", desc: "La dosis de San Holo y Kaskade de tu tarde dice que tu cuerpo quiere moverse. 15 minutos de cardio o una caminata rápida con el playlist de EDM activa las endorfinas y convierte esa energía acumulada en algo físico.", time: "15 min" },
-    { icon: "🌬️", title: "Respiración 4-7-8 para el puente emocional", desc: "Pasaste de Miley Cyrus introspectivo a trap agresivo — tu sistema nervioso hizo un viaje. Tres rondas de respiración 4-7-8 (inhala 4s, sostén 7s, exhala 8s) integran ese contraste antes de la noche.", time: "5 min" },
-    { icon: "✍️", title: "El journal del contraste", desc: "Escuchar a Labrinth y luego a Offset en el mismo flujo no es accidental. Apunta: ¿qué buscabas en cada bloque? El contraste entre ambos mundos suele revelar lo que el día te dejó pendiente.", time: "10 min" },
+    { icon: "🚶", title: "Caminata nocturna sin destino", desc: "Después de más de 3 horas con Twenty One Pilots, tu mente necesita aire. Una caminata de 15 minutos en silencio — sin música, sin teléfono — permite que las emociones del listening se asienten antes de dormir.", time: "15 min" },
+    { icon: "🌬️", title: "Respiración box para anclar el presente", desc: "El peso emocional de un maratón de TØP puede dejar el sistema nervioso activado. Cuatro rondas de box breathing (4s inhala, 4s sostén, 4s exhala, 4s sostén) te devuelven al momento presente.", time: "8 min" },
+    { icon: "✍️", title: "Escribe lo que Tyler Joseph te hizo pensar", desc: "Cuando escuchas tanto de un artista de un jalón, algo resuena. Anota una letra o idea de esta noche que se quedó dando vueltas — y qué dice de lo que estás viviendo ahora mismo.", time: "10 min" },
   ]
 
-  const journalPrompt = "Arrancaste la tarde con Miley Cyrus y Labrinth, y la terminaste con trap latino y EDM. Completa: 'Lo que estaba procesando en silencio al inicio era ___ y lo que buscaba al final era ___'"
-  const quote = { text: "Music gives a soul to the universe, wings to the mind, flight to the imagination, and life to everything.", author: "Plato" }
+  const journalPrompt = "Pasaste la noche con Twenty One Pilots — desde sus primeros demos hasta su live en Mexico City. ¿Qué línea de Tyler Joseph describe mejor cómo te sientes ahorita, y por qué esa en particular?"
+  const quote = { text: "I know what I want, and I want everything.", author: "Tyler Joseph" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
