@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Sat Oct 10, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "⚡", sub: "TØP + James Blake en lo profundo, KAROL G y Bad Bunny jalando hacia arriba — tensión entre introspección y movimiento" }
-  const insight = "La sesión de hoy mezcla dos corrientes muy distintas: un bloque denso de Twenty One Pilots (Message Man, Fake You Out, lives en México) junto con James Blake y RØZ marcan un hilo introspectivo y emocional constante. Al mismo tiempo, KAROL G con Ahí y BbY WOW, Bad Bunny, Trueno y Milo j, más ILLENIUM y Alison Wonderland empujan hacia energía y movimiento. Esa tensión entre lo que procesas y lo que buscas es la firma TRANSITIONAL — no estás en un solo estado, estás navegando entre dos."
+  const mood = { label: "TRANSITIONAL", emoji: "⚡", sub: "TØP y Blamegame de Nsqk en la tarde — el hilo introspectivo se mantiene mientras la energía reggaeton/EDM sigue jalando" }
+  const insight = "La sesión de la tarde confirma el patrón del día: volviste a Message Man y Blamegame de Nsqk — canciones que procesan cosas sin resolverlas del todo. James Blake, RØZ y Nsqk anclan el lado emocional mientras KAROL G, Bad Bunny, ILLENIUM y Alison Wonderland siguen empujando hacia movimiento. TRANSITIONAL persistente — no es indecisión, es que estás en medio de algo."
 
   const tracks = [
     { n: 1, name: "Message Man", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/4Oyl6oYSNeeZZP0OAxPVaU", vibe: "EMO ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 2, name: "Ahí", artist: "KAROL G & Drake", url: "https://open.spotify.com/track/6DoUDG1GJrJf6eGQLUBBnm", vibe: "REGGAETON", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 2, name: "Blamegame", artist: "Nsqk & paopao", url: "https://open.spotify.com/track/6O2c6uqvFAeUNxWQY6R3e1", vibe: "LATIN ALT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
     { n: 3, name: "Through The High Wire", artist: "James Blake", url: "https://open.spotify.com/track/0pkmCdVL9F63BEpfM3RBrL", vibe: "EMOTIONAL", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 4, name: "RESCUE U", artist: "Alison Wonderland & WINK", url: "https://open.spotify.com/track/3jDXVV12qJ0sZB3Ixp3srB", vibe: "EDM", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 5, name: "PUMAS", artist: "Trueno & Milo j", url: "https://open.spotify.com/track/5Iu46UfunYa0I5CFGAW59y", vibe: "LATIN RAP", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 4, name: "PUMAS", artist: "Trueno & Milo j", url: "https://open.spotify.com/track/5Iu46UfunYa0I5CFGAW59y", vibe: "LATIN RAP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 5, name: "Ahí", artist: "KAROL G & Drake", url: "https://open.spotify.com/track/6DoUDG1GJrJf6eGQLUBBnm", vibe: "REGGAETON", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
     { n: 6, name: "Ya no te quiero ver", artist: "RØZ & Joalin", url: "https://open.spotify.com/track/4kddD5phh3YQIX8L7UKltl", vibe: "ELECTRONICA", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 68, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 46, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 64, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 65, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 44, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 62, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Caminata de 20 min — deja que la tensión se mueva", desc: "Cuando la música oscila entre introspección y energía como hoy, el cuerpo necesita procesar eso físicamente. Camina sin destino ni meta, deja que el ritmo de TØP o KAROL G guíe el paso. El movimiento desbloquea lo que la mente está procesando.", time: "20 min" },
-    { icon: "🌬️", title: "Box breathing — ancla el estado antes del siguiente bloque", desc: "La transición constante entre géneros y emociones activa múltiples sistemas a la vez. Cuatro ciclos de respiración en caja (inhala 4s, retén 4s, exhala 4s, pausa 4s) resincronizan el sistema nervioso y te devuelven al centro.", time: "6 min" },
-    { icon: "📓", title: "Escribe lo que Ahí y Message Man tienen en común", desc: "Una canción sobre conexión romántica intensa y otra sobre guardar secretos en silencio — ¿qué buscabas cuando pusiste ambas hoy? Escribe sin filtro. No necesita sentido todavía.", time: "10 min" },
+    { icon: "🚶", title: "Camina 15 min sin música — solo procesa", desc: "Llevas todo el día alternando entre introspección y energía. Una caminata en silencio a las 3pm deja que lo que escuchaste esta mañana termine de asentarse antes de que el día siga. Sin auriculares, sin destino fijo.", time: "15 min" },
+    { icon: "🌬️", title: "Pausa de 5 min — respira en 4-7-8", desc: "Inhala 4s, retén 7s, exhala 8s. Tres ciclos. El patrón TRANSITIONAL activa múltiples sistemas a la vez — este ejercicio los sincroniza antes del bloque de la tarde.", time: "5 min" },
+    { icon: "📓", title: "¿Qué está sin resolver hoy?", desc: "Blamegame y Message Man son canciones sobre cosas que no se dicen. Escribe en 5 minutos qué conversación o decisión llevas cargando. No necesitas la respuesta — solo nombrarlo.", time: "8 min" },
   ]
 
-  const journalPrompt = "Tu playlist de hoy mezcla lo que procesas (TØP, James Blake) con lo que buscas (KAROL G, EDM). ¿Qué parte de ti está ganando la conversación ahora mismo?"
-  const quote = { text: "Between stimulus and response there is a space. In that space is our power to choose our response.", author: "Viktor E. Frankl" }
+  const journalPrompt = "Volviste a Message Man y Blamegame de Nsqk en la tarde. ¿Qué estás procesando que todavía no tiene nombre?"
+  const quote = { text: "You don't have to resolve every tension. Sometimes staying in the middle is the work.", author: "Pema Chödrön" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
