@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Sat Oct 10, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "⚡", sub: "TØP en modo introspectivo profundo, Bad Bunny y KAROL G, EDM fuerte — dos mundos jalando al mismo tiempo" }
-  const insight = "La sesión de hoy arrancó con un bloque largo y emotivo de Twenty One Pilots — tracks en vivo de México, Message Man, Fake You Out, Stressed Out — una inmersión que raramente suena casual. En paralelo, Bad Bunny, KAROL G, Trueno y Milo j trajeron energía urbana y ritmo latino. ILLENIUM, Alison Wonderland y el remix Justice de Angèle sumaron peso electrónico. Es la señal clásica TRANSITIONAL: la mente procesa algo profundo con TØP mientras el cuerpo busca movimiento con el resto."
+  const mood = { label: "TRANSITIONAL", emoji: "⚡", sub: "TØP + James Blake en lo profundo, KAROL G y Bad Bunny jalando hacia arriba — tensión entre introspección y movimiento" }
+  const insight = "La sesión de hoy mezcla dos corrientes muy distintas: un bloque denso de Twenty One Pilots (Message Man, Fake You Out, lives en México) junto con James Blake y RØZ marcan un hilo introspectivo y emocional constante. Al mismo tiempo, KAROL G con Ahí y BbY WOW, Bad Bunny, Trueno y Milo j, más ILLENIUM y Alison Wonderland empujan hacia energía y movimiento. Esa tensión entre lo que procesas y lo que buscas es la firma TRANSITIONAL — no estás en un solo estado, estás navegando entre dos."
 
   const tracks = [
     { n: 1, name: "Message Man", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/4Oyl6oYSNeeZZP0OAxPVaU", vibe: "EMO ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 2, name: "PIToRRO DE COCO", artist: "Bad Bunny", url: "https://open.spotify.com/track/14QaXYIK3K3QPtezqxRRPN", vibe: "TRAP LATINO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 2, name: "Ahí", artist: "KAROL G & Drake", url: "https://open.spotify.com/track/6DoUDG1GJrJf6eGQLUBBnm", vibe: "REGGAETON", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
     { n: 3, name: "Through The High Wire", artist: "James Blake", url: "https://open.spotify.com/track/0pkmCdVL9F63BEpfM3RBrL", vibe: "EMOTIONAL", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 4, name: "Feel Alive", artist: "ILLENIUM & Bastille", url: "https://open.spotify.com/track/1xkkHeokEkhrUmqjh2dkv5", vibe: "EDM", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 4, name: "RESCUE U", artist: "Alison Wonderland & WINK", url: "https://open.spotify.com/track/3jDXVV12qJ0sZB3Ixp3srB", vibe: "EDM", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
     { n: 5, name: "PUMAS", artist: "Trueno & Milo j", url: "https://open.spotify.com/track/5Iu46UfunYa0I5CFGAW59y", vibe: "LATIN RAP", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 6, name: "Stressed Out", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3CRDbSIZ4r5MsZ0YwxuEkn", vibe: "NOSTALGIC", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 6, name: "Ya no te quiero ver", artist: "RØZ & Joalin", url: "https://open.spotify.com/track/4kddD5phh3YQIX8L7UKltl", vibe: "ELECTRONICA", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 70, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 44, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 62, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 68, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 46, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 64, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Caminata sin destino — 20 min con TØP en los oídos", desc: "Un bloque tan extenso de Twenty One Pilots no es aleatorio — hay algo que estás procesando. Una caminata sin rumbo fijo, sin mapa, permite que la mente siga el hilo emocional que la música empezó. No necesitas saber a dónde vas.", time: "20 min" },
-    { icon: "🌬️", title: "Respiración en caja para anclar el cambio de ritmo", desc: "Pasar de emo rock profundo a trap latino y EDM en la misma sesión activa múltiples estados. Cuatro ciclos de box breathing (inhala 4s, retén 4s, exhala 4s, pausa 4s) resincronizan el sistema nervioso entre transiciones.", time: "6 min" },
-    { icon: "📓", title: "¿Qué procesas con Tyler Joseph hoy?", desc: "Message Man, Fake You Out, Stressed Out — esos tracks no se escuchan en bloque sin razón. Abre el cuaderno y escribe sin filtro lo que esas letras movieron. No tiene que tener estructura. Solo que salga.", time: "10 min" },
+    { icon: "🚶", title: "Caminata de 20 min — deja que la tensión se mueva", desc: "Cuando la música oscila entre introspección y energía como hoy, el cuerpo necesita procesar eso físicamente. Camina sin destino ni meta, deja que el ritmo de TØP o KAROL G guíe el paso. El movimiento desbloquea lo que la mente está procesando.", time: "20 min" },
+    { icon: "🌬️", title: "Box breathing — ancla el estado antes del siguiente bloque", desc: "La transición constante entre géneros y emociones activa múltiples sistemas a la vez. Cuatro ciclos de respiración en caja (inhala 4s, retén 4s, exhala 4s, pausa 4s) resincronizan el sistema nervioso y te devuelven al centro.", time: "6 min" },
+    { icon: "📓", title: "Escribe lo que Ahí y Message Man tienen en común", desc: "Una canción sobre conexión romántica intensa y otra sobre guardar secretos en silencio — ¿qué buscabas cuando pusiste ambas hoy? Escribe sin filtro. No necesita sentido todavía.", time: "10 min" },
   ]
 
-  const journalPrompt = "Escuchaste TØP en modo maratón esta mañana. ¿Qué parte de ti estaba hablando — y qué necesitaba ser escuchada?"
-  const quote = { text: "The most important thing is to try and inspire people so that they can be great in whatever they want to do.", author: "Kobe Bryant" }
+  const journalPrompt = "Tu playlist de hoy mezcla lo que procesas (TØP, James Blake) con lo que buscas (KAROL G, EDM). ¿Qué parte de ti está ganando la conversación ahora mismo?"
+  const quote = { text: "Between stimulus and response there is a space. In that space is our power to choose our response.", author: "Viktor E. Frankl" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
