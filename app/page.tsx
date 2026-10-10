@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Sat Oct 10, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "⚡", sub: "Reggaeton y trap latino en la noche, EDM fuerte, James Blake de golpe — push-pull total" }
-  const insight = "La sesión nocturna abrió con Bad Bunny y KAROL G en modo urbano latino puro, luego dio un giro brusco hacia dubstep pesado (JADOM), ILLENIUM con Bastille, y el remix Justice de Angèle. James Blake apareció como una pausa emocional en medio del caos. La mezcla de reggaeton, trap, EDM y un indie folk de Milo j y Trueno es el classic push-pull — el cuerpo quiere energía, algo adentro busca textura y profundidad al mismo tiempo."
+  const mood = { label: "TRANSITIONAL", emoji: "⚡", sub: "TØP en modo introspectivo profundo, Bad Bunny y KAROL G, EDM fuerte — dos mundos jalando al mismo tiempo" }
+  const insight = "La sesión de hoy arrancó con un bloque largo y emotivo de Twenty One Pilots — tracks en vivo de México, Message Man, Fake You Out, Stressed Out — una inmersión que raramente suena casual. En paralelo, Bad Bunny, KAROL G, Trueno y Milo j trajeron energía urbana y ritmo latino. ILLENIUM, Alison Wonderland y el remix Justice de Angèle sumaron peso electrónico. Es la señal clásica TRANSITIONAL: la mente procesa algo profundo con TØP mientras el cuerpo busca movimiento con el resto."
 
   const tracks = [
-    { n: 1, name: "PIToRRO DE COCO", artist: "Bad Bunny", url: "https://open.spotify.com/track/14QaXYIK3K3QPtezqxRRPN", vibe: "TRAP LATINO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 2, name: "Feel Alive", artist: "ILLENIUM & Bastille", url: "https://open.spotify.com/track/1xkkHeokEkhrUmqjh2dkv5", vibe: "EDM", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 3, name: "RESCUE U", artist: "Alison Wonderland & WINK", url: "https://open.spotify.com/track/3jDXVV12qJ0sZB3Ixp3srB", vibe: "TRAP EDM", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 4, name: "Through The High Wire", artist: "James Blake", url: "https://open.spotify.com/track/0pkmCdVL9F63BEpfM3RBrL", vibe: "EMOTIONAL", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 1, name: "Message Man", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/4Oyl6oYSNeeZZP0OAxPVaU", vibe: "EMO ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 2, name: "PIToRRO DE COCO", artist: "Bad Bunny", url: "https://open.spotify.com/track/14QaXYIK3K3QPtezqxRRPN", vibe: "TRAP LATINO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 3, name: "Through The High Wire", artist: "James Blake", url: "https://open.spotify.com/track/0pkmCdVL9F63BEpfM3RBrL", vibe: "EMOTIONAL", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 4, name: "Feel Alive", artist: "ILLENIUM & Bastille", url: "https://open.spotify.com/track/1xkkHeokEkhrUmqjh2dkv5", vibe: "EDM", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
     { n: 5, name: "PUMAS", artist: "Trueno & Milo j", url: "https://open.spotify.com/track/5Iu46UfunYa0I5CFGAW59y", vibe: "LATIN RAP", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 6, name: "Ingobernable", artist: "C. Tangana", url: "https://open.spotify.com/track/3SK45LddxlEkzI8OWO9Eyo", vibe: "FLAMENCO", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 6, name: "Stressed Out", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3CRDbSIZ4r5MsZ0YwxuEkn", vibe: "NOSTALGIC", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 74, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 48, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 68, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 70, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 44, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 62, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Descarga física — 15 min de movimiento sin pensar", desc: "Con energía alta pero valence mixta, el cuerpo necesita outlet antes de que la mente procese. Una carrera corta, saltar cuerda, o bailar solo en casa. Bad Bunny y ILLENIUM son el soundtrack perfecto. No es ejercicio — es regulación.", time: "15 min" },
-    { icon: "🌬️", title: "Respiración 4-7-8 para bajar la turbulencia", desc: "El push-pull entre géneros muy distintos refleja tensión interna entre lo que querés sentir y lo que sentís. Cuatro ciclos de 4-7-8 (inhala 4s, retén 7s, exhala 8s) activan el nervio vago y bajan el ruido de fondo antes de dormir.", time: "5 min" },
-    { icon: "📓", title: "Escribe qué necesitabas hoy — sin juzgar", desc: "Transitional aparece cuando estás en dos estados al mismo tiempo. ¿Qué buscabas con la música de esta noche — energía, evasión, compañía, procesamiento? La pregunta no tiene respuesta mala. Solo escribe lo que sube.", time: "8 min" },
+    { icon: "🚶", title: "Caminata sin destino — 20 min con TØP en los oídos", desc: "Un bloque tan extenso de Twenty One Pilots no es aleatorio — hay algo que estás procesando. Una caminata sin rumbo fijo, sin mapa, permite que la mente siga el hilo emocional que la música empezó. No necesitas saber a dónde vas.", time: "20 min" },
+    { icon: "🌬️", title: "Respiración en caja para anclar el cambio de ritmo", desc: "Pasar de emo rock profundo a trap latino y EDM en la misma sesión activa múltiples estados. Cuatro ciclos de box breathing (inhala 4s, retén 4s, exhala 4s, pausa 4s) resincronizan el sistema nervioso entre transiciones.", time: "6 min" },
+    { icon: "📓", title: "¿Qué procesas con Tyler Joseph hoy?", desc: "Message Man, Fake You Out, Stressed Out — esos tracks no se escuchan en bloque sin razón. Abre el cuaderno y escribe sin filtro lo que esas letras movieron. No tiene que tener estructura. Solo que salga.", time: "10 min" },
   ]
 
-  const journalPrompt = "Pasaste de Bad Bunny a James Blake en la misma noche. ¿Qué estaba pasando adentro que necesitabas esas dos energías tan distintas?"
-  const quote = { text: "You have to know when to be arrogant. You have to know when to be humble. You have to know when to be both.", author: "Phil Jackson" }
+  const journalPrompt = "Escuchaste TØP en modo maratón esta mañana. ¿Qué parte de ti estaba hablando — y qué necesitaba ser escuchada?"
+  const quote = { text: "The most important thing is to try and inspire people so that they can be great in whatever they want to do.", author: "Kobe Bryant" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
