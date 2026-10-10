@@ -6,33 +6,33 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Fri Oct 09, 2026"
-  const mood = { label: "MELANCHOLIC", emoji: "🌑", sub: "Tarde de viernes con TØP — made for me, Ingobernable y el live de México City cerrando el día" }
-  const insight = "La tarde arrancó con Columbia de Quevedo, 'made for me' de JVKE (romántico y suave) e Ingobernable de C. Tangana con Gipsy Kings — flamenco y latin como puente antes de volver al universo TØP. El live de Mexico City dominó: Ride, Next Semester, Heathens, Shy Away, Stressed Out, Jumpsuit, Fake You Out. Valence baja sostenida, emo moderno con picos de nostalgia. Es viernes de cierre introspectivo antes de que arranque el fin de semana."
+  const date = "Sat Oct 10, 2026"
+  const mood = { label: "NOSTALGIC", emoji: "🌅", sub: "Sábado de throwbacks — TØP desde 2009, Mountain Sound y el live de México City reviviendo algo" }
+  const insight = "Mountain Sound de Of Monsters and Men abrió el sábado con su folk cálido del 2012. Desde ahí, un viaje hacia atrás: Johnny Boy, Air Catcher y Fake You Out de los primeros TØP (2009–2013), Stressed Out y Message Man del Blurryface era. El live de México City funciona como cápsula del tiempo — escuchar esos tracks en vivo es procesar el recuerdo del concierto. Valence baja pero con calidez nostálgica, no melancolía pura. Es un sábado de mirar hacia adentro y quedarse con lo que importa."
 
   const tracks = [
-    { n: 1, name: "Fake You Out", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3MLtopC0uho28PxZN7Zecy", vibe: "EMO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "Stressed Out", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3CRDbSIZ4r5MsZ0YwxuEkn", vibe: "NOSTALGIA", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 3, name: "made for me", artist: "JVKE & ZVC", url: "https://open.spotify.com/track/6FOcAUTjpxsMN5X9cUvK1B", vibe: "ROMANTIC", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 4, name: "Ingobernable", artist: "C. Tangana", url: "https://open.spotify.com/track/3SK45LddxlEkzI8OWO9Eyo", vibe: "FLAMENCO", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 5, name: "Jumpsuit", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/1E1uGhNdBe6Dddbgs2KqtZ", vibe: "MOD ROCK", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 6, name: "Columbia", artist: "Quevedo", url: "https://open.spotify.com/track/6XbtvPmIpyCbjuT0e8cQtp", vibe: "REGGAETON", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 1, name: "Mountain Sound", artist: "Of Monsters and Men", url: "https://open.spotify.com/track/60ZGteAEtPCnGE6zevgUcd", vibe: "INDIE FOLK", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 2, name: "Stressed Out", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3CRDbSIZ4r5MsZ0YwxuEkn", vibe: "THROWBACK", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 3, name: "Message Man", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/4Oyl6oYSNeeZZP0OAxPVaU", vibe: "EMO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 4, name: "Fake You Out", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3MLtopC0uho28PxZN7Zecy", vibe: "EARLY ERA", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 5, name: "Malabares", artist: "Sabino", url: "https://open.spotify.com/track/468MBAKrrK72FDQKpSR4hZ", vibe: "FOLK MX", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 6, name: "made for me", artist: "JVKE & ZVC", url: "https://open.spotify.com/track/6FOcAUTjpxsMN5X9cUvK1B", vibe: "ROMANTIC", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 48, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 30, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 38, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 52, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 38, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 35, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Caminata de cierre — 15 minutos afuera", desc: "Llevas horas en modo introspectivo con TØP. Una caminata corta al atardecer (sin audífonos los primeros 5 minutos) resetea el sistema nervioso y prepara la transición al fin de semana. La luz de tarde es el ritual de cierre perfecto.", time: "15 min" },
-    { icon: "🌬️", title: "Respiración 4-7-8 para bajar del ride emocional", desc: "El loop de emo rock sostenido activa el sistema nervioso simpático. Tres rondas de 4-7-8 (inhala 4s, sostén 7s, exhala 8s) bajan el cortisol y te anclan antes de la noche del viernes.", time: "6 min" },
-    { icon: "✍️", title: "Carta rápida de cierre de semana", desc: "Es viernes por la tarde. Escribe tres cosas: lo que soltás esta semana, lo que te llevás al fin de semana, y una cosa que quieras sentir mañana. Tyler Joseph lleva una noche procesándolo contigo — ahora es tu turno.", time: "8 min" },
+    { icon: "🎞️", title: "Revive un recuerdo bueno — sin pantallas", desc: "La nostalgia activa el sistema de recompensa pero puede volverse bucle. Dale dirección: cierra los ojos, elige UN recuerdo específico del que estos tracks son soundtrack, y quédate 5 minutos ahí. No para escapar — para anclar.", time: "5 min" },
+    { icon: "🚶", title: "Caminata sin destino fijo — modo exploración", desc: "Es sábado. Sal sin ruta. Mountain Sound y el folk de Sabino piden movimiento suave al aire libre. Deja que el cuerpo lleve el ritmo, no el mapa. 20 minutos es suficiente para cambiar el estado.", time: "20 min" },
+    { icon: "✍️", title: "Escribe una lista de lo que extrañas", desc: "El modo nostálgico tiene información. ¿Qué personas, lugares, versiones de vos o momentos están apareciendo hoy? Escríbelos sin filtro. No para recuperarlos — para saber qué valores siguen vivos en vos.", time: "10 min" },
   ]
 
-  const journalPrompt = "Llevas el viernes entero con Twenty One Pilots. ¿Qué estás cerrando esta semana — y cómo quieres que se sienta este fin de semana?"
-  const quote = { text: "Stay alive. Nico and the Niners.", author: "Tyler Joseph" }
+  const journalPrompt = "Mountain Sound abrió el sábado y desde ahí todo fue hacia atrás. ¿Qué estás recordando hoy — y qué dice eso de lo que querés ahora?"
+  const quote = { text: "We are not what you think we are, we are golden.", author: "Of Monsters and Men" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
