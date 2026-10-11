@@ -6,33 +6,33 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Sat Oct 10, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "⚡", sub: "TØP y Blamegame de Nsqk en la tarde — el hilo introspectivo se mantiene mientras la energía reggaeton/EDM sigue jalando" }
-  const insight = "La sesión de la tarde confirma el patrón del día: volviste a Message Man y Blamegame de Nsqk — canciones que procesan cosas sin resolverlas del todo. James Blake, RØZ y Nsqk anclan el lado emocional mientras KAROL G, Bad Bunny, ILLENIUM y Alison Wonderland siguen empujando hacia movimiento. TRANSITIONAL persistente — no es indecisión, es que estás en medio de algo."
+  const date = "Sat Oct 11, 2026"
+  const mood = { label: "TRANSITIONAL", emoji: "⚡", sub: "TØP en bucle, EDM que empuja, reggaeton que ancla — dos fuerzas opuestas sin ceder" }
+  const insight = "Tu sesión mezcla una carga emocional pesada — TØP en vivo desde México City, James Blake, Nsqk — con picos de energía real: ILLENIUM + Bastille, Alison Wonderland, JADOM dubstep. La intensidad subió respecto a ayer: el EDM tiene más presencia pero el ancla introspectiva de Heathens, Shy Away y Message Man no suelta. Sigues en tránsito, pero el motor acelera."
 
   const tracks = [
     { n: 1, name: "Message Man", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/4Oyl6oYSNeeZZP0OAxPVaU", vibe: "EMO ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 2, name: "Blamegame", artist: "Nsqk & paopao", url: "https://open.spotify.com/track/6O2c6uqvFAeUNxWQY6R3e1", vibe: "LATIN ALT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 2, name: "Feel Alive", artist: "ILLENIUM, Bastille & Dabin", url: "https://open.spotify.com/track/1xkkHeokEkhrUmqjh2dkv5", vibe: "EDM DROP", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
     { n: 3, name: "Through The High Wire", artist: "James Blake", url: "https://open.spotify.com/track/0pkmCdVL9F63BEpfM3RBrL", vibe: "EMOTIONAL", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 4, name: "PUMAS", artist: "Trueno & Milo j", url: "https://open.spotify.com/track/5Iu46UfunYa0I5CFGAW59y", vibe: "LATIN RAP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 5, name: "Ahí", artist: "KAROL G & Drake", url: "https://open.spotify.com/track/6DoUDG1GJrJf6eGQLUBBnm", vibe: "REGGAETON", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 6, name: "Ya no te quiero ver", artist: "RØZ & Joalin", url: "https://open.spotify.com/track/4kddD5phh3YQIX8L7UKltl", vibe: "ELECTRONICA", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 4, name: "PIToRRO DE COCO", artist: "Bad Bunny", url: "https://open.spotify.com/track/14QaXYIK3K3QPtezqxRRPN", vibe: "TRAP LATINO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 5, name: "RESCUE U", artist: "Alison Wonderland & WINK", url: "https://open.spotify.com/track/3jDXVV12qJ0sZB3Ixp3srB", vibe: "DUBSTEP", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 6, name: "Ingobernable", artist: "C. Tangana & Gipsy Kings", url: "https://open.spotify.com/track/3SK45LddxlEkzI8OWO9Eyo", vibe: "FLAMENCO", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 65, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 44, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 62, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 70, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 46, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 65, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Camina 15 min sin música — solo procesa", desc: "Llevas todo el día alternando entre introspección y energía. Una caminata en silencio a las 3pm deja que lo que escuchaste esta mañana termine de asentarse antes de que el día siga. Sin auriculares, sin destino fijo.", time: "15 min" },
-    { icon: "🌬️", title: "Pausa de 5 min — respira en 4-7-8", desc: "Inhala 4s, retén 7s, exhala 8s. Tres ciclos. El patrón TRANSITIONAL activa múltiples sistemas a la vez — este ejercicio los sincroniza antes del bloque de la tarde.", time: "5 min" },
-    { icon: "📓", title: "¿Qué está sin resolver hoy?", desc: "Blamegame y Message Man son canciones sobre cosas que no se dicen. Escribe en 5 minutos qué conversación o decisión llevas cargando. No necesitas la respuesta — solo nombrarlo.", time: "8 min" },
+    { icon: "🏃", title: "Corre o trota 20 min con Feel Alive de ILLENIUM", desc: "La energía EDM que jalaste hoy pide salida física. Pon el tracklist de ILLENIUM y Alison Wonderland y mueve el cuerpo — tu sistema nervioso ya está calibrado para el movimiento, solo dale el canal.", time: "20 min" },
+    { icon: "🌬️", title: "Pausa de caja — 4-4-4-4", desc: "Inhala 4s, retén 4s, exhala 4s, retén 4s. Cuatro ciclos. El contraste TØP-EDM genera activación simultánea en dos frecuencias — esta respiración las sincroniza antes del resto de la tarde.", time: "5 min" },
+    { icon: "📓", title: "Heathens y Stressed Out: ¿de qué huyes?", desc: "TØP en vivo desde México y Stressed Out en bucle son señales. Escribe sin editar: ¿qué situación o conversación llevas evitando esta semana? No resuelvas — solo nómbrala.", time: "8 min" },
   ]
 
-  const journalPrompt = "Volviste a Message Man y Blamegame de Nsqk en la tarde. ¿Qué estás procesando que todavía no tiene nombre?"
-  const quote = { text: "You don't have to resolve every tension. Sometimes staying in the middle is the work.", author: "Pema Chödrön" }
+  const journalPrompt = "Pusiste Heathens, Shy Away y Stressed Out de TØP en vivo desde México City. ¿De qué te estás alejando que esas canciones dicen por ti?"
+  const quote = { text: "The most courageous act is still to think for yourself. Aloud.", author: "Coco Chanel" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
