@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Sat Oct 11, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "⚡", sub: "TØP en bucle, EDM que empuja, reggaeton que ancla — dos fuerzas opuestas sin ceder" }
-  const insight = "Tu sesión mezcla una carga emocional pesada — TØP en vivo desde México City, James Blake, Nsqk — con picos de energía real: ILLENIUM + Bastille, Alison Wonderland, JADOM dubstep. La intensidad subió respecto a ayer: el EDM tiene más presencia pero el ancla introspectiva de Heathens, Shy Away y Message Man no suelta. Sigues en tránsito, pero el motor acelera."
+  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Folk íntimo de noche, TØP que no suelta, reggaeton que rompe — dos mundos que no se resuelven" }
+  const insight = "Tu sesión nocturna arrancó con Nikki Fölk en bucle — folk íntimo mexicano, vulnerable, con 'Canto para no llorar' como ancla emocional. Después vino TØP, Bad Bunny, KAROL G y ILLENIUM. Esa apertura suave que se transforma en energía es la señal más honesta: algo en ti buscaba consuelo antes de moverse."
 
   const tracks = [
-    { n: 1, name: "Message Man", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/4Oyl6oYSNeeZZP0OAxPVaU", vibe: "EMO ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 2, name: "Feel Alive", artist: "ILLENIUM, Bastille & Dabin", url: "https://open.spotify.com/track/1xkkHeokEkhrUmqjh2dkv5", vibe: "EDM DROP", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 3, name: "Through The High Wire", artist: "James Blake", url: "https://open.spotify.com/track/0pkmCdVL9F63BEpfM3RBrL", vibe: "EMOTIONAL", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 1, name: "Canto para no llorar", artist: "Nikki Fölk", url: "https://open.spotify.com/track/1O2JNRggds9oU4mJDGG8EV", vibe: "FOLK ÍNTIMO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 2, name: "Message Man", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/4Oyl6oYSNeeZZP0OAxPVaU", vibe: "EMO ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 3, name: "Through The High Wire", artist: "James Blake", url: "https://open.spotify.com/track/0pkmCdVL9F63BEpfM3RBrL", vibe: "EMOTIONAL", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
     { n: 4, name: "PIToRRO DE COCO", artist: "Bad Bunny", url: "https://open.spotify.com/track/14QaXYIK3K3QPtezqxRRPN", vibe: "TRAP LATINO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 5, name: "RESCUE U", artist: "Alison Wonderland & WINK", url: "https://open.spotify.com/track/3jDXVV12qJ0sZB3Ixp3srB", vibe: "DUBSTEP", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 6, name: "Ingobernable", artist: "C. Tangana & Gipsy Kings", url: "https://open.spotify.com/track/3SK45LddxlEkzI8OWO9Eyo", vibe: "FLAMENCO", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 5, name: "Feel Alive", artist: "ILLENIUM, Bastille & Dabin", url: "https://open.spotify.com/track/1xkkHeokEkhrUmqjh2dkv5", vibe: "EDM DROP", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
+    { n: 6, name: "Ya no te quiero ver", artist: "RØZ & Joalin", url: "https://open.spotify.com/track/4kddD5phh3YQIX8L7UKltl", vibe: "ELECTRONICA", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 70, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 46, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 65, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 62, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 38, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 60, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Corre o trota 20 min con Feel Alive de ILLENIUM", desc: "La energía EDM que jalaste hoy pide salida física. Pon el tracklist de ILLENIUM y Alison Wonderland y mueve el cuerpo — tu sistema nervioso ya está calibrado para el movimiento, solo dale el canal.", time: "20 min" },
-    { icon: "🌬️", title: "Pausa de caja — 4-4-4-4", desc: "Inhala 4s, retén 4s, exhala 4s, retén 4s. Cuatro ciclos. El contraste TØP-EDM genera activación simultánea en dos frecuencias — esta respiración las sincroniza antes del resto de la tarde.", time: "5 min" },
-    { icon: "📓", title: "Heathens y Stressed Out: ¿de qué huyes?", desc: "TØP en vivo desde México y Stressed Out en bucle son señales. Escribe sin editar: ¿qué situación o conversación llevas evitando esta semana? No resuelvas — solo nómbrala.", time: "8 min" },
+    { icon: "🚶", title: "Caminata nocturna con Nikki Fölk de fondo", desc: "No corras — camina. 'Canto para no llorar' y 'CAMBIO EL CHIP' en bucle mientras mueves el cuerpo despacio. El folk íntimo con movimiento suave resetea el sistema nervioso sin forzarlo.", time: "15 min" },
+    { icon: "🌬️", title: "Respiración 4-7-8 para bajar el tono", desc: "Inhala 4s, retén 7s, exhala 8s. Tres ciclos. La mezcla folk-EDM-trap de tu sesión activa varios registros a la vez — este patrón los baja a uno solo antes de dormir.", time: "4 min" },
+    { icon: "📓", title: "¿Qué dice 'Canto para no llorar' que tú no has dicho?", desc: "Pusiste esa canción tres veces seguidas de noche. Escribe sin editar: ¿qué emoción llevas cargando hoy que todavía no has nombrado en voz alta? No tienes que resolverla — solo ponle nombre.", time: "8 min" },
   ]
 
-  const journalPrompt = "Pusiste Heathens, Shy Away y Stressed Out de TØP en vivo desde México City. ¿De qué te estás alejando que esas canciones dicen por ti?"
-  const quote = { text: "The most courageous act is still to think for yourself. Aloud.", author: "Coco Chanel" }
+  const journalPrompt = "Pusiste 'Canto para no llorar' de Nikki Fölk en bucle a la 1am. ¿Qué estabas sintiendo que esa canción decía mejor que tú?"
+  const quote = { text: "No toda música alegre te salva, y no toda música triste te hunde.", author: "Anónimo" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
