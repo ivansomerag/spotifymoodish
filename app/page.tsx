@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Sun Oct 11, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌀", sub: "Reggaeton en la mañana, introspección en la madrugada — dos Ivan en un domingo" }
-  const insight = "La sesión arrancó con KAROL G, Nsqk, Milo j y Alvaro Diaz marcando el ritmo del mediodía, pero desde las 4am el tono cambió radicalmente: Olivia Rodrigo en loop, James Blake, Nikki Fölk y CHVRCHES. El cuerpo pidió movimiento, la madrugada pidió silencio. Esa dicotomía define exactamente dónde estás ahora."
+  const mood = { label: "TRANSITIONAL", emoji: "🌀", sub: "CHVRCHES electropop al despertar, Olivia Rodrigo en loop toda la madrugada — el domingo no se decide" }
+  const insight = "Arrancaste el día con CHVRCHES, underscores y Twenty One Pilots — electropop y emo pop marcando el tono de la mañana. Pero 'stupid song' acumuló más de 4 horas en loop entre las 3 y las 4am, con James Blake de fondo. Hay algo entre lo que suenas de día y lo que no puedes soltar de noche."
 
   const tracks = [
-    { n: 1, name: "piel", artist: "Nsqk", url: "https://open.spotify.com/track/3uzpECBHQDuAEy6R2AzAEV", vibe: "LATIN ÍNTIMO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 2, name: "interesante", artist: "Paloma Morphy", url: "https://open.spotify.com/track/5dL5VeYWna6JiqTzqdbk9b", vibe: "ALT POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 3, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/49j6SvuvWfbEKZKzsHCdLJ", vibe: "SAD POP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 1, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/49j6SvuvWfbEKZKzsHCdLJ", vibe: "SAD POP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 2, name: "Tether (Junior Sanchez Remix)", artist: "CHVRCHES", url: "https://open.spotify.com/track/71sKbB1s1dJTjI9DcW9c40", vibe: "ELECTROPOP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 3, name: "piel", artist: "Nsqk", url: "https://open.spotify.com/track/3uzpECBHQDuAEy6R2AzAEV", vibe: "LATIN ÍNTIMO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
     { n: 4, name: "I Had a Dream She Took My Hand", artist: "James Blake", url: "https://open.spotify.com/track/4VemTpfvVD5zunOOxA82sY", vibe: "MELANCHOLIC", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
     { n: 5, name: "Intentions", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3FbMtvXMcjmuAzlAhgwK0I", vibe: "EMO POP ROCK", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
     { n: 6, name: "MALASNOTICIAS.", artist: "Alvaro Diaz", url: "https://open.spotify.com/track/7giI2ndmt3L5QiMB8v3McO", vibe: "LATIN URBAN", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 63, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 49, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 70, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 58, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 44, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 65, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Caminata sin destino, 20 minutos", desc: "No corras hoy — el mix de James Blake y Nikki Fölk en la madrugada pide algo más tranquilo. Una caminata sin airpods reset el sistema nervioso después de una sesión emocional larga.", time: "20 min" },
-    { icon: "🌬️", title: "Box breathing para anclar el presente", desc: "4s inhala, 4s sostén, 4s exhala, 4s pausa. Repite 5 veces. Ideal cuando el cuerpo bailó reggaeton pero la mente aterrizó en Olivia Rodrigo a las 4am.", time: "5 min" },
-    { icon: "📓", title: "Escribe lo que no dijiste hoy", desc: "Entre 'stupid song' y 'I Had a Dream She Took My Hand' hay algo sin resolver. Escríbelo sin censura: ¿qué es lo que esas canciones nombraron por ti esta noche?", time: "10 min" },
+    { icon: "🚶", title: "Caminata lenta, 20 minutos sin música", desc: "Después de 4 horas con 'stupid song' en loop, el sistema nervioso necesita silencio activo. Sin airpods. Solo tú, el sol de domingo, y lo que surja.", time: "20 min" },
+    { icon: "🌬️", title: "Respiración 4-7-8 para soltar tensión", desc: "Inhala 4 segundos, sostén 7, exhala lento en 8. Repite 4 veces. Ideal para transitar del estado nocturno introspectivo al presente del mediodía.", time: "5 min" },
+    { icon: "📓", title: "Escribe la canción que no puedes dejar de escuchar", desc: "¿Qué dice 'stupid song' que tú no has podido decir aún? Escribe sin filtro durante 10 minutos — no el análisis, sino la respuesta emocional directa.", time: "10 min" },
   ]
 
-  const journalPrompt = "Escuchaste a Olivia Rodrigo en loop a las 4am y a KAROL G a las 9. ¿Cuál de los dos Ivan fue más honesto hoy?"
-  const quote = { text: "La música es el taquígrafo de las emociones.", author: "León Tolstói" }
+  const journalPrompt = "Pasaste la madrugada con Olivia Rodrigo y el día con CHVRCHES y Twenty One Pilots. ¿Qué parte de ti escucha cada una?"
+  const quote = { text: "La música expresa lo que no puede ponerse en palabras y lo que no puede permanecer en silencio.", author: "Victor Hugo" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
