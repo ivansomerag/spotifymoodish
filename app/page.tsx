@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Sun Oct 11, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌀", sub: "Latin urbano que empuja, pop introspectivo que frena — el día con dos velocidades" }
-  const insight = "Tu sesión de hoy mezcló reggaeton y latin urbano a full (KAROL G, Quevedo, Milo j, Alvaro Diaz) con momentos de pop emocional profundo — Olivia Rodrigo, James Blake, Twenty One Pilots. El cuerpo quiso moverse, la mente llegó a otro lugar. Esa tensión entre ritmo y reflexión define tu domingo."
+  const mood = { label: "TRANSITIONAL", emoji: "🌀", sub: "Reggaeton en la mañana, introspección en la madrugada — dos Ivan en un domingo" }
+  const insight = "La sesión arrancó con KAROL G, Nsqk, Milo j y Alvaro Diaz marcando el ritmo del mediodía, pero desde las 4am el tono cambió radicalmente: Olivia Rodrigo en loop, James Blake, Nikki Fölk y CHVRCHES. El cuerpo pidió movimiento, la madrugada pidió silencio. Esa dicotomía define exactamente dónde estás ahora."
 
   const tracks = [
     { n: 1, name: "piel", artist: "Nsqk", url: "https://open.spotify.com/track/3uzpECBHQDuAEy6R2AzAEV", vibe: "LATIN ÍNTIMO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 2, name: "BbY WOW", artist: "KAROL G", url: "https://open.spotify.com/track/3h5T5JypYU7huFiVYhv1dr", vibe: "REGGAETON", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 3, name: "MALASNOTICIAS.", artist: "Alvaro Diaz", url: "https://open.spotify.com/track/7giI2ndmt3L5QiMB8v3McO", vibe: "LATIN URBAN", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 4, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/49j6SvuvWfbEKZKzsHCdLJ", vibe: "SAD POP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 2, name: "interesante", artist: "Paloma Morphy", url: "https://open.spotify.com/track/5dL5VeYWna6JiqTzqdbk9b", vibe: "ALT POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 3, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/49j6SvuvWfbEKZKzsHCdLJ", vibe: "SAD POP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 4, name: "I Had a Dream She Took My Hand", artist: "James Blake", url: "https://open.spotify.com/track/4VemTpfvVD5zunOOxA82sY", vibe: "MELANCHOLIC", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
     { n: 5, name: "Intentions", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3FbMtvXMcjmuAzlAhgwK0I", vibe: "EMO POP ROCK", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 6, name: "Columbia", artist: "Quevedo", url: "https://open.spotify.com/track/6XbtvPmIpyCbjuT0e8cQtp", vibe: "REGGAETON", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 6, name: "MALASNOTICIAS.", artist: "Alvaro Diaz", url: "https://open.spotify.com/track/7giI2ndmt3L5QiMB8v3McO", vibe: "LATIN URBAN", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 68, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 52, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 72, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 63, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 49, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 70, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "30 min de cardio con tu playlist reggaeton", desc: "KAROL G, Quevedo y Milo j dominaron tu sesión — ese ritmo está hecho para correr o subir escaleras. Aprovecha la energía que ya traes antes de que el introspectivo gane terreno.", time: "30 min" },
-    { icon: "🌬️", title: "Respiración 4-7-8 para soltar la tensión", desc: "Inhala 4s, sostén 7s, exhala 8s. Tres ciclos. La mezcla de latin bailable con Olivia Rodrigo y James Blake habla de un sistema nervioso que aún no decidió en qué modo estar.", time: "5 min" },
-    { icon: "📓", title: "Escribe desde las dos velocidades", desc: "Hoy escuchaste MALASNOTICIAS y después James Blake. Escribe: ¿qué te persigue cuando el ritmo baja? No lo resuelvas — solo ponle nombre en el papel.", time: "10 min" },
+    { icon: "🚶", title: "Caminata sin destino, 20 minutos", desc: "No corras hoy — el mix de James Blake y Nikki Fölk en la madrugada pide algo más tranquilo. Una caminata sin airpods reset el sistema nervioso después de una sesión emocional larga.", time: "20 min" },
+    { icon: "🌬️", title: "Box breathing para anclar el presente", desc: "4s inhala, 4s sostén, 4s exhala, 4s pausa. Repite 5 veces. Ideal cuando el cuerpo bailó reggaeton pero la mente aterrizó en Olivia Rodrigo a las 4am.", time: "5 min" },
+    { icon: "📓", title: "Escribe lo que no dijiste hoy", desc: "Entre 'stupid song' y 'I Had a Dream She Took My Hand' hay algo sin resolver. Escríbelo sin censura: ¿qué es lo que esas canciones nombraron por ti esta noche?", time: "10 min" },
   ]
 
-  const journalPrompt = "Entre KAROL G y Olivia Rodrigo hay un universo. ¿Cuál de las dos sonó más verdadera hoy — y por qué?"
-  const quote = { text: "La música da alma al universo, alas a la mente, vuelo a la imaginación y vida a todo.", author: "Platón" }
+  const journalPrompt = "Escuchaste a Olivia Rodrigo en loop a las 4am y a KAROL G a las 9. ¿Cuál de los dos Ivan fue más honesto hoy?"
+  const quote = { text: "La música es el taquígrafo de las emociones.", author: "León Tolstói" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
