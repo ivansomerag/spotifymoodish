@@ -6,33 +6,33 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Sat Oct 11, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Folk íntimo de noche, TØP que no suelta, reggaeton que rompe — dos mundos que no se resuelven" }
-  const insight = "Tu sesión nocturna arrancó con Nikki Fölk en bucle — folk íntimo mexicano, vulnerable, con 'Canto para no llorar' como ancla emocional. Después vino TØP, Bad Bunny, KAROL G y ILLENIUM. Esa apertura suave que se transforma en energía es la señal más honesta: algo en ti buscaba consuelo antes de moverse."
+  const date = "Sun Oct 11, 2026"
+  const mood = { label: "TRANSITIONAL", emoji: "🌀", sub: "Latin que energiza, pop que fragiliza — tu mañana arranca con dos caras" }
+  const insight = "Esta mañana abriste con Nsqk y Paloma Morphy — latin suave e íntimo — luego saltaste a KAROL G, CHVRCHES remix y MALASNOTICIAS. El cierre con James Blake y Olivia Rodrigo revela la grieta: tu cuerpo buscó movimiento pero tu mente llegó a otro lugar. Esa tensión es el pulso del día."
 
   const tracks = [
-    { n: 1, name: "Canto para no llorar", artist: "Nikki Fölk", url: "https://open.spotify.com/track/1O2JNRggds9oU4mJDGG8EV", vibe: "FOLK ÍNTIMO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 2, name: "Message Man", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/4Oyl6oYSNeeZZP0OAxPVaU", vibe: "EMO ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 3, name: "Through The High Wire", artist: "James Blake", url: "https://open.spotify.com/track/0pkmCdVL9F63BEpfM3RBrL", vibe: "EMOTIONAL", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 4, name: "PIToRRO DE COCO", artist: "Bad Bunny", url: "https://open.spotify.com/track/14QaXYIK3K3QPtezqxRRPN", vibe: "TRAP LATINO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 5, name: "Feel Alive", artist: "ILLENIUM, Bastille & Dabin", url: "https://open.spotify.com/track/1xkkHeokEkhrUmqjh2dkv5", vibe: "EDM DROP", nc: "#fb7185", nBg: "rgba(250,46,140,0.15)", nBd: "rgba(250,46,140,0.35)", vc: "#fb7185", vBg: "rgba(250,46,140,0.18)", vBd: "rgba(250,46,140,0.4)" },
-    { n: 6, name: "Ya no te quiero ver", artist: "RØZ & Joalin", url: "https://open.spotify.com/track/4kddD5phh3YQIX8L7UKltl", vibe: "ELECTRONICA", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 1, name: "piel", artist: "Nsqk", url: "https://open.spotify.com/track/3uzpECBHQDuAEy6R2AzAEV", vibe: "LATIN ÍNTIMO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 2, name: "BbY WOW", artist: "KAROL G", url: "https://open.spotify.com/track/3h5T5JypYU7huFiVYhv1dr", vibe: "REGGAETON", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 3, name: "Intentions", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3FbMtvXMcjmuAzlAhgwK0I", vibe: "POP ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 4, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/49j6SvuvWfbEKZKzsHCdLJ", vibe: "SAD POP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 5, name: "I Had a Dream She Took My Hand", artist: "James Blake", url: "https://open.spotify.com/track/4VemTpfvVD5zunOOxA82sY", vibe: "EMOTIONAL", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 6, name: "CÓMO QUIERES", artist: "RØZ", url: "https://open.spotify.com/track/3e9cKUnFgJIVleVRZ19atR", vibe: "LATIN ALT", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 62, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 38, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 60, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 65, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 48, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 68, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Caminata nocturna con Nikki Fölk de fondo", desc: "No corras — camina. 'Canto para no llorar' y 'CAMBIO EL CHIP' en bucle mientras mueves el cuerpo despacio. El folk íntimo con movimiento suave resetea el sistema nervioso sin forzarlo.", time: "15 min" },
-    { icon: "🌬️", title: "Respiración 4-7-8 para bajar el tono", desc: "Inhala 4s, retén 7s, exhala 8s. Tres ciclos. La mezcla folk-EDM-trap de tu sesión activa varios registros a la vez — este patrón los baja a uno solo antes de dormir.", time: "4 min" },
-    { icon: "📓", title: "¿Qué dice 'Canto para no llorar' que tú no has dicho?", desc: "Pusiste esa canción tres veces seguidas de noche. Escribe sin editar: ¿qué emoción llevas cargando hoy que todavía no has nombrado en voz alta? No tienes que resolverla — solo ponle nombre.", time: "8 min" },
+    { icon: "🏃", title: "Trote corto con Latin urbano de fondo", desc: "Pon MALASNOTICIAS o BbY WOW y mueve el cuerpo 20 minutos. El ritmo de reggaeton y latin urbano que dominó tu mañana está hecho para esto — tu energía ya está a medio camino.", time: "20 min" },
+    { icon: "🌬️", title: "Box breathing para centrar la mente", desc: "Inhala 4s, retén 4s, exhala 4s, retén 4s. Cuatro ciclos. La tensión entre el James Blake introspectivo y el KAROL G festivo de tu sesión necesita un punto neutro antes de arrancar el día.", time: "5 min" },
+    { icon: "📓", title: "Escribe sobre la grieta de hoy", desc: "Tu playlist de esta mañana saltó de latin bailable a Olivia Rodrigo y James Blake sin aviso. Escribe: ¿qué parte de ti quiere moverse y qué parte quiere quedarse quieta? Solo nómbralo.", time: "8 min" },
   ]
 
-  const journalPrompt = "Pusiste 'Canto para no llorar' de Nikki Fölk en bucle a la 1am. ¿Qué estabas sintiendo que esa canción decía mejor que tú?"
-  const quote = { text: "No toda música alegre te salva, y no toda música triste te hunde.", author: "Anónimo" }
+  const journalPrompt = "Tu mañana abrió con Nsqk y terminó con James Blake. ¿Qué cambió entre esas dos canciones — en el día o en ti?"
+  const quote = { text: "La música dice lo que las palabras no pueden y lo que es imposible quedar en silencio.", author: "Victor Hugo" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
