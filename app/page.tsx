@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Mon Oct 12, 2026"
-  const mood = { label: "MELANCHOLIC", emoji: "🌑", sub: "MCR, K.Flay y Marconi Union — la tarde pide introspección y peso emocional" }
-  const insight = "La sesión de hoy mezcla emo pesado (Cancer de MCR, Nico and the Niners de Twenty One Pilots), rock alternativo oscuro (Perfectly Alone de K.Flay, Nervous de The Neighbourhood) y ambient de calma forzada (Weightless de Marconi Union, Many Meetings de Howard Shore). Los picos de rap — Forever, Bagpipes from Baghdad — llegan como interrupciones de energía, pero el hilo conductor es introspectivo y cargado emocionalmente."
+  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "LOTR + rap legendario + Nsqk — la tarde oscila entre lo épico y lo introspectivo" }
+  const insight = "La sesión de esta tarde es un vaivén emocional claro: arrancas con Many Meetings (Howard Shore, orquestal LOTR) y Le Festin (Ratatouille), aterrizas en Forever de Drake/Kanye/Lil Wayne/Eminem y Bagpipes from Baghdad — energía máxima — y luego caes de vuelta a Tarde o temprano de Nsqk, Cancer de MCR y Nervous de The Neighbourhood. El sistema nervioso está probando distintos estados; todavía buscando dónde instalarse."
 
   const tracks = [
-    { n: 1, name: "Perfectly Alone", artist: "K.Flay", url: "https://open.spotify.com/track/6yjppaAD7BNYNWEEaaqHjt", vibe: "ALT ROCK OSCURO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 2, name: "Cancer", artist: "My Chemical Romance", url: "https://open.spotify.com/track/0GgN4MhR5GKn5IcKN0e0rG", vibe: "EMO INTENSO", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 1, name: "Forever", artist: "Drake, Kanye, Lil Wayne, Eminem", url: "https://open.spotify.com/track/3qjKqmA2YeH0a8DRoKj8iy", vibe: "RAP LEGENDARIO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 2, name: "Tarde o temprano", artist: "Nsqk", url: "https://open.spotify.com/track/3AkrjXOl3d8LycQHLHBm94", vibe: "LATIN ALTERNATIVO", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
     { n: 3, name: "Nico and the Niners", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/5SehvGGC53A7SZKCLXQcyt", vibe: "MODERN ROCK EMO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 4, name: "avalanche", artist: "imagiro", url: "https://open.spotify.com/track/6LSlKLXR4fLeaY1vSyNdHm", vibe: "ALT POP DELICADO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 5, name: "Weightless Part 1", artist: "Marconi Union", url: "https://open.spotify.com/track/2UZZtkoLOg7IHxeTAdPFvd", vibe: "AMBIENT TRANQUILO", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 6, name: "Tarde o temprano", artist: "Nsqk", url: "https://open.spotify.com/track/3AkrjXOl3d8LycQHLHBm94", vibe: "LATIN ALTERNATIVO", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 4, name: "Many Meetings", artist: "Howard Shore", url: "https://open.spotify.com/track/0VfcYOujgf9JDAgwlgu1qm", vibe: "ÉPICO ORQUESTAL", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 5, name: "Cancer", artist: "My Chemical Romance", url: "https://open.spotify.com/track/0GgN4MhR5GKn5IcKN0e0rG", vibe: "EMO INTENSO", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 6, name: "FINA", artist: "Bad Bunny & Young Miko", url: "https://open.spotify.com/track/3nNmRE0DxHC6ZaKkrpUumS", vibe: "TRAP LATINO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 42, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 30, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 38, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 58, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 40, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 52, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Camina sin destino fijo", desc: "Con valence en 30 y un mood cargado de emo y ambient, el cuerpo necesita movimiento suave, no intensidad. 20 minutos caminando sin auriculares — deja que el peso de los tracks se asiente antes de la siguiente vuelta.", time: "20 min" },
-    { icon: "🌬️", title: "Respiración de caja para el peso emocional", desc: "Cancer de MCR y Perfectly Alone de K.Flay activan el sistema nervioso de otra forma: hacia adentro. Caja 4-4-4-4: inhala, sostén, exhala, sostén. Cuatro rondas para anclar.", time: "8 min" },
-    { icon: "📓", title: "¿Qué estás procesando hoy?", desc: "Weightless, Cancer, Nico and the Niners — no pones ese playlist sin razón. Escribe sin filtro qué está pesando hoy. No necesitas resolverlo. Solo nómbralo.", time: "10 min" },
+    { icon: "🏃", title: "Corre con el playlist encendido", desc: "La mezcla de rap legendario (Forever) y rock épico (Nico and the Niners) tiene el BPM perfecto para un sprint corto. 15 minutos al ritmo de lo que estás escuchando — deja que la energía de Drake y Eminem te mueva.", time: "15 min" },
+    { icon: "🎧", title: "Escucha Many Meetings sin hacer nada más", desc: "Howard Shore y el LOTR piden atención total, no de fondo. Pon Many Meetings, cierra los ojos, y deja que lo orquestal resetee el sistema nervioso entre los picos de rap y emo.", time: "5 min" },
+    { icon: "📓", title: "¿Entre qué dos estados estás hoy?", desc: "LOTR y rap legendario en la misma sesión dicen que hay algo grande en la cabeza. Escribe una frase sobre lo épico que se siente lo que estás construyendo — y una sobre lo que todavía pesa.", time: "8 min" },
   ]
 
-  const journalPrompt = "K.Flay dice 'perfectly alone', MCR habla de Cancer, Twenty One Pilots de escapar — ¿qué parte de ti está procesando algo en silencio hoy, y qué necesitaría para salir?"
-  const quote = { text: "La música puede cambiar el mundo porque puede cambiar a las personas.", author: "Bono" }
+  const journalPrompt = "Forever suena a algo que no quieres perder, Many Meetings a algo que termina bien — ¿qué estás intentando resolver hoy que necesita los dos?"
+  const quote = { text: "No hay camino hacia la grandeza que no pase por la duda.", author: "Eminem" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
