@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Sun Oct 11, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌀", sub: "CHVRCHES electropop al despertar, Olivia Rodrigo en loop toda la madrugada — el domingo no se decide" }
-  const insight = "Arrancaste el día con CHVRCHES, underscores y Twenty One Pilots — electropop y emo pop marcando el tono de la mañana. Pero 'stupid song' acumuló más de 4 horas en loop entre las 3 y las 4am, con James Blake de fondo. Hay algo entre lo que suenas de día y lo que no puedes soltar de noche."
+  const mood = { label: "TRANSITIONAL", emoji: "🌀", sub: "Latin urban de mañana, pop melancólico de madrugada — el domingo no se decide entre el flow y los sentimientos" }
+  const insight = "El día arrancó con KAROL G, Trueno, Quevedo y Alvaro Diaz — energía latina pura y danceability alto. Pero entre las 3 y las 4am apareció James Blake, Olivia Rodrigo y Harry Styles, bajando el peso emocional. Tu domingo oscila entre el ritmo colectivo y la introspección solitaria."
 
   const tracks = [
-    { n: 1, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/49j6SvuvWfbEKZKzsHCdLJ", vibe: "SAD POP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 2, name: "Tether (Junior Sanchez Remix)", artist: "CHVRCHES", url: "https://open.spotify.com/track/71sKbB1s1dJTjI9DcW9c40", vibe: "ELECTROPOP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 3, name: "piel", artist: "Nsqk", url: "https://open.spotify.com/track/3uzpECBHQDuAEy6R2AzAEV", vibe: "LATIN ÍNTIMO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 4, name: "I Had a Dream She Took My Hand", artist: "James Blake", url: "https://open.spotify.com/track/4VemTpfvVD5zunOOxA82sY", vibe: "MELANCHOLIC", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 5, name: "Intentions", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3FbMtvXMcjmuAzlAhgwK0I", vibe: "EMO POP ROCK", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 6, name: "MALASNOTICIAS.", artist: "Alvaro Diaz", url: "https://open.spotify.com/track/7giI2ndmt3L5QiMB8v3McO", vibe: "LATIN URBAN", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 1, name: "piel", artist: "Nsqk", url: "https://open.spotify.com/track/3uzpECBHQDuAEy6R2AzAEV", vibe: "LATIN ÍNTIMO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 2, name: "MALASNOTICIAS.", artist: "Alvaro Diaz", url: "https://open.spotify.com/track/7giI2ndmt3L5QiMB8v3McO", vibe: "LATIN URBAN", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 3, name: "BbY WOW", artist: "KAROL G", url: "https://open.spotify.com/track/3h5T5JypYU7huFiVYhv1dr", vibe: "REGGAETON", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 4, name: "Intentions", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3FbMtvXMcjmuAzlAhgwK0I", vibe: "EMO POP ROCK", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 5, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/49j6SvuvWfbEKZKzsHCdLJ", vibe: "SAD POP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 6, name: "I Had a Dream She Took My Hand", artist: "James Blake", url: "https://open.spotify.com/track/4VemTpfvVD5zunOOxA82sY", vibe: "MELANCHOLIC", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 58, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 44, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 65, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 66, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 48, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 72, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Caminata lenta, 20 minutos sin música", desc: "Después de 4 horas con 'stupid song' en loop, el sistema nervioso necesita silencio activo. Sin airpods. Solo tú, el sol de domingo, y lo que surja.", time: "20 min" },
-    { icon: "🌬️", title: "Respiración 4-7-8 para soltar tensión", desc: "Inhala 4 segundos, sostén 7, exhala lento en 8. Repite 4 veces. Ideal para transitar del estado nocturno introspectivo al presente del mediodía.", time: "5 min" },
-    { icon: "📓", title: "Escribe la canción que no puedes dejar de escuchar", desc: "¿Qué dice 'stupid song' que tú no has podido decir aún? Escribe sin filtro durante 10 minutos — no el análisis, sino la respuesta emocional directa.", time: "10 min" },
+    { icon: "🏃", title: "Salida corta con KAROL G en los oídos", desc: "Tu danceability está en 72 — el cuerpo ya quiere moverse. 15 minutos de caminata rápida o trote suave con la playlist de la mañana. No lo pienses, solo sal.", time: "15 min" },
+    { icon: "🌬️", title: "Box breathing para cerrar el ciclo nocturno", desc: "Inhala 4 segundos, sostén 4, exhala 4, pausa 4. Repite 6 veces. Ayuda a soltar la carga emocional de las 3am con James Blake y entrar al mediodía limpio.", time: "5 min" },
+    { icon: "📓", title: "Escribe qué sonaste de madrugada y por qué", desc: "Entre las 3 y las 4am pusiste a James Blake, Olivia Rodrigo y Harry Styles seguidos. Escribe sin filtro qué estabas procesando — no el análisis, sino lo que sentiste.", time: "10 min" },
   ]
 
-  const journalPrompt = "Pasaste la madrugada con Olivia Rodrigo y el día con CHVRCHES y Twenty One Pilots. ¿Qué parte de ti escucha cada una?"
-  const quote = { text: "La música expresa lo que no puede ponerse en palabras y lo que no puede permanecer en silencio.", author: "Victor Hugo" }
+  const journalPrompt = "Tu mañana fue de KAROL G y Trueno, tu madrugada de James Blake y Olivia Rodrigo. ¿Qué versión de ti escucha cada uno, y cuál es la que más necesitas hoy?"
+  const quote = { text: "La música da alas a la mente, vuelo a la imaginación, y vida a todo lo demás.", author: "Platón" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
