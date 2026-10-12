@@ -6,33 +6,33 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Sun Oct 11, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌀", sub: "Latin urban de mañana, pop melancólico de madrugada — el domingo no se decide entre el flow y los sentimientos" }
-  const insight = "El día arrancó con KAROL G, Trueno, Quevedo y Alvaro Diaz — energía latina pura y danceability alto. Pero entre las 3 y las 4am apareció James Blake, Olivia Rodrigo y Harry Styles, bajando el peso emocional. Tu domingo oscila entre el ritmo colectivo y la introspección solitaria."
+  const date = "Mon Oct 12, 2026"
+  const mood = { label: "HYPE", emoji: "🔥", sub: "Eminem, Snoop y Macklemore dominan la mañana — el lunes arranca con rap pesado y house que no pide permiso" }
+  const insight = "La sesión de hoy está marcada por hip-hop de alto voltaje: Eminem en modo Castle, Snoop con 50 Cent y Eminem, Bad Meets Evil y Macklemore en Thrift Shop. Entre esos bloques aparecen pulsos de EDM (DROELOE, Distinct Motive) y house (Kaila, NO ESTABA MAL), lo que eleva la energía sin bajarla. El lunes empieza decidido."
 
   const tracks = [
-    { n: 1, name: "piel", artist: "Nsqk", url: "https://open.spotify.com/track/3uzpECBHQDuAEy6R2AzAEV", vibe: "LATIN ÍNTIMO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 2, name: "MALASNOTICIAS.", artist: "Alvaro Diaz", url: "https://open.spotify.com/track/7giI2ndmt3L5QiMB8v3McO", vibe: "LATIN URBAN", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
-    { n: 3, name: "BbY WOW", artist: "KAROL G", url: "https://open.spotify.com/track/3h5T5JypYU7huFiVYhv1dr", vibe: "REGGAETON", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 4, name: "Intentions", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3FbMtvXMcjmuAzlAhgwK0I", vibe: "EMO POP ROCK", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 5, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/49j6SvuvWfbEKZKzsHCdLJ", vibe: "SAD POP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 6, name: "I Had a Dream She Took My Hand", artist: "James Blake", url: "https://open.spotify.com/track/4VemTpfvVD5zunOOxA82sY", vibe: "MELANCHOLIC", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 1, name: "Castle", artist: "Eminem", url: "https://open.spotify.com/track/0lc70Jh2s1iOMuv9XIEhFy", vibe: "RAP INTENSO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 2, name: "Gunz N Smoke", artist: "Snoop Dogg ft. Eminem", url: "https://open.spotify.com/track/2GiJpAxK7T6JddAmEVreKT", vibe: "GANGSTER RAP", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 3, name: "Lines of the Broken", artist: "DROELOE & San Holo", url: "https://open.spotify.com/track/3nrhCeTDMltTYtyIw73KPG", vibe: "EDM EUFÓRICO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 4, name: "Thrift Shop", artist: "Macklemore & Ryan Lewis", url: "https://open.spotify.com/track/6CjtS2JZH9RkDz5UVInsa9", vibe: "POP RAP NOSTÁLGICO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 5, name: "Tight Dress", artist: "Kaila", url: "https://open.spotify.com/track/0VSnVU4YP5YJ6zZXuMoOBs", vibe: "HOUSE CLUB", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 6, name: "Ahí", artist: "KAROL G & Drake", url: "https://open.spotify.com/track/6DoUDG1GJrJf6eGQLUBBnm", vibe: "REGGAETON GLOBAL", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 66, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 48, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 72, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 75, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 55, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 70, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Salida corta con KAROL G en los oídos", desc: "Tu danceability está en 72 — el cuerpo ya quiere moverse. 15 minutos de caminata rápida o trote suave con la playlist de la mañana. No lo pienses, solo sal.", time: "15 min" },
-    { icon: "🌬️", title: "Box breathing para cerrar el ciclo nocturno", desc: "Inhala 4 segundos, sostén 4, exhala 4, pausa 4. Repite 6 veces. Ayuda a soltar la carga emocional de las 3am con James Blake y entrar al mediodía limpio.", time: "5 min" },
-    { icon: "📓", title: "Escribe qué sonaste de madrugada y por qué", desc: "Entre las 3 y las 4am pusiste a James Blake, Olivia Rodrigo y Harry Styles seguidos. Escribe sin filtro qué estabas procesando — no el análisis, sino lo que sentiste.", time: "10 min" },
+    { icon: "🏋️", title: "Entrena con Eminem en loop", desc: "Energy en 75 y hip-hop dominante — el cuerpo está en modo activación. 20 minutos de ejercicio intenso: sentadillas, flexiones, saltos. Castle de Eminem como banda sonora. El lunes se gana desde temprano.", time: "20 min" },
+    { icon: "🌬️", title: "Descarga la tensión del rap con respiración", desc: "Tanto rap pesado activa el sistema nervioso. Después del ejercicio, 4-7-8: inhala 4 seg, sostén 7, exhala 8. Tres rondas para bajar del high sin perder el foco.", time: "5 min" },
+    { icon: "📓", title: "¿Con qué actitud arrancas esta semana?", desc: "Pusiste Castle de Eminem y Gunz N Smoke a primera hora — eso no es accidente. Escribe en una línea la mentalidad con la que quieres llegar al viernes. Sin explicaciones.", time: "5 min" },
   ]
 
-  const journalPrompt = "Tu mañana fue de KAROL G y Trueno, tu madrugada de James Blake y Olivia Rodrigo. ¿Qué versión de ti escucha cada uno, y cuál es la que más necesitas hoy?"
-  const quote = { text: "La música da alas a la mente, vuelo a la imaginación, y vida a todo lo demás.", author: "Platón" }
+  const journalPrompt = "Eminem, Snoop, Macklemore — elegiste rap de peso para arrancar el lunes. ¿Qué estás preparando para enfrentar esta semana, y qué necesitas que esa energía te ayude a sostener?"
+  const quote = { text: "El rap es la CNN del gueto — documenta lo que nadie más quiere ver.", author: "Chuck D" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
