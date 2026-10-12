@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Mon Oct 12, 2026"
-  const mood = { label: "HYPE", emoji: "🔥", sub: "Eminem, Snoop y Macklemore dominan la mañana — el lunes arranca con rap pesado y house que no pide permiso" }
-  const insight = "La sesión de hoy está marcada por hip-hop de alto voltaje: Eminem en modo Castle, Snoop con 50 Cent y Eminem, Bad Meets Evil y Macklemore en Thrift Shop. Entre esos bloques aparecen pulsos de EDM (DROELOE, Distinct Motive) y house (Kaila, NO ESTABA MAL), lo que eleva la energía sin bajarla. El lunes empieza decidido."
+  const mood = { label: "MELANCHOLIC", emoji: "🌑", sub: "MCR, K.Flay y Marconi Union — la tarde pide introspección y peso emocional" }
+  const insight = "La sesión de hoy mezcla emo pesado (Cancer de MCR, Nico and the Niners de Twenty One Pilots), rock alternativo oscuro (Perfectly Alone de K.Flay, Nervous de The Neighbourhood) y ambient de calma forzada (Weightless de Marconi Union, Many Meetings de Howard Shore). Los picos de rap — Forever, Bagpipes from Baghdad — llegan como interrupciones de energía, pero el hilo conductor es introspectivo y cargado emocionalmente."
 
   const tracks = [
-    { n: 1, name: "Castle", artist: "Eminem", url: "https://open.spotify.com/track/0lc70Jh2s1iOMuv9XIEhFy", vibe: "RAP INTENSO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 2, name: "Gunz N Smoke", artist: "Snoop Dogg ft. Eminem", url: "https://open.spotify.com/track/2GiJpAxK7T6JddAmEVreKT", vibe: "GANGSTER RAP", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
-    { n: 3, name: "Lines of the Broken", artist: "DROELOE & San Holo", url: "https://open.spotify.com/track/3nrhCeTDMltTYtyIw73KPG", vibe: "EDM EUFÓRICO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 4, name: "Thrift Shop", artist: "Macklemore & Ryan Lewis", url: "https://open.spotify.com/track/6CjtS2JZH9RkDz5UVInsa9", vibe: "POP RAP NOSTÁLGICO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 5, name: "Tight Dress", artist: "Kaila", url: "https://open.spotify.com/track/0VSnVU4YP5YJ6zZXuMoOBs", vibe: "HOUSE CLUB", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 6, name: "Ahí", artist: "KAROL G & Drake", url: "https://open.spotify.com/track/6DoUDG1GJrJf6eGQLUBBnm", vibe: "REGGAETON GLOBAL", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 1, name: "Perfectly Alone", artist: "K.Flay", url: "https://open.spotify.com/track/6yjppaAD7BNYNWEEaaqHjt", vibe: "ALT ROCK OSCURO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 2, name: "Cancer", artist: "My Chemical Romance", url: "https://open.spotify.com/track/0GgN4MhR5GKn5IcKN0e0rG", vibe: "EMO INTENSO", nc: "#cbd5e1", nBg: "rgba(100,116,139,0.25)", nBd: "rgba(100,116,139,0.4)", vc: "#cbd5e1", vBg: "rgba(30,41,59,0.6)", vBd: "rgba(100,116,139,0.5)" },
+    { n: 3, name: "Nico and the Niners", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/5SehvGGC53A7SZKCLXQcyt", vibe: "MODERN ROCK EMO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 4, name: "avalanche", artist: "imagiro", url: "https://open.spotify.com/track/6LSlKLXR4fLeaY1vSyNdHm", vibe: "ALT POP DELICADO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 5, name: "Weightless Part 1", artist: "Marconi Union", url: "https://open.spotify.com/track/2UZZtkoLOg7IHxeTAdPFvd", vibe: "AMBIENT TRANQUILO", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 6, name: "Tarde o temprano", artist: "Nsqk", url: "https://open.spotify.com/track/3AkrjXOl3d8LycQHLHBm94", vibe: "LATIN ALTERNATIVO", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 75, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 55, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 70, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 42, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 30, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 38, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏋️", title: "Entrena con Eminem en loop", desc: "Energy en 75 y hip-hop dominante — el cuerpo está en modo activación. 20 minutos de ejercicio intenso: sentadillas, flexiones, saltos. Castle de Eminem como banda sonora. El lunes se gana desde temprano.", time: "20 min" },
-    { icon: "🌬️", title: "Descarga la tensión del rap con respiración", desc: "Tanto rap pesado activa el sistema nervioso. Después del ejercicio, 4-7-8: inhala 4 seg, sostén 7, exhala 8. Tres rondas para bajar del high sin perder el foco.", time: "5 min" },
-    { icon: "📓", title: "¿Con qué actitud arrancas esta semana?", desc: "Pusiste Castle de Eminem y Gunz N Smoke a primera hora — eso no es accidente. Escribe en una línea la mentalidad con la que quieres llegar al viernes. Sin explicaciones.", time: "5 min" },
+    { icon: "🚶", title: "Camina sin destino fijo", desc: "Con valence en 30 y un mood cargado de emo y ambient, el cuerpo necesita movimiento suave, no intensidad. 20 minutos caminando sin auriculares — deja que el peso de los tracks se asiente antes de la siguiente vuelta.", time: "20 min" },
+    { icon: "🌬️", title: "Respiración de caja para el peso emocional", desc: "Cancer de MCR y Perfectly Alone de K.Flay activan el sistema nervioso de otra forma: hacia adentro. Caja 4-4-4-4: inhala, sostén, exhala, sostén. Cuatro rondas para anclar.", time: "8 min" },
+    { icon: "📓", title: "¿Qué estás procesando hoy?", desc: "Weightless, Cancer, Nico and the Niners — no pones ese playlist sin razón. Escribe sin filtro qué está pesando hoy. No necesitas resolverlo. Solo nómbralo.", time: "10 min" },
   ]
 
-  const journalPrompt = "Eminem, Snoop, Macklemore — elegiste rap de peso para arrancar el lunes. ¿Qué estás preparando para enfrentar esta semana, y qué necesitas que esa energía te ayude a sostener?"
-  const quote = { text: "El rap es la CNN del gueto — documenta lo que nadie más quiere ver.", author: "Chuck D" }
+  const journalPrompt = "K.Flay dice 'perfectly alone', MCR habla de Cancer, Twenty One Pilots de escapar — ¿qué parte de ti está procesando algo en silencio hoy, y qué necesitaría para salir?"
+  const quote = { text: "La música puede cambiar el mundo porque puede cambiar a las personas.", author: "Bono" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
