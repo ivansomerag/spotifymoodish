@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Tue Oct 13, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "K.Flay en solitario + Nsqk en bucle + épica cinematográfica — identidad en proceso, energía buscando salida" }
-  const insight = "Perfectly Alone de K.Flay dominó la tarde con 35+ minutos — la mente eligió quedarse con esa tensión en lugar de escapar. Nsqk ancla el loop alternativo latino, mientras Le Festin y Many Meetings de Howard Shore inyectan momentos de grandeza cinematográfica: el sistema nervioso alterna entre introspección profunda y aspiración épica, sin resolver todavía hacia dónde."
+  const mood = { label: "MELANCHOLIC", emoji: "🖤", sub: "Twenty One Pilots en bucle total — emo profundo, angustia rock y nostalgia existencial dominan la sesión" }
+  const insight = "100% Twenty One Pilots hoy — desde los clásicos emo de Vessel (Trees, Ode to Sleep, Goner) hasta los nuevos lanzamientos de Clancy (Drag Path, Drum Show, Garbage). La mezcla de tracks de bajo valence como Addict With A Pen y Goner con la energía contenida de Heavydirtysoul y Drum Show revela un estado de procesamiento emocional intenso: la mente busca catarsis a través del rock introspectivo."
 
   const tracks = [
-    { n: 1, name: "Perfectly Alone", artist: "K.Flay", url: "https://open.spotify.com/track/6yjppaAD7BNYNWEEaaqHjt", vibe: "ALT INDIE SOLITUD", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 2, name: "Tarde o temprano", artist: "Nsqk", url: "https://open.spotify.com/track/3AkrjXOl3d8LycQHLHBm94", vibe: "LATIN ALTERNATIVO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 3, name: "Dientes de Fierro", artist: "Nsqk & Jean Dawson", url: "https://open.spotify.com/track/2j5ImvoXOHcsAFSzoi3SyH", vibe: "POST-PUNK LATINO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 4, name: "Forever", artist: "Drake, Kanye, Lil Wayne, Eminem", url: "https://open.spotify.com/track/3qjKqmA2YeH0a8DRoKj8iy", vibe: "RAP LEGENDARIO", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 5, name: "Le Festin", artist: "Camille", url: "https://open.spotify.com/track/5Y1aFwjwTTojIQe3gaWDLr", vibe: "ÉPICO CINEMATOGRÁFICO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 6, name: "Nico and the Niners", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/5SehvGGC53A7SZKCLXQcyt", vibe: "MODERN ROCK EMO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 1, name: "Drag Path", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/0TlcczkVTGpinpkGJpT81L", vibe: "ANGST POP ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 2, name: "Trees", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/1yf97yL1ll8FYXC27c9VTw", vibe: "EMO CATARSIS", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 3, name: "Heavydirtysoul", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/7i9763l5SSfOnqZ35VOcfy", vibe: "RAP ROCK DURO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 4, name: "Drum Show", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/20BFo9REyGdCxrlPmD3xph", vibe: "ALT ROCK INTENSO", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 5, name: "Goner", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/5P3yUXUC9rZPJPNmYGKEAz", vibe: "EMO SAD FINAL", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 6, name: "Addict With A Pen", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3MFertXkQGFCIXm0R8qUjW", vibe: "EMO CRUDO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 55, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 38, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 44, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 62, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 28, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 38, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "✍️", title: "Escribe lo que K.Flay no puede decir por ti", desc: "35 minutos con Perfectly Alone es una señal clara — algo quiere ser procesado en palabras, no solo en audio. Abre una hoja en blanco y escribe sin filtro por 7 minutos: ¿qué es lo que eliges seguir cargando solo?", time: "7 min" },
-    { icon: "🏃", title: "Corre con Forever y sácalo del sistema", desc: "El rap épico de Drake/Kanye/Eminem tiene el BPM exacto para convertir la tensión acumulada en movimiento. 15 minutos de carrera o caminata rápida — deja que el cuerpo resuelva lo que la mente da vueltas.", time: "15 min" },
-    { icon: "🌬️", title: "Reset con respiración box 4-4-4-4", desc: "Inhala 4s, sostén 4s, exhala 4s, sostén 4s — cuatro ciclos. El loop Nsqk + K.Flay carga el sistema nervioso sin descargarlo. Este patrón lo equilibra antes de que la tarde se convierta en noche.", time: "5 min" },
+    { icon: "✍️", title: "Escribe lo que Tyler Joseph no pudo terminar", desc: "Goner y Addict With A Pen son cartas sin destinatario. Toma 7 minutos y escribe la tuya: ¿qué carga has estado cargando sin nombre? Ponle nombre hoy.", time: "7 min" },
+    { icon: "🏃", title: "Corre con Heavydirtysoul y vacía el sistema", desc: "El BPM de Heavydirtysoul fue diseñado para mover cuerpos, no solo mentes. 15 minutos de carrera o caminata rápida — convierte la intensidad emocional en movimiento físico real.", time: "15 min" },
+    { icon: "🌬️", title: "Respiración 4-7-8 para bajar la angustia", desc: "Inhala 4s, sostén 7s, exhala 8s — tres ciclos. El loop de tracks sad/angst activa el sistema nervioso simpático. Este patrón lo regresa al parasimpático antes de que la noche se complique.", time: "5 min" },
   ]
 
-  const journalPrompt = "K.Flay llama al estado 'Perfectly Alone' — ¿en qué parte de tu vida elegiste quedarte solo cuando no tenías por qué, y qué ganaste y perdiste con eso?"
-  const quote = { text: "I am perfectly alone and I am perfectly okay.", author: "K.Flay" }
+  const journalPrompt = "Trees termina con 'I need to know that when I fail, you'll still be here' — ¿a quién le estás pidiendo eso en silencio ahora mismo, y por qué no se lo has dicho?"
+  const quote = { text: "I'm falling, so I'm taking my time on my ride.", author: "Tyler Joseph" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
