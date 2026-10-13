@@ -6,33 +6,33 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Mon Oct 13, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Nsqk + TOP + Eminem + épica cinematográfica — la tarde oscila entre identidad y acción" }
-  const insight = "Tarde o temprano (Nsqk, 3.6h) y Nico and the Niners (TOP, 3.2h) siguen siendo los anclas del día — algo profundo sigue sin resolverse. Pero la sesión de hoy sumó Eminem/Drake/Forever, Imagine Dragons Rise Up, Where Is Gone de Fontaines D.C.+ROSALÍA y Many Meetings de Howard Shore: el sistema nervioso busca catarsis épica como salida, mientras el loop latino-alternativo de fondo mantiene la tensión abierta."
+  const date = "Tue Oct 13, 2026"
+  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "K.Flay en solitario + Nsqk en bucle + épica cinematográfica — identidad en proceso, energía buscando salida" }
+  const insight = "Perfectly Alone de K.Flay dominó la tarde con 35+ minutos — la mente eligió quedarse con esa tensión en lugar de escapar. Nsqk ancla el loop alternativo latino, mientras Le Festin y Many Meetings de Howard Shore inyectan momentos de grandeza cinematográfica: el sistema nervioso alterna entre introspección profunda y aspiración épica, sin resolver todavía hacia dónde."
 
   const tracks = [
-    { n: 1, name: "Tarde o temprano", artist: "Nsqk", url: "https://open.spotify.com/track/3AkrjXOl3d8LycQHLHBm94", vibe: "LATIN ALTERNATIVO", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 2, name: "Nico and the Niners", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/5SehvGGC53A7SZKCLXQcyt", vibe: "MODERN ROCK EMO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 3, name: "Forever", artist: "Drake, Kanye, Lil Wayne, Eminem", url: "https://open.spotify.com/track/3qjKqmA2YeH0a8DRoKj8iy", vibe: "RAP LEGENDARIO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 4, name: "Where Is Gone?", artist: "Fontaines D.C. & ROSALÍA", url: "https://open.spotify.com/track/79qjt8xBRaIZfBzthXsI4D", vibe: "POST-PUNK IBÉRICO", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 1, name: "Perfectly Alone", artist: "K.Flay", url: "https://open.spotify.com/track/6yjppaAD7BNYNWEEaaqHjt", vibe: "ALT INDIE SOLITUD", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 2, name: "Tarde o temprano", artist: "Nsqk", url: "https://open.spotify.com/track/3AkrjXOl3d8LycQHLHBm94", vibe: "LATIN ALTERNATIVO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 3, name: "Dientes de Fierro", artist: "Nsqk & Jean Dawson", url: "https://open.spotify.com/track/2j5ImvoXOHcsAFSzoi3SyH", vibe: "POST-PUNK LATINO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 4, name: "Forever", artist: "Drake, Kanye, Lil Wayne, Eminem", url: "https://open.spotify.com/track/3qjKqmA2YeH0a8DRoKj8iy", vibe: "RAP LEGENDARIO", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
     { n: 5, name: "Le Festin", artist: "Camille", url: "https://open.spotify.com/track/5Y1aFwjwTTojIQe3gaWDLr", vibe: "ÉPICO CINEMATOGRÁFICO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 6, name: "Nothing Lasts Forever", artist: "BUNT. & RØAM", url: "https://open.spotify.com/track/4RDJePvro9z2X1r8FFgSxt", vibe: "DANCE EDM", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 6, name: "Nico and the Niners", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/5SehvGGC53A7SZKCLXQcyt", vibe: "MODERN ROCK EMO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 58, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 40, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 48, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 55, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 38, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 44, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🎯", title: "Cierra el loop antes de las 9pm", desc: "Tarde o temprano en repeat masivo (3+ horas) es la mente señalando algo inconcluso. Escribe en papel físico una cosa que llevas posponiendo — no para resolverla hoy, sino para darle nombre y dejarla fuera de tu cabeza.", time: "5 min" },
-    { icon: "🏃", title: "Caminata catártica con Forever", desc: "Forever de Drake/Kanye/Eminem tiene el tempo exacto para romper la tensión estática. 15 minutos afuera — deja que la épica del track mueva lo que la introspección tiene atascado.", time: "15 min" },
-    { icon: "🌬️", title: "Exhala el día con 4-7-8", desc: "Inhala 4s, sostén 7s, exhala 8s — tres ciclos. Eminem + TOP + Nsqk es mucha carga emocional acumulada para llevar dormido. Este patrón activa el nervio vago y baja el cortisol en minutos.", time: "4 min" },
+    { icon: "✍️", title: "Escribe lo que K.Flay no puede decir por ti", desc: "35 minutos con Perfectly Alone es una señal clara — algo quiere ser procesado en palabras, no solo en audio. Abre una hoja en blanco y escribe sin filtro por 7 minutos: ¿qué es lo que eliges seguir cargando solo?", time: "7 min" },
+    { icon: "🏃", title: "Corre con Forever y sácalo del sistema", desc: "El rap épico de Drake/Kanye/Eminem tiene el BPM exacto para convertir la tensión acumulada en movimiento. 15 minutos de carrera o caminata rápida — deja que el cuerpo resuelva lo que la mente da vueltas.", time: "15 min" },
+    { icon: "🌬️", title: "Reset con respiración box 4-4-4-4", desc: "Inhala 4s, sostén 4s, exhala 4s, sostén 4s — cuatro ciclos. El loop Nsqk + K.Flay carga el sistema nervioso sin descargarlo. Este patrón lo equilibra antes de que la tarde se convierta en noche.", time: "5 min" },
   ]
 
-  const journalPrompt = "Fontaines D.C. + ROSALÍA preguntan '¿a dónde fue?' — ¿qué versión tuya de hace un año se quedó en el camino, y vale la pena recuperarla?"
-  const quote = { text: "The part of me that could do that has gone away.", author: "Fontaines D.C." }
+  const journalPrompt = "K.Flay llama al estado 'Perfectly Alone' — ¿en qué parte de tu vida elegiste quedarte solo cuando no tenías por qué, y qué ganaste y perdiste con eso?"
+  const quote = { text: "I am perfectly alone and I am perfectly okay.", author: "K.Flay" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
