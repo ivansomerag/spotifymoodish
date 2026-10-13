@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Mon Oct 13, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Nsqk + TOP + K.Flay + Le Festin — la noche oscila entre introspección y épica" }
-  const insight = "La sesión de esta noche es un vaivén profundo: Tarde o temprano de Nsqk y Perfectly Alone de K.Flay acumularon más de 4 horas combinadas — el sistema nervioso claramente está procesando algo. Pero también metes Le Festin (Ratatouille), Nothing Lasts Forever (BUNT. EDM), Forever de Drake/Kanye/Eminem y Skrillex. El patrón grita TRANSITIONAL: introspección intensa con picos de energía que buscan salida."
+  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "Nsqk + TOP + Eminem + épica cinematográfica — la tarde oscila entre identidad y acción" }
+  const insight = "Tarde o temprano (Nsqk, 3.6h) y Nico and the Niners (TOP, 3.2h) siguen siendo los anclas del día — algo profundo sigue sin resolverse. Pero la sesión de hoy sumó Eminem/Drake/Forever, Imagine Dragons Rise Up, Where Is Gone de Fontaines D.C.+ROSALÍA y Many Meetings de Howard Shore: el sistema nervioso busca catarsis épica como salida, mientras el loop latino-alternativo de fondo mantiene la tensión abierta."
 
   const tracks = [
     { n: 1, name: "Tarde o temprano", artist: "Nsqk", url: "https://open.spotify.com/track/3AkrjXOl3d8LycQHLHBm94", vibe: "LATIN ALTERNATIVO", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
     { n: 2, name: "Nico and the Niners", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/5SehvGGC53A7SZKCLXQcyt", vibe: "MODERN ROCK EMO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 3, name: "Perfectly Alone", artist: "K.Flay", url: "https://open.spotify.com/track/6yjppaAD7BNYNWEEaaqHjt", vibe: "ALT INTROSPECTIVO", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 4, name: "Forever", artist: "Drake, Kanye, Lil Wayne, Eminem", url: "https://open.spotify.com/track/3qjKqmA2YeH0a8DRoKj8iy", vibe: "RAP LEGENDARIO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 3, name: "Forever", artist: "Drake, Kanye, Lil Wayne, Eminem", url: "https://open.spotify.com/track/3qjKqmA2YeH0a8DRoKj8iy", vibe: "RAP LEGENDARIO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 4, name: "Where Is Gone?", artist: "Fontaines D.C. & ROSALÍA", url: "https://open.spotify.com/track/79qjt8xBRaIZfBzthXsI4D", vibe: "POST-PUNK IBÉRICO", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
     { n: 5, name: "Le Festin", artist: "Camille", url: "https://open.spotify.com/track/5Y1aFwjwTTojIQe3gaWDLr", vibe: "ÉPICO CINEMATOGRÁFICO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
     { n: 6, name: "Nothing Lasts Forever", artist: "BUNT. & RØAM", url: "https://open.spotify.com/track/4RDJePvro9z2X1r8FFgSxt", vibe: "DANCE EDM", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 55, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 42, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 50, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 58, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 40, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 48, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🧘", title: "Box breathing antes de dormir", desc: "Cuatro horas en Nsqk y K.Flay dicen que hay algo que no has terminado de procesar. Inhala 4s, sostén 4s, exhala 4s — tres rondas. Deja que la mente cierre lo que la música mantuvo abierto.", time: "6 min" },
-    { icon: "🏃", title: "Sprint corto con Forever de fondo", desc: "El cerebro necesita una salida física para la energía contenida. 10 minutos de caminata o trote rápido — deja que Drake, Kanye y Eminem te den el tempo. La transición del cuerpo ayuda a la transición del estado.", time: "10 min" },
-    { icon: "📓", title: "¿Qué estás procesando hoy?", desc: "Tarde o temprano en repeat masivo siempre señala algo pendiente. Escribe tres cosas que no terminaste de resolver hoy — no para resolverlas, sino para sacarlas de la cabeza antes de apagar.", time: "8 min" },
+    { icon: "🎯", title: "Cierra el loop antes de las 9pm", desc: "Tarde o temprano en repeat masivo (3+ horas) es la mente señalando algo inconcluso. Escribe en papel físico una cosa que llevas posponiendo — no para resolverla hoy, sino para darle nombre y dejarla fuera de tu cabeza.", time: "5 min" },
+    { icon: "🏃", title: "Caminata catártica con Forever", desc: "Forever de Drake/Kanye/Eminem tiene el tempo exacto para romper la tensión estática. 15 minutos afuera — deja que la épica del track mueva lo que la introspección tiene atascado.", time: "15 min" },
+    { icon: "🌬️", title: "Exhala el día con 4-7-8", desc: "Inhala 4s, sostén 7s, exhala 8s — tres ciclos. Eminem + TOP + Nsqk es mucha carga emocional acumulada para llevar dormido. Este patrón activa el nervio vago y baja el cortisol en minutos.", time: "4 min" },
   ]
 
-  const journalPrompt = "Tarde o temprano de Nsqk suena a algo que no puedes soltar todavía — ¿qué es lo que tarde o temprano tendrás que enfrentar?"
-  const quote = { text: "La introspección no es debilidad — es el primer paso hacia cualquier cambio real.", author: "K.Flay" }
+  const journalPrompt = "Fontaines D.C. + ROSALÍA preguntan '¿a dónde fue?' — ¿qué versión tuya de hace un año se quedó en el camino, y vale la pena recuperarla?"
+  const quote = { text: "The part of me that could do that has gone away.", author: "Fontaines D.C." }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
