@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Wed Oct 14, 2026"
-  const mood = { label: "MELANCHOLIC", emoji: "🖤", sub: "Drag Path → Message Man → Trees → Goner — buscando algo inencontrable, procesando desde adentro" }
-  const insight = "La madrugada del 14 estuvo marcada por las canciones más introspectivas de Twenty One Pilots: Drag Path y Message Man lideraron en tiempo de reproducción, ambas cargadas de angst y peso emocional. Trees y Goner cerraron el círculo — canciones sobre sentirse al límite y pedir rescate. Una sola nota de contraste: Contacto Cero de Wuicho kun, sad rap en español que apunta a desconexión emocional. El sistema nervioso está procesando algo, no escapando de ello."
+  const mood = { label: "MELANCHOLIC", emoji: "🖤", sub: "Next Semester → Isle Of Flightless Birds → Car Radio live → Tear in My Heart — nostalgia y peso emocional en bucle" }
+  const insight = "La mañana del 14 fue un recorrido profundo por el universo emocional de Twenty One Pilots: desde los tracks más angustiados de Blurryface y Vessel hasta los directos en vivo de México y las nuevas piezas de 2024-2025. Next Semester y Isle Of Flightless Birds anclaron en lo introspectivo; Tear in My Heart y Heathens ofrecieron breves destellos de energía sin salir del peso melancólico. El patrón es claro — buscas contención emocional, no escapatoria."
 
   const tracks = [
-    { n: 1, name: "Drag Path", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/0TlcczkVTGpinpkGJpT81L", vibe: "ANGST", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 2, name: "Message Man", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/4Oyl6oYSNeeZZP0OAxPVaU", vibe: "EMO CRUDO", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 3, name: "Drum Show", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/20BFo9REyGdCxrlPmD3xph", vibe: "HARD ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 4, name: "Trees", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/1yf97yL1ll8FYXC27c9VTw", vibe: "RAW EMO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 1, name: "Next Semester", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/1BANPzYIhCQkJ1ZFq2Fb0O", vibe: "ANGST", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 2, name: "Isle Of Flightless Birds", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/1WffRpGaJXfbgrKuUg3CWi", vibe: "RAW EMO", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 3, name: "Drag Path", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/0TlcczkVTGpinpkGJpT81L", vibe: "SAD ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 4, name: "Tear in My Heart", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3bnVBN67NBEzedqQuWrpP4", vibe: "POP ROCK", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
     { n: 5, name: "Goner", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/5P3yUXUC9rZPJPNmYGKEAz", vibe: "SAD EMO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 6, name: "Contacto Cero", artist: "Wuicho kun, Yubeili", url: "https://open.spotify.com/track/06gWYDApdKpVOGz7fvoZoP", vibe: "SAD RAP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 6, name: "Car Radio (Live MX)", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/6yvZLQqaM09tZddJ4jL6EC", vibe: "EMOTIONAL", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 42, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 15, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 28, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 38, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 18, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 30, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Caminata silenciosa — sin música", desc: "Drag Path y Message Man son canciones para procesar, no para escapar. Una caminata de 15 minutos sin auriculares permite que el cuerpo metabolice lo que la mente está cargando. El movimiento cambia el estado.", time: "15 min" },
-    { icon: "🌬️", title: "4-7-8 Breathing — libera el peso", desc: "Inhala 4s, sostén 7s, exhala lentamente 8s — repite 4 ciclos. Activa el nervio vago y desactiva el modo de alerta. Ideal después de un ciclo largo de música con alta carga emocional.", time: "5 min" },
-    { icon: "✍️", title: "Escribe lo que Goner no puede decir", desc: "Goner es una canción sobre sentirse al límite. Escribe en papel: ¿qué estás cargando que todavía no has puesto en palabras? No tiene que ser bonito. Escribe hasta que el bolígrafo se sienta más ligero.", time: "10 min" },
+    { icon: "🌊", title: "Caminata consciente — sin destino", desc: "Isle Of Flightless Birds y Goner son canciones que necesitan movimiento lento para procesarse. Sal 15 minutos sin ruta fija — deja que el cuerpo resuelva lo que la mente está cargando en bucle.", time: "15 min" },
+    { icon: "🌬️", title: "Respiración 4-4-6 — ancla el sistema", desc: "Inhala 4s, sostén 4s, exhala lentamente 6s — repite 5 ciclos. Este patrón activa el nervio vago y te saca del loop emocional sin suprimir lo que sientes. Ideal después de sesiones melancólicas largas.", time: "6 min" },
+    { icon: "✍️", title: "Escribe lo que Next Semester no termina", desc: "La canción habla de dejar algo atrás sin cerrarlo del todo. Escribe: ¿qué es lo que estás dejando ir este mes pero todavía no has terminado de procesar? No edites. Solo escribe hasta que algo se sienta diferente.", time: "10 min" },
   ]
 
-  const journalPrompt = "Pasaste horas con Drag Path y Message Man en loop — dos canciones sobre cargar con algo que no se puede soltar fácilmente. ¿Qué es lo que hoy no puedes soltar?"
-  const quote = { text: "I'm a goner, somebody catch my breath.", author: "Tyler Joseph — Goner" }
+  const journalPrompt = "Pasaste esta mañana con Isle Of Flightless Birds y Next Semester en loop — dos canciones sobre transiciones incompletas. ¿Qué es lo que en este momento está a medias en tu vida?"
+  const quote = { text: "I'm falling, so I'm taking my time on my ride.", author: "Tyler Joseph — Ride" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
