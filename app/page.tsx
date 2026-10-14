@@ -6,33 +6,33 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Tue Oct 13, 2026"
-  const mood = { label: "MELANCHOLIC", emoji: "🖤", sub: "Drum Show → Heavydirtysoul → Drag Path → Addict With A Pen — de hard rock a emo crudo, el arco completo TØP en una sola tarde" }
-  const insight = "La sesión arrancó con fuerza: Drum Show y Heavydirtysoul tienen energía de rock duro, casi catártica. Pero el arco fue descendiendo — Message Man, Drag Path, Goner, Friend Please, Addict With A Pen — hasta llegar al material más vulnerable y sin producción del catálogo de Twenty One Pilots. Ese viaje de lo intenso a lo íntimo es una firma emocional clara: el sistema nervioso procesando algo grande, usando el rock como rampa de acceso y el emo temprano como destino."
+  const date = "Wed Oct 14, 2026"
+  const mood = { label: "MELANCHOLIC", emoji: "🖤", sub: "Drag Path → Message Man → Trees → Goner — buscando algo inencontrable, procesando desde adentro" }
+  const insight = "La madrugada del 14 estuvo marcada por las canciones más introspectivas de Twenty One Pilots: Drag Path y Message Man lideraron en tiempo de reproducción, ambas cargadas de angst y peso emocional. Trees y Goner cerraron el círculo — canciones sobre sentirse al límite y pedir rescate. Una sola nota de contraste: Contacto Cero de Wuicho kun, sad rap en español que apunta a desconexión emocional. El sistema nervioso está procesando algo, no escapando de ello."
 
   const tracks = [
-    { n: 1, name: "Drum Show", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/20BFo9REyGdCxrlPmD3xph", vibe: "HARD ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 2, name: "Heavydirtysoul", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/7i9763l5SSfOnqZ35VOcfy", vibe: "EMO POP ROCK", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 3, name: "Drag Path", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/0TlcczkVTGpinpkGJpT81L", vibe: "ANGST POP ROCK", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 4, name: "Message Man", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/4Oyl6oYSNeeZZP0OAxPVaU", vibe: "EMO CRUDO", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 1, name: "Drag Path", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/0TlcczkVTGpinpkGJpT81L", vibe: "ANGST", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 2, name: "Message Man", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/4Oyl6oYSNeeZZP0OAxPVaU", vibe: "EMO CRUDO", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 3, name: "Drum Show", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/20BFo9REyGdCxrlPmD3xph", vibe: "HARD ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 4, name: "Trees", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/1yf97yL1ll8FYXC27c9VTw", vibe: "RAW EMO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
     { n: 5, name: "Goner", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/5P3yUXUC9rZPJPNmYGKEAz", vibe: "SAD EMO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 6, name: "Addict With A Pen", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3MFertXkQGFCIXm0R8qUjW", vibe: "RAW EMO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 6, name: "Contacto Cero", artist: "Wuicho kun, Yubeili", url: "https://open.spotify.com/track/06gWYDApdKpVOGz7fvoZoP", vibe: "SAD RAP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 55, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 20, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 32, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 42, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 15, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 28, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🥁", title: "Mueve el cuerpo — Drum Show Style", desc: "Drum Show tiene una energía percusiva que pide movimiento físico. 10 minutos de caminar rápido, saltar o bailar en tu cuarto — no tiene que ser bonito, solo tiene que ser real.", time: "10 min" },
-    { icon: "✍️", title: "Journaling de arco emocional", desc: "Tu sesión viajó de hard rock a emo puro. Escribe: ¿cuál fue el momento del día en que sentiste más pesado? ¿Y cuándo fue más ligero? Trazar el arco en papel lo hace procesable.", time: "7 min" },
-    { icon: "🌬️", title: "Box Breathing — reset del sistema", desc: "Inhala 4s, sostén 4s, exhala 4s, sostén 4s — 5 ciclos. Después de una sesión de alta carga emocional como esta, el box breathing activa el parasimpático y regresa el cortisol a baseline.", time: "5 min" },
+    { icon: "🚶", title: "Caminata silenciosa — sin música", desc: "Drag Path y Message Man son canciones para procesar, no para escapar. Una caminata de 15 minutos sin auriculares permite que el cuerpo metabolice lo que la mente está cargando. El movimiento cambia el estado.", time: "15 min" },
+    { icon: "🌬️", title: "4-7-8 Breathing — libera el peso", desc: "Inhala 4s, sostén 7s, exhala lentamente 8s — repite 4 ciclos. Activa el nervio vago y desactiva el modo de alerta. Ideal después de un ciclo largo de música con alta carga emocional.", time: "5 min" },
+    { icon: "✍️", title: "Escribe lo que Goner no puede decir", desc: "Goner es una canción sobre sentirse al límite. Escribe en papel: ¿qué estás cargando que todavía no has puesto en palabras? No tiene que ser bonito. Escribe hasta que el bolígrafo se sienta más ligero.", time: "10 min" },
   ]
 
-  const journalPrompt = "Tu sesión empezó con Drum Show y terminó con Addict With A Pen — de lo más duro a lo más vulnerable. ¿Qué pasó hoy que te llevó por ese recorrido?"
-  const quote = { text: "Can you save, can you save my heavydirtysoul?", author: "Tyler Joseph — Heavydirtysoul" }
+  const journalPrompt = "Pasaste horas con Drag Path y Message Man en loop — dos canciones sobre cargar con algo que no se puede soltar fácilmente. ¿Qué es lo que hoy no puedes soltar?"
+  const quote = { text: "I'm a goner, somebody catch my breath.", author: "Tyler Joseph — Goner" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
