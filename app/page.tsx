@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Tue Oct 13, 2026"
-  const mood = { label: "MELANCHOLIC", emoji: "🖤", sub: "Drag Path y Message Man en loop pesado — angustia contenida, rock introspectivo y catarsis emo de tarde" }
-  const insight = "La tarde del 13 de octubre es puro Twenty One Pilots: Drag Path y Message Man acumularon casi 4 horas de reproducción combinada, señal de un estado emocional que busca ritmo donde procesar algo. La secuencia de Isle Of Flightless Birds → Next Semester → Ride Live apunta a un recorrido desde los primeros años emo hasta el presente, como si la mente necesitara trazar una línea completa antes de soltar."
+  const mood = { label: "MELANCHOLIC", emoji: "🖤", sub: "Goner → Isle Of Flightless Birds → Addict With A Pen — el arco de noche más oscuro del catálogo TØP, emo puro y catarsis contenida" }
+  const insight = "El bloque de las 6pm cierra el día con las canciones más vulnerables de Twenty One Pilots: Goner, Friend Please y Addict With A Pen son de los primeros años, crudos y sin producción que los suavice. Llegar a esos tracks al final de una tarde de Drag Path y Message Man sugiere que el procesamiento emocional está en su punto más hondo — el sistema nervioso buscando fondo antes de poder subir."
 
   const tracks = [
     { n: 1, name: "Drag Path", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/0TlcczkVTGpinpkGJpT81L", vibe: "ANGST POP ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 2, name: "Message Man", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/4Oyl6oYSNeeZZP0OAxPVaU", vibe: "EMO TENSO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 3, name: "Drum Show", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/20BFo9REyGdCxrlPmD3xph", vibe: "ALT ROCK DURO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 2, name: "Goner", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/5P3yUXUC9rZPJPNmYGKEAz", vibe: "EMO CRUDO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 3, name: "Isle Of Flightless Birds", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/1WffRpGaJXfbgrKuUg3CWi", vibe: "EMO TEMPRANO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
     { n: 4, name: "Trees", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/1yf97yL1ll8FYXC27c9VTw", vibe: "EMO CATARSIS", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 5, name: "Heavydirtysoul", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/7i9763l5SSfOnqZ35VOcfy", vibe: "RAP ROCK EXPLOSIVO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 6, name: "Next Semester", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/1BANPzYIhCQkJ1ZFq2Fb0O", vibe: "MODERN ROCK", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "Next Semester", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/1BANPzYIhCQkJ1ZFq2Fb0O", vibe: "MODERN ROCK", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 6, name: "Addict With A Pen", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3MFertXkQGFCIXm0R8qUjW", vibe: "RAW EMO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 58, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 25, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 35, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 52, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 18, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 28, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "📓", title: "Escríbele a Message Man", desc: "Message Man empieza con 'you don't know my brain the way you know my face' — ¿hay algo que sabes de ti que nadie más sabe aún? Escríbelo en 5 minutos sin editar.", time: "5 min" },
-    { icon: "🚶", title: "Caminata sin audífonos, 10 minutos", desc: "Después de horas de Drag Path en loop, el sistema nervioso necesita silencio real. Sal sin música — escucha el exterior por una vez en la tarde.", time: "10 min" },
-    { icon: "🌬️", title: "Box breathing para resetear el ciclo", desc: "Inhala 4s, sostén 4s, exhala 4s, sostén 4s — 4 ciclos. El loop obsesivo de tracks pesados activa el cortisol; este patrón lo corta antes de que se instale la noche.", time: "4 min" },
+    { icon: "✍️", title: "Escribe sin filtro — Goner Style", desc: "Goner es Tyler escribiendo lo más oscuro sin censura. Pon un timer de 6 minutos y escribe lo que no le dirías a nadie — sin editar, sin releer.", time: "6 min" },
+    { icon: "🕯️", title: "Luz tenue, silencio activo", desc: "Después de Isle Of Flightless Birds y Addict With A Pen, el sistema necesita quietud real. Apaga pantallas, pon una vela o luz baja — solo 8 minutos de no-input.", time: "8 min" },
+    { icon: "🌬️", title: "4-7-8 Breathing — modo noche", desc: "Inhala 4s, sostén 7s, exhala 8s — 4 ciclos. Este patrón activa el nervio vago y baja el cortisol acumulado de una tarde de emo pesado. Ideal antes de que llegue la noche.", time: "5 min" },
   ]
 
-  const journalPrompt = "Drag Path y Message Man estuvieron en loop casi toda la tarde — ¿qué estás evitando pensar, o qué estás tratando de procesar con esa repetición?"
-  const quote = { text: "We will find a place we belong.", author: "Tyler Joseph — Message Man" }
+  const journalPrompt = "Goner termina con 'I'm a Goner, somebody catch my fall' — ¿quién o qué es lo que estás pidiendo que te sostenga hoy?"
+  const quote = { text: "I'm a Goner, somebody catch my fall.", author: "Tyler Joseph — Goner" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
