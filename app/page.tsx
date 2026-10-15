@@ -6,33 +6,33 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Wed Oct 15, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "De TØP angst a EDM y reggaeton — el sistema está cambiando de frecuencia" }
-  const insight = "El historial muestra un pivot claro: ayer fue una maratón introspectiva de Twenty One Pilots (emo, angst, rock moderno), pero hoy las últimas escuchas giraron hacia algo completamente distinto — FADE AWAY de San Holo, Take Me Back de ILLENIUM, Única de KAROL G x Tainy, y messy de Łaszewo. El cuerpo está buscando energía y danceability después del peso emocional de la noche anterior. Push-pull clásico: procesando algo mientras intenta soltar."
+  const date = "Thu Oct 15, 2026"
+  const mood = { label: "NOSTALGIC", emoji: "📼", sub: "Retro arqueológico — de Queen y ABBA a TØP, el sistema excavó décadas en una sola sesión" }
+  const insight = "La sesión de hoy es un viaje arqueológico a través del tiempo: Queen, ABBA, Guns N' Roses, MGMT, Kendrick Lamar y Drake conviven con los TØP más tempranos (Isle of Flightless Birds, Fall Away — ambos del 2009). La nostalgia domina con throwbacks de distintas eras, desde el disco de los 70s hasta el indie de 2007. No es escapismo — es búsqueda activa de algo que ya funcionó antes."
 
   const tracks = [
-    { n: 1, name: "algo así (remix)", artist: "paopao & Mora", url: "https://open.spotify.com/track/6P6w5zbJBGNoID8rd365aZ", vibe: "TRAP LATINO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 2, name: "FADE AWAY", artist: "San Holo & Tisoki", url: "https://open.spotify.com/track/3q56vfX8ubHB2QvIa8xq6v", vibe: "EDM", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 3, name: "Take Me Back", artist: "ILLENIUM & Dean Lewis", url: "https://open.spotify.com/track/4ktOL5ShhTQ2zl8YNnES2b", vibe: "EDM EMO", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 4, name: "Única", artist: "Tainy & KAROL G", url: "https://open.spotify.com/track/0xHAfrziD261HeNYVmYqNF", vibe: "REGGAETON", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 5, name: "messy", artist: "Łaszewo", url: "https://open.spotify.com/track/3CPhCNH8rV1czzGSmXm9TH", vibe: "HOUSE", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 6, name: "Next Semester", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/1BANPzYIhCQkJ1ZFq2Fb0O", vibe: "EMOTIONAL", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 1, name: "November Rain", artist: "Guns N' Roses", url: "https://open.spotify.com/track/3q9npStSssk7sZWotiNQLK", vibe: "CLASSIC ROCK", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 2, name: "Gimme! Gimme! Gimme!", artist: "ABBA", url: "https://open.spotify.com/track/3vkQ5DAB1qQMYO4Mr9zJN6", vibe: "DISCO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 3, name: "Time To Pretend", artist: "MGMT", url: "https://open.spotify.com/track/5OcxthvGOxWYsuwKrWk5U4", vibe: "INDIE", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 4, name: "Money Trees", artist: "Kendrick Lamar & Jay Rock", url: "https://open.spotify.com/track/2HbKqm4o0w5wEeEFXm2sD4", vibe: "HIP-HOP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 5, name: "I Want To Break Free", artist: "Queen", url: "https://open.spotify.com/track/5lmMeytpSOBTzFYRS32fwA", vibe: "CLASSIC ROCK", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 6, name: "Fall Away", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/6aeKPkMywDDYWtPBsbfO50", vibe: "EMO", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 62, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 48, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 71, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 55, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 44, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 58, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Corre con el momentum — 20 min", desc: "ILLENIUM y San Holo a volumen alto son el empuje perfecto para un run corto. No tiene que ser intenso — usa la energía del EDM para mover el cuerpo y liberar lo que quedó del TØP de ayer.", time: "20 min" },
-    { icon: "🌬️", title: "Respira el cambio — box breathing", desc: "Inhala 4s, sostén 4s, exhala 4s, sostén 4s. Repite 6 ciclos. Ideal en el punto de transición entre géneros — como tu día hoy, tu cuerpo también necesita un reset consciente.", time: "5 min" },
-    { icon: "✍️", title: "El pivot — ¿qué dejaste atrás?", desc: "Pasaste de 20+ TØP a EDM y reggaeton en cuestión de horas. Escribe 10 minutos sin filtro: ¿qué estado emocional estás intentando dejar ir con ese cambio de frecuencia?", time: "10 min" },
+    { icon: "🚶", title: "Caminata sin destino — 25 min", desc: "Pon November Rain o Time To Pretend y camina sin dirección fija. La nostalgia pide movimiento lento y contemplativo, no intensidad. Deja que los recuerdos suban y pasen.", time: "25 min" },
+    { icon: "🌬️", title: "Respira hacia el presente — 4-7-8", desc: "Inhala 4s, sostén 7s, exhala 8s. Repite 5 ciclos. El pasado está en tu playlist — este ejercicio es el ancla que te trae de regreso al ahora.", time: "5 min" },
+    { icon: "✍️", title: "Carta al tú de otra era", desc: "Elige una canción de la sesión de hoy que te lleve a un momento específico del pasado. Escribe 10 minutos desde ese lugar: ¿qué le dirías a esa versión de ti?", time: "10 min" },
   ]
 
-  const journalPrompt = "Ayer TØP en loop, hoy KAROL G y San Holo. Ese giro no es aleatorio — la música que eliges dice algo sobre lo que necesitas. ¿Qué estás buscando en la energía de hoy que el angst de ayer no te podía dar?"
-  const quote = { text: "The beat goes on, even when you don't know where you're going.", author: "San Holo" }
+  const journalPrompt = "Queen, ABBA, Guns N' Roses, MGMT — tu playlist de hoy cruzó décadas. Elige una canción y escribe: ¿a qué momento o versión de ti te regresa? ¿Qué necesitas recordar de ese tiempo?"
+  const quote = { text: "Music gives a soul to the universe, wings to the mind, flight to the imagination, and life to everything.", author: "Plato" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
