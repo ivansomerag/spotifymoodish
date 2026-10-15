@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Thu Oct 15, 2026"
-  const mood = { label: "NOSTALGIC", emoji: "📼", sub: "Retro arqueológico — de Queen y ABBA a TØP, el sistema excavó décadas en una sola sesión" }
-  const insight = "La sesión de hoy es un viaje arqueológico a través del tiempo: Queen, ABBA, Guns N' Roses, MGMT, Kendrick Lamar y Drake conviven con los TØP más tempranos (Isle of Flightless Birds, Fall Away — ambos del 2009). La nostalgia domina con throwbacks de distintas eras, desde el disco de los 70s hasta el indie de 2007. No es escapismo — es búsqueda activa de algo que ya funcionó antes."
+  const mood = { label: "TRANSITIONAL", emoji: "⚡", sub: "Cruce de mundos — hip-hop pesado, ethereal indie y EDM en la misma sesión sin escala" }
+  const insight = "La sesión de hoy no eligió un carril: arrancó con el supergrupo de hip-hop más pesado del juego (Drake, Kanye, Wayne, Eminem en Forever), dio un giro etéreo con AURORA y Twenty One Pilots, y aterrizó en EDM con The Chainsmokers. Esa oscilación constante entre intensidad y vulnerabilidad es la firma de un estado transitional — energía que busca forma todavía."
 
   const tracks = [
-    { n: 1, name: "November Rain", artist: "Guns N' Roses", url: "https://open.spotify.com/track/3q9npStSssk7sZWotiNQLK", vibe: "CLASSIC ROCK", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 2, name: "Gimme! Gimme! Gimme!", artist: "ABBA", url: "https://open.spotify.com/track/3vkQ5DAB1qQMYO4Mr9zJN6", vibe: "DISCO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 3, name: "Time To Pretend", artist: "MGMT", url: "https://open.spotify.com/track/5OcxthvGOxWYsuwKrWk5U4", vibe: "INDIE", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 4, name: "Money Trees", artist: "Kendrick Lamar & Jay Rock", url: "https://open.spotify.com/track/2HbKqm4o0w5wEeEFXm2sD4", vibe: "HIP-HOP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 5, name: "I Want To Break Free", artist: "Queen", url: "https://open.spotify.com/track/5lmMeytpSOBTzFYRS32fwA", vibe: "CLASSIC ROCK", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 6, name: "Fall Away", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/6aeKPkMywDDYWtPBsbfO50", vibe: "EMO", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 1, name: "Forever", artist: "Drake, Kanye, Lil Wayne & Eminem", url: "https://open.spotify.com/track/3qjKqmA2YeH0a8DRoKj8iy", vibe: "HIP-HOP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "Heathens", artist: "AURORA", url: "https://open.spotify.com/track/4UkLS3Vqp8o2ukxipCIQ7N", vibe: "ETHEREAL", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 3, name: "The Line", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/52IZK2QdSxUf7O5gdwhail", vibe: "EMO / POP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 4, name: "November Rain", artist: "Guns N' Roses", url: "https://open.spotify.com/track/3q9npStSssk7sZWotiNQLK", vibe: "CLASSIC ROCK", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 5, name: "Sympathy Is a Knife", artist: "Charli xcx", url: "https://open.spotify.com/track/5c9tBmJKbTdn1vhzXHeAwW", vibe: "DANCE POP", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "The Fall", artist: "The Chainsmokers & Ship Wrek", url: "https://open.spotify.com/track/5FvGI8KtImlEbOsvEW3pfX", vibe: "EDM", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 55, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 44, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 58, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 68, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 42, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 62, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Caminata sin destino — 25 min", desc: "Pon November Rain o Time To Pretend y camina sin dirección fija. La nostalgia pide movimiento lento y contemplativo, no intensidad. Deja que los recuerdos suban y pasen.", time: "25 min" },
-    { icon: "🌬️", title: "Respira hacia el presente — 4-7-8", desc: "Inhala 4s, sostén 7s, exhala 8s. Repite 5 ciclos. El pasado está en tu playlist — este ejercicio es el ancla que te trae de regreso al ahora.", time: "5 min" },
-    { icon: "✍️", title: "Carta al tú de otra era", desc: "Elige una canción de la sesión de hoy que te lleve a un momento específico del pasado. Escribe 10 minutos desde ese lugar: ¿qué le dirías a esa versión de ti?", time: "10 min" },
+    { icon: "🏃", title: "Run sin playlist — 20 min", desc: "La energía de Forever y The Fall pide liberarse con movimiento real. Sal a correr sin música estos 20 min — deja que la mente procese sola lo que los tracks empezaron a mover.", time: "20 min" },
+    { icon: "🌬️", title: "Respira en los contrastes — Caja 4-4-4-4", desc: "Inhala 4s, sostén 4s, exhala 4s, sostén vacío 4s. Repite 6 ciclos. Es el ritmo del estado transitional: igual de tiempo en cada fase, sin favorecer ninguna.", time: "6 min" },
+    { icon: "✍️", title: "¿Qué estás cruzando?", desc: "Hoy pasaste de Drake a AURORA a GNR sin escala. Escribe 10 minutos: ¿entre qué dos versiones de ti mismo estás en tránsito ahora mismo? ¿Cuál dejás atrás y cuál todavía no llegó?", time: "10 min" },
   ]
 
-  const journalPrompt = "Queen, ABBA, Guns N' Roses, MGMT — tu playlist de hoy cruzó décadas. Elige una canción y escribe: ¿a qué momento o versión de ti te regresa? ¿Qué necesitas recordar de ese tiempo?"
-  const quote = { text: "Music gives a soul to the universe, wings to the mind, flight to the imagination, and life to everything.", author: "Plato" }
+  const journalPrompt = "Forever, Heathens, November Rain — géneros opuestos en la misma sesión. Escribe: ¿qué parte de ti escuchó cada una? ¿Cuál de esos mundos es donde realmente querés estar hoy?"
+  const quote = { text: "Not all those who wander are lost.", author: "J.R.R. Tolkien" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
