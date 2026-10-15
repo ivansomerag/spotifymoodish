@@ -6,33 +6,33 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Wed Oct 14, 2026"
-  const mood = { label: "MELANCHOLIC", emoji: "🖤", sub: "Next Semester → Isle Of Flightless Birds → Goner — maratón TØP, algo se está procesando lento y en silencio" }
-  const insight = "La tarde del 13 fue una sesión continua de 30 tracks de Twenty One Pilots, de los demos de 2009 a los en vivo de México 2026. Next Semester abrió con esperanza pero Blurryface y Trench (Message Man, Heavydirtysoul, Goner, Addict With A Pen) tiraron el peso hacia adentro. El único quiebre fue Contacto Cero — rap sad que confirmó el estado: introspección sostenida, sin escapatoria visible."
+  const date = "Wed Oct 15, 2026"
+  const mood = { label: "TRANSITIONAL", emoji: "🌊", sub: "De TØP angst a EDM y reggaeton — el sistema está cambiando de frecuencia" }
+  const insight = "El historial muestra un pivot claro: ayer fue una maratón introspectiva de Twenty One Pilots (emo, angst, rock moderno), pero hoy las últimas escuchas giraron hacia algo completamente distinto — FADE AWAY de San Holo, Take Me Back de ILLENIUM, Única de KAROL G x Tainy, y messy de Łaszewo. El cuerpo está buscando energía y danceability después del peso emocional de la noche anterior. Push-pull clásico: procesando algo mientras intenta soltar."
 
   const tracks = [
-    { n: 1, name: "Next Semester", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/1BANPzYIhCQkJ1ZFq2Fb0O", vibe: "EMOTIONAL", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 2, name: "Isle Of Flightless Birds", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/1WffRpGaJXfbgrKuUg3CWi", vibe: "SAD EMO", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 3, name: "Drag Path", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/0TlcczkVTGpinpkGJpT81L", vibe: "SAD ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 4, name: "Goner", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/5P3yUXUC9rZPJPNmYGKEAz", vibe: "ANGST", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 5, name: "Car Radio (Live MX)", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/6yvZLQqaM09tZddJ4jL6EC", vibe: "LIVE EMO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 6, name: "Contacto Cero", artist: "Wuicho kun", url: "https://open.spotify.com/track/06gWYDApdKpVOGz7fvoZoP", vibe: "SAD RAP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 1, name: "algo así (remix)", artist: "paopao & Mora", url: "https://open.spotify.com/track/6P6w5zbJBGNoID8rd365aZ", vibe: "TRAP LATINO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 2, name: "FADE AWAY", artist: "San Holo & Tisoki", url: "https://open.spotify.com/track/3q56vfX8ubHB2QvIa8xq6v", vibe: "EDM", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 3, name: "Take Me Back", artist: "ILLENIUM & Dean Lewis", url: "https://open.spotify.com/track/4ktOL5ShhTQ2zl8YNnES2b", vibe: "EDM EMO", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 4, name: "Única", artist: "Tainy & KAROL G", url: "https://open.spotify.com/track/0xHAfrziD261HeNYVmYqNF", vibe: "REGGAETON", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 5, name: "messy", artist: "Łaszewo", url: "https://open.spotify.com/track/3CPhCNH8rV1czzGSmXm9TH", vibe: "HOUSE", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 6, name: "Next Semester", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/1BANPzYIhCQkJ1ZFq2Fb0O", vibe: "EMOTIONAL", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 32, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 12, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 25, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 62, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 48, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 71, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Caminata sin destino — 20 min", desc: "Isle Of Flightless Birds y Goner piden movimiento lento, no resolución. Sal sin ruta ni pantalla: deja que el cuerpo procese lo que la mente lleva en bucle. No tienes que llegar a ningún lado.", time: "20 min" },
-    { icon: "🌬️", title: "Exhala el peso — respiración 4-7-8", desc: "Inhala 4s, sostén 7s, exhala 8s. Repite 5 ciclos. Baja el cortisol activo más rápido que el box breathing estándar. Ideal después de una sesión larga de música cargada de angst como la de hoy.", time: "5 min" },
-    { icon: "✍️", title: "Escribe lo que Goner no puede nombrar", desc: "La canción habla de sentirse al límite pero aferrarse. Pon 8 minutos y escribe: ¿qué es lo que estás cargando esta semana que todavía no le has puesto palabras? Sin editar. Sin releer.", time: "10 min" },
+    { icon: "🏃", title: "Corre con el momentum — 20 min", desc: "ILLENIUM y San Holo a volumen alto son el empuje perfecto para un run corto. No tiene que ser intenso — usa la energía del EDM para mover el cuerpo y liberar lo que quedó del TØP de ayer.", time: "20 min" },
+    { icon: "🌬️", title: "Respira el cambio — box breathing", desc: "Inhala 4s, sostén 4s, exhala 4s, sostén 4s. Repite 6 ciclos. Ideal en el punto de transición entre géneros — como tu día hoy, tu cuerpo también necesita un reset consciente.", time: "5 min" },
+    { icon: "✍️", title: "El pivot — ¿qué dejaste atrás?", desc: "Pasaste de 20+ TØP a EDM y reggaeton en cuestión de horas. Escribe 10 minutos sin filtro: ¿qué estado emocional estás intentando dejar ir con ese cambio de frecuencia?", time: "10 min" },
   ]
 
-  const journalPrompt = "30 tracks de Twenty One Pilots seguidos — de los demos de 2009 al en vivo de México 2026. Ese recorrido no es aleatorio. ¿Qué estás buscando en esas canciones hoy que no encuentras en otro lado?"
-  const quote = { text: "I'm falling, so I'm taking my time on my ride.", author: "Tyler Joseph — Ride" }
+  const journalPrompt = "Ayer TØP en loop, hoy KAROL G y San Holo. Ese giro no es aleatorio — la música que eliges dice algo sobre lo que necesitas. ¿Qué estás buscando en la energía de hoy que el angst de ayer no te podía dar?"
+  const quote = { text: "The beat goes on, even when you don't know where you're going.", author: "San Holo" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
