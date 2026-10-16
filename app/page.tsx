@@ -6,33 +6,33 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Thu Oct 16, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌀", sub: "Maratón Nsqk — álbum nuevo completo más Muse, James Blake y Olivia Rodrigo en la misma noche" }
-  const insight = "La noche arrancó con un binge intenso del álbum nuevo de Nsqk recién lanzado el 15 de octubre: 18 tracks seguidos, una exploración de Latin alternative oscuro y etéreo. Después la mente buscó contraste — Muse con Hysteria, James Blake y Dave en grime introspectivo, Olivia Rodrigo en pop visceral. Es un estado transitional cargado: la euforia del discovery mezclada con una búsqueda emocional que no terminó en un solo punto."
+  const date = "Fri Oct 16, 2026"
+  const mood = { label: "TRANSITIONAL", emoji: "🌀", sub: "Binge del álbum nuevo de Nsqk + contraste de géneros — empezando el día desde ese espacio" }
+  const insight = "La madrugada fue un binge completo del álbum nuevo de Nsqk (lanzado el 15 de octubre): Latin alternative oscuro y etéreo de corrido. Entre eso: Muse con energía de rock, James Blake y Dave en grime introspectivo, Olivia Rodrigo en pop visceral, y destellos de ABBA y Jain. Comienzas este viernes cargado de discovery y contraste emocional — es un buen estado para arrancar el día con intención."
 
   const tracks = [
-    { n: 1, name: "Santurce", artist: "Nsqk", url: "https://open.spotify.com/track/2rjXngX3fqjbFmLAQBzbjp", vibe: "LATIN ALT", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 1, name: "SAMSA", artist: "Nsqk", url: "https://open.spotify.com/track/4uwPJjZlTgGAoWWg6nof0d", vibe: "LATIN ALT", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
     { n: 2, name: "Dientes De Fierro", artist: "Nsqk & Jean Dawson", url: "https://open.spotify.com/track/4dAjV0Fmr0NfBjR09KpiFj", vibe: "LATIN ALT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 3, name: "Ghost In The Shell", artist: "Nsqk", url: "https://open.spotify.com/track/5lBvNgYIUMxlfLPaUXELMx", vibe: "DARK POP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 4, name: "Hysteria", artist: "Muse", url: "https://open.spotify.com/track/0knbMPVHpFbsx38pLoYSRs", vibe: "ROCK", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 5, name: "Doesn't Just Happen", artist: "James Blake & Dave", url: "https://open.spotify.com/track/2NI8EpPOnrRQhNs81tAAoe", vibe: "GRIME", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "maggots for brains", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/6jfiwkcwt8iYCdkbLukxeI", vibe: "POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 3, name: "Hysteria", artist: "Muse", url: "https://open.spotify.com/track/0knbMPVHpFbsx38pLoYSRs", vibe: "ROCK", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 4, name: "Doesn't Just Happen", artist: "James Blake & Dave", url: "https://open.spotify.com/track/2NI8EpPOnrRQhNs81tAAoe", vibe: "GRIME", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "maggots for brains", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/6jfiwkcwt8iYCdkbLukxeI", vibe: "POP", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "Circo", artist: "Nsqk & Kevin Kaarl", url: "https://open.spotify.com/track/2KIqzRxZftjm3TIt1rRs6Y", vibe: "LATIN ALT", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 72, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 44, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 58, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 68, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 40, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 55, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Carrera corta de descarga — 20 min", desc: "Escuchaste 18 tracks de un álbum nuevo de un tirón — eso es energía acumulada sin salida física. Una carrera ligera de 20 minutos libera la tensión y deja que el cuerpo procese lo que la música activó.", time: "20 min" },
-    { icon: "🌬️", title: "Respiración box 4-4-4-4", desc: "Inhala 4s, sostén 4s, exhala 4s, sostén 4s. Repite 6 ciclos. Técnica usada por fuerzas especiales para bajar la activación del sistema nervioso — ideal después de un binge musical de alta intensidad.", time: "6 min" },
-    { icon: "✍️", title: "Primeras impresiones del álbum nuevo", desc: "Acabas de escuchar el disco nuevo de Nsqk recién salido. Escribe 5 palabras que te dejó y la frase de una canción que más te pegó — sin pensar demasiado, solo lo que llegó primero.", time: "10 min" },
+    { icon: "🌅", title: "Camina 15 min al aire libre", desc: "Llegas a este viernes después de una madrugada intensa de discovery musical. Una caminata corta en la mañana ancla tu sistema nervioso y te ayuda a entrar al día con claridad en lugar de momentum acumulado.", time: "15 min" },
+    { icon: "🌬️", title: "Respiración 4-7-8 para aterrizar", desc: "Inhala 4s, sostén 7s, exhala 8s. Repite 4 ciclos. Ideal para el comienzo del día después de una noche de alta estimulación musical — activa el sistema parasimpático y te centra.", time: "5 min" },
+    { icon: "✍️", title: "Intención para el viernes", desc: "Escuchaste un álbum entero de un tirón anoche — eso dice algo sobre dónde está tu atención. Escribe una sola cosa que quieres que este viernes tenga al final del día. Una, nada más.", time: "5 min" },
   ]
 
-  const journalPrompt = "Escuchaste el álbum nuevo de Nsqk de corrido esta noche — eso es raro y no pasa con cualquier artista. ¿Qué tiene Nsqk que te hizo quedarte 18 tracks seguidos? ¿Qué está diciendo esa música sobre dónde estás tú ahorita?"
-  const quote = { text: "Music gives a soul to the universe, wings to the mind, flight to the imagination, and life to everything.", author: "Plato" }
+  const journalPrompt = "Nsqk lanzó un álbum ayer y tú lo escuchaste completo de madrugada. ¿Qué estabas buscando en esa música a esa hora? ¿Lo encontraste?"
+  const quote = { text: "The morning wind spreads its fresh smell. We must get up and take that in.", author: "Rumi" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
