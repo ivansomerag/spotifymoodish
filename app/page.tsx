@@ -6,33 +6,33 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Thu Oct 15, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "⚡", sub: "Cruce de mundos — hip-hop pesado, ethereal indie y EDM en la misma sesión sin escala" }
-  const insight = "La sesión de hoy no eligió un carril: arrancó con el supergrupo de hip-hop más pesado del juego (Drake, Kanye, Wayne, Eminem en Forever), dio un giro etéreo con AURORA y Twenty One Pilots, y aterrizó en EDM con The Chainsmokers. Esa oscilación constante entre intensidad y vulnerabilidad es la firma de un estado transitional — energía que busca forma todavía."
+  const date = "Thu Oct 16, 2026"
+  const mood = { label: "TRANSITIONAL", emoji: "🌀", sub: "Entre mundos — hip-hop dorado, nostalgia ABBA y Twenty One Pilots en el mismo carrete" }
+  const insight = "La sesión de las últimas horas viajó décadas en una sola escucha: arrancó en 2009 con el supergrupo de Forever, giró hacia nostalgia disco con ABBA y Thrift Shop, se asentó en el emo melódico de Twenty One Pilots, y terminó con reggaeton y electro-pop actual. Es el perfil clásico de un estado transitional — la mente que no eligió un solo estado emocional, sino que los recorrió todos."
 
   const tracks = [
     { n: 1, name: "Forever", artist: "Drake, Kanye, Lil Wayne & Eminem", url: "https://open.spotify.com/track/3qjKqmA2YeH0a8DRoKj8iy", vibe: "HIP-HOP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "Heathens", artist: "AURORA", url: "https://open.spotify.com/track/4UkLS3Vqp8o2ukxipCIQ7N", vibe: "ETHEREAL", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 3, name: "The Line", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/52IZK2QdSxUf7O5gdwhail", vibe: "EMO / POP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 4, name: "November Rain", artist: "Guns N' Roses", url: "https://open.spotify.com/track/3q9npStSssk7sZWotiNQLK", vibe: "CLASSIC ROCK", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 5, name: "Sympathy Is a Knife", artist: "Charli xcx", url: "https://open.spotify.com/track/5c9tBmJKbTdn1vhzXHeAwW", vibe: "DANCE POP", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "The Fall", artist: "The Chainsmokers & Ship Wrek", url: "https://open.spotify.com/track/5FvGI8KtImlEbOsvEW3pfX", vibe: "EDM", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "Gimme! Gimme! Gimme!", artist: "ABBA", url: "https://open.spotify.com/track/3vkQ5DAB1qQMYO4Mr9zJN6", vibe: "DISCO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 3, name: "Fall Away", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/6aeKPkMywDDYWtPBsbfO50", vibe: "EMO", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 4, name: "Video Games", artist: "Lana Del Rey", url: "https://open.spotify.com/track/33HucJaMg7OBQLqmaVx58p", vibe: "MELANCHOLIC", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "messy", artist: "Łaszewo", url: "https://open.spotify.com/track/3CPhCNH8rV1czzGSmXm9TH", vibe: "HOUSE", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "Única", artist: "Tainy & KAROL G", url: "https://open.spotify.com/track/0xHAfrziD261HeNYVmYqNF", vibe: "REGGAETON", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 68, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 42, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 62, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 65, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 47, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 66, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Run sin playlist — 20 min", desc: "La energía de Forever y The Fall pide liberarse con movimiento real. Sal a correr sin música estos 20 min — deja que la mente procese sola lo que los tracks empezaron a mover.", time: "20 min" },
-    { icon: "🌬️", title: "Respira en los contrastes — Caja 4-4-4-4", desc: "Inhala 4s, sostén 4s, exhala 4s, sostén vacío 4s. Repite 6 ciclos. Es el ritmo del estado transitional: igual de tiempo en cada fase, sin favorecer ninguna.", time: "6 min" },
-    { icon: "✍️", title: "¿Qué estás cruzando?", desc: "Hoy pasaste de Drake a AURORA a GNR sin escala. Escribe 10 minutos: ¿entre qué dos versiones de ti mismo estás en tránsito ahora mismo? ¿Cuál dejás atrás y cuál todavía no llegó?", time: "10 min" },
+    { icon: "🚶", title: "Caminata de descompresión — 25 min", desc: "Tu sesión recorrió décadas y géneros sin parar. Sal a caminar sin destino fijo durante 25 minutos — deja que el cuerpo integre lo que la música movió antes de seguir con el día.", time: "25 min" },
+    { icon: "🌬️", title: "Respiración 4-7-8 para transiciones", desc: "Inhala 4s, sostén 7s, exhala 8s. Repite 5 ciclos. La exhalación larga activa el sistema nervioso parasimpático — ideal cuando la mente saltó entre muchos estados emocionales.", time: "5 min" },
+    { icon: "✍️", title: "El track que más reprocesaste", desc: "Escucha otra vez el track de esta sesión que más te llamó la atención. Escribe 3 oraciones: ¿qué te dice sobre donde estás hoy? No analices — solo escribe lo primero que llegue.", time: "12 min" },
   ]
 
-  const journalPrompt = "Forever, Heathens, November Rain — géneros opuestos en la misma sesión. Escribe: ¿qué parte de ti escuchó cada una? ¿Cuál de esos mundos es donde realmente querés estar hoy?"
-  const quote = { text: "Not all those who wander are lost.", author: "J.R.R. Tolkien" }
+  const journalPrompt = "Pasaste de Forever a ABBA a Lana Del Rey a reggaeton en pocas horas. Escribe: si cada track fuera una conversación contigo mismo, ¿cuál de esas conversaciones todavía no terminaste?"
+  const quote = { text: "Life is a series of natural and spontaneous changes. Don't resist them.", author: "Lao Tzu" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
