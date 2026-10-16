@@ -7,8 +7,8 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Fri Oct 16, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌀", sub: "Binge del álbum nuevo de Nsqk + contraste de géneros — empezando el día desde ese espacio" }
-  const insight = "La madrugada fue un binge completo del álbum nuevo de Nsqk (lanzado el 15 de octubre): Latin alternative oscuro y etéreo de corrido. Entre eso: Muse con energía de rock, James Blake y Dave en grime introspectivo, Olivia Rodrigo en pop visceral, y destellos de ABBA y Jain. Comienzas este viernes cargado de discovery y contraste emocional — es un buen estado para arrancar el día con intención."
+  const mood = { label: "TRANSITIONAL", emoji: "🌀", sub: "Album binge nocturno de Nsqk + rock, grime y pop — despertando en modo discovery" }
+  const insight = "Madrugada de inmersión total: 20+ tracks del nuevo álbum de Nsqk lanzado el 15 de octubre — Latin alt oscuro con corridos etéreos y colaboraciones de Jean Dawson, Kevin Kaarl y Julieta Venegas. El contexto lo pusieron Muse, James Blake & Dave, Olivia Rodrigo, ROSALÍA y ABBA antes del binge. Es un viernes que arranca desde el discovery profundo — alta curiosidad, energía moderada, algo de tensión emocional por resolver."
 
   const tracks = [
     { n: 1, name: "SAMSA", artist: "Nsqk", url: "https://open.spotify.com/track/4uwPJjZlTgGAoWWg6nof0d", vibe: "LATIN ALT", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
@@ -20,19 +20,19 @@ export default function WellnessDashboard() {
   ]
 
   const meters = [
-    { label: "Energy",       value: 68, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 40, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 55, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 65, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 38, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 58, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🌅", title: "Camina 15 min al aire libre", desc: "Llegas a este viernes después de una madrugada intensa de discovery musical. Una caminata corta en la mañana ancla tu sistema nervioso y te ayuda a entrar al día con claridad en lugar de momentum acumulado.", time: "15 min" },
-    { icon: "🌬️", title: "Respiración 4-7-8 para aterrizar", desc: "Inhala 4s, sostén 7s, exhala 8s. Repite 4 ciclos. Ideal para el comienzo del día después de una noche de alta estimulación musical — activa el sistema parasimpático y te centra.", time: "5 min" },
-    { icon: "✍️", title: "Intención para el viernes", desc: "Escuchaste un álbum entero de un tirón anoche — eso dice algo sobre dónde está tu atención. Escribe una sola cosa que quieres que este viernes tenga al final del día. Una, nada más.", time: "5 min" },
+    { icon: "☀️", title: "Sal 10 min antes de arrancar", desc: "Escuchaste música hasta las 4am — tu ritmo circadiano necesita luz natural para reset. Diez minutos afuera sin pantalla anclan el cortisol matutino y hacen que el resto del día fluya mejor.", time: "10 min" },
+    { icon: "🌬️", title: "Respiración Box para centrar", desc: "Inhala 4s, sostén 4s, exhala 4s, sostén 4s. Repite 5 veces. Ideal después de una noche de alta estimulación auditiva — reduce el ruido mental y te pone en modo presencia.", time: "4 min" },
+    { icon: "✍️", title: "Una palabra para este viernes", desc: "Escuchaste un álbum entero de corrido de madrugada. Eso no es casual. Escribe una sola palabra que describe lo que quieres que este viernes te deje. Solo una.", time: "3 min" },
   ]
 
-  const journalPrompt = "Nsqk lanzó un álbum ayer y tú lo escuchaste completo de madrugada. ¿Qué estabas buscando en esa música a esa hora? ¿Lo encontraste?"
-  const quote = { text: "The morning wind spreads its fresh smell. We must get up and take that in.", author: "Rumi" }
+  const journalPrompt = "Escuchaste el álbum nuevo de Nsqk completo entre las 2 y las 4am. ¿Qué estabas procesando mientras lo hacías? ¿Hay algo de esa música que todavía resena ahora que es de mañana?"
+  const quote = { text: "Music gives a soul to the universe, wings to the mind, flight to the imagination, and life to everything.", author: "Plato" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
