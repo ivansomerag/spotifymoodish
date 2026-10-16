@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Thu Oct 16, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌀", sub: "Entre mundos — hip-hop dorado, nostalgia ABBA y Twenty One Pilots en el mismo carrete" }
-  const insight = "La sesión de las últimas horas viajó décadas en una sola escucha: arrancó en 2009 con el supergrupo de Forever, giró hacia nostalgia disco con ABBA y Thrift Shop, se asentó en el emo melódico de Twenty One Pilots, y terminó con reggaeton y electro-pop actual. Es el perfil clásico de un estado transitional — la mente que no eligió un solo estado emocional, sino que los recorrió todos."
+  const mood = { label: "TRANSITIONAL", emoji: "🌀", sub: "Maratón Nsqk — álbum nuevo completo más Muse, James Blake y Olivia Rodrigo en la misma noche" }
+  const insight = "La noche arrancó con un binge intenso del álbum nuevo de Nsqk recién lanzado el 15 de octubre: 18 tracks seguidos, una exploración de Latin alternative oscuro y etéreo. Después la mente buscó contraste — Muse con Hysteria, James Blake y Dave en grime introspectivo, Olivia Rodrigo en pop visceral. Es un estado transitional cargado: la euforia del discovery mezclada con una búsqueda emocional que no terminó en un solo punto."
 
   const tracks = [
-    { n: 1, name: "Forever", artist: "Drake, Kanye, Lil Wayne & Eminem", url: "https://open.spotify.com/track/3qjKqmA2YeH0a8DRoKj8iy", vibe: "HIP-HOP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "Gimme! Gimme! Gimme!", artist: "ABBA", url: "https://open.spotify.com/track/3vkQ5DAB1qQMYO4Mr9zJN6", vibe: "DISCO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 3, name: "Fall Away", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/6aeKPkMywDDYWtPBsbfO50", vibe: "EMO", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 4, name: "Video Games", artist: "Lana Del Rey", url: "https://open.spotify.com/track/33HucJaMg7OBQLqmaVx58p", vibe: "MELANCHOLIC", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 5, name: "messy", artist: "Łaszewo", url: "https://open.spotify.com/track/3CPhCNH8rV1czzGSmXm9TH", vibe: "HOUSE", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "Única", artist: "Tainy & KAROL G", url: "https://open.spotify.com/track/0xHAfrziD261HeNYVmYqNF", vibe: "REGGAETON", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 1, name: "Santurce", artist: "Nsqk", url: "https://open.spotify.com/track/2rjXngX3fqjbFmLAQBzbjp", vibe: "LATIN ALT", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "Dientes De Fierro", artist: "Nsqk & Jean Dawson", url: "https://open.spotify.com/track/4dAjV0Fmr0NfBjR09KpiFj", vibe: "LATIN ALT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 3, name: "Ghost In The Shell", artist: "Nsqk", url: "https://open.spotify.com/track/5lBvNgYIUMxlfLPaUXELMx", vibe: "DARK POP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 4, name: "Hysteria", artist: "Muse", url: "https://open.spotify.com/track/0knbMPVHpFbsx38pLoYSRs", vibe: "ROCK", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "Doesn't Just Happen", artist: "James Blake & Dave", url: "https://open.spotify.com/track/2NI8EpPOnrRQhNs81tAAoe", vibe: "GRIME", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "maggots for brains", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/6jfiwkcwt8iYCdkbLukxeI", vibe: "POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 65, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 47, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 66, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 72, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 44, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 58, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Caminata de descompresión — 25 min", desc: "Tu sesión recorrió décadas y géneros sin parar. Sal a caminar sin destino fijo durante 25 minutos — deja que el cuerpo integre lo que la música movió antes de seguir con el día.", time: "25 min" },
-    { icon: "🌬️", title: "Respiración 4-7-8 para transiciones", desc: "Inhala 4s, sostén 7s, exhala 8s. Repite 5 ciclos. La exhalación larga activa el sistema nervioso parasimpático — ideal cuando la mente saltó entre muchos estados emocionales.", time: "5 min" },
-    { icon: "✍️", title: "El track que más reprocesaste", desc: "Escucha otra vez el track de esta sesión que más te llamó la atención. Escribe 3 oraciones: ¿qué te dice sobre donde estás hoy? No analices — solo escribe lo primero que llegue.", time: "12 min" },
+    { icon: "🏃", title: "Carrera corta de descarga — 20 min", desc: "Escuchaste 18 tracks de un álbum nuevo de un tirón — eso es energía acumulada sin salida física. Una carrera ligera de 20 minutos libera la tensión y deja que el cuerpo procese lo que la música activó.", time: "20 min" },
+    { icon: "🌬️", title: "Respiración box 4-4-4-4", desc: "Inhala 4s, sostén 4s, exhala 4s, sostén 4s. Repite 6 ciclos. Técnica usada por fuerzas especiales para bajar la activación del sistema nervioso — ideal después de un binge musical de alta intensidad.", time: "6 min" },
+    { icon: "✍️", title: "Primeras impresiones del álbum nuevo", desc: "Acabas de escuchar el disco nuevo de Nsqk recién salido. Escribe 5 palabras que te dejó y la frase de una canción que más te pegó — sin pensar demasiado, solo lo que llegó primero.", time: "10 min" },
   ]
 
-  const journalPrompt = "Pasaste de Forever a ABBA a Lana Del Rey a reggaeton en pocas horas. Escribe: si cada track fuera una conversación contigo mismo, ¿cuál de esas conversaciones todavía no terminaste?"
-  const quote = { text: "Life is a series of natural and spontaneous changes. Don't resist them.", author: "Lao Tzu" }
+  const journalPrompt = "Escuchaste el álbum nuevo de Nsqk de corrido esta noche — eso es raro y no pasa con cualquier artista. ¿Qué tiene Nsqk que te hizo quedarte 18 tracks seguidos? ¿Qué está diciendo esa música sobre dónde estás tú ahorita?"
+  const quote = { text: "Music gives a soul to the universe, wings to the mind, flight to the imagination, and life to everything.", author: "Plato" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
