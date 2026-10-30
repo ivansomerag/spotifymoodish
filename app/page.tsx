@@ -8,13 +8,13 @@ export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Fri Oct 30, 2026"
   const mood = { label: "TRANSITIONAL", emoji: "🌀", sub: "Latin romántico, rock emo y disco de ABBA — empuje y jalón emocional" }
-  const insight = "Tu noche mezcló el Latin romántico de Nsqk y Tainy con el rock intenso de Muse y Twenty One Pilots, y lo cerraste con el pop afilado de Olivia Rodrigo. ABBA metió disco nostálgico en medio, así que el día arranca con energía alta pero con emociones aún por resolver."
+  const insight = "Tus últimas horas combinan el Latin romántico de Nsqk y Tainy con el rock dramático de Muse y Twenty One Pilots, con el pop afilado de Olivia Rodrigo en medio. El disco de ABBA aporta un respiro nostálgico, así que la tarde pide canalizar energía sin dejar de procesar lo que sientes."
 
   const tracks = [
     { n: 1, name: "NADIE MÁS!", artist: "Nsqk", url: "https://open.spotify.com/track/0HWyOfh3Q08UreN155KmRZ", vibe: "LATIN", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
     { n: 2, name: "Única", artist: "Tainy & KAROL G", url: "https://open.spotify.com/track/0xHAfrziD261HeNYVmYqNF", vibe: "REGGAETON", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
     { n: 3, name: "Hysteria", artist: "Muse", url: "https://open.spotify.com/track/0knbMPVHpFbsx38pLoYSRs", vibe: "ROCK", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 4, name: "Message Man", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/4Oyl6oYSNeeZZP0OAxPVaU", vibe: "EMO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 4, name: "Center Mass", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/2BHSRlGgJwzTPfYvAax28m", vibe: "EMO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
     { n: 5, name: "drop dead", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/6gkbtMtioHgtyGjrMel6ei", vibe: "POP", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
     { n: 6, name: "Gimme! Gimme! Gimme!", artist: "ABBA", url: "https://open.spotify.com/track/3vkQ5DAB1qQMYO4Mr9zJN6", vibe: "DISCO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
@@ -26,12 +26,12 @@ export default function WellnessDashboard() {
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Caminata de 15 min con ritmo", desc: "Tu mezcla trae energía alta y emociones mixtas. Una caminata a paso firme, con ABBA o Tainy de fondo, convierte esa tensión en movimiento y despeja la cabeza.", time: "15 min" },
+    { icon: "🚶", title: "Caminata de 15 min con ritmo", desc: "Tu mezcla trae energía alta y emociones mixtas. Una caminata a paso firme después de comer, con ABBA o Tainy de fondo, convierte esa tensión en movimiento y despeja la cabeza.", time: "15 min" },
     { icon: "🌬️", title: "Respiración 4-6 para bajar revoluciones", desc: "Inhala 4 segundos, exhala 6. Repite 8 veces. Ayuda a asentar la intensidad del rock y el pop de anoche sin apagar tu energía.", time: "4 min" },
-    { icon: "✍️", title: "Escribe qué soltarías hoy", desc: "Entre Muse, Twenty One Pilots y Olivia Rodrigo hay algo por resolver. Anota una cosa que quieras soltar y una que quieras cargar contigo este viernes.", time: "5 min" },
+    { icon: "✍️", title: "Escribe qué soltarías hoy", desc: "Entre Muse, Twenty One Pilots y Olivia Rodrigo hay algo por resolver. Anota una cosa que quieras soltar y una que quieras cargar contigo esta tarde de viernes.", time: "5 min" },
   ]
 
-  const journalPrompt = "Anoche pasaste de Hysteria de Muse a Message Man de Twenty One Pilots y cerraste con drop dead de Olivia Rodrigo. ¿Qué emoción te acompañó de principio a fin, y qué necesita hoy para sentirse escuchada?"
+  const journalPrompt = "Pasaste de Hysteria de Muse a Center Mass de Twenty One Pilots y cerraste con drop dead de Olivia Rodrigo. ¿Qué emoción te acompañó de principio a fin, y qué necesita hoy para sentirse escuchada?"
   const quote = { text: "Where words fail, music speaks.", author: "Hans Christian Andersen" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
