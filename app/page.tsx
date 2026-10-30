@@ -6,33 +6,33 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Fri Oct 16, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌀", sub: "Album binge nocturno de Nsqk + rock, grime y pop — despertando en modo discovery" }
-  const insight = "Madrugada de inmersión total: 20+ tracks del nuevo álbum de Nsqk lanzado el 15 de octubre — Latin alt oscuro con corridos etéreos y colaboraciones de Jean Dawson, Kevin Kaarl y Julieta Venegas. El contexto lo pusieron Muse, James Blake & Dave, Olivia Rodrigo, ROSALÍA y ABBA antes del binge. Es un viernes que arranca desde el discovery profundo — alta curiosidad, energía moderada, algo de tensión emocional por resolver."
+  const date = "Fri Oct 30, 2026"
+  const mood = { label: "TRANSITIONAL", emoji: "🌀", sub: "Latin romántico, rock emo y disco de ABBA — empuje y jalón emocional" }
+  const insight = "Tu noche mezcló el Latin romántico de Nsqk y Tainy con el rock intenso de Muse y Twenty One Pilots, y lo cerraste con el pop afilado de Olivia Rodrigo. ABBA metió disco nostálgico en medio, así que el día arranca con energía alta pero con emociones aún por resolver."
 
   const tracks = [
-    { n: 1, name: "SAMSA", artist: "Nsqk", url: "https://open.spotify.com/track/4uwPJjZlTgGAoWWg6nof0d", vibe: "LATIN ALT", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "Dientes De Fierro", artist: "Nsqk & Jean Dawson", url: "https://open.spotify.com/track/4dAjV0Fmr0NfBjR09KpiFj", vibe: "LATIN ALT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 1, name: "NADIE MÁS!", artist: "Nsqk", url: "https://open.spotify.com/track/0HWyOfh3Q08UreN155KmRZ", vibe: "LATIN", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "Única", artist: "Tainy & KAROL G", url: "https://open.spotify.com/track/0xHAfrziD261HeNYVmYqNF", vibe: "REGGAETON", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
     { n: 3, name: "Hysteria", artist: "Muse", url: "https://open.spotify.com/track/0knbMPVHpFbsx38pLoYSRs", vibe: "ROCK", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 4, name: "Doesn't Just Happen", artist: "James Blake & Dave", url: "https://open.spotify.com/track/2NI8EpPOnrRQhNs81tAAoe", vibe: "GRIME", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 5, name: "maggots for brains", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/6jfiwkcwt8iYCdkbLukxeI", vibe: "POP", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "Circo", artist: "Nsqk & Kevin Kaarl", url: "https://open.spotify.com/track/2KIqzRxZftjm3TIt1rRs6Y", vibe: "LATIN ALT", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 4, name: "Message Man", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/4Oyl6oYSNeeZZP0OAxPVaU", vibe: "EMO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "drop dead", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/6gkbtMtioHgtyGjrMel6ei", vibe: "POP", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "Gimme! Gimme! Gimme!", artist: "ABBA", url: "https://open.spotify.com/track/3vkQ5DAB1qQMYO4Mr9zJN6", vibe: "DISCO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 65, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 38, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 58, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 72, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 48, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 64, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "☀️", title: "Sal 10 min antes de arrancar", desc: "Escuchaste música hasta las 4am — tu ritmo circadiano necesita luz natural para reset. Diez minutos afuera sin pantalla anclan el cortisol matutino y hacen que el resto del día fluya mejor.", time: "10 min" },
-    { icon: "🌬️", title: "Respiración Box para centrar", desc: "Inhala 4s, sostén 4s, exhala 4s, sostén 4s. Repite 5 veces. Ideal después de una noche de alta estimulación auditiva — reduce el ruido mental y te pone en modo presencia.", time: "4 min" },
-    { icon: "✍️", title: "Una palabra para este viernes", desc: "Escuchaste un álbum entero de corrido de madrugada. Eso no es casual. Escribe una sola palabra que describe lo que quieres que este viernes te deje. Solo una.", time: "3 min" },
+    { icon: "🚶", title: "Caminata de 15 min con ritmo", desc: "Tu mezcla trae energía alta y emociones mixtas. Una caminata a paso firme, con ABBA o Tainy de fondo, convierte esa tensión en movimiento y despeja la cabeza.", time: "15 min" },
+    { icon: "🌬️", title: "Respiración 4-6 para bajar revoluciones", desc: "Inhala 4 segundos, exhala 6. Repite 8 veces. Ayuda a asentar la intensidad del rock y el pop de anoche sin apagar tu energía.", time: "4 min" },
+    { icon: "✍️", title: "Escribe qué soltarías hoy", desc: "Entre Muse, Twenty One Pilots y Olivia Rodrigo hay algo por resolver. Anota una cosa que quieras soltar y una que quieras cargar contigo este viernes.", time: "5 min" },
   ]
 
-  const journalPrompt = "Escuchaste el álbum nuevo de Nsqk completo entre las 2 y las 4am. ¿Qué estabas procesando mientras lo hacías? ¿Hay algo de esa música que todavía resena ahora que es de mañana?"
-  const quote = { text: "Music gives a soul to the universe, wings to the mind, flight to the imagination, and life to everything.", author: "Plato" }
+  const journalPrompt = "Anoche pasaste de Hysteria de Muse a Message Man de Twenty One Pilots y cerraste con drop dead de Olivia Rodrigo. ¿Qué emoción te acompañó de principio a fin, y qué necesita hoy para sentirse escuchada?"
+  const quote = { text: "Where words fail, music speaks.", author: "Hans Christian Andersen" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
