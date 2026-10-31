@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Fri Oct 30, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌀", sub: "Latin romántico, rock emo y pop afilado — empuje y jalón emocional" }
-  const insight = "Tu historial reciente alterna el Latin romántico de Nsqk y Tainy con el rock intenso de Muse y Twenty One Pilots, mientras Olivia Rodrigo y Sabrina Carpenter ponen el pop con actitud. ABBA aparece como pausa nostálgica, así que esta noche de viernes pide soltar la tensión acumulada con movimiento y un poco de calma."
+  const mood = { label: "EUPHORIC", emoji: "🎉", sub: "Reggae, house y himnos de Nueva York — viernes en modo celebración" }
+  const insight = "Tus últimas horas mezclan el reggae de Shaggy, el house de Kaila y el himno de JAŸ-Z y Alicia Keys con el Latin de Nsqk, todo con mucho ritmo y buena vibra. Es una noche de viernes con ganas de celebrar, y ese impulso se disfruta mejor si lo mueves con el cuerpo."
 
   const tracks = [
-    { n: 1, name: "NADIE MÁS!", artist: "Nsqk", url: "https://open.spotify.com/track/0HWyOfh3Q08UreN155KmRZ", vibe: "LATIN", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "Única", artist: "Tainy & KAROL G", url: "https://open.spotify.com/track/0xHAfrziD261HeNYVmYqNF", vibe: "REGGAETON", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 3, name: "Hysteria", artist: "Muse", url: "https://open.spotify.com/track/0knbMPVHpFbsx38pLoYSRs", vibe: "ROCK", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 4, name: "Message Man", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/4Oyl6oYSNeeZZP0OAxPVaU", vibe: "EMO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 5, name: "drop dead", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/6gkbtMtioHgtyGjrMel6ei", vibe: "POP", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "Knowing Me, Knowing You", artist: "ABBA", url: "https://open.spotify.com/track/798cuJeotvXP8UVa8GJPnD", vibe: "DISCO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 1, name: "Boombastic", artist: "Shaggy", url: "https://open.spotify.com/track/4fxF8ljwryMZX5c9EKrLFE", vibe: "REGGAE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "No veo bien", artist: "RØZ & Nsqk", url: "https://open.spotify.com/track/0KZjUlL4n5kJVhpFllMc1J", vibe: "LATIN", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 3, name: "Empire State Of Mind", artist: "JAŸ-Z & Alicia Keys", url: "https://open.spotify.com/track/2igwFfvr1OAGX9SKDCPBwO", vibe: "HIP HOP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 4, name: "Tight Dress", artist: "Kaila", url: "https://open.spotify.com/track/0VSnVU4YP5YJ6zZXuMoOBs", vibe: "HOUSE", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "NADIE MÁS!", artist: "Nsqk", url: "https://open.spotify.com/track/0HWyOfh3Q08UreN155KmRZ", vibe: "LATIN", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "Hysteria", artist: "Muse", url: "https://open.spotify.com/track/0knbMPVHpFbsx38pLoYSRs", vibe: "ROCK", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 70, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 46, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 64, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 78, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 72, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 82, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Caminata de 20 min al atardecer", desc: "Tu mezcla trae energía alta y emociones mixtas. Una caminata a paso firme con Tainy o ABBA de fondo convierte esa tensión en movimiento y cierra bien la semana.", time: "20 min" },
-    { icon: "🌬️", title: "Respiración 4-6 para bajar revoluciones", desc: "Inhala 4 segundos, exhala 6. Repite 8 veces. Ayuda a asentar la intensidad del rock y el pop sin apagar tu energía.", time: "4 min" },
-    { icon: "✍️", title: "Escribe qué soltarías esta semana", desc: "Entre Muse, Twenty One Pilots y Olivia Rodrigo hay algo por resolver. Anota una cosa que quieras soltar y una que quieras llevarte al fin de semana.", time: "5 min" },
+    { icon: "💃", title: "Baile libre de 15 min", desc: "Pon Boombastic y Tight Dress y muévete sin pensar en pasos. Tu energía está alta y bailar la convierte en bienestar físico.", time: "15 min" },
+    { icon: "🌬️", title: "Respiración 4-6 para cerrar el día", desc: "Inhala 4 segundos, exhala 6. Repite 8 veces. Mantiene la buena vibra pero te ayuda a aterrizar antes de dormir.", time: "4 min" },
+    { icon: "✍️", title: "Escribe 3 cosas que celebrar", desc: "Entre el reggae, el house y el himno de Nueva York, tu noche pide gratitud. Anota 3 momentos de la semana que valió la pena festejar.", time: "5 min" },
   ]
 
-  const journalPrompt = "Pasaste de Hysteria de Muse a Message Man de Twenty One Pilots y llegaste a drop dead de Olivia Rodrigo. ¿Qué emoción te acompañó de principio a fin, y qué necesita para sentirse escuchada este viernes?"
-  const quote = { text: "Music can heal the wounds which medicine cannot touch.", author: "Debasish Mridha" }
+  const journalPrompt = "Pasaste de Boombastic de Shaggy a Empire State Of Mind y luego a Tight Dress de Kaila. ¿Qué parte de tu semana te hizo sentir con ganas de celebrar, y cómo quieres llevar esa energía al fin de semana?"
+  const quote = { text: "Where words fail, music speaks.", author: "Hans Christian Andersen" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
