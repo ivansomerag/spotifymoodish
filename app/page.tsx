@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Mon Nov 02, 2026"
-  const mood = { label: "NOSTALGIC", emoji: "🕯️", sub: "Boleros y clásicos en Día de Muertos — recordando con cariño" }
-  const insight = "Tus últimas horas giran alrededor de Luis Miguel, José José, Vicente Fernández y Los Ángeles Azules, con un guiño a My Chemical Romance y a Chino & Nacho. Es una mezcla de clásicos que se sienten como recuerdos de familia, muy a tono con el Día de Muertos."
+  const mood = { label: "TRANSITIONAL", emoji: "🔀", sub: "Del EDM y el reggaeton al rock y el sad pop — empuje y jalón" }
+  const insight = "Tu noche brinca entre EDM, latin urbano y trap, y de pronto aterriza en Olivia Rodrigo, Twenty One Pilots y James Blake. Es una mezcla de buscar energía y quedarte un rato en lo introspectivo."
 
   const tracks = [
-    { n: 1, name: "La Media Vuelta", artist: "Luis Miguel", url: "https://open.spotify.com/track/1lKI9y1DL6QnYTZguVmACX", vibe: "BOLERO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "Lo Que No Fue No Será", artist: "José José", url: "https://open.spotify.com/track/3nlBG0lCutyuRX3jDRALw0", vibe: "BOLERO", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 3, name: "La Cadenita", artist: "Los Ángeles Azules & Alicia Villarreal", url: "https://open.spotify.com/track/6kXLLpboEWQQh6MtnqYH2o", vibe: "CUMBIA", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 4, name: "Niña Bonita", artist: "Chino & Nacho", url: "https://open.spotify.com/track/4u5xLMRN0dgKBFFN8FiNgv", vibe: "REGGAETON", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 5, name: "Welcome to the Black Parade", artist: "My Chemical Romance", url: "https://open.spotify.com/track/5wQnmLuC1W7ATsArWACrgW", vibe: "EMO", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "cosas malas de mí", artist: "Paloma Morphy", url: "https://open.spotify.com/track/1dNnMJZhKPnrYrS3Y3lJfT", vibe: "ALT POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 1, name: "Opalite", artist: "Taylor Swift", url: "https://open.spotify.com/track/3yWuTOYDztXjZxdE2cIRUa", vibe: "POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "MY MIND", artist: "AUBE", url: "https://open.spotify.com/track/58IXp70NRDKiwEEwtXSx5t", vibe: "HOUSE", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 3, name: "PUMAS", artist: "Trueno & Milo j", url: "https://open.spotify.com/track/5Iu46UfunYa0I5CFGAW59y", vibe: "LATIN RAP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 4, name: "Intentions", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3FbMtvXMcjmuAzlAhgwK0I", vibe: "ROCK", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "Doesn't Just Happen", artist: "James Blake & Dave", url: "https://open.spotify.com/track/2NI8EpPOnrRQhNs81tAAoe", vibe: "GRIME", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "the cure", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/55pBIZO1cqoldeqpp5WR7H", vibe: "SAD POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 52, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 48, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 58, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 72, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 44, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 68, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Caminata suave de 20 min", desc: "Sal a caminar con La Media Vuelta o La Cadenita de fondo, a paso tranquilo. Moverte despacio le da espacio a los recuerdos sin pesarte.", time: "20 min" },
-    { icon: "🌬️", title: "Respiración 4-7-8", desc: "Inhala 4 segundos, sostén 7 y exhala 8. Repite 4 ciclos. Te ayuda a sostener la nostalgia con calma en vez de dejar que te arrastre.", time: "5 min" },
-    { icon: "✍️", title: "Carta a un recuerdo querido", desc: "Escribe unas líneas a alguien o algo que extrañas hoy, Día de Muertos. No tiene que enviarse, solo darle un lugar en papel.", time: "10 min" },
+    { icon: "🏃", title: "Trote de intervalos de 25 min", desc: "Alterna 2 min rápido con 2 min suave, con AUBE o Trueno en los audífonos. Le das salida a la energía y luego dejas que baje.", time: "25 min" },
+    { icon: "🌬️", title: "Respiración en caja", desc: "Inhala 4 segundos, sostén 4, exhala 4, sostén 4. Repite 6 ciclos para unir la energía del EDM con la calma del sad pop.", time: "5 min" },
+    { icon: "✍️", title: "Diario de dos polos", desc: "Escribe una página sobre lo que te prendió hoy y lo que te hizo bajar el ritmo. No hay que resolver nada, solo ponerlo en papel.", time: "10 min" },
   ]
 
-  const journalPrompt = "Pasaste de Lo Que No Fue No Será de José José a La Cadenita y luego a Welcome to the Black Parade. ¿A quién o a qué momento te llevó esa música hoy, y qué te gustaría agradecerle?"
-  const quote = { text: "Music is the strongest form of magic.", author: "Marilyn Manson" }
+  const journalPrompt = "Pasaste de MY MIND de AUBE a the cure de Olivia Rodrigo y luego a Intentions de Twenty One Pilots. ¿Qué parte de ti pedía energía y cuál pedía quedarse en silencio?"
+  const quote = { text: "The only way out is through.", author: "Robert Frost" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
