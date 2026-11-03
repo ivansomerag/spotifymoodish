@@ -7,22 +7,22 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Mon Nov 02, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🔀", sub: "Del EDM y el reggaeton al rock y el sad pop — empuje y jalón" }
-  const insight = "Tu noche brinca entre EDM, latin urbano y trap, y de pronto aterriza en Olivia Rodrigo, Twenty One Pilots y James Blake. Es una mezcla de buscar energía y quedarte un rato en lo introspectivo."
+  const mood = { label: "TRANSITIONAL", emoji: "🔀", sub: "Reggaetón y EDM por un lado, sad pop y rock por el otro" }
+  const insight = "Tu noche arrancó con reggaetón de Tainy y EDM de Kaskade, y entre medio se coló el rap triste de Wuicho kun y el sad pop de Olivia Rodrigo. Buscas energía para moverte, pero hay una vena emocional que sigue pidiendo espacio."
 
   const tracks = [
-    { n: 1, name: "Opalite", artist: "Taylor Swift", url: "https://open.spotify.com/track/3yWuTOYDztXjZxdE2cIRUa", vibe: "POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "MY MIND", artist: "AUBE", url: "https://open.spotify.com/track/58IXp70NRDKiwEEwtXSx5t", vibe: "HOUSE", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 3, name: "PUMAS", artist: "Trueno & Milo j", url: "https://open.spotify.com/track/5Iu46UfunYa0I5CFGAW59y", vibe: "LATIN RAP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 4, name: "Intentions", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3FbMtvXMcjmuAzlAhgwK0I", vibe: "ROCK", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 5, name: "Doesn't Just Happen", artist: "James Blake & Dave", url: "https://open.spotify.com/track/2NI8EpPOnrRQhNs81tAAoe", vibe: "GRIME", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 1, name: "MONSTRUO", artist: "Tainy & Feid", url: "https://open.spotify.com/track/2ToF4unFUMMKGfu7KYhy1j", vibe: "REGGAETON", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "Comes Back Around", artist: "Kaskade & BUNT.", url: "https://open.spotify.com/track/7vDG2z8tUsW7Rtoz9OyjOE", vibe: "EDM", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 3, name: "Contacto Cero", artist: "Wuicho kun & Yubeili", url: "https://open.spotify.com/track/06gWYDApdKpVOGz7fvoZoP", vibe: "SAD RAP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 4, name: "Opalite", artist: "Taylor Swift", url: "https://open.spotify.com/track/3yWuTOYDztXjZxdE2cIRUa", vibe: "POP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "New Born", artist: "Muse", url: "https://open.spotify.com/track/2VrJMuLt2m9HbifGrKWHqk", vibe: "ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
     { n: 6, name: "the cure", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/55pBIZO1cqoldeqpp5WR7H", vibe: "SAD POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 72, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 44, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 68, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 74, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 46, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 71, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
@@ -31,7 +31,7 @@ export default function WellnessDashboard() {
     { icon: "✍️", title: "Diario de dos polos", desc: "Escribe una página sobre lo que te prendió hoy y lo que te hizo bajar el ritmo. No hay que resolver nada, solo ponerlo en papel.", time: "10 min" },
   ]
 
-  const journalPrompt = "Pasaste de MY MIND de AUBE a the cure de Olivia Rodrigo y luego a Intentions de Twenty One Pilots. ¿Qué parte de ti pedía energía y cuál pedía quedarse en silencio?"
+  const journalPrompt = "Pasaste de MONSTRUO y Comes Back Around a Contacto Cero y the cure. ¿Qué te pedía el cuerpo con los beats y qué te pedía el corazón con las letras tristes?"
   const quote = { text: "The only way out is through.", author: "Robert Frost" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
