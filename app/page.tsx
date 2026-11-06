@@ -8,21 +8,21 @@ export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Thu Nov 05, 2026"
   const mood = { label: "TRANSITIONAL", emoji: "🔀", sub: "Latin urbano y rock intenso, con sad pop de por medio" }
-  const insight = "Tu tarde mezcló el reggaetón de KAROL G y el rap latino de Trueno y Milo j con el rock de Muse y K.Flay, y entre medio apareció el sad pop de Olivia Rodrigo. Hay ganas de moverse y soltar tensión, pero también una vena emocional que sigue pidiendo espacio."
+  const insight = "Tu tarde mezcló el reggaetón de KAROL G y el rap latino de Trueno y Milo j con el rock de Muse y K.Flay, y entre medio aparecieron Olivia Rodrigo y ABBA con un toque más emocional. Hay ganas de moverse y soltar tensión, pero también una vena sentimental que sigue pidiendo espacio."
 
   const tracks = [
     { n: 1, name: "BbY WOW", artist: "KAROL G", url: "https://open.spotify.com/track/3h5T5JypYU7huFiVYhv1dr", vibe: "REGGAETON", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
     { n: 2, name: "GTFU", artist: "JADOM", url: "https://open.spotify.com/track/5ZPoYjUs1Lcc8wdZFf0qhv", vibe: "DUBSTEP", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
     { n: 3, name: "PUMAS", artist: "Trueno & Milo j", url: "https://open.spotify.com/track/5Iu46UfunYa0I5CFGAW59y", vibe: "RAP LATINO", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 4, name: "Story of My Life", artist: "One Direction", url: "https://open.spotify.com/track/4nVBt6MZDDP6tRVdQTgxJg", vibe: "NOSTALGIA", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 4, name: "Chiquitita", artist: "ABBA", url: "https://open.spotify.com/track/762B4bOcXF7I2Y8UlKTyTy", vibe: "NOSTALGIA", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
     { n: 5, name: "Hysteria", artist: "Muse", url: "https://open.spotify.com/track/0knbMPVHpFbsx38pLoYSRs", vibe: "ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "the cure", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/55pBIZO1cqoldeqpp5WR7H", vibe: "SAD POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 6, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/49j6SvuvWfbEKZKzsHCdLJ", vibe: "SAD POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 76, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 48, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 66, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 74, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 46, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 68, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
@@ -31,7 +31,7 @@ export default function WellnessDashboard() {
     { icon: "✍️", title: "Diario de dos polos", desc: "Escribe una página sobre lo que te prendió hoy y lo que te hizo bajar el ritmo. No hay que resolver nada, solo ponerlo en papel.", time: "10 min" },
   ]
 
-  const journalPrompt = "Pasaste de BbY WOW y GTFU a Hysteria y the cure, con Story of My Life como pausa nostálgica. ¿Qué te pedía el cuerpo con los beats y qué te pedía el corazón con las letras más tristes?"
+  const journalPrompt = "Pasaste de BbY WOW y GTFU a Hysteria y stupid song, con Chiquitita como pausa nostálgica. ¿Qué te pedía el cuerpo con los beats y qué te pedía el corazón con las letras más tristes?"
   const quote = { text: "The only way out is through.", author: "Robert Frost" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
