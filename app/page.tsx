@@ -7,31 +7,31 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Fri Nov 06, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🔀", sub: "Reggaetón y rock alternativo con un lado sentimental" }
-  const insight = "Tus últimas horas saltaron del reggaetón de KAROL G y el rap de Trueno y Milo j al rock alternativo de K.Flay, con Olivia Rodrigo y One Direction en el lado más sentimental. Hay energía para moverte, pero también ganas de revisar recuerdos y emociones."
+  const mood = { label: "TRANSITIONAL", emoji: "🔀", sub: "Rock alternativo, pop sentimental y urbano latino" }
+  const insight = "Tus últimas horas mezclaron el rock de K.Flay y Muse con el pop dolido de Olivia Rodrigo, y también reggaetón de KAROL G y rap latino de Trueno y Milo j. Hay ganas de moverte y soltar energía, pero también de quedarte con lo nostálgico, como ABBA y One Direction."
 
   const tracks = [
     { n: 1, name: "BbY WOW", artist: "KAROL G", url: "https://open.spotify.com/track/3h5T5JypYU7huFiVYhv1dr", vibe: "REGGAETON", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "the cure", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/55pBIZO1cqoldeqpp5WR7H", vibe: "SAD POP", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 3, name: "PUMAS", artist: "Trueno & Milo j", url: "https://open.spotify.com/track/5Iu46UfunYa0I5CFGAW59y", vibe: "RAP LATINO", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 4, name: "Story of My Life", artist: "One Direction", url: "https://open.spotify.com/track/4nVBt6MZDDP6tRVdQTgxJg", vibe: "NOSTALGIA", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 5, name: "Ants", artist: "K.Flay", url: "https://open.spotify.com/track/6ukoKgaAueZa5CSMxpJTqp", vibe: "ALT ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "Sexo, Violencia y Llantas", artist: "ROSALÍA", url: "https://open.spotify.com/track/1dp0MRcrgCxEESP1LrF2yA", vibe: "LATIN POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/49j6SvuvWfbEKZKzsHCdLJ", vibe: "SAD POP", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 3, name: "Hysteria", artist: "Muse", url: "https://open.spotify.com/track/0knbMPVHpFbsx38pLoYSRs", vibe: "ROCK", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 4, name: "Chiquitita", artist: "ABBA", url: "https://open.spotify.com/track/762B4bOcXF7I2Y8UlKTyTy", vibe: "NOSTALGIA", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "Blood Cells", artist: "K.Flay", url: "https://open.spotify.com/track/1mbdPFx9xGRhW1mCNpizsR", vibe: "ALT ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "Tarde o temprano", artist: "Nsqk", url: "https://open.spotify.com/track/3AkrjXOl3d8LycQHLHBm94", vibe: "LATIN", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 72, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 48, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 66, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 70, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 45, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 62, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Caminata rápida de 20 min", desc: "Sal con Trueno o KAROL G y mantén un paso firme. Le das salida a la energía del reggaetón sin forzar el cuerpo.", time: "20 min" },
-    { icon: "🌬️", title: "Respiración 4-7-8", desc: "Inhala 4 segundos, sostén 7, exhala 8. Repite 5 ciclos para bajar el ritmo después del rock y hacer espacio al lado más sentimental.", time: "5 min" },
-    { icon: "✍️", title: "Diario de recuerdos", desc: "Escribe sobre un recuerdo que te trajo Story of My Life y cómo te sientes hoy al verlo. Sin juzgar, solo ponlo en papel.", time: "10 min" },
+    { icon: "🏃", title: "Caminata rápida de 20 min", desc: "Sal con Muse o K.Flay y mantén un paso firme. Le das salida a la energía del rock sin forzar el cuerpo.", time: "20 min" },
+    { icon: "🌬️", title: "Respiración 4-7-8", desc: "Inhala 4 segundos, sostén 7, exhala 8. Repite 5 ciclos para bajar el ritmo y hacer espacio a lo que sientes.", time: "5 min" },
+    { icon: "✍️", title: "Diario de recuerdos", desc: "Escribe sobre lo que te movió al escuchar Chiquitita y stupid song, y cómo te sientes hoy. Sin juzgar, solo ponlo en papel.", time: "10 min" },
   ]
 
-  const journalPrompt = "Pasaste de BbY WOW y PUMAS a Ants y the cure, con Story of My Life como pausa nostálgica. ¿Qué recuerdo o sentimiento te pidió volver y qué necesitas hoy para soltarlo o abrazarlo?"
+  const journalPrompt = "Pasaste de Blood Cells y Hysteria a stupid song y Chiquitita, con BbY WOW de por medio. ¿Qué sentimiento te pidió volver y qué necesitas hoy para soltarlo o abrazarlo?"
   const quote = { text: "Feelings are just visitors; let them come and go.", author: "Mooji" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
