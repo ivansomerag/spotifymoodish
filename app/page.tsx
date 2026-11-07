@@ -8,30 +8,30 @@ export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Fri Nov 06, 2026"
   const mood = { label: "TRANSITIONAL", emoji: "🔀", sub: "Rock alternativo, pop dolido y urbano latino" }
-  const insight = "Tus últimas reproducciones mezclaron el rock afilado de K.Flay y Muse con el pop dolido de Olivia Rodrigo, y también reggaetón de KAROL G y latino de Nsqk. Hay ganas de soltar energía, pero también de quedarte un rato en lo nostálgico, como One Direction y ABBA."
+  const insight = "Tus últimas reproducciones saltaron del dubstep de JADOM y el rock de Muse al pop dolido de Olivia Rodrigo, con reggaetón de KAROL G y Rosalía de por medio. Hay ganas de soltar energía, pero también de quedarte un rato en lo nostálgico, como One Direction."
 
   const tracks = [
-    { n: 1, name: "Blood Cells", artist: "K.Flay", url: "https://open.spotify.com/track/1mbdPFx9xGRhW1mCNpizsR", vibe: "ALT ROCK", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 1, name: "GTFU", artist: "JADOM", url: "https://open.spotify.com/track/5ZPoYjUs1Lcc8wdZFf0qhv", vibe: "DUBSTEP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
     { n: 2, name: "the cure", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/4EoJ151oQ5jY48z4RhSE96", vibe: "SAD POP", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
     { n: 3, name: "Hysteria", artist: "Muse", url: "https://open.spotify.com/track/0knbMPVHpFbsx38pLoYSRs", vibe: "ROCK", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
     { n: 4, name: "Story of My Life", artist: "One Direction", url: "https://open.spotify.com/track/4nVBt6MZDDP6tRVdQTgxJg", vibe: "NOSTALGIA", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 5, name: "Tarde o temprano", artist: "Nsqk", url: "https://open.spotify.com/track/3AkrjXOl3d8LycQHLHBm94", vibe: "LATIN", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 5, name: "Sexo, Violencia y Llantas", artist: "ROSALÍA", url: "https://open.spotify.com/track/1dp0MRcrgCxEESP1LrF2yA", vibe: "LATIN POP", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
     { n: 6, name: "BbY WOW", artist: "KAROL G", url: "https://open.spotify.com/track/3h5T5JypYU7huFiVYhv1dr", vibe: "REGGAETON", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 68, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 42, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 58, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 72, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 45, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 60, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Caminata rápida de 20 min", desc: "Sal con Muse o K.Flay y mantén un paso firme. Le das salida a la energía del rock sin forzar el cuerpo.", time: "20 min" },
+    { icon: "🏃", title: "Caminata rápida de 20 min", desc: "Sal con Muse o JADOM y mantén un paso firme. Le das salida a la energía del rock sin forzar el cuerpo.", time: "20 min" },
     { icon: "🌬️", title: "Respiración 4-7-8", desc: "Inhala 4 segundos, sostén 7, exhala 8. Repite 5 ciclos para bajar el ritmo y hacer espacio a lo que sientes.", time: "5 min" },
-    { icon: "✍️", title: "Diario de contrastes", desc: "Escribe sobre lo que sentiste con the cure y Story of My Life, y qué te pedía el cuerpo con Blood Cells. Sin juzgar, solo ponlo en papel.", time: "10 min" },
+    { icon: "✍️", title: "Diario de contrastes", desc: "Escribe sobre lo que sentiste con the cure y Story of My Life, y qué te pedía el cuerpo con GTFU. Sin juzgar, solo ponlo en papel.", time: "10 min" },
   ]
 
-  const journalPrompt = "Pasaste de Blood Cells y Hysteria a the cure y Story of My Life, con BbY WOW y Tarde o temprano de por medio. ¿Qué te pidió cada cambio de energía y qué necesitas hoy para soltarlo o abrazarlo?"
+  const journalPrompt = "Pasaste de GTFU y Hysteria a the cure y Story of My Life, con BbY WOW y Sexo, Violencia y Llantas de por medio. ¿Qué te pidió cada cambio de energía y qué necesitas hoy para soltarlo o abrazarlo?"
   const quote = { text: "You can't stop the waves, but you can learn to surf.", author: "Jon Kabat-Zinn" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
