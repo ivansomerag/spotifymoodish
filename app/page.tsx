@@ -8,7 +8,7 @@ export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Sat Nov 07, 2026"
   const mood = { label: "TRANSITIONAL", emoji: "🔀", sub: "Dubstep, pop alternativo y rap latino" }
-  const insight = "Tus últimas escuchas saltan del dubstep de SLANDER y Excision al pop alternativo de Paloma Morphy y Olivia Rodrigo, con rap de C. Tangana y pop latino de Delilah en medio. Es un vaivén entre soltar energía y quedarte con letras más íntimas."
+  const insight = "Tus últimas escuchas saltan del dubstep de SLANDER y Excision al pop alternativo de Paloma Morphy y Olivia Rodrigo, con rap de C. Tangana y pop latino de Delilah en medio. Sigues en un vaivén entre soltar energía y quedarte con letras más íntimas, ahora a mitad del día."
 
   const tracks = [
     { n: 1, name: "Give You Love", artist: "SLANDER, Excision, Blanke", url: "https://open.spotify.com/track/6Bv6ovdcP1uCEJjnF9qvBg", vibe: "DUBSTEP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
@@ -20,9 +20,9 @@ export default function WellnessDashboard() {
   ]
 
   const meters = [
-    { label: "Energy",       value: 70, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 48, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 64, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 68, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 50, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 66, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
@@ -31,7 +31,7 @@ export default function WellnessDashboard() {
     { icon: "✍️", title: "Diario de contrastes", desc: "Escribe qué te movió en cosas malas de mí y en take me home (4 christmas), y qué te pedía el cuerpo con Give You Love. Sin juzgar, solo ponlo en papel.", time: "10 min" },
   ]
 
-  const journalPrompt = "Pasaste de Give You Love a cosas malas de mí y take me home (4 christmas), con 5 Estrellas, Milko Freestyle y ¡COOL GIRL! de por medio. ¿Qué te pidió cada cambio de energía y qué necesitas hoy para soltarlo o abrazarlo?"
+  const journalPrompt = "Pasaste de Give You Love a cosas malas de mí y take me home (4 christmas), con 5 Estrellas, Milko Freestyle y ¡COOL GIRL! de por medio. ¿Qué te pidió cada cambio de energía y qué necesitas para el resto de la tarde para soltarlo o abrazarlo?"
   const quote = { text: "You can't stop the waves, but you can learn to surf.", author: "Jon Kabat-Zinn" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
