@@ -7,31 +7,31 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Sat Nov 07, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🔀", sub: "Dubstep, pop alternativo y rap latino" }
-  const insight = "Tus últimas escuchas saltan del dubstep de SLANDER y Excision al pop alternativo de Paloma Morphy y Olivia Rodrigo, con rap de C. Tangana y pop latino de Delilah en medio. Sigues en un vaivén entre soltar energía y quedarte con letras más íntimas, ahora a mitad del día."
+  const mood = { label: "TRANSITIONAL", emoji: "🔀", sub: "Rock, house, rap latino y melancolía" }
+  const insight = "Tus últimas escuchas saltan del rock de Twenty One Pilots y Muse al house de AUBE, con reggaeton, rap latino de Trueno y Milo J, y la parte más introspectiva de James Blake. Es un vaivén entre soltar energía y quedarte con algo más íntimo y nostálgico, con Story of My Life de por medio."
 
   const tracks = [
-    { n: 1, name: "Give You Love", artist: "SLANDER, Excision, Blanke", url: "https://open.spotify.com/track/6Bv6ovdcP1uCEJjnF9qvBg", vibe: "DUBSTEP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "take me home (4 christmas)", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/4UjYZS6Jbt3lee27qmiNOu", vibe: "ALT POP", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 1, name: "The Hype", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/7I3skNaQdvZSS7zXY2VHId", vibe: "ROCK", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "Hush", artist: "Muse, Ellie Goulding", url: "https://open.spotify.com/track/0OcCTvv3tpZBSZxP889Ijs", vibe: "ALT ROCK", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
     { n: 3, name: "cosas malas de mí", artist: "Paloma Morphy", url: "https://open.spotify.com/track/1dNnMJZhKPnrYrS3Y3lJfT", vibe: "ALT POP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 4, name: "Milko Freestyle", artist: "C. Tangana, Agorazein", url: "https://open.spotify.com/track/6qP0OSXyS6vMS7Ib4waLHt", vibe: "RAP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 5, name: "5 Estrellas", artist: "Delilah", url: "https://open.spotify.com/track/6JgY6AX42HPqZGDk8jfJax", vibe: "LATIN", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "¡COOL GIRL!", artist: "Delilah", url: "https://open.spotify.com/track/3YkpQRL3jXb7sMnSCnarfJ", vibe: "LATIN POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 4, name: "PUMAS", artist: "Trueno, Milo j", url: "https://open.spotify.com/track/5Iu46UfunYa0I5CFGAW59y", vibe: "RAP LATINO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "I Had a Dream She Took My Hand", artist: "James Blake", url: "https://open.spotify.com/track/4VemTpfvVD5zunOOxA82sY", vibe: "INTROSPECTIVO", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "Story of My Life", artist: "One Direction", url: "https://open.spotify.com/track/4nVBt6MZDDP6tRVdQTgxJg", vibe: "NOSTALGIA", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 68, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 50, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 66, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 70, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 45, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 62, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Trote suave de 20 min", desc: "Sal con Give You Love o Milko Freestyle y mantén un ritmo constante. Le das salida a la energía del dubstep sin forzar el cuerpo.", time: "20 min" },
-    { icon: "🌬️", title: "Respiración en caja", desc: "Inhala 4 segundos, sostén 4, exhala 4, sostén 4. Repite 6 ciclos para equilibrar la energía alta con la calma.", time: "5 min" },
-    { icon: "✍️", title: "Diario de contrastes", desc: "Escribe qué te movió en cosas malas de mí y en take me home (4 christmas), y qué te pedía el cuerpo con Give You Love. Sin juzgar, solo ponlo en papel.", time: "10 min" },
+    { icon: "🏃", title: "Caminata o trote de 25 min", desc: "Sal con The Hype o PUMAS y mantén un ritmo constante. Le das salida a la energía del rock y el rap sin forzar el cuerpo.", time: "25 min" },
+    { icon: "🌬️", title: "Respiración en caja", desc: "Inhala 4 segundos, sostén 4, exhala 4, sostén 4. Repite 6 ciclos para bajar de la energía alta a algo más sereno, como en I Had a Dream She Took My Hand.", time: "5 min" },
+    { icon: "✍️", title: "Diario de contrastes", desc: "Escribe qué despertó en ti Story of My Life y qué te pidió el cuerpo con The Hype. Sin juzgar, solo ponlo en papel.", time: "10 min" },
   ]
 
-  const journalPrompt = "Pasaste de Give You Love a cosas malas de mí y take me home (4 christmas), con 5 Estrellas, Milko Freestyle y ¡COOL GIRL! de por medio. ¿Qué te pidió cada cambio de energía y qué necesitas para el resto de la tarde para soltarlo o abrazarlo?"
+  const journalPrompt = "Pasaste de The Hype y Hush a PUMAS, I Had a Dream She Took My Hand y Story of My Life. ¿Qué te pidió cada cambio de energía y qué necesitas esta noche para soltarlo o abrazarlo?"
   const quote = { text: "You can't stop the waves, but you can learn to surf.", author: "Jon Kabat-Zinn" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
