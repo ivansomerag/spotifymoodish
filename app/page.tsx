@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Sun Nov 08, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🔀", sub: "Rap alternativo, rock y pulso latino en tensión" }
-  const insight = "Esta mañana pasaste de Año sabático de Lng Sht y Fuck Being Sober de Annika Wells a Message Man de Twenty One Pilots, con La Perla de ROSALÍA y COOK en medio. Ese vaivén entre rap introspectivo, rock emotivo y ritmos de baile muestra a alguien que procesa algo mientras busca energía."
+  const mood = { label: "TRANSITIONAL", emoji: "🔀", sub: "Clásica, dance pop y pulso latino en contraste" }
+  const insight = "Pasaste de un bloque largo de piano y cuerdas, con la Moonlight de Beethoven y el Preludio de Bach, a Satisfy de Calvin Harris y Before You Know It de Kygo. Ese salto entre calma clásica, dance pop y el pulso latino de ZOMBI y Nsqk muestra a alguien que alterna entre foco sereno y ganas de moverse."
 
   const tracks = [
-    { n: 1, name: "Año sabático", artist: "Lng Sht", url: "https://open.spotify.com/track/5yiPVM93F5tMdDui8ANDoo", vibe: "ALT HIP HOP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "Fuck Being Sober", artist: "Annika Wells", url: "https://open.spotify.com/track/1aBCdCoHR7AwWQbiWEHdzA", vibe: "ALT POP", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 3, name: "Message Man", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/4Oyl6oYSNeeZZP0OAxPVaU", vibe: "EMO ROCK", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 4, name: "La Perla", artist: "ROSALÍA, Yahritza Y Su Esencia", url: "https://open.spotify.com/track/4oVO4fGNRRvEn0CRuFO4qv", vibe: "LATIN POP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 5, name: "COOK", artist: "SOFI TUKKER, J Balvin", url: "https://open.spotify.com/track/4H2rI43vuXJuUrRIMxknzA", vibe: "DANCE", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "New Born", artist: "Muse", url: "https://open.spotify.com/track/2VrJMuLt2m9HbifGrKWHqk", vibe: "ALT ROCK", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 1, name: "Satisfy", artist: "Calvin Harris, Jazzy", url: "https://open.spotify.com/track/3AsOa3cNh8bqF4q1temSHE", vibe: "DANCE POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "lo que un día fue", artist: "Paloma Morphy", url: "https://open.spotify.com/track/3b9BBjthb7r9Jn5yyWMlrm", vibe: "ALT POP", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 3, name: "ZOMBI", artist: "Trueno", url: "https://open.spotify.com/track/2JxNMSXbMvzjOXyzleH5UZ", vibe: "LATIN TRAP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 4, name: "Moonlight Sonata: I. Adagio", artist: "Beethoven, Paul Lewis", url: "https://open.spotify.com/track/40gRh2ZURv5tYBo8yB9Lu3", vibe: "CLASSICAL", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "Cienciaficción (Sessions)", artist: "Nsqk", url: "https://open.spotify.com/track/4k1lZ3BL6h9Ivvpbvr1I3R", vibe: "LATIN", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "Before You Know It", artist: "Kygo, Ava Max", url: "https://open.spotify.com/track/0IEKKqwiTDVh6I3M9XlrAQ", vibe: "EDM", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 70, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 48, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 64, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 58, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 55, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 52, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Trote suave de 20 min", desc: "Sal a trotar con COOK y La Perla al inicio y baja el ritmo con Año sabático. Mover el cuerpo ayuda a unir tu lado intenso y tu lado reflexivo de hoy.", time: "20 min" },
-    { icon: "🌬️", title: "Respiración 4-7-8", desc: "Inhala 4 segundos, sostén 7, exhala 8. Haz 5 rondas para asentar el vaivén entre Message Man y el pulso dance.", time: "5 min" },
-    { icon: "✍️", title: "Diario de dos lados", desc: "Escribe en dos columnas lo que te pesa y lo que te activa, inspirado en Año sabático y COOK. Cierra con una acción pequeña para hoy.", time: "10 min" },
+    { icon: "🚶", title: "Caminata con pulso", desc: "Camina 25 min empezando con Satisfy y Before You Know It, y baja el ritmo con la Moonlight de Beethoven. Así mueves el cuerpo sin perder la calma de la tarde.", time: "25 min" },
+    { icon: "🌬️", title: "Respiración en caja", desc: "Inhala 4, sostén 4, exhala 4, sostén 4. Haz 6 rondas para asentar el contraste entre piano y dance.", time: "5 min" },
+    { icon: "✍️", title: "Diario de contrastes", desc: "Anota qué momento del día pidió quietud y cuál pidió movimiento, inspirado en Moonlight y ZOMBI. Cierra con un pequeño plan para la noche.", time: "10 min" },
   ]
 
-  const journalPrompt = "Pasaste de Año sabático y Fuck Being Sober a Message Man, La Perla y COOK. ¿Qué parte de ti necesita una pausa y cuál quiere moverse, y cómo puedes darle espacio a las dos hoy?"
-  const quote = { text: "A journey of a thousand miles begins with a single step.", author: "Lao Tzu" }
+  const journalPrompt = "Hoy fuiste de la Moonlight de Beethoven a Satisfy y ZOMBI. ¿Qué momento del día pidió quietud, cuál pidió movimiento, y cómo puedes honrar los dos esta tarde?"
+  const quote = { text: "Music expresses that which cannot be put into words.", author: "Victor Hugo" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
