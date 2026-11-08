@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Sat Nov 07, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🔀", sub: "House, rap latino y pop agridulce" }
-  const insight = "Tus últimas escuchas van del house de Manhattan y el rap de The Manifesto al pop agridulce de Say Don't Go y Paloma Morphy, con rock de Twenty One Pilots y Muse en medio. Es un vaivén entre moverte y quedarte con algo más íntimo, con James Blake cerrando el lado reflexivo."
+  const mood = { label: "ENERGIZED", emoji: "⚡", sub: "Pop latino, dance y rock con pulso" }
+  const insight = "Tus últimas escuchas arrancan con La Perla de ROSALÍA y COOK de SOFI TUKKER y J Balvin, con reggaetón de Quevedo y Nsqk que mantienen el ritmo arriba. New Born de Muse y Badlands le dan un filo más emotivo, pero el pulso general sigue siendo de movimiento."
 
   const tracks = [
-    { n: 1, name: "The Manifesto", artist: "Gorillaz, Trueno, Proof", url: "https://open.spotify.com/track/1pgl5ntthebzHaqJVI1n6B", vibe: "ALT RAP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "Manhattan", artist: "Carlita, SOFI TUKKER", url: "https://open.spotify.com/track/0x4hqWguXOxlO1sEwVXB7V", vibe: "HOUSE", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 3, name: "Say Don't Go (Taylor's Version)", artist: "Taylor Swift", url: "https://open.spotify.com/track/4NioO5R9sHEZh4cGzMHyNt", vibe: "SAD POP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 4, name: "Au", artist: "Paloma Morphy", url: "https://open.spotify.com/track/1kEufzqJ2fCC9X7K2upW9D", vibe: "ALT POP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 5, name: "The Hype", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/7I3skNaQdvZSS7zXY2VHId", vibe: "ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "I Had a Dream She Took My Hand", artist: "James Blake", url: "https://open.spotify.com/track/4VemTpfvVD5zunOOxA82sY", vibe: "INTROSPECTIVO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 1, name: "La Perla", artist: "ROSALÍA, Yahritza Y Su Esencia", url: "https://open.spotify.com/track/4oVO4fGNRRvEn0CRuFO4qv", vibe: "LATIN POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "COOK", artist: "SOFI TUKKER, J Balvin", url: "https://open.spotify.com/track/4H2rI43vuXJuUrRIMxknzA", vibe: "DANCE", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 3, name: "New Born", artist: "Muse", url: "https://open.spotify.com/track/2VrJMuLt2m9HbifGrKWHqk", vibe: "ALT ROCK", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 4, name: "piel", artist: "Nsqk", url: "https://open.spotify.com/track/3uzpECBHQDuAEy6R2AzAEV", vibe: "LATIN", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "maggots for brains", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/6jfiwkcwt8iYCdkbLukxeI", vibe: "POP", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "Badlands", artist: "Mumford & Sons, Gracie Abrams", url: "https://open.spotify.com/track/47Z5J8r3LrI0gSuqxijzSg", vibe: "FOLK POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 66, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 42, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 64, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 78, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 60, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 74, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Caminata o trote de 25 min", desc: "Sal con Manhattan o The Hype y mantén un ritmo constante. Le das salida a la energía del house y el rock sin forzar el cuerpo.", time: "25 min" },
-    { icon: "🌬️", title: "Respiración en caja", desc: "Inhala 4 segundos, sostén 4, exhala 4, sostén 4. Repite 6 ciclos para bajar de la energía alta a algo más sereno, como en I Had a Dream She Took My Hand.", time: "5 min" },
-    { icon: "✍️", title: "Diario de contrastes", desc: "Escribe qué despertó en ti Say Don't Go y qué te pidió el cuerpo con Manhattan. Sin juzgar, solo ponlo en papel.", time: "10 min" },
+    { icon: "💃", title: "Baile libre de 20 min", desc: "Ponte COOK y La Perla y muévete sin coreografía. Aprovechas la energía alta de tus escuchas y sueltas tensión en el cuerpo.", time: "20 min" },
+    { icon: "🌬️", title: "Respiración 4-7-8", desc: "Inhala 4 segundos, sostén 7, exhala 8. Haz 5 ciclos para bajar el ritmo después de tanto pulso, como el cierre más suave de Badlands.", time: "5 min" },
+    { icon: "✍️", title: "Diario de energía", desc: "Escribe qué te impulsó de New Born y qué te dejó piel. Anota en qué parte del día quieres canalizar esa energía.", time: "10 min" },
   ]
 
-  const journalPrompt = "Pasaste de Manhattan y The Manifesto a Say Don't Go, Au y I Had a Dream She Took My Hand. ¿Qué te pidió cada cambio de energía y qué necesitas esta noche para soltarlo o abrazarlo?"
-  const quote = { text: "Feelings come and go like clouds in a windy sky.", author: "Thich Nhat Hanh" }
+  const journalPrompt = "Pasaste de La Perla y COOK a New Born, piel y Badlands. ¿Hacia dónde quieres dirigir toda esa energía esta noche y qué necesitas para cerrar el día con calma?"
+  const quote = { text: "Energy flows where attention goes.", author: "Tony Robbins" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
