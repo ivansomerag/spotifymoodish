@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Sat Nov 07, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🔀", sub: "Rock, house, rap latino y melancolía" }
-  const insight = "Tus últimas escuchas saltan del rock de Twenty One Pilots y Muse al house de AUBE, con reggaeton, rap latino de Trueno y Milo J, y la parte más introspectiva de James Blake. Es un vaivén entre soltar energía y quedarte con algo más íntimo y nostálgico, con Story of My Life de por medio."
+  const mood = { label: "TRANSITIONAL", emoji: "🔀", sub: "House, rap latino y pop agridulce" }
+  const insight = "Tus últimas escuchas van del house de Manhattan y el rap de The Manifesto al pop agridulce de Say Don't Go y Paloma Morphy, con rock de Twenty One Pilots y Muse en medio. Es un vaivén entre moverte y quedarte con algo más íntimo, con James Blake cerrando el lado reflexivo."
 
   const tracks = [
-    { n: 1, name: "The Hype", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/7I3skNaQdvZSS7zXY2VHId", vibe: "ROCK", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "Hush", artist: "Muse, Ellie Goulding", url: "https://open.spotify.com/track/0OcCTvv3tpZBSZxP889Ijs", vibe: "ALT ROCK", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 3, name: "cosas malas de mí", artist: "Paloma Morphy", url: "https://open.spotify.com/track/1dNnMJZhKPnrYrS3Y3lJfT", vibe: "ALT POP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 4, name: "PUMAS", artist: "Trueno, Milo j", url: "https://open.spotify.com/track/5Iu46UfunYa0I5CFGAW59y", vibe: "RAP LATINO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 5, name: "I Had a Dream She Took My Hand", artist: "James Blake", url: "https://open.spotify.com/track/4VemTpfvVD5zunOOxA82sY", vibe: "INTROSPECTIVO", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "Story of My Life", artist: "One Direction", url: "https://open.spotify.com/track/4nVBt6MZDDP6tRVdQTgxJg", vibe: "NOSTALGIA", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 1, name: "The Manifesto", artist: "Gorillaz, Trueno, Proof", url: "https://open.spotify.com/track/1pgl5ntthebzHaqJVI1n6B", vibe: "ALT RAP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "Manhattan", artist: "Carlita, SOFI TUKKER", url: "https://open.spotify.com/track/0x4hqWguXOxlO1sEwVXB7V", vibe: "HOUSE", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 3, name: "Say Don't Go (Taylor's Version)", artist: "Taylor Swift", url: "https://open.spotify.com/track/4NioO5R9sHEZh4cGzMHyNt", vibe: "SAD POP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 4, name: "Au", artist: "Paloma Morphy", url: "https://open.spotify.com/track/1kEufzqJ2fCC9X7K2upW9D", vibe: "ALT POP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "The Hype", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/7I3skNaQdvZSS7zXY2VHId", vibe: "ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "I Had a Dream She Took My Hand", artist: "James Blake", url: "https://open.spotify.com/track/4VemTpfvVD5zunOOxA82sY", vibe: "INTROSPECTIVO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 70, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 45, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 62, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 66, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 42, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 64, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Caminata o trote de 25 min", desc: "Sal con The Hype o PUMAS y mantén un ritmo constante. Le das salida a la energía del rock y el rap sin forzar el cuerpo.", time: "25 min" },
+    { icon: "🏃", title: "Caminata o trote de 25 min", desc: "Sal con Manhattan o The Hype y mantén un ritmo constante. Le das salida a la energía del house y el rock sin forzar el cuerpo.", time: "25 min" },
     { icon: "🌬️", title: "Respiración en caja", desc: "Inhala 4 segundos, sostén 4, exhala 4, sostén 4. Repite 6 ciclos para bajar de la energía alta a algo más sereno, como en I Had a Dream She Took My Hand.", time: "5 min" },
-    { icon: "✍️", title: "Diario de contrastes", desc: "Escribe qué despertó en ti Story of My Life y qué te pidió el cuerpo con The Hype. Sin juzgar, solo ponlo en papel.", time: "10 min" },
+    { icon: "✍️", title: "Diario de contrastes", desc: "Escribe qué despertó en ti Say Don't Go y qué te pidió el cuerpo con Manhattan. Sin juzgar, solo ponlo en papel.", time: "10 min" },
   ]
 
-  const journalPrompt = "Pasaste de The Hype y Hush a PUMAS, I Had a Dream She Took My Hand y Story of My Life. ¿Qué te pidió cada cambio de energía y qué necesitas esta noche para soltarlo o abrazarlo?"
-  const quote = { text: "You can't stop the waves, but you can learn to surf.", author: "Jon Kabat-Zinn" }
+  const journalPrompt = "Pasaste de Manhattan y The Manifesto a Say Don't Go, Au y I Had a Dream She Took My Hand. ¿Qué te pidió cada cambio de energía y qué necesitas esta noche para soltarlo o abrazarlo?"
+  const quote = { text: "Feelings come and go like clouds in a windy sky.", author: "Thich Nhat Hanh" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
