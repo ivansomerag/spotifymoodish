@@ -6,33 +6,33 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Sat Nov 07, 2026"
-  const mood = { label: "ENERGIZED", emoji: "⚡", sub: "Pop latino, dance y rock con pulso" }
-  const insight = "Tus últimas escuchas arrancan con La Perla de ROSALÍA y COOK de SOFI TUKKER y J Balvin, con reggaetón de Quevedo y Nsqk que mantienen el ritmo arriba. New Born de Muse y Badlands le dan un filo más emotivo, pero el pulso general sigue siendo de movimiento."
+  const date = "Sun Nov 08, 2026"
+  const mood = { label: "TRANSITIONAL", emoji: "🔀", sub: "Rock emotivo, latin y dance en tensión" }
+  const insight = "Tu madrugada pasa de Message Man de Twenty One Pilots y New Born de Muse a La Perla de ROSALÍA, COOK y los ritmos de Nsqk. Ese vaivén entre rock introspectivo y pulso latino o dance muestra una mente que busca energía sin dejar de procesar."
 
   const tracks = [
-    { n: 1, name: "La Perla", artist: "ROSALÍA, Yahritza Y Su Esencia", url: "https://open.spotify.com/track/4oVO4fGNRRvEn0CRuFO4qv", vibe: "LATIN POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "COOK", artist: "SOFI TUKKER, J Balvin", url: "https://open.spotify.com/track/4H2rI43vuXJuUrRIMxknzA", vibe: "DANCE", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 1, name: "Message Man", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/4Oyl6oYSNeeZZP0OAxPVaU", vibe: "EMO ROCK", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "La Perla", artist: "ROSALÍA, Yahritza Y Su Esencia", url: "https://open.spotify.com/track/4oVO4fGNRRvEn0CRuFO4qv", vibe: "LATIN POP", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
     { n: 3, name: "New Born", artist: "Muse", url: "https://open.spotify.com/track/2VrJMuLt2m9HbifGrKWHqk", vibe: "ALT ROCK", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 4, name: "piel", artist: "Nsqk", url: "https://open.spotify.com/track/3uzpECBHQDuAEy6R2AzAEV", vibe: "LATIN", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 5, name: "maggots for brains", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/6jfiwkcwt8iYCdkbLukxeI", vibe: "POP", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "Badlands", artist: "Mumford & Sons, Gracie Abrams", url: "https://open.spotify.com/track/47Z5J8r3LrI0gSuqxijzSg", vibe: "FOLK POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 4, name: "COOK", artist: "SOFI TUKKER, J Balvin", url: "https://open.spotify.com/track/4H2rI43vuXJuUrRIMxknzA", vibe: "DANCE", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "piel", artist: "Nsqk", url: "https://open.spotify.com/track/3uzpECBHQDuAEy6R2AzAEV", vibe: "LATIN", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "I Had a Dream She Took My Hand", artist: "James Blake", url: "https://open.spotify.com/track/4VemTpfvVD5zunOOxA82sY", vibe: "ELECTRONIC", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 78, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 60, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 74, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 72, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 52, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 66, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "💃", title: "Baile libre de 20 min", desc: "Ponte COOK y La Perla y muévete sin coreografía. Aprovechas la energía alta de tus escuchas y sueltas tensión en el cuerpo.", time: "20 min" },
-    { icon: "🌬️", title: "Respiración 4-7-8", desc: "Inhala 4 segundos, sostén 7, exhala 8. Haz 5 ciclos para bajar el ritmo después de tanto pulso, como el cierre más suave de Badlands.", time: "5 min" },
-    { icon: "✍️", title: "Diario de energía", desc: "Escribe qué te impulsó de New Born y qué te dejó piel. Anota en qué parte del día quieres canalizar esa energía.", time: "10 min" },
+    { icon: "🚶", title: "Caminata de 25 min", desc: "Sal a caminar con La Perla y COOK al inicio y deja que el ritmo se suavice con piel. Mover el cuerpo ayuda a unir el lado intenso y el lado tranquilo de tu mañana.", time: "25 min" },
+    { icon: "🌬️", title: "Respiración en caja", desc: "Inhala 4 segundos, sostén 4, exhala 4, sostén 4. Haz 6 rondas para asentar el vaivén entre Message Man y el pulso dance.", time: "5 min" },
+    { icon: "✍️", title: "Diario de dos lados", desc: "Escribe en dos columnas lo que te desahoga y lo que te activa, inspirado en Message Man y COOK. Cierra con una acción pequeña para hoy.", time: "10 min" },
   ]
 
-  const journalPrompt = "Pasaste de La Perla y COOK a New Born, piel y Badlands. ¿Hacia dónde quieres dirigir toda esa energía esta noche y qué necesitas para cerrar el día con calma?"
-  const quote = { text: "Energy flows where attention goes.", author: "Tony Robbins" }
+  const journalPrompt = "Saltaste de Message Man y New Born a La Perla, COOK y piel. ¿Qué parte de ti quería desahogarse y cuál quería moverse, y cómo puedes darle espacio a las dos hoy?"
+  const quote = { text: "The best way out is always through.", author: "Robert Frost" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
