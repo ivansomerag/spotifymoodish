@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Sun Nov 08, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🔀", sub: "Clásica, dance pop y pulso latino en contraste" }
-  const insight = "Pasaste de un bloque largo de piano y cuerdas, con la Moonlight de Beethoven y el Preludio de Bach, a Satisfy de Calvin Harris y Before You Know It de Kygo. Ese salto entre calma clásica, dance pop y el pulso latino de ZOMBI y Nsqk muestra a alguien que alterna entre foco sereno y ganas de moverse."
+  const mood = { label: "ENERGIZED", emoji: "⚡", sub: "EDM de pulso alto con pop agridulce" }
+  const insight = "Tu última hora fue dominada por dubstep y house, con Fibonacci de Subtronics, Comes Back Around de Kaskade y We Run de Small Town Kid marcando el ritmo. Entre ellos se cuelan Drag Path de Twenty One Pilots y stupid song de Olivia Rodrigo, una vena agridulce que acompaña toda esa energía."
 
   const tracks = [
-    { n: 1, name: "Satisfy", artist: "Calvin Harris, Jazzy", url: "https://open.spotify.com/track/3AsOa3cNh8bqF4q1temSHE", vibe: "DANCE POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "lo que un día fue", artist: "Paloma Morphy", url: "https://open.spotify.com/track/3b9BBjthb7r9Jn5yyWMlrm", vibe: "ALT POP", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 3, name: "ZOMBI", artist: "Trueno", url: "https://open.spotify.com/track/2JxNMSXbMvzjOXyzleH5UZ", vibe: "LATIN TRAP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 4, name: "Moonlight Sonata: I. Adagio", artist: "Beethoven, Paul Lewis", url: "https://open.spotify.com/track/40gRh2ZURv5tYBo8yB9Lu3", vibe: "CLASSICAL", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 5, name: "Cienciaficción (Sessions)", artist: "Nsqk", url: "https://open.spotify.com/track/4k1lZ3BL6h9Ivvpbvr1I3R", vibe: "LATIN", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "Before You Know It", artist: "Kygo, Ava Max", url: "https://open.spotify.com/track/0IEKKqwiTDVh6I3M9XlrAQ", vibe: "EDM", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 1, name: "Drag Path", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/0TlcczkVTGpinpkGJpT81L", vibe: "POP ROCK", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "Fibonacci (Part 1)", artist: "Subtronics", url: "https://open.spotify.com/track/4uvE3TQVF9BgkfZbZeFL16", vibe: "DUBSTEP", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 3, name: "HIBIKI", artist: "Bad Bunny, Mora", url: "https://open.spotify.com/track/4qSEvFGCpde73gqIuq3sho", vibe: "REGGAETON", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 4, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/4LfCY65LvojKjWEnU7fNN4", vibe: "SAD POP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "We Run", artist: "Small Town Kid", url: "https://open.spotify.com/track/2ZGSXWF4H5HogHxtKbyckj", vibe: "HOUSE", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "Comes Back Around", artist: "Kaskade, BUNT.", url: "https://open.spotify.com/track/7vDG2z8tUsW7Rtoz9OyjOE", vibe: "EDM", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 58, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 55, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 52, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 82, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 48, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 72, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Caminata con pulso", desc: "Camina 25 min empezando con Satisfy y Before You Know It, y baja el ritmo con la Moonlight de Beethoven. Así mueves el cuerpo sin perder la calma de la tarde.", time: "25 min" },
-    { icon: "🌬️", title: "Respiración en caja", desc: "Inhala 4, sostén 4, exhala 4, sostén 4. Haz 6 rondas para asentar el contraste entre piano y dance.", time: "5 min" },
-    { icon: "✍️", title: "Diario de contrastes", desc: "Anota qué momento del día pidió quietud y cuál pidió movimiento, inspirado en Moonlight y ZOMBI. Cierra con un pequeño plan para la noche.", time: "10 min" },
+    { icon: "🏃", title: "Cardio con beat", desc: "Trota o baila 25 min al ritmo de We Run y Comes Back Around. Aprovecha la energía alta para moverte a tu ritmo.", time: "25 min" },
+    { icon: "🌬️", title: "Respiración 4-7-8", desc: "Inhala 4, sostén 7, exhala 8. Haz 5 rondas para bajar las revoluciones después de tanto dubstep.", time: "5 min" },
+    { icon: "✍️", title: "Diario de energía", desc: "Escribe a dónde quieres dirigir esta energía hoy, inspirado en Fibonacci y Drag Path. Anota también lo que se siente agridulce.", time: "10 min" },
   ]
 
-  const journalPrompt = "Hoy fuiste de la Moonlight de Beethoven a Satisfy y ZOMBI. ¿Qué momento del día pidió quietud, cuál pidió movimiento, y cómo puedes honrar los dos esta tarde?"
-  const quote = { text: "Music expresses that which cannot be put into words.", author: "Victor Hugo" }
+  const journalPrompt = "Hoy pasaste de Fibonacci y We Run a Drag Path y stupid song. ¿Hacia qué quieres dirigir toda esa energía, y qué emoción agridulce vale la pena escuchar entre el ruido?"
+  const quote = { text: "Where words fail, music speaks.", author: "Hans Christian Andersen" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
