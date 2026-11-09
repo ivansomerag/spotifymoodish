@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Mon Nov 09, 2026"
-  const mood = { label: "ENERGIZED", emoji: "⚡", sub: "EDM, house y beats con arranque de lunes" }
-  const insight = "Esta mañana arrancaste con Yesterday, RESCUE U y Chills On A Sunny Day, puro pulso electrónico, y lo mezclaste con The Hype y el rap de Milko Freestyle. Tu cuerpo está pidiendo ritmo y salida: es energía de arranque, no de calma."
+  const mood = { label: "TRANSITIONAL", emoji: "🌗", sub: "De EDM a latin alternativo y synthpop pensativo" }
+  const insight = "Pasaste de beats y EDM en la mañana a un maratón de Nsqk, con Mil Problemas y Lo Tuvimos Pero Ya No Está, y en medio se coló Overthinker de CHVRCHES. Es un vaivén entre querer moverte y darle vueltas a las cosas, con un toque de calma en Morning Shall Come."
 
   const tracks = [
-    { n: 1, name: "Yesterday", artist: "ALOTT", url: "https://open.spotify.com/track/60QOPLOCWkkOGtiFH5CNNF", vibe: "EDM", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "The Hype", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/7I3skNaQdvZSS7zXY2VHId", vibe: "POP ROCK", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 3, name: "Milko Freestyle", artist: "C. Tangana, Agorazein", url: "https://open.spotify.com/track/6qP0OSXyS6vMS7Ib4waLHt", vibe: "RAP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 4, name: "RESCUE U", artist: "Alison Wonderland, WINK", url: "https://open.spotify.com/track/3jDXVV12qJ0sZB3Ixp3srB", vibe: "DUBSTEP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 5, name: "Chills On A Sunny Day", artist: "4KPLAYA", url: "https://open.spotify.com/track/6gXFWIpjqaesFzzfYLHpfg", vibe: "HOUSE", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "Hombre De Bien", artist: "Nsqk", url: "https://open.spotify.com/track/69oWplRBBYbozVuy1tC1HM", vibe: "LATIN", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 1, name: "Mil Problemas", artist: "Nsqk, Eslabon Armado", url: "https://open.spotify.com/track/0LzkJLMy0FhjVswthlS5Mz", vibe: "LATIN", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "Lo Tuvimos Pero Ya No Está", artist: "Nsqk, Riosse", url: "https://open.spotify.com/track/2nRpadOH6XfQQjFPHpWuPL", vibe: "LATIN ALT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 3, name: "Overthinker", artist: "CHVRCHES", url: "https://open.spotify.com/track/2b8BZIE6VefboEkZMrNhRX", vibe: "SYNTHPOP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 4, name: "take me home (4 christmas)", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/4UjYZS6Jbt3lee27qmiNOu", vibe: "POP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "Morning Shall Come", artist: "AURORA, Bear McCreary", url: "https://open.spotify.com/track/6dwEUTQ8cwx6EDfJqGwK90", vibe: "ETHEREAL", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "Yesterday", artist: "ALOTT", url: "https://open.spotify.com/track/60QOPLOCWkkOGtiFH5CNNF", vibe: "HOUSE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 82, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 58, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 76, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 64, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 45, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 66, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Intervalos con ritmo", desc: "Trota 25 min alternando 2 min rápido con RESCUE U y 2 min suave con Chills On A Sunny Day. Canaliza la energía del lunes en movimiento.", time: "25 min" },
-    { icon: "🌬️", title: "Respiración en caja", desc: "Inhala 4, sostén 4, exhala 4, sostén 4. Haz 6 rondas para afinar el foco antes de que arranque la jornada.", time: "5 min" },
-    { icon: "✍️", title: "Diario de impulso", desc: "Escribe a dónde quieres dirigir toda la energía de hoy y cuál es el primer paso concreto. Una página, sin editar.", time: "10 min" },
+    { icon: "🚶", title: "Caminata con Nsqk", desc: "Sal 20 min a caminar a paso medio con Mil Problemas de fondo. Deja que el cuerpo se mueva mientras la cabeza se ordena.", time: "20 min" },
+    { icon: "🌬️", title: "Respiración 4-7-8", desc: "Inhala 4, sostén 7, exhala 8. Haz 5 rondas con Morning Shall Come para soltar el exceso de pensamiento.", time: "5 min" },
+    { icon: "✍️", title: "Diario del overthinker", desc: "Escribe 3 cosas que estás dándole vueltas y al lado de cada una, una acción pequeña o soltarla. Sin editar.", time: "10 min" },
   ]
 
-  const journalPrompt = "Hoy empezaste con Yesterday, RESCUE U y The Hype. ¿Qué quieres lograr hoy que haga que esa energía valga la pena?"
-  const quote = { text: "Energy and persistence conquer all things.", author: "Benjamin Franklin" }
+  const journalPrompt = "Entre Mil Problemas, Overthinker y Morning Shall Come, ¿qué pensamiento llevas cargando hoy que podrías dejar de revisar una vez más?"
+  const quote = { text: "Between stimulus and response there is a space.", author: "Viktor Frankl" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
