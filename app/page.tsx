@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Mon Nov 09, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌗", sub: "Pop triste y emo rock con pulso de EDM y house" }
-  const insight = "Anoche alternaste la melancolía de when the party's over, Intentions y stupid song con la energía de I Will Find You y Fibonacci. Es un vaivén claro: tu cuerpo pide movimiento, pero tu cabeza se queda en canciones que te hacen sentir."
+  const mood = { label: "ENERGIZED", emoji: "⚡", sub: "EDM, house y beats con arranque de lunes" }
+  const insight = "Esta mañana arrancaste con Yesterday, RESCUE U y Chills On A Sunny Day, puro pulso electrónico, y lo mezclaste con The Hype y el rap de Milko Freestyle. Tu cuerpo está pidiendo ritmo y salida: es energía de arranque, no de calma."
 
   const tracks = [
-    { n: 1, name: "la mexicana", artist: "Paloma Morphy", url: "https://open.spotify.com/track/75XfhrDL2yrVaQoA0UOJrf", vibe: "LATIN", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "Intentions", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3FbMtvXMcjmuAzlAhgwK0I", vibe: "EMO ROCK", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 3, name: "when the party's over", artist: "Billie Eilish", url: "https://open.spotify.com/track/43zdsphuZLzwA9k4DJhU0I", vibe: "SAD POP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 4, name: "Fibonacci (Part 1)", artist: "Subtronics", url: "https://open.spotify.com/track/4uvE3TQVF9BgkfZbZeFL16", vibe: "DUBSTEP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 5, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/4LfCY65LvojKjWEnU7fNN4", vibe: "ALT POP", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "I Will Find You", artist: "BUNT.", url: "https://open.spotify.com/track/76mV2P4QsEKzp2k9hGnAdz", vibe: "DANCE POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 1, name: "Yesterday", artist: "ALOTT", url: "https://open.spotify.com/track/60QOPLOCWkkOGtiFH5CNNF", vibe: "EDM", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "The Hype", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/7I3skNaQdvZSS7zXY2VHId", vibe: "POP ROCK", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 3, name: "Milko Freestyle", artist: "C. Tangana, Agorazein", url: "https://open.spotify.com/track/6qP0OSXyS6vMS7Ib4waLHt", vibe: "RAP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 4, name: "RESCUE U", artist: "Alison Wonderland, WINK", url: "https://open.spotify.com/track/3jDXVV12qJ0sZB3Ixp3srB", vibe: "DUBSTEP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "Chills On A Sunny Day", artist: "4KPLAYA", url: "https://open.spotify.com/track/6gXFWIpjqaesFzzfYLHpfg", vibe: "HOUSE", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "Hombre De Bien", artist: "Nsqk", url: "https://open.spotify.com/track/69oWplRBBYbozVuy1tC1HM", vibe: "LATIN", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 62, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 38, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 60, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 82, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 58, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 76, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Trote de arranque", desc: "Trota 20 min con I Will Find You al inicio y Fibonacci para el último tramo. Usa la energía de anoche para empezar el lunes en movimiento.", time: "20 min" },
-    { icon: "🌬️", title: "Respiración 4-7-8", desc: "Inhala 4, sostén 7, exhala 8. Haz 5 rondas para bajar el ritmo antes de empezar el día.", time: "5 min" },
-    { icon: "✍️", title: "Diario de contrastes", desc: "Escribe qué te pidieron stupid song e Intentions frente a lo que te pidió Fibonacci. Nombra las dos emociones sin juzgarlas.", time: "10 min" },
+    { icon: "🏃", title: "Intervalos con ritmo", desc: "Trota 25 min alternando 2 min rápido con RESCUE U y 2 min suave con Chills On A Sunny Day. Canaliza la energía del lunes en movimiento.", time: "25 min" },
+    { icon: "🌬️", title: "Respiración en caja", desc: "Inhala 4, sostén 4, exhala 4, sostén 4. Haz 6 rondas para afinar el foco antes de que arranque la jornada.", time: "5 min" },
+    { icon: "✍️", title: "Diario de impulso", desc: "Escribe a dónde quieres dirigir toda la energía de hoy y cuál es el primer paso concreto. Una página, sin editar.", time: "10 min" },
   ]
 
-  const journalPrompt = "Anoche pasaste de I Will Find You y Fibonacci a when the party's over y stupid song. ¿Qué necesitas soltar con movimiento y qué necesitas escuchar en silencio?"
-  const quote = { text: "Music expresses that which cannot be put into words.", author: "Victor Hugo" }
+  const journalPrompt = "Hoy empezaste con Yesterday, RESCUE U y The Hype. ¿Qué quieres lograr hoy que haga que esa energía valga la pena?"
+  const quote = { text: "Energy and persistence conquer all things.", author: "Benjamin Franklin" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
