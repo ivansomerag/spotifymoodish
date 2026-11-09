@@ -6,32 +6,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Sun Nov 08, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌗", sub: "Rock emocional y pop triste con pulso de house" }
-  const insight = "Tus últimas horas combinan la melancolía de when the party's over, Death of Love e Intentions con el pulso de house y EDM de I Will Find You y Fibonacci. Es un vaivén emocional: buscas energía para moverte, pero vuelves a canciones que te dejan sentir."
+  const date = "Mon Nov 09, 2026"
+  const mood = { label: "TRANSITIONAL", emoji: "🌗", sub: "Pop triste y emo rock con pulso de EDM y house" }
+  const insight = "Anoche alternaste la melancolía de when the party's over, Intentions y stupid song con la energía de I Will Find You y Fibonacci. Es un vaivén claro: tu cuerpo pide movimiento, pero tu cabeza se queda en canciones que te hacen sentir."
 
   const tracks = [
     { n: 1, name: "la mexicana", artist: "Paloma Morphy", url: "https://open.spotify.com/track/75XfhrDL2yrVaQoA0UOJrf", vibe: "LATIN", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
     { n: 2, name: "Intentions", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/3FbMtvXMcjmuAzlAhgwK0I", vibe: "EMO ROCK", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
     { n: 3, name: "when the party's over", artist: "Billie Eilish", url: "https://open.spotify.com/track/43zdsphuZLzwA9k4DJhU0I", vibe: "SAD POP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 4, name: "Death of Love", artist: "James Blake", url: "https://open.spotify.com/track/0eXLacgidV4BAUBWYpRsdV", vibe: "ALT POP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 5, name: "Drag Path", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/0TlcczkVTGpinpkGJpT81L", vibe: "POP ROCK", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 4, name: "Fibonacci (Part 1)", artist: "Subtronics", url: "https://open.spotify.com/track/4uvE3TQVF9BgkfZbZeFL16", vibe: "DUBSTEP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "stupid song", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/4LfCY65LvojKjWEnU7fNN4", vibe: "ALT POP", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
     { n: 6, name: "I Will Find You", artist: "BUNT.", url: "https://open.spotify.com/track/76mV2P4QsEKzp2k9hGnAdz", vibe: "DANCE POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 58, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 35, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 55, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 62, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 38, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 60, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Caminata de transición", desc: "Camina 20 min empezando con I Will Find You y cerrando con when the party's over. Deja que el ritmo cambie contigo.", time: "20 min" },
-    { icon: "🌬️", title: "Respiración en caja", desc: "Inhala 4, sostén 4, exhala 4, sostén 4. Haz 6 rondas para encontrar un punto medio entre la energía y la melancolía.", time: "5 min" },
-    { icon: "✍️", title: "Diario de contrastes", desc: "Escribe qué te piden Intentions y Drag Path frente a lo que te pide I Will Find You. Nombra las dos emociones sin juzgarlas.", time: "10 min" },
+    { icon: "🏃", title: "Trote de arranque", desc: "Trota 20 min con I Will Find You al inicio y Fibonacci para el último tramo. Usa la energía de anoche para empezar el lunes en movimiento.", time: "20 min" },
+    { icon: "🌬️", title: "Respiración 4-7-8", desc: "Inhala 4, sostén 7, exhala 8. Haz 5 rondas para bajar el ritmo antes de empezar el día.", time: "5 min" },
+    { icon: "✍️", title: "Diario de contrastes", desc: "Escribe qué te pidieron stupid song e Intentions frente a lo que te pidió Fibonacci. Nombra las dos emociones sin juzgarlas.", time: "10 min" },
   ]
 
-  const journalPrompt = "Hoy pasaste de I Will Find You y Fibonacci a Death of Love y when the party's over. ¿Qué parte de ti quiere moverse y cuál quiere quedarse quieta un rato?"
+  const journalPrompt = "Anoche pasaste de I Will Find You y Fibonacci a when the party's over y stupid song. ¿Qué necesitas soltar con movimiento y qué necesitas escuchar en silencio?"
   const quote = { text: "Music expresses that which cannot be put into words.", author: "Victor Hugo" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
