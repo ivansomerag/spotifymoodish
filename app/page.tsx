@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Mon Nov 09, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌗", sub: "De EDM a latin alternativo y synthpop pensativo" }
-  const insight = "Pasaste de beats y EDM en la mañana a un maratón de Nsqk, con Mil Problemas y Lo Tuvimos Pero Ya No Está, y en medio se coló Overthinker de CHVRCHES. Es un vaivén entre querer moverte y darle vueltas a las cosas, con un toque de calma en Morning Shall Come."
+  const mood = { label: "MELANCHOLIC", emoji: "🌧️", sub: "Emo rock y desamor latino en bucle" }
+  const insight = "Una tarde entera de Twenty One Pilots en vivo y un maratón de Nsqk con canciones como No Basta Con Querernos Más y Lo Tuvimos Pero Ya No Está apuntan a un estado introspectivo y de despedidas. Overthinker y Goodbye refuerzan ese tono, con Morning Shall Come como pequeño respiro."
 
   const tracks = [
-    { n: 1, name: "Mil Problemas", artist: "Nsqk, Eslabon Armado", url: "https://open.spotify.com/track/0LzkJLMy0FhjVswthlS5Mz", vibe: "LATIN", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 1, name: "No Basta Con Querernos Más", artist: "Nsqk", url: "https://open.spotify.com/track/0HT27ud4NVGisbfWR5drJm", vibe: "LATIN", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
     { n: 2, name: "Lo Tuvimos Pero Ya No Está", artist: "Nsqk, Riosse", url: "https://open.spotify.com/track/2nRpadOH6XfQQjFPHpWuPL", vibe: "LATIN ALT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 3, name: "Overthinker", artist: "CHVRCHES", url: "https://open.spotify.com/track/2b8BZIE6VefboEkZMrNhRX", vibe: "SYNTHPOP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 4, name: "take me home (4 christmas)", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/4UjYZS6Jbt3lee27qmiNOu", vibe: "POP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 5, name: "Morning Shall Come", artist: "AURORA, Bear McCreary", url: "https://open.spotify.com/track/6dwEUTQ8cwx6EDfJqGwK90", vibe: "ETHEREAL", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "Yesterday", artist: "ALOTT", url: "https://open.spotify.com/track/60QOPLOCWkkOGtiFH5CNNF", vibe: "HOUSE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 3, name: "Stressed Out (Live in Mexico City)", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/60xcUD1MuHVNg9SmePwXsD", vibe: "EMO ROCK", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 4, name: "Overthinker", artist: "CHVRCHES", url: "https://open.spotify.com/track/2b8BZIE6VefboEkZMrNhRX", vibe: "SYNTHPOP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "Goodbye", artist: "Sabrina Carpenter", url: "https://open.spotify.com/track/4tVVmShMF2PYdLqcejrsy2", vibe: "POP", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "Morning Shall Come", artist: "AURORA, Bear McCreary", url: "https://open.spotify.com/track/6dwEUTQ8cwx6EDfJqGwK90", vibe: "ETHEREAL", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 64, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 45, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 66, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 58, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 28, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 50, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Caminata con Nsqk", desc: "Sal 20 min a caminar a paso medio con Mil Problemas de fondo. Deja que el cuerpo se mueva mientras la cabeza se ordena.", time: "20 min" },
-    { icon: "🌬️", title: "Respiración 4-7-8", desc: "Inhala 4, sostén 7, exhala 8. Haz 5 rondas con Morning Shall Come para soltar el exceso de pensamiento.", time: "5 min" },
-    { icon: "✍️", title: "Diario del overthinker", desc: "Escribe 3 cosas que estás dándole vueltas y al lado de cada una, una acción pequeña o soltarla. Sin editar.", time: "10 min" },
+    { icon: "🚶", title: "Caminata al aire libre", desc: "Sal 25 min a caminar con luz natural y una lista suave. Deja que el cuerpo suelte lo que la cabeza repite desde Stressed Out.", time: "25 min" },
+    { icon: "🌬️", title: "Respiración en caja", desc: "Inhala 4, sostén 4, exhala 4, sostén 4. Haz 6 rondas con Morning Shall Come para bajar el ritmo.", time: "5 min" },
+    { icon: "✍️", title: "Carta que no se envía", desc: "Escribe unas líneas dirigidas a lo que dejaste ir, como en No Basta Con Querernos Más. Léela y ciérrala sin editar.", time: "10 min" },
   ]
 
-  const journalPrompt = "Entre Mil Problemas, Overthinker y Morning Shall Come, ¿qué pensamiento llevas cargando hoy que podrías dejar de revisar una vez más?"
-  const quote = { text: "Between stimulus and response there is a space.", author: "Viktor Frankl" }
+  const journalPrompt = "Entre No Basta Con Querernos Más, Stressed Out y Goodbye, ¿qué despedida estás repasando y qué necesitarías para dejarla descansar hoy?"
+  const quote = { text: "The wound is the place where the Light enters you.", author: "Rumi" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
