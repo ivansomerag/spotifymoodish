@@ -7,31 +7,31 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Mon Nov 09, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🔀", sub: "Emo rock, latino y un destello de EDM" }
-  const insight = "Twenty One Pilots en vivo y un maratón de Nsqk dominan la tarde, con un giro de energía en Que Calor de Deorro. Ese vaivén entre canciones introspectivas y pistas para moverse muestra un estado de empuje y jale emocional."
+  const mood = { label: "TRANSITIONAL", emoji: "🔀", sub: "De emo rock en vivo a pop suave y trap latino" }
+  const insight = "La tarde fue de Twenty One Pilots en vivo y un maratón de Nsqk, y la noche cerró con pop melancólico como Paloma Morphy y Harry Styles, con Safada y Que Calor como chispa de energía. Ese vaivén entre bajar el ritmo y querer moverte muestra un estado de transición emocional."
 
   const tracks = [
-    { n: 1, name: "Que Calor", artist: "Deorro, Jessica Audiffred", url: "https://open.spotify.com/track/3UgW9zdwst5BrEMK3uecgg", vibe: "EDM", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "Circo", artist: "Nsqk, Kevin Kaarl", url: "https://open.spotify.com/track/2KIqzRxZftjm3TIt1rRs6Y", vibe: "LATIN ALT", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 3, name: "Heathens (Live in Mexico City)", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/0KgKBjUQMjdDkXk67dMmtB", vibe: "EMO ROCK", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 4, name: "The Run and Go", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/68NsOuum1AegLDhOIr2ADL", vibe: "EMO", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 5, name: "Peces Muertos", artist: "Nsqk", url: "https://open.spotify.com/track/181FED6RsbQQRUnA4qboQx", vibe: "LATIN", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "take me home (4 christmas)", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/4UjYZS6Jbt3lee27qmiNOu", vibe: "POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 1, name: "Safada", artist: "Luísa Sonza, Young Miko", url: "https://open.spotify.com/track/3Cy7EQSrpwENzbXGFSdGcb", vibe: "TRAP LATINO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "lo que un día fue", artist: "Paloma Morphy", url: "https://open.spotify.com/track/3b9BBjthb7r9Jn5yyWMlrm", vibe: "ALT POP", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 3, name: "Stressed Out (Live in Mexico City)", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/60xcUD1MuHVNg9SmePwXsD", vibe: "EMO ROCK", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 4, name: "State Of Grace (Taylor's Version)", artist: "Taylor Swift", url: "https://open.spotify.com/track/6lzc0Al0zfZOIFsFvBS1ki", vibe: "POP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "As It Was", artist: "Harry Styles", url: "https://open.spotify.com/track/4Dvkj6JhhA12EX05fT7y2e", vibe: "POP", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "Que Calor", artist: "Deorro, Jessica Audiffred", url: "https://open.spotify.com/track/3UgW9zdwst5BrEMK3uecgg", vibe: "EDM", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 66, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 40, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 58, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 62, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 42, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 60, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Carrera con intervalos", desc: "Trota 20 min alternando 2 min rápido y 1 min suave, siguiendo el pulso de Que Calor y The Run and Go. Canaliza la energía sin quemarte.", time: "20 min" },
-    { icon: "🌬️", title: "Respiración 4-7-8", desc: "Inhala 4, sostén 7, exhala 8. Haz 5 rondas para asentar el vaivén entre calma y empuje que traen Heathens y Circo.", time: "5 min" },
-    { icon: "✍️", title: "Diario de dos polos", desc: "Escribe una columna de lo que te pide moverte y otra de lo que te pide quedarte quieto, como Peces Muertos frente a Que Calor. Busca qué tienen en común.", time: "10 min" },
+    { icon: "🧘", title: "Estiramiento suave", desc: "Haz 15 min de movilidad y estiramientos con lo que un día fue de fondo. Suelta la tensión del día antes de dormir.", time: "15 min" },
+    { icon: "🌬️", title: "Respiración 4-7-8", desc: "Inhala 4, sostén 7, exhala 8. Haz 5 rondas para asentar el vaivén entre la energía de Safada y la calma de As It Was.", time: "5 min" },
+    { icon: "✍️", title: "Diario de dos polos", desc: "Escribe una columna de lo que te pide moverte y otra de lo que te pide quedarte quieto, como Que Calor frente a State Of Grace. Busca qué tienen en común.", time: "10 min" },
   ]
 
-  const journalPrompt = "Entre Heathens, Circo y Que Calor, ¿qué parte de ti quiere avanzar hoy y cuál pide una pausa? ¿Qué pasaría si dejaras que conviviera cada una?"
+  const journalPrompt = "Entre Stressed Out, lo que un día fue y Que Calor, ¿qué parte de ti quiere cerrar el día en movimiento y cuál pide soltar? ¿Qué pasaría si dejaras que convivieran?"
   const quote = { text: "The only way out is through.", author: "Robert Frost" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
