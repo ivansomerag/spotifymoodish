@@ -6,33 +6,33 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
-  const date = "Mon Nov 09, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🔀", sub: "De emo rock en vivo a pop suave y trap latino" }
-  const insight = "La tarde fue de Twenty One Pilots en vivo y un maratón de Nsqk, y la noche cerró con pop melancólico como Paloma Morphy y Harry Styles, con Safada y Que Calor como chispa de energía. Ese vaivén entre bajar el ritmo y querer moverte muestra un estado de transición emocional."
+  const date = "Tue Nov 10, 2026"
+  const mood = { label: "HYPE", emoji: "🔥", sub: "Eminem en modo motivación, de Not Afraid a Won't Back Down" }
+  const insight = "La mañana arrancó con un bloque completo de Eminem, con Not Afraid y Won't Back Down como himnos de resistencia y Going Through Changes como momento de reflexión. Entre ese rap de superación aparecen James Blake y Taylor Swift, así que detrás de la energía hay una vena introspectiva."
 
   const tracks = [
-    { n: 1, name: "Safada", artist: "Luísa Sonza, Young Miko", url: "https://open.spotify.com/track/3Cy7EQSrpwENzbXGFSdGcb", vibe: "TRAP LATINO", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "lo que un día fue", artist: "Paloma Morphy", url: "https://open.spotify.com/track/3b9BBjthb7r9Jn5yyWMlrm", vibe: "ALT POP", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 3, name: "Stressed Out (Live in Mexico City)", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/60xcUD1MuHVNg9SmePwXsD", vibe: "EMO ROCK", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 4, name: "State Of Grace (Taylor's Version)", artist: "Taylor Swift", url: "https://open.spotify.com/track/6lzc0Al0zfZOIFsFvBS1ki", vibe: "POP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 5, name: "As It Was", artist: "Harry Styles", url: "https://open.spotify.com/track/4Dvkj6JhhA12EX05fT7y2e", vibe: "POP", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "Que Calor", artist: "Deorro, Jessica Audiffred", url: "https://open.spotify.com/track/3UgW9zdwst5BrEMK3uecgg", vibe: "EDM", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 1, name: "Not Afraid", artist: "Eminem", url: "https://open.spotify.com/track/7Ie9W94M7OjPoZVV216Xus", vibe: "RAP MOTIVACIONAL", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "Won't Back Down", artist: "Eminem, P!nk", url: "https://open.spotify.com/track/7kNlRLC9PEH8nXMVawssMx", vibe: "PUMP UP", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 3, name: "Going Through Changes", artist: "Eminem", url: "https://open.spotify.com/track/0ZqWBTU1EkdVPAMwQgfKiv", vibe: "HIP HOP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 4, name: "You're On Your Own, Kid", artist: "Taylor Swift", url: "https://open.spotify.com/track/4D7BCuvgdJlYvlX5WlN54t", vibe: "POP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "Loading", artist: "James Blake", url: "https://open.spotify.com/track/0GQW2gDyxgT5IsNEM4osbJ", vibe: "ELECTRÓNICA", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "messy", artist: "Łaszewo", url: "https://open.spotify.com/track/3CPhCNH8rV1czzGSmXm9TH", vibe: "HOUSE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 62, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 42, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 60, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 78, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 45, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 68, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🧘", title: "Estiramiento suave", desc: "Haz 15 min de movilidad y estiramientos con lo que un día fue de fondo. Suelta la tensión del día antes de dormir.", time: "15 min" },
-    { icon: "🌬️", title: "Respiración 4-7-8", desc: "Inhala 4, sostén 7, exhala 8. Haz 5 rondas para asentar el vaivén entre la energía de Safada y la calma de As It Was.", time: "5 min" },
-    { icon: "✍️", title: "Diario de dos polos", desc: "Escribe una columna de lo que te pide moverte y otra de lo que te pide quedarte quieto, como Que Calor frente a State Of Grace. Busca qué tienen en común.", time: "10 min" },
+    { icon: "🏃", title: "Carrera de intervalos", desc: "Corre 25 min alternando 2 min rápidos y 1 min suaves con Not Afraid y Won't Back Down de fondo. Canaliza la energía en movimiento.", time: "25 min" },
+    { icon: "🌬️", title: "Respiración en caja", desc: "Inhala 4, sostén 4, exhala 4, sostén 4. Haz 6 rondas para bajar las revoluciones después del bloque de rap.", time: "5 min" },
+    { icon: "✍️", title: "Diario de resistencia", desc: "Escribe sobre algo que estás atravesando, como en Going Through Changes, y qué pequeño paso te haría sentir que no vas a retroceder.", time: "10 min" },
   ]
 
-  const journalPrompt = "Entre Stressed Out, lo que un día fue y Que Calor, ¿qué parte de ti quiere cerrar el día en movimiento y cuál pide soltar? ¿Qué pasaría si dejaras que convivieran?"
-  const quote = { text: "The only way out is through.", author: "Robert Frost" }
+  const journalPrompt = "Entre Not Afraid, Going Through Changes y Loading, ¿qué cambio estás atravesando hoy y qué te haría decir que no vas a retroceder? ¿Qué parte de ti ya está lista para avanzar?"
+  const quote = { text: "Courage is not the absence of fear, but the triumph over it.", author: "Nelson Mandela" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
