@@ -7,32 +7,32 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Tue Nov 10, 2026"
-  const mood = { label: "HYPE", emoji: "🔥", sub: "Eminem en modo motivación, de Not Afraid a Won't Back Down" }
-  const insight = "La mañana arrancó con un bloque completo de Eminem, con Not Afraid y Won't Back Down como himnos de resistencia y Going Through Changes como momento de reflexión. Entre ese rap de superación aparecen James Blake y Taylor Swift, así que detrás de la energía hay una vena introspectiva."
+  const mood = { label: "TRANSITIONAL", emoji: "🌗", sub: "Sad pop al atardecer, con house y reggaetón en medio" }
+  const insight = "Tus últimas horas mezclan sad pop como when the party's over y deja vu con indie pop suave de mmeadows, y de pronto saltan al house de Tight Dress y al reggaetón de Columbia. Ese vaivén entre introspección y ganas de moverte muestra un día de emociones encontradas."
 
   const tracks = [
-    { n: 1, name: "Not Afraid", artist: "Eminem", url: "https://open.spotify.com/track/7Ie9W94M7OjPoZVV216Xus", vibe: "RAP MOTIVACIONAL", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "Won't Back Down", artist: "Eminem, P!nk", url: "https://open.spotify.com/track/7kNlRLC9PEH8nXMVawssMx", vibe: "PUMP UP", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 3, name: "Going Through Changes", artist: "Eminem", url: "https://open.spotify.com/track/0ZqWBTU1EkdVPAMwQgfKiv", vibe: "HIP HOP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 4, name: "You're On Your Own, Kid", artist: "Taylor Swift", url: "https://open.spotify.com/track/4D7BCuvgdJlYvlX5WlN54t", vibe: "POP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 5, name: "Loading", artist: "James Blake", url: "https://open.spotify.com/track/0GQW2gDyxgT5IsNEM4osbJ", vibe: "ELECTRÓNICA", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "messy", artist: "Łaszewo", url: "https://open.spotify.com/track/3CPhCNH8rV1czzGSmXm9TH", vibe: "HOUSE", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 1, name: "You're On Your Own, Kid", artist: "Taylor Swift", url: "https://open.spotify.com/track/4D7BCuvgdJlYvlX5WlN54t", vibe: "POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "when the party's over", artist: "Billie Eilish", url: "https://open.spotify.com/track/43zdsphuZLzwA9k4DJhU0I", vibe: "SAD POP", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 3, name: "deja vu", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/6HU7h9RYOaPRFeh0R3UeAr", vibe: "SAD POP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 4, name: "You Should Know By Now", artist: "mmeadows", url: "https://open.spotify.com/track/3ghnu632z14LIr5WI43leD", vibe: "INDIE POP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "Tight Dress", artist: "Kaila", url: "https://open.spotify.com/track/0VSnVU4YP5YJ6zZXuMoOBs", vibe: "HOUSE", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "Columbia", artist: "Quevedo", url: "https://open.spotify.com/track/6XbtvPmIpyCbjuT0e8cQtp", vibe: "REGGAETÓN", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 78, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 45, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 68, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 52, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 38, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 64, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Carrera de intervalos", desc: "Corre 25 min alternando 2 min rápidos y 1 min suaves con Not Afraid y Won't Back Down de fondo. Canaliza la energía en movimiento.", time: "25 min" },
-    { icon: "🌬️", title: "Respiración en caja", desc: "Inhala 4, sostén 4, exhala 4, sostén 4. Haz 6 rondas para bajar las revoluciones después del bloque de rap.", time: "5 min" },
-    { icon: "✍️", title: "Diario de resistencia", desc: "Escribe sobre algo que estás atravesando, como en Going Through Changes, y qué pequeño paso te haría sentir que no vas a retroceder.", time: "10 min" },
+    { icon: "🚶", title: "Caminata al atardecer", desc: "Sal 20 min a caminar a ritmo medio con Columbia y Tight Dress para pasar de la introspección al movimiento.", time: "20 min" },
+    { icon: "🌬️", title: "Respiración 4-7-8", desc: "Inhala 4, sostén 7, exhala 8. Haz 5 rondas para soltar la tensión después del bloque de sad pop.", time: "5 min" },
+    { icon: "✍️", title: "Diario de dos mitades", desc: "Escribe una página sobre lo que te pesa, como en when the party's over, y otra sobre lo que te da ganas de bailar.", time: "10 min" },
   ]
 
-  const journalPrompt = "Entre Not Afraid, Going Through Changes y Loading, ¿qué cambio estás atravesando hoy y qué te haría decir que no vas a retroceder? ¿Qué parte de ti ya está lista para avanzar?"
-  const quote = { text: "Courage is not the absence of fear, but the triumph over it.", author: "Nelson Mandela" }
+  const journalPrompt = "Entre when the party's over, deja vu y Tight Dress, ¿qué parte de hoy te pide quedarte en calma y cuál te pide moverte? ¿Qué pasaría si dejaras que convivan?"
+  const quote = { text: "The only way out is through.", author: "Robert Frost" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
 
