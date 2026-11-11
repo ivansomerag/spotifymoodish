@@ -7,31 +7,31 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Tue Nov 10, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌗", sub: "Sad pop al atardecer, con house y reggaetón en medio" }
-  const insight = "Gran parte de tu tarde fue indie pop suave de mmeadows, y ahora lo cruzas con sad pop como when the party's over y deja vu. En medio se cuelan el house de Tight Dress y el reggaetón de Columbia, un vaivén entre introspección y ganas de moverte."
+  const mood = { label: "TRANSITIONAL", emoji: "🌗", sub: "Rock emocional y sad pop de noche, con EDM y house al final" }
+  const insight = "Tu noche empezó con sad pop como drop dead y RAWFEAR de Twenty One Pilots, y terminó saltando a house, EDM y latin con Tarde o temprano. Es un vaivén entre introspección y ganas de moverte, con James Blake y el jazz de cezanne como pausa en medio."
 
   const tracks = [
-    { n: 1, name: "You're On Your Own, Kid", artist: "Taylor Swift", url: "https://open.spotify.com/track/4D7BCuvgdJlYvlX5WlN54t", vibe: "POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
-    { n: 2, name: "when the party's over", artist: "Billie Eilish", url: "https://open.spotify.com/track/43zdsphuZLzwA9k4DJhU0I", vibe: "SAD POP", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
-    { n: 3, name: "deja vu", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/6HU7h9RYOaPRFeh0R3UeAr", vibe: "SAD POP", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
-    { n: 4, name: "You Should Know By Now", artist: "mmeadows", url: "https://open.spotify.com/track/3ghnu632z14LIr5WI43leD", vibe: "INDIE POP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
-    { n: 5, name: "Tight Dress", artist: "Kaila", url: "https://open.spotify.com/track/0VSnVU4YP5YJ6zZXuMoOBs", vibe: "HOUSE", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "Columbia", artist: "Quevedo", url: "https://open.spotify.com/track/6XbtvPmIpyCbjuT0e8cQtp", vibe: "REGGAETÓN", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 1, name: "RAWFEAR", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/43ee3gqWBlPKe2MeGJ2S6I", vibe: "MODERN ROCK", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 2, name: "drop dead", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/3fRCAPMMZ8l8P9YKI6OCzD", vibe: "SAD POP", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
+    { n: 3, name: "Through The High Wire", artist: "James Blake", url: "https://open.spotify.com/track/0pkmCdVL9F63BEpfM3RBrL", vibe: "MELANCHOLIC", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
+    { n: 4, name: "I Just Might - Austin Millz Remix", artist: "Bruno Mars", url: "https://open.spotify.com/track/60VUS5w7zOJERqf7BSAGwy", vibe: "DANCE POP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
+    { n: 5, name: "PULL ME CLOSER", artist: "San Holo", url: "https://open.spotify.com/track/4TL9YbU53eOeTTvv2ZWDTf", vibe: "EDM", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
+    { n: 6, name: "Tarde o temprano", artist: "Nsqk", url: "https://open.spotify.com/track/3AkrjXOl3d8LycQHLHBm94", vibe: "LATIN", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
 
   const meters = [
-    { label: "Energy",       value: 50, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 40, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
-    { label: "Danceability", value: 64, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
+    { label: "Energy",       value: 62, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 42, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Danceability", value: 66, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
   const wellnessItems = [
-    { icon: "🚶", title: "Caminata al atardecer", desc: "Sal 20 min a caminar a ritmo medio con Columbia y Tight Dress para pasar de la introspección al movimiento.", time: "20 min" },
-    { icon: "🌬️", title: "Respiración 4-7-8", desc: "Inhala 4, sostén 7, exhala 8. Haz 5 rondas para soltar la tensión después del bloque de sad pop.", time: "5 min" },
-    { icon: "✍️", title: "Diario de dos mitades", desc: "Escribe una página sobre lo que te pesa, como en when the party's over, y otra sobre lo que te da ganas de bailar.", time: "10 min" },
+    { icon: "🧘", title: "Estiramiento nocturno", desc: "Haz 10 min de estiramiento suave de cuello, hombros y espalda con Through The High Wire de fondo para bajar el ritmo.", time: "10 min" },
+    { icon: "🌬️", title: "Respiración 4-7-8", desc: "Inhala 4, sostén 7, exhala 8. Haz 5 rondas para soltar la tensión después de RAWFEAR y drop dead.", time: "5 min" },
+    { icon: "✍️", title: "Diario de cierre", desc: "Escribe una página sobre lo que te pesó hoy y otra sobre lo que te dio ganas de moverte, como PULL ME CLOSER.", time: "10 min" },
   ]
 
-  const journalPrompt = "Entre when the party's over, deja vu y Tight Dress, ¿qué parte de hoy te pide quedarte en calma y cuál te pide moverte? ¿Qué pasaría si dejaras que convivan?"
+  const journalPrompt = "Entre RAWFEAR, drop dead y PULL ME CLOSER, ¿qué miedo o enojo de hoy puedes soltar antes de dormir y qué energía quieres llevarte a mañana?"
   const quote = { text: "The only way out is through.", author: "Robert Frost" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
