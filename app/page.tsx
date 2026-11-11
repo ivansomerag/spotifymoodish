@@ -8,7 +8,7 @@ export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Tue Nov 10, 2026"
   const mood = { label: "TRANSITIONAL", emoji: "🌗", sub: "Sad pop al atardecer, con house y reggaetón en medio" }
-  const insight = "Tus últimas horas mezclan sad pop como when the party's over y deja vu con indie pop suave de mmeadows, y de pronto saltan al house de Tight Dress y al reggaetón de Columbia. Ese vaivén entre introspección y ganas de moverte muestra un día de emociones encontradas."
+  const insight = "Gran parte de tu tarde fue indie pop suave de mmeadows, y ahora lo cruzas con sad pop como when the party's over y deja vu. En medio se cuelan el house de Tight Dress y el reggaetón de Columbia, un vaivén entre introspección y ganas de moverte."
 
   const tracks = [
     { n: 1, name: "You're On Your Own, Kid", artist: "Taylor Swift", url: "https://open.spotify.com/track/4D7BCuvgdJlYvlX5WlN54t", vibe: "POP", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
@@ -20,8 +20,8 @@ export default function WellnessDashboard() {
   ]
 
   const meters = [
-    { label: "Energy",       value: 52, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
-    { label: "Valence",      value: 38, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
+    { label: "Energy",       value: 50, color: "#14F195", glow: "rgba(20,241,149,0.8)" },
+    { label: "Valence",      value: 40, color: "#c084fc", glow: "rgba(192,132,252,0.8)" },
     { label: "Danceability", value: 64, color: "#00E5FF", glow: "rgba(0,229,255,0.8)" },
   ]
 
