@@ -7,16 +7,16 @@ const HELA_URL = process.env.NEXT_PUBLIC_HELA_URL
 export default function WellnessDashboard() {
   // ── DATA — updated every 3 hours by Hela ──
   const date = "Wed Nov 11, 2026"
-  const mood = { label: "TRANSITIONAL", emoji: "🌗", sub: "Sad pop y rock emocional chocando con EDM, rap y latin" }
-  const insight = "Tu noche pasó de drop dead y Center Mass a when the party's over, y luego saltó sin escalas a Feel Alive, PUNK TACTICS y reggaeton. Es un tira y afloja entre introspección y ganas de explotar en movimiento, con el latin de Nsqk como hilo constante."
+  const mood = { label: "TRANSITIONAL", emoji: "🌗", sub: "Rock emocional y sad pop chocando con EDM, rap y latin" }
+  const insight = "Tu escucha reciente salta de RAWFEAR y drop dead a when the party's over, y de pronto cambia a Feel Alive, PUNK TACTICS y reggaeton. Es un vaivén entre introspección y ganas de moverte, con Tarde o temprano de Nsqk como hilo latino constante."
 
   const tracks = [
-    { n: 1, name: "Center Mass", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/2BHSRlGgJwzTPfYvAax28m", vibe: "MODERN ROCK", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 1, name: "RAWFEAR", artist: "Twenty One Pilots", url: "https://open.spotify.com/track/43ee3gqWBlPKe2MeGJ2S6I", vibe: "MODERN ROCK", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
     { n: 2, name: "drop dead", artist: "Olivia Rodrigo", url: "https://open.spotify.com/track/3fRCAPMMZ8l8P9YKI6OCzD", vibe: "SAD POP", nc: "#fbbf24", nBg: "rgba(245,158,11,0.15)", nBd: "rgba(245,158,11,0.4)", vc: "#fbbf24", vBg: "rgba(245,158,11,0.18)", vBd: "rgba(245,158,11,0.45)" },
     { n: 3, name: "when the party's over", artist: "Billie Eilish", url: "https://open.spotify.com/track/43zdsphuZLzwA9k4DJhU0I", vibe: "MELANCHOLIC", nc: "#fb7185", nBg: "rgba(251,113,133,0.15)", nBd: "rgba(251,113,133,0.35)", vc: "#fb7185", vBg: "rgba(251,113,133,0.18)", vBd: "rgba(251,113,133,0.4)" },
     { n: 4, name: "PUNK TACTICS", artist: "Joey Valence & Brae", url: "https://open.spotify.com/track/2jQ1P0aGT4WkNyJCeoQnb9", vibe: "HIP HOP", nc: "#c084fc", nBg: "rgba(192,132,252,0.15)", nBd: "rgba(192,132,252,0.4)", vc: "#c084fc", vBg: "rgba(192,132,252,0.18)", vBd: "rgba(192,132,252,0.45)" },
     { n: 5, name: "Feel Alive", artist: "ILLENIUM, Bastille & Dabin", url: "https://open.spotify.com/track/1xkkHeokEkhrUmqjh2dkv5", vibe: "EDM", nc: "#00E5FF", nBg: "rgba(0,229,255,0.15)", nBd: "rgba(0,229,255,0.4)", vc: "#00E5FF", vBg: "rgba(0,229,255,0.18)", vBd: "rgba(0,229,255,0.45)" },
-    { n: 6, name: "NADIE MÁS!", artist: "Nsqk", url: "https://open.spotify.com/track/0HWyOfh3Q08UreN155KmRZ", vibe: "LATIN", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
+    { n: 6, name: "Tarde o temprano", artist: "Nsqk", url: "https://open.spotify.com/track/3AkrjXOl3d8LycQHLHBm94", vibe: "LATIN", nc: "#14F195", nBg: "rgba(20,241,149,0.15)", nBd: "rgba(20,241,149,0.4)", vc: "#14F195", vBg: "rgba(20,241,149,0.18)", vBd: "rgba(20,241,149,0.45)" },
   ]
 
   const meters = [
@@ -26,12 +26,12 @@ export default function WellnessDashboard() {
   ]
 
   const wellnessItems = [
-    { icon: "🏃", title: "Caminata o trote ligero", desc: "Sal 20 min a caminar o trotar suave con Feel Alive y PUNK TACTICS para canalizar esa energía de la noche.", time: "20 min" },
-    { icon: "🌬️", title: "Respiración en caja", desc: "Inhala 4, sostén 4, exhala 4, sostén 4. Haz 6 rondas para equilibrar el contraste entre Center Mass y when the party's over.", time: "5 min" },
-    { icon: "✍️", title: "Diario de contrastes", desc: "Escribe qué parte de ti se identificó con drop dead y cuál con NADIE MÁS!, y qué necesita cada una hoy.", time: "10 min" },
+    { icon: "🏃", title: "Caminata o trote ligero", desc: "Sal 20 min a caminar o trotar suave con Feel Alive y PUNK TACTICS para canalizar esa energía.", time: "20 min" },
+    { icon: "🌬️", title: "Respiración en caja", desc: "Inhala 4, sostén 4, exhala 4, sostén 4. Haz 6 rondas para equilibrar el contraste entre RAWFEAR y when the party's over.", time: "5 min" },
+    { icon: "✍️", title: "Diario de contrastes", desc: "Escribe qué parte de ti se identificó con drop dead y cuál con Tarde o temprano, y qué necesita cada una hoy.", time: "10 min" },
   ]
 
-  const journalPrompt = "Entre Center Mass, when the party's over y Feel Alive, ¿qué emoción de anoche sigue contigo hoy y qué le dirías si pudiera moverse libre?"
+  const journalPrompt = "Entre RAWFEAR, when the party's over y Feel Alive, ¿qué emoción de hoy sigue contigo y qué le dirías si pudiera moverse libre?"
   const quote = { text: "The only way out is through.", author: "Robert Frost" }
   const playlistUrl = "https://open.spotify.com/playlist/294GQpveapLix5cOdGWOru"
   // ─────────────────────────────────────────────────────────────────────────
